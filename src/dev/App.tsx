@@ -1,0 +1,421 @@
+import { createSignal, For } from "solid-js";
+import type { Density } from "../core/types";
+import "../core/tokens.css";
+import "./catalog.css";
+
+import { SouiProvider } from "../core/SouiProvider";
+import { Stack } from "../components/layout/Stack";
+import { HStack } from "../components/layout/HStack";
+import { Divider } from "../components/layout/Divider";
+import { Spacer } from "../components/layout/Spacer";
+import { Button } from "../components/general/Button";
+import { IconButton } from "../components/general/IconButton";
+import { Badge } from "../components/general/Badge";
+import { Tag } from "../components/general/Tag";
+import { TextField } from "../components/form/TextField";
+import { TextArea } from "../components/form/TextArea";
+import { NumberInput } from "../components/form/NumberInput";
+import { Select } from "../components/form/Select";
+import { Checkbox } from "../components/form/Checkbox";
+import { RadioGroup } from "../components/form/RadioGroup";
+import { RadioButton } from "../components/form/RadioButton";
+import { Switch } from "../components/form/Switch";
+import { Card, CardHeader, CardBody, CardFooter } from "../components/data/Card";
+import { DescriptionList } from "../components/data/DescriptionList";
+import { Skeleton } from "../components/data/Skeleton";
+import { EmptyState } from "../components/data/EmptyState";
+import { Table } from "../components/data/Table";
+import { Dialog, DialogHeader, DialogBody, DialogFooter } from "../components/feedback/Dialog";
+import { Alert } from "../components/feedback/Alert";
+import { Progress } from "../components/feedback/Progress";
+import { Spinner } from "../components/feedback/Spinner";
+import { Tabs, TabList, Tab, TabPanel } from "../components/navigation/Tabs";
+import { Breadcrumb, BreadcrumbItem } from "../components/navigation/Breadcrumb";
+import { Pagination } from "../components/navigation/Pagination";
+
+export function App() {
+  const [density, setDensity] = createSignal<Density>("normal");
+  const [theme, setTheme] = createSignal<"light" | "dark">("light");
+  const [dialogOpen, setDialogOpen] = createSignal(false);
+  const [activeTab, setActiveTab] = createSignal("tab1");
+  const [page, setPage] = createSignal(1);
+  const [switchOn, setSwitchOn] = createSignal(false);
+  const [checkboxChecked, setCheckboxChecked] = createSignal(false);
+  const [radioValue, setRadioValue] = createSignal("a");
+  const [textValue, setTextValue] = createSignal("");
+  const [numberValue, setNumberValue] = createSignal(0);
+  const [selectValue, setSelectValue] = createSignal("");
+
+  const tableData = [
+    { id: "1", name: "Tanaka Taro", email: "tanaka@example.com", role: "Admin", age: 32 },
+    { id: "2", name: "Suzuki Hanako", email: "suzuki@example.com", role: "Editor", age: 28 },
+    { id: "3", name: "Sato Jiro", email: "sato@example.com", role: "Viewer", age: 45 },
+    { id: "4", name: "Yamada Yuki", email: "yamada@example.com", role: "Editor", age: 36 },
+  ];
+
+  const tableColumns = [
+    { key: "name" as const, header: "Name", sortable: true },
+    { key: "email" as const, header: "Email" },
+    { key: "role" as const, header: "Role", width: "100px" },
+    { key: "age" as const, header: "Age", align: "end" as const, sortable: true },
+  ];
+
+  return (
+    <SouiProvider config={{ density: density(), theme: theme() }}>
+      <div class="catalog">
+        <h1>soui Component Catalog</h1>
+        <p class="catalog-subtitle">SolidJS Opinionated UI - Business-focused component library</p>
+
+        {/* Global Controls */}
+        <div class="catalog-controls">
+          <label>Density:</label>
+          <Button
+            variant={density() === "normal" ? "primary" : "neutral"}
+            size="sm"
+            onClick={() => setDensity("normal")}
+          >
+            Normal
+          </Button>
+          <Button
+            variant={density() === "dense" ? "primary" : "neutral"}
+            size="sm"
+            onClick={() => setDensity("dense")}
+          >
+            Dense
+          </Button>
+          <Spacer />
+          <label>Theme:</label>
+          <Button
+            variant={theme() === "light" ? "primary" : "neutral"}
+            size="sm"
+            onClick={() => setTheme("light")}
+          >
+            Light
+          </Button>
+          <Button
+            variant={theme() === "dark" ? "primary" : "neutral"}
+            size="sm"
+            onClick={() => setTheme("dark")}
+          >
+            Dark
+          </Button>
+        </div>
+
+        {/* Layout */}
+        <section class="catalog-section">
+          <h2>Layout</h2>
+
+          <h3>Stack / HStack</h3>
+          <HStack gap={3}>
+            <Stack gap={2}>
+              <Badge variant="neutral">Item 1</Badge>
+              <Badge variant="neutral">Item 2</Badge>
+              <Badge variant="neutral">Item 3</Badge>
+            </Stack>
+            <Divider orientation="vertical" />
+            <HStack gap={2}>
+              <Badge variant="primary">H1</Badge>
+              <Badge variant="primary">H2</Badge>
+              <Badge variant="primary">H3</Badge>
+            </HStack>
+          </HStack>
+
+          <h3>Divider</h3>
+          <Divider />
+        </section>
+
+        {/* General */}
+        <section class="catalog-section">
+          <h2>General</h2>
+
+          <h3>Button</h3>
+          <div class="catalog-row">
+            <Button variant="primary">Primary</Button>
+            <Button variant="neutral">Neutral</Button>
+            <Button variant="danger">Danger</Button>
+            <Button variant="primary" disabled>Disabled</Button>
+            <Button variant="primary" loading>Loading</Button>
+          </div>
+          <div class="catalog-row">
+            <Button variant="primary" size="sm">Small</Button>
+            <Button variant="primary" size="md">Medium</Button>
+            <Button variant="primary" size="lg">Large</Button>
+          </div>
+
+          <h3>IconButton</h3>
+          <div class="catalog-row">
+            <IconButton variant="primary" aria-label="Add" icon={<span>+</span>} />
+            <IconButton variant="neutral" aria-label="Settings" icon={<span>*</span>} />
+            <IconButton variant="danger" aria-label="Delete" icon={<span>x</span>} />
+          </div>
+
+          <h3>Badge</h3>
+          <div class="catalog-row">
+            <Badge variant="primary">Primary</Badge>
+            <Badge variant="neutral">Neutral</Badge>
+            <Badge variant="danger">Danger</Badge>
+            <Badge variant="success">Success</Badge>
+            <Badge variant="warning">Warning</Badge>
+            <Badge variant="info">Info</Badge>
+          </div>
+
+          <h3>Tag</h3>
+          <div class="catalog-row">
+            <Tag variant="primary" onRemove={() => {}}>Removable</Tag>
+            <Tag variant="success">Status: OK</Tag>
+            <Tag variant="danger" onRemove={() => {}}>Error</Tag>
+          </div>
+        </section>
+
+        {/* Form */}
+        <section class="catalog-section">
+          <h2>Form</h2>
+
+          <div class="catalog-grid">
+            <div>
+              <h3>TextField</h3>
+              <Stack gap={3}>
+                <TextField
+                  label="Name"
+                  placeholder="Enter your name"
+                  value={textValue()}
+                  onInput={setTextValue}
+                />
+                <TextField
+                  label="Email"
+                  type="email"
+                  placeholder="user@example.com"
+                  hint="We will not share your email"
+                />
+                <TextField
+                  label="With Error"
+                  error="This field is required"
+                  required
+                />
+              </Stack>
+            </div>
+
+            <div>
+              <h3>TextArea</h3>
+              <TextArea
+                label="Description"
+                placeholder="Enter description..."
+                hint="Max 500 characters"
+              />
+            </div>
+          </div>
+
+          <div class="catalog-grid">
+            <div>
+              <h3>NumberInput</h3>
+              <NumberInput
+                label="Quantity"
+                value={numberValue()}
+                onInput={setNumberValue}
+                min={0}
+                max={100}
+                step={1}
+              />
+            </div>
+
+            <div>
+              <h3>Select</h3>
+              <Select
+                label="Role"
+                placeholder="Select a role"
+                value={selectValue()}
+                onChange={setSelectValue}
+                options={[
+                  { value: "admin", label: "Admin" },
+                  { value: "editor", label: "Editor" },
+                  { value: "viewer", label: "Viewer" },
+                ]}
+              />
+            </div>
+          </div>
+
+          <h3>Checkbox</h3>
+          <div class="catalog-row">
+            <Checkbox
+              checked={checkboxChecked()}
+              onChange={setCheckboxChecked}
+              label="Accept terms"
+            />
+            <Checkbox checked indeterminate label="Indeterminate" />
+            <Checkbox disabled label="Disabled" />
+          </div>
+
+          <h3>RadioGroup</h3>
+          <RadioGroup
+            value={radioValue()}
+            onChange={setRadioValue}
+            label="Select option"
+          >
+            <HStack gap={4}>
+              <RadioButton value="a" label="Option A" />
+              <RadioButton value="b" label="Option B" />
+              <RadioButton value="c" label="Option C" />
+            </HStack>
+          </RadioGroup>
+
+          <h3>Switch</h3>
+          <div class="catalog-row">
+            <Switch
+              checked={switchOn()}
+              onChange={setSwitchOn}
+              label="Enable notifications"
+            />
+            <Switch checked disabled label="Disabled (on)" />
+          </div>
+        </section>
+
+        {/* Data Display */}
+        <section class="catalog-section">
+          <h2>Data Display</h2>
+
+          <h3>Table</h3>
+          <div class="catalog-block">
+            <Table
+              columns={tableColumns}
+              data={tableData}
+              rowKey={(row) => row.id}
+            />
+          </div>
+
+          <h3>Card</h3>
+          <div class="catalog-grid">
+            <Card>
+              <CardHeader>Card Title</CardHeader>
+              <CardBody>
+                <p>Card content goes here. Supports any JSX.</p>
+              </CardBody>
+              <CardFooter>
+                <HStack gap={2}>
+                  <Button variant="primary" size="sm">Action</Button>
+                  <Button variant="neutral" size="sm">Cancel</Button>
+                </HStack>
+              </CardFooter>
+            </Card>
+
+            <Card>
+              <CardHeader>User Details</CardHeader>
+              <CardBody>
+                <DescriptionList
+                  items={[
+                    { term: "Name", description: "Tanaka Taro" },
+                    { term: "Role", description: "Admin" },
+                    { term: "Email", description: "tanaka@example.com" },
+                  ]}
+                />
+              </CardBody>
+            </Card>
+          </div>
+
+          <h3>Skeleton</h3>
+          <div class="catalog-row">
+            <Skeleton variant="circle" width="40px" height="40px" />
+            <Stack gap={2}>
+              <Skeleton variant="text" width="200px" />
+              <Skeleton variant="text" width="150px" />
+            </Stack>
+          </div>
+
+          <h3>EmptyState</h3>
+          <EmptyState
+            title="No data"
+            description="There are no items to display yet."
+            action={<Button variant="primary" size="sm">Create New</Button>}
+          />
+        </section>
+
+        {/* Feedback */}
+        <section class="catalog-section">
+          <h2>Feedback</h2>
+
+          <h3>Alert</h3>
+          <Stack gap={2}>
+            <Alert variant="info">Informational message.</Alert>
+            <Alert variant="success">Operation completed successfully.</Alert>
+            <Alert variant="warning">Please check your input.</Alert>
+            <Alert variant="danger" onDismiss={() => {}}>
+              An error occurred. Please try again.
+            </Alert>
+          </Stack>
+
+          <h3>Progress</h3>
+          <Stack gap={2}>
+            <Progress value={30} variant="info" />
+            <Progress value={65} variant="success" />
+            <Progress value={90} variant="warning" />
+          </Stack>
+
+          <h3>Spinner</h3>
+          <div class="catalog-row">
+            <Spinner size="sm" />
+            <Spinner size="md" />
+            <Spinner size="lg" />
+            <Spinner size="md" variant="primary" />
+          </div>
+
+          <h3>Dialog</h3>
+          <Button variant="primary" onClick={() => setDialogOpen(true)}>
+            Open Dialog
+          </Button>
+          <Dialog open={dialogOpen()} onClose={() => setDialogOpen(false)}>
+            <DialogHeader>Confirm Action</DialogHeader>
+            <DialogBody>
+              <p>Are you sure you want to proceed with this action?</p>
+            </DialogBody>
+            <DialogFooter>
+              <HStack gap={2}>
+                <Button variant="neutral" size="sm" onClick={() => setDialogOpen(false)}>
+                  Cancel
+                </Button>
+                <Button variant="primary" size="sm" onClick={() => setDialogOpen(false)}>
+                  Confirm
+                </Button>
+              </HStack>
+            </DialogFooter>
+          </Dialog>
+        </section>
+
+        {/* Navigation */}
+        <section class="catalog-section">
+          <h2>Navigation</h2>
+
+          <h3>Tabs</h3>
+          <Tabs value={activeTab()} onChange={setActiveTab}>
+            <TabList>
+              <Tab value="tab1">Overview</Tab>
+              <Tab value="tab2">Details</Tab>
+              <Tab value="tab3">Settings</Tab>
+            </TabList>
+            <TabPanel value="tab1">
+              <p>Overview content goes here.</p>
+            </TabPanel>
+            <TabPanel value="tab2">
+              <p>Details content goes here.</p>
+            </TabPanel>
+            <TabPanel value="tab3">
+              <p>Settings content goes here.</p>
+            </TabPanel>
+          </Tabs>
+
+          <h3>Breadcrumb</h3>
+          <Breadcrumb>
+            <BreadcrumbItem href="#">Home</BreadcrumbItem>
+            <BreadcrumbItem href="#">Users</BreadcrumbItem>
+            <BreadcrumbItem current>Tanaka Taro</BreadcrumbItem>
+          </Breadcrumb>
+
+          <h3>Pagination</h3>
+          <Pagination
+            page={page()}
+            totalPages={10}
+            onChange={setPage}
+          />
+        </section>
+      </div>
+    </SouiProvider>
+  );
+}
