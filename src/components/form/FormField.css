@@ -1,0 +1,31 @@
+.soui-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--soui-space-1);
+}
+
+.soui-form-field__label {
+  font-size: var(--soui-font-size-sm);
+  font-weight: 500;
+  color: var(--soui-text);
+  line-height: var(--soui-line-height);
+}
+
+.soui-form-field__required {
+  color: var(--soui-color-danger-base);
+  margin-left: var(--soui-space-1);
+}
+
+.soui-form-field__hint {
+  font-size: var(--soui-font-size-sm);
+  color: var(--soui-text-muted);
+  margin: 0;
+  line-height: var(--soui-line-height);
+}
+
+.soui-form-field__error {
+  font-size: var(--soui-font-size-sm);
+  color: var(--soui-color-danger-base);
+  margin: 0;
+  line-height: var(--soui-line-height);
+}

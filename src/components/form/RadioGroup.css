@@ -1,0 +1,19 @@
+.soui-radio-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.soui-radio-group__label {
+  font-size: var(--soui-font-size-sm);
+  font-weight: 500;
+  color: var(--soui-text);
+  line-height: var(--soui-line-height);
+  margin-bottom: var(--soui-space-2);
+}
+
+.soui-radio-group__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--soui-space-2);
+}

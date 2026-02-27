@@ -1,0 +1,72 @@
+.soui-radio-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--soui-space-2);
+  cursor: pointer;
+  user-select: none;
+  line-height: var(--soui-line-height);
+}
+
+.soui-radio-button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Hidden native input --- */
+
+.soui-radio-button__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Indicator --- */
+
+.soui-radio-button__indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--soui-border);
+  border-radius: 50%;
+  background-color: var(--soui-bg);
+  flex-shrink: 0;
+  transition: border-color 0.15s;
+}
+
+.soui-radio-button__input:checked + .soui-radio-button__indicator {
+  border-color: var(--soui-color-primary-base);
+}
+
+.soui-radio-button__input:focus-visible + .soui-radio-button__indicator {
+  outline: 2px solid var(--soui-ring);
+  outline-offset: 2px;
+}
+
+/* --- Dot --- */
+
+.soui-radio-button__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s;
+}
+
+.soui-radio-button__input:checked + .soui-radio-button__indicator .soui-radio-button__dot {
+  background-color: var(--soui-color-primary-base);
+}
+
+/* --- Label --- */
+
+.soui-radio-button__label {
+  color: var(--soui-text);
+  font-size: var(--soui-font-size-md);
+}

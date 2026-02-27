@@ -1,0 +1,126 @@
+.soui-number-input {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--soui-border);
+  border-radius: var(--soui-radius);
+  background-color: var(--soui-bg);
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+}
+
+.soui-number-input:focus-within {
+  border-color: var(--soui-ring);
+  box-shadow: 0 0 0 1px var(--soui-ring);
+}
+
+.soui-number-input:has([aria-invalid="true"]) {
+  border-color: var(--soui-color-danger-base);
+}
+
+.soui-number-input:has([aria-invalid="true"]):focus-within {
+  border-color: var(--soui-color-danger-base);
+  box-shadow: 0 0 0 1px var(--soui-color-danger-base);
+}
+
+/* --- Input --- */
+
+.soui-number-input__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--soui-text);
+  font-family: inherit;
+  text-align: center;
+  line-height: var(--soui-line-height);
+  -moz-appearance: textfield;
+  box-sizing: border-box;
+}
+
+.soui-number-input__input::-webkit-inner-spin-button,
+.soui-number-input__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.soui-number-input__input:focus {
+  outline: none;
+}
+
+.soui-number-input__input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Buttons --- */
+
+.soui-number-input__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--soui-color-neutral-subtle);
+  color: var(--soui-text);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  user-select: none;
+  transition: background-color 0.15s;
+}
+
+.soui-number-input__button:hover:not(:disabled) {
+  background-color: var(--soui-color-neutral-border);
+}
+
+.soui-number-input__button:active:not(:disabled) {
+  background-color: var(--soui-color-neutral-active);
+  color: var(--soui-color-neutral-fg);
+}
+
+.soui-number-input__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Sizes --- */
+
+.soui-number-input--sm {
+  height: var(--soui-control-height-sm);
+}
+
+.soui-number-input--sm .soui-number-input__input {
+  font-size: var(--soui-font-size-sm);
+}
+
+.soui-number-input--sm .soui-number-input__button {
+  width: var(--soui-control-height-sm);
+  font-size: var(--soui-font-size-sm);
+}
+
+.soui-number-input--md {
+  height: var(--soui-control-height-md);
+}
+
+.soui-number-input--md .soui-number-input__input {
+  font-size: var(--soui-font-size-md);
+}
+
+.soui-number-input--md .soui-number-input__button {
+  width: var(--soui-control-height-md);
+  font-size: var(--soui-font-size-md);
+}
+
+.soui-number-input--lg {
+  height: var(--soui-control-height-lg);
+}
+
+.soui-number-input--lg .soui-number-input__input {
+  font-size: var(--soui-font-size-lg);
+}
+
+.soui-number-input--lg .soui-number-input__button {
+  width: var(--soui-control-height-lg);
+  font-size: var(--soui-font-size-lg);
+}
