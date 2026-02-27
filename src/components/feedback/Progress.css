@@ -1,0 +1,38 @@
+.soui-progress {
+  width: 100%;
+  background-color: var(--soui-border);
+  border-radius: var(--soui-radius);
+  overflow: hidden;
+}
+
+.soui-progress--sm {
+  height: 4px;
+}
+
+.soui-progress--md {
+  height: 8px;
+}
+
+.soui-progress__bar {
+  height: 100%;
+  border-radius: var(--soui-radius);
+  transition: width 0.3s ease;
+}
+
+/* --- Variants --- */
+
+.soui-progress--info .soui-progress__bar {
+  background-color: var(--soui-color-info-base);
+}
+
+.soui-progress--success .soui-progress__bar {
+  background-color: var(--soui-color-success-base);
+}
+
+.soui-progress--warning .soui-progress__bar {
+  background-color: var(--soui-color-warning-base);
+}
+
+.soui-progress--danger .soui-progress__bar {
+  background-color: var(--soui-color-danger-base);
+}

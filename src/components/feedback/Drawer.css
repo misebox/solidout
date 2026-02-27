@@ -1,0 +1,45 @@
+.soui-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.soui-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: var(--soui-bg);
+  border: 1px solid var(--soui-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* --- Sides --- */
+
+.soui-drawer--left {
+  left: 0;
+}
+
+.soui-drawer--right {
+  right: 0;
+}
+
+/* --- Sizes --- */
+
+.soui-drawer--sm {
+  width: 280px;
+  max-width: 80vw;
+}
+
+.soui-drawer--md {
+  width: 400px;
+  max-width: 80vw;
+}
+
+.soui-drawer--lg {
+  width: 560px;
+  max-width: 80vw;
+}

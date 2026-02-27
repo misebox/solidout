@@ -1,0 +1,53 @@
+.soui-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--soui-space-2);
+}
+
+.soui-pagination__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--soui-color-neutral-border);
+  border-radius: var(--soui-radius);
+  background: transparent;
+  color: var(--soui-text);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  white-space: nowrap;
+}
+
+.soui-pagination__button:hover:not(:disabled) {
+  background-color: var(--soui-color-neutral-subtle);
+}
+
+.soui-pagination__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.soui-pagination__info {
+  font-size: var(--soui-font-size-md);
+  color: var(--soui-text);
+  min-width: 60px;
+  text-align: center;
+}
+
+/* --- Sizes --- */
+
+.soui-pagination--sm .soui-pagination__button {
+  height: var(--soui-control-height-sm);
+  padding: 0 var(--soui-space-3);
+  font-size: var(--soui-font-size-sm);
+}
+
+.soui-pagination--sm .soui-pagination__info {
+  font-size: var(--soui-font-size-sm);
+}
+
+.soui-pagination--md .soui-pagination__button {
+  height: var(--soui-control-height-md);
+  padding: 0 var(--soui-space-4);
+  font-size: var(--soui-font-size-md);
+}

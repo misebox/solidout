@@ -1,0 +1,29 @@
+.soui-description-list {
+  margin: 0;
+  padding: 0;
+  color: var(--soui-text);
+}
+
+.soui-description-list__term {
+  font-weight: 600;
+  font-size: var(--soui-font-size-sm);
+  color: var(--soui-text-muted);
+  margin-bottom: var(--soui-space-1);
+}
+
+.soui-description-list__detail {
+  margin: 0 0 var(--soui-space-4) 0;
+  font-size: var(--soui-font-size-md);
+}
+
+/* --- 2-column layout --- */
+
+.soui-description-list--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 var(--soui-space-6);
+}
+
+.soui-description-list--2col .soui-description-list__detail {
+  margin-bottom: var(--soui-space-4);
+}

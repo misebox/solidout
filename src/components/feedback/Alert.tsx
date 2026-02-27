@@ -1,0 +1,46 @@
+import { splitProps, Show } from "solid-js";
+import type { JSX } from "solid-js";
+import type { CommonProps, FeedbackVariant } from "../../core/types";
+import { cls } from "../../core/utils";
+import "./Alert.css";
+
+export interface AlertProps extends CommonProps {
+  variant?: FeedbackVariant;
+  children: JSX.Element;
+  onDismiss?: () => void;
+}
+
+export function Alert(props: AlertProps) {
+  const [local, others] = splitProps(props, [
+    "class",
+    "density",
+    "variant",
+    "children",
+    "onDismiss",
+  ]);
+
+  return (
+    <div
+      class={cls(
+        "soui-alert",
+        `soui-alert--${local.variant ?? "info"}`,
+        local.class,
+      )}
+      role="alert"
+      data-density={local.density}
+      {...others}
+    >
+      <div class="soui-alert__content">{local.children}</div>
+      <Show when={local.onDismiss}>
+        <button
+          type="button"
+          class="soui-alert__dismiss"
+          onClick={() => local.onDismiss?.()}
+          aria-label="Dismiss"
+        >
+          &times;
+        </button>
+      </Show>
+    </div>
+  );
+}

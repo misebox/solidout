@@ -1,0 +1,25 @@
+.soui-card {
+  background-color: var(--soui-bg);
+  border: 1px solid var(--soui-border);
+  border-radius: var(--soui-radius);
+  overflow: hidden;
+}
+
+.soui-card__header {
+  padding: var(--soui-space-4) var(--soui-space-5);
+  border-bottom: 1px solid var(--soui-border);
+  font-weight: 600;
+  font-size: var(--soui-font-size-lg);
+  color: var(--soui-text);
+}
+
+.soui-card__body {
+  padding: var(--soui-space-4) var(--soui-space-5);
+  color: var(--soui-text);
+}
+
+.soui-card__footer {
+  padding: var(--soui-space-3) var(--soui-space-5);
+  border-top: 1px solid var(--soui-border);
+  background-color: var(--soui-bg-subtle);
+}

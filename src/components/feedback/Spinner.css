@@ -1,0 +1,45 @@
+.soui-spinner {
+  display: inline-block;
+  border-style: solid;
+  border-radius: 50%;
+  border-right-color: transparent;
+  animation: soui-spinner-spin 0.6s linear infinite;
+}
+
+/* --- Sizes --- */
+
+.soui-spinner--sm {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.soui-spinner--md {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+.soui-spinner--lg {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+
+/* --- Variants --- */
+
+.soui-spinner--primary {
+  border-color: var(--soui-color-primary-base);
+  border-right-color: transparent;
+}
+
+.soui-spinner--neutral {
+  border-color: var(--soui-color-neutral-base);
+  border-right-color: transparent;
+}
+
+@keyframes soui-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

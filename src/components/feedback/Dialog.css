@@ -1,0 +1,64 @@
+.soui-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.soui-dialog {
+  background-color: var(--soui-bg);
+  border: 1px solid var(--soui-border);
+  border-radius: var(--soui-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* --- Sizes --- */
+
+.soui-dialog--sm {
+  width: 400px;
+  max-width: 90vw;
+}
+
+.soui-dialog--md {
+  width: 560px;
+  max-width: 90vw;
+}
+
+.soui-dialog--lg {
+  width: 720px;
+  max-width: 90vw;
+}
+
+/* --- Sections --- */
+
+.soui-dialog__header {
+  padding: var(--soui-space-4) var(--soui-space-5);
+  border-bottom: 1px solid var(--soui-border);
+  font-weight: 600;
+  font-size: var(--soui-font-size-lg);
+  color: var(--soui-text);
+  flex-shrink: 0;
+}
+
+.soui-dialog__body {
+  padding: var(--soui-space-4) var(--soui-space-5);
+  overflow-y: auto;
+  flex: 1;
+  color: var(--soui-text);
+}
+
+.soui-dialog__footer {
+  padding: var(--soui-space-3) var(--soui-space-5);
+  border-top: 1px solid var(--soui-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--soui-space-2);
+  flex-shrink: 0;
+}

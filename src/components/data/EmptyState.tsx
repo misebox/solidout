@@ -1,0 +1,42 @@
+import { splitProps, Show } from "solid-js";
+import type { JSX } from "solid-js";
+import type { CommonProps } from "../../core/types";
+import { cls } from "../../core/utils";
+import "./EmptyState.css";
+
+export interface EmptyStateProps extends CommonProps {
+  title: string;
+  description?: string;
+  icon?: JSX.Element;
+  action?: JSX.Element;
+}
+
+export function EmptyState(props: EmptyStateProps) {
+  const [local, others] = splitProps(props, [
+    "class",
+    "density",
+    "title",
+    "description",
+    "icon",
+    "action",
+  ]);
+
+  return (
+    <div
+      class={cls("soui-empty-state", local.class)}
+      data-density={local.density}
+      {...others}
+    >
+      <Show when={local.icon}>
+        <div class="soui-empty-state__icon">{local.icon}</div>
+      </Show>
+      <h3 class="soui-empty-state__title">{local.title}</h3>
+      <Show when={local.description}>
+        <p class="soui-empty-state__description">{local.description}</p>
+      </Show>
+      <Show when={local.action}>
+        <div class="soui-empty-state__action">{local.action}</div>
+      </Show>
+    </div>
+  );
+}
