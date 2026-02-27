@@ -115,59 +115,59 @@
 /* --- Dark mode --- */
 
 [data-theme="dark"] {
-  /* primary */
-  --soui-color-primary-base: #60a5fa;
-  --soui-color-primary-fg: #0f172a;
-  --soui-color-primary-subtle: #1e3a5f;
+  /* primary — same hue, keep base usable, white fg */
+  --soui-color-primary-base: #3b82f6;
+  --soui-color-primary-fg: #ffffff;
+  --soui-color-primary-subtle: #172554;
   --soui-color-primary-subtle-fg: #93c5fd;
-  --soui-color-primary-border: #2563eb;
-  --soui-color-primary-hover: #93c5fd;
-  --soui-color-primary-active: #bfdbfe;
+  --soui-color-primary-border: #1d4ed8;
+  --soui-color-primary-hover: #2563eb;
+  --soui-color-primary-active: #1d4ed8;
 
-  /* neutral */
-  --soui-color-neutral-base: #9ca3af;
-  --soui-color-neutral-fg: #0f172a;
+  /* neutral — muted gray, white fg */
+  --soui-color-neutral-base: #4b5563;
+  --soui-color-neutral-fg: #ffffff;
   --soui-color-neutral-subtle: #1f2937;
   --soui-color-neutral-subtle-fg: #d1d5db;
-  --soui-color-neutral-border: #4b5563;
-  --soui-color-neutral-hover: #d1d5db;
-  --soui-color-neutral-active: #e5e7eb;
+  --soui-color-neutral-border: #374151;
+  --soui-color-neutral-hover: #374151;
+  --soui-color-neutral-active: #1f2937;
 
   /* danger */
-  --soui-color-danger-base: #f87171;
-  --soui-color-danger-fg: #0f172a;
-  --soui-color-danger-subtle: #451a1a;
+  --soui-color-danger-base: #dc2626;
+  --soui-color-danger-fg: #ffffff;
+  --soui-color-danger-subtle: #450a0a;
   --soui-color-danger-subtle-fg: #fca5a5;
-  --soui-color-danger-border: #dc2626;
-  --soui-color-danger-hover: #fca5a5;
-  --soui-color-danger-active: #fecaca;
+  --soui-color-danger-border: #991b1b;
+  --soui-color-danger-hover: #b91c1c;
+  --soui-color-danger-active: #991b1b;
 
   /* success */
-  --soui-color-success-base: #4ade80;
-  --soui-color-success-fg: #0f172a;
-  --soui-color-success-subtle: #14332a;
+  --soui-color-success-base: #16a34a;
+  --soui-color-success-fg: #ffffff;
+  --soui-color-success-subtle: #052e16;
   --soui-color-success-subtle-fg: #86efac;
-  --soui-color-success-border: #16a34a;
-  --soui-color-success-hover: #86efac;
-  --soui-color-success-active: #bbf7d0;
+  --soui-color-success-border: #15803d;
+  --soui-color-success-hover: #15803d;
+  --soui-color-success-active: #166534;
 
   /* warning */
-  --soui-color-warning-base: #fbbf24;
-  --soui-color-warning-fg: #0f172a;
-  --soui-color-warning-subtle: #422006;
+  --soui-color-warning-base: #d97706;
+  --soui-color-warning-fg: #ffffff;
+  --soui-color-warning-subtle: #451a03;
   --soui-color-warning-subtle-fg: #fcd34d;
-  --soui-color-warning-border: #d97706;
-  --soui-color-warning-hover: #fcd34d;
-  --soui-color-warning-active: #fde68a;
+  --soui-color-warning-border: #b45309;
+  --soui-color-warning-hover: #b45309;
+  --soui-color-warning-active: #92400e;
 
   /* info */
-  --soui-color-info-base: #22d3ee;
-  --soui-color-info-fg: #0f172a;
-  --soui-color-info-subtle: #0c3644;
+  --soui-color-info-base: #0891b2;
+  --soui-color-info-fg: #ffffff;
+  --soui-color-info-subtle: #083344;
   --soui-color-info-subtle-fg: #67e8f9;
-  --soui-color-info-border: #0891b2;
-  --soui-color-info-hover: #67e8f9;
-  --soui-color-info-active: #a5f3fc;
+  --soui-color-info-border: #0e7490;
+  --soui-color-info-hover: #0e7490;
+  --soui-color-info-active: #155e75;
 
   /* global tokens */
   --soui-bg: #0f172a;
@@ -176,6 +176,15 @@
   --soui-text-muted: #94a3b8;
   --soui-border: #334155;
   --soui-ring: var(--soui-color-primary-base);
+}
+
+/* --- Root container --- */
+
+[data-soui] {
+  background-color: var(--soui-bg);
+  color: var(--soui-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: var(--soui-line-height);
 }
 
 /* --- Focus ring --- */

@@ -49,34 +49,39 @@ function SelectInput<T extends string = string>(props: {
   };
 
   return (
-    <select
-      id={ctx?.id}
-      class={cls(
-        "soui-select__input",
-        `soui-select__input--${local.size ?? "md"}`,
-      )}
-      value={local.value ?? ""}
-      disabled={local.disabled}
-      required={local.required}
-      aria-invalid={ctx?.hasError || undefined}
-      aria-describedby={
-        ctx?.hasError ? ctx.errorId : ctx?.hintId
-      }
-      onChange={handleChange}
-    >
-      {local.placeholder && (
-        <option value="" disabled>
-          {local.placeholder}
-        </option>
-      )}
-      <For each={local.options}>
-        {(option) => (
-          <option value={option.value} disabled={option.disabled}>
-            {option.label}
+    <div class="soui-select__wrapper">
+      <select
+        id={ctx?.id}
+        class={cls(
+          "soui-select__input",
+          `soui-select__input--${local.size ?? "md"}`,
+        )}
+        value={local.value ?? ""}
+        disabled={local.disabled}
+        required={local.required}
+        aria-invalid={ctx?.hasError || undefined}
+        aria-describedby={
+          ctx?.hasError ? ctx.errorId : ctx?.hintId
+        }
+        onChange={handleChange}
+      >
+        {local.placeholder && (
+          <option value="" disabled>
+            {local.placeholder}
           </option>
         )}
-      </For>
-    </select>
+        <For each={local.options}>
+          {(option) => (
+            <option value={option.value} disabled={option.disabled}>
+              {option.label}
+            </option>
+          )}
+        </For>
+      </select>
+      <svg class="soui-select__arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
   );
 }
 

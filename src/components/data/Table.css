@@ -74,18 +74,26 @@
   cursor: pointer;
 }
 
+.soui-table__sort-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--soui-space-1);
+}
+
 .soui-table__sort-icon::after {
   content: "\2195"; /* up-down arrow */
-  font-size: 0.75em;
-  opacity: 0.4;
+  font-size: 1em;
+  opacity: 0.35;
 }
 
 .soui-table__sort-icon--asc::after {
-  content: "\2191"; /* up arrow */
+  content: "\25B2"; /* triangle up */
+  font-size: 0.7em;
   opacity: 1;
 }
 
 .soui-table__sort-icon--desc::after {
-  content: "\2193"; /* down arrow */
+  content: "\25BC"; /* triangle down */
+  font-size: 0.7em;
   opacity: 1;
 }
