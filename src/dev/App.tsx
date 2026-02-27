@@ -1,4 +1,4 @@
-import { createSignal, For } from "solid-js";
+import { createSignal, createMemo } from "solid-js";
 import type { Density } from "../core/types";
 import "../core/tokens.css";
 import "./catalog.css";
@@ -45,6 +45,8 @@ export function App() {
   const [textValue, setTextValue] = createSignal("");
   const [numberValue, setNumberValue] = createSignal(0);
   const [selectValue, setSelectValue] = createSignal("");
+  const [sortKey, setSortKey] = createSignal<string>("");
+  const [sortDir, setSortDir] = createSignal<"asc" | "desc">("asc");
 
   const tableData = [
     { id: "1", name: "Tanaka Taro", email: "tanaka@example.com", role: "Admin", age: 32 },
@@ -52,6 +54,27 @@ export function App() {
     { id: "3", name: "Sato Jiro", email: "sato@example.com", role: "Viewer", age: 45 },
     { id: "4", name: "Yamada Yuki", email: "yamada@example.com", role: "Editor", age: 36 },
   ];
+
+  const sortedTableData = createMemo(() => {
+    const key = sortKey();
+    const dir = sortDir();
+    if (!key) return tableData;
+    return [...tableData].sort((a, b) => {
+      const av = a[key as keyof typeof a];
+      const bv = b[key as keyof typeof b];
+      if (typeof av === "number" && typeof bv === "number") {
+        return dir === "asc" ? av - bv : bv - av;
+      }
+      const sa = String(av);
+      const sb = String(bv);
+      return dir === "asc" ? sa.localeCompare(sb) : sb.localeCompare(sa);
+    });
+  });
+
+  const handleSort = (key: string, direction: "asc" | "desc") => {
+    setSortKey(key);
+    setSortDir(direction);
+  };
 
   const tableColumns = [
     { key: "name" as const, header: "Name", sortable: true },
@@ -277,8 +300,11 @@ export function App() {
           <div class="catalog-block">
             <Table
               columns={tableColumns}
-              data={tableData}
+              data={sortedTableData()}
               rowKey={(row) => row.id}
+              sortKey={sortKey()}
+              sortDirection={sortDir()}
+              onSort={handleSort}
             />
           </div>
 
