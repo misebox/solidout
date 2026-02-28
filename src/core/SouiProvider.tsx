@@ -2,7 +2,6 @@ import { splitProps, createEffect, onCleanup } from "solid-js";
 import type { JSX } from "solid-js";
 import { SouiContext } from "./context";
 import { createTheme } from "./theme";
-import { ja } from "date-fns/locale";
 import type { ThemeConfig, Density } from "./types";
 
 export interface SouiProviderProps {
@@ -44,7 +43,7 @@ export function SouiProvider(props: SouiProviderProps) {
   const contextValue = () => ({
     dateFormat: {
       displayFormat: local.config?.dateFormat?.displayFormat ?? "yyyy/MM/dd",
-      locale: local.config?.dateFormat?.locale ?? ja,
+      locale: local.config?.dateFormat?.locale,
     },
   });
 

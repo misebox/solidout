@@ -23,6 +23,7 @@
 
   --soui-line-height: 1.5;
   --soui-radius: 6px;
+  --soui-disabled-opacity: 0.5;
 }
 
 /* --- Density: dense --- */

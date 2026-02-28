@@ -13,7 +13,7 @@ export type Variant =
   | "warning"
   | "info";
 
-export type ButtonVariant = Extract<Variant, "primary" | "neutral" | "danger">;
+export type ButtonVariant = Extract<Variant, "primary" | "neutral" | "danger"> | "ghost";
 export type FeedbackVariant = Extract<
   Variant,
   "success" | "danger" | "warning" | "info"
@@ -43,12 +43,10 @@ export interface ColorDefinition {
   base: string;
 }
 
-export type { Locale } from "date-fns";
-import type { Locale } from "date-fns";
-
 export interface DateFormatConfig {
   displayFormat: string;
-  locale?: Locale;
+  /** date-fns Locale object */
+  locale?: Record<string, unknown>;
 }
 
 export interface ThemeConfig {
