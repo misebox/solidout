@@ -29,13 +29,13 @@
 }
 
 .soui-select__input:focus {
-  outline: none;
-  border-color: var(--soui-ring);
-  box-shadow: 0 0 0 1px var(--soui-ring);
+  outline: 2px solid var(--soui-ring);
+  outline-offset: -1px;
+  border-color: transparent;
 }
 
 .soui-select__input:disabled {
-  opacity: 0.5;
+  opacity: var(--soui-disabled-opacity);
   cursor: not-allowed;
 }
 
@@ -44,8 +44,8 @@
 }
 
 .soui-select__input[aria-invalid="true"]:focus {
-  border-color: var(--soui-color-danger-base);
-  box-shadow: 0 0 0 1px var(--soui-color-danger-base);
+  outline-color: var(--soui-color-danger-base);
+  border-color: transparent;
 }
 
 /* --- Sizes --- */

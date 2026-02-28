@@ -8,7 +8,7 @@
 }
 
 .soui-radio-button--disabled {
-  opacity: 0.5;
+  opacity: var(--soui-disabled-opacity);
   cursor: not-allowed;
 }
 

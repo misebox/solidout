@@ -10,8 +10,9 @@
 }
 
 .soui-number-input:focus-within {
-  border-color: var(--soui-ring);
-  box-shadow: 0 0 0 1px var(--soui-ring);
+  outline: 2px solid var(--soui-ring);
+  outline-offset: -1px;
+  border-color: transparent;
 }
 
 .soui-number-input:has([aria-invalid="true"]) {
@@ -19,8 +20,8 @@
 }
 
 .soui-number-input:has([aria-invalid="true"]):focus-within {
-  border-color: var(--soui-color-danger-base);
-  box-shadow: 0 0 0 1px var(--soui-color-danger-base);
+  outline-color: var(--soui-color-danger-base);
+  border-color: transparent;
 }
 
 /* --- Input --- */
@@ -49,7 +50,7 @@
 }
 
 .soui-number-input__input:disabled {
-  opacity: 0.5;
+  opacity: var(--soui-disabled-opacity);
   cursor: not-allowed;
 }
 
@@ -80,7 +81,7 @@
 }
 
 .soui-number-input__button:disabled {
-  opacity: 0.5;
+  opacity: var(--soui-disabled-opacity);
   cursor: not-allowed;
 }
 
