@@ -51,7 +51,7 @@ export function Dialog(props: DialogProps) {
   ]);
 
   dialogCounter += 1;
-  const titleId = `soui-dialog-title-${dialogCounter}`;
+  const titleId = `so-dialog-title-${dialogCounter}`;
 
   const [mounted, setMounted] = createSignal(false);
   const [closing, setClosing] = createSignal(false);
@@ -99,8 +99,8 @@ export function Dialog(props: DialogProps) {
         <DialogContext.Provider value={titleId}>
           <div
             class={cls(
-              "soui-dialog-backdrop",
-              closing() && "soui-dialog-backdrop--closing",
+              "so-dialog-backdrop",
+              closing() && "so-dialog-backdrop--closing",
             )}
             onClick={handleBackdropClick}
             onAnimationEnd={handleAnimationEnd}
@@ -108,9 +108,9 @@ export function Dialog(props: DialogProps) {
             <div
               ref={setContainerRef}
               class={cls(
-                "soui-dialog",
-                `soui-dialog--${local.size ?? "md"}`,
-                closing() && "soui-dialog--closing",
+                "so-dialog",
+                `so-dialog--${local.size ?? "md"}`,
+                closing() && "so-dialog--closing",
                 local.class,
               )}
               role="dialog"
@@ -133,7 +133,7 @@ export function DialogHeader(props: DialogHeaderProps) {
   const titleId = useContext(DialogContext);
 
   return (
-    <div id={titleId} class={cls("soui-dialog__header", local.class)} {...others}>
+    <div id={titleId} class={cls("so-dialog__header", local.class)} {...others}>
       {local.children}
     </div>
   );
@@ -143,7 +143,7 @@ export function DialogBody(props: DialogBodyProps) {
   const [local, others] = splitProps(props, ["class", "children"]);
 
   return (
-    <div class={cls("soui-dialog__body", local.class)} {...others}>
+    <div class={cls("so-dialog__body", local.class)} {...others}>
       {local.children}
     </div>
   );
@@ -153,7 +153,7 @@ export function DialogFooter(props: DialogFooterProps) {
   const [local, others] = splitProps(props, ["class", "children"]);
 
   return (
-    <div class={cls("soui-dialog__footer", local.class)} {...others}>
+    <div class={cls("so-dialog__footer", local.class)} {...others}>
       {local.children}
     </div>
   );

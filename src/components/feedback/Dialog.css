@@ -1,4 +1,4 @@
-.soui-dialog-backdrop {
+.so-dialog-backdrop {
   position: fixed;
   inset: 0;
   display: flex;
@@ -6,86 +6,86 @@
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  animation: soui-dialog-backdrop-in 0.2s ease-out;
+  animation: so-dialog-backdrop-in 0.2s ease-out;
 }
 
-.soui-dialog-backdrop--closing {
-  animation: soui-dialog-backdrop-out 0.15s ease-in forwards;
+.so-dialog-backdrop--closing {
+  animation: so-dialog-backdrop-out 0.15s ease-in forwards;
 }
 
-.soui-dialog {
-  background-color: var(--soui-bg);
-  border: 1px solid var(--soui-border);
-  border-radius: var(--soui-radius);
+.so-dialog {
+  background-color: var(--so-bg);
+  border: 1px solid var(--so-border);
+  border-radius: var(--so-radius);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   max-height: 85vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: soui-dialog-in 0.2s ease-out;
+  animation: so-dialog-in 0.2s ease-out;
 }
 
-.soui-dialog--closing {
-  animation: soui-dialog-out 0.15s ease-in forwards;
+.so-dialog--closing {
+  animation: so-dialog-out 0.15s ease-in forwards;
 }
 
 /* --- Sizes --- */
 
-.soui-dialog--sm {
+.so-dialog--sm {
   width: 400px;
   max-width: 90vw;
 }
 
-.soui-dialog--md {
+.so-dialog--md {
   width: 560px;
   max-width: 90vw;
 }
 
-.soui-dialog--lg {
+.so-dialog--lg {
   width: 720px;
   max-width: 90vw;
 }
 
 /* --- Sections --- */
 
-.soui-dialog__header {
-  padding: var(--soui-space-4) var(--soui-space-5);
-  border-bottom: 1px solid var(--soui-border);
+.so-dialog__header {
+  padding: var(--so-space-4) var(--so-space-5);
+  border-bottom: 1px solid var(--so-border);
   font-weight: 600;
-  font-size: var(--soui-font-size-lg);
-  color: var(--soui-text);
+  font-size: var(--so-font-size-lg);
+  color: var(--so-text);
   flex-shrink: 0;
 }
 
-.soui-dialog__body {
-  padding: var(--soui-space-4) var(--soui-space-5);
+.so-dialog__body {
+  padding: var(--so-space-4) var(--so-space-5);
   overflow-y: auto;
   flex: 1;
-  color: var(--soui-text);
+  color: var(--so-text);
 }
 
-.soui-dialog__footer {
-  padding: var(--soui-space-3) var(--soui-space-5);
-  border-top: 1px solid var(--soui-border);
+.so-dialog__footer {
+  padding: var(--so-space-3) var(--so-space-5);
+  border-top: 1px solid var(--so-border);
   display: flex;
   justify-content: flex-end;
-  gap: var(--soui-space-2);
+  gap: var(--so-space-2);
   flex-shrink: 0;
 }
 
 /* --- Animations --- */
 
-@keyframes soui-dialog-backdrop-in {
+@keyframes so-dialog-backdrop-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes soui-dialog-backdrop-out {
+@keyframes so-dialog-backdrop-out {
   from { opacity: 1; }
   to { opacity: 0; }
 }
 
-@keyframes soui-dialog-in {
+@keyframes so-dialog-in {
   from {
     opacity: 0;
     transform: scale(0.95);
@@ -96,7 +96,7 @@
   }
 }
 
-@keyframes soui-dialog-out {
+@keyframes so-dialog-out {
   from {
     opacity: 1;
     transform: scale(1);

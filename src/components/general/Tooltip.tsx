@@ -21,12 +21,12 @@ export function Tooltip(props: TooltipProps) {
   ]);
 
   tooltipCounter += 1;
-  const tooltipId = `soui-tooltip-${tooltipCounter}`;
+  const tooltipId = `so-tooltip-${tooltipCounter}`;
 
   return (
     <Show when={local.content} fallback={<>{local.children}</>}>
       <span
-        class={cls("soui-tooltip-wrapper", local.class)}
+        class={cls("so-tooltip-wrapper", local.class)}
         {...others}
       >
         <span aria-describedby={tooltipId}>
@@ -35,8 +35,8 @@ export function Tooltip(props: TooltipProps) {
         <span
           id={tooltipId}
           class={cls(
-            "soui-tooltip",
-            `soui-tooltip--${local.placement ?? "top"}`,
+            "so-tooltip",
+            `so-tooltip--${local.placement ?? "top"}`,
           )}
           role="tooltip"
         >

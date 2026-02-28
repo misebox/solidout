@@ -13,7 +13,7 @@ import {
 } from "../registry.js";
 import { rewriteImports } from "../rewrite-imports.js";
 
-const RELEASE_URL = "https://github.com/misebox/soui/releases/download";
+const RELEASE_URL = "https://github.com/misebox/solidout/releases/download";
 
 function getVersion(): string {
   const require = createRequire(import.meta.url);
@@ -75,7 +75,7 @@ async function fetchAndExtract(
 export async function add(cwd: string): Promise<void> {
   const config = loadConfig(cwd);
   if (config === null) {
-    console.error(`${CONFIG_FILENAME} not found. Run: npx soui init`);
+    console.error(`${CONFIG_FILENAME} not found. Run: npx solidout init`);
     process.exit(1);
     return;
   }

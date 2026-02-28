@@ -17,7 +17,7 @@ export function Menu(props: MenuProps) {
 
   return (
     <div
-      class={cls("soui-menu", local.class)}
+      class={cls("so-menu", local.class)}
       data-density={local.density}
       {...others}
     >

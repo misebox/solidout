@@ -1,53 +1,53 @@
-.soui-pagination {
+.so-pagination {
   display: inline-flex;
   align-items: center;
-  gap: var(--soui-space-2);
+  gap: var(--so-space-2);
 }
 
-.soui-pagination__button {
+.so-pagination__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--soui-color-neutral-border);
-  border-radius: var(--soui-radius);
+  border: 1px solid var(--so-color-neutral-border);
+  border-radius: var(--so-radius);
   background: transparent;
-  color: var(--soui-text);
+  color: var(--so-text);
   font: inherit;
   cursor: pointer;
   transition: background-color 0.15s;
   white-space: nowrap;
 }
 
-.soui-pagination__button:hover:not(:disabled) {
-  background-color: var(--soui-color-neutral-subtle);
+.so-pagination__button:hover:not(:disabled) {
+  background-color: var(--so-color-neutral-subtle);
 }
 
-.soui-pagination__button:disabled {
-  opacity: var(--soui-disabled-opacity);
+.so-pagination__button:disabled {
+  opacity: var(--so-disabled-opacity);
   cursor: not-allowed;
 }
 
-.soui-pagination__info {
-  font-size: var(--soui-font-size-md);
-  color: var(--soui-text);
+.so-pagination__info {
+  font-size: var(--so-font-size-md);
+  color: var(--so-text);
   min-width: 60px;
   text-align: center;
 }
 
 /* --- Sizes --- */
 
-.soui-pagination--sm .soui-pagination__button {
-  height: var(--soui-control-height-sm);
-  padding: 0 var(--soui-space-3);
-  font-size: var(--soui-font-size-sm);
+.so-pagination--sm .so-pagination__button {
+  height: var(--so-control-height-sm);
+  padding: 0 var(--so-space-3);
+  font-size: var(--so-font-size-sm);
 }
 
-.soui-pagination--sm .soui-pagination__info {
-  font-size: var(--soui-font-size-sm);
+.so-pagination--sm .so-pagination__info {
+  font-size: var(--so-font-size-sm);
 }
 
-.soui-pagination--md .soui-pagination__button {
-  height: var(--soui-control-height-md);
-  padding: 0 var(--soui-space-4);
-  font-size: var(--soui-font-size-md);
+.so-pagination--md .so-pagination__button {
+  height: var(--so-control-height-md);
+  padding: 0 var(--so-space-4);
+  font-size: var(--so-font-size-md);
 }

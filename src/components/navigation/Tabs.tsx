@@ -65,7 +65,7 @@ export function Tabs(props: TabsProps) {
   return (
     <TabsContext.Provider value={context}>
       <div
-        class={cls("soui-tabs", local.class)}
+        class={cls("so-tabs", local.class)}
         data-density={local.density}
         {...others}
       >
@@ -80,7 +80,7 @@ export function TabList(props: TabListProps) {
 
   return (
     <div
-      class={cls("soui-tab-list", local.class)}
+      class={cls("so-tab-list", local.class)}
       role="tablist"
       {...others}
     >
@@ -103,8 +103,8 @@ export function Tab(props: TabProps) {
     <button
       type="button"
       class={cls(
-        "soui-tab",
-        ctx.value() === local.value && "soui-tab--active",
+        "so-tab",
+        ctx.value() === local.value && "so-tab--active",
         local.class,
       )}
       role="tab"
@@ -130,7 +130,7 @@ export function TabPanel(props: TabPanelProps) {
   return (
     <Show when={ctx.value() === local.value}>
       <div
-        class={cls("soui-tab-panel", local.class)}
+        class={cls("so-tab-panel", local.class)}
         role="tabpanel"
         {...others}
       >

@@ -32,7 +32,7 @@ export function createDisclosure(
   options: DisclosureOptions = {},
 ): DisclosureReturn {
   const id = options.id ?? createUniqueId();
-  const contentId = `soui-disclosure-${id}`;
+  const contentId = `so-disclosure-${id}`;
 
   const [internalOpen, setInternalOpen] = createSignal(
     options.defaultOpen ?? false,

@@ -30,8 +30,8 @@ export function Card(props: CardProps) {
   return (
     <div
       class={cls(
-        "soui-card",
-        local.variant === "elevated" && "soui-card--elevated",
+        "so-card",
+        local.variant === "elevated" && "so-card--elevated",
         local.class,
       )}
       data-density={local.density}
@@ -46,7 +46,7 @@ export function CardHeader(props: CardHeaderProps) {
   const [local, others] = splitProps(props, ["class", "children"]);
 
   return (
-    <div class={cls("soui-card__header", local.class)} {...others}>
+    <div class={cls("so-card__header", local.class)} {...others}>
       {local.children}
     </div>
   );
@@ -56,7 +56,7 @@ export function CardBody(props: CardBodyProps) {
   const [local, others] = splitProps(props, ["class", "children"]);
 
   return (
-    <div class={cls("soui-card__body", local.class)} {...others}>
+    <div class={cls("so-card__body", local.class)} {...others}>
       {local.children}
     </div>
   );
@@ -66,7 +66,7 @@ export function CardFooter(props: CardFooterProps) {
   const [local, others] = splitProps(props, ["class", "children"]);
 
   return (
-    <div class={cls("soui-card__footer", local.class)} {...others}>
+    <div class={cls("so-card__footer", local.class)} {...others}>
       {local.children}
     </div>
   );

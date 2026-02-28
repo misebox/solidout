@@ -3,7 +3,7 @@ import type { Density } from "../core/types";
 import "../core/tokens.css";
 import "./catalog.css";
 
-import { SouiProvider } from "../core/SouiProvider";
+import { SolidoutProvider } from "../core/SolidoutProvider";
 import { Stack } from "../components/layout/Stack";
 import { HStack } from "../components/layout/HStack";
 import { Divider } from "../components/layout/Divider";
@@ -84,9 +84,9 @@ export function App() {
   ];
 
   return (
-    <SouiProvider config={{ density: density(), theme: theme() }}>
+    <SolidoutProvider config={{ density: density(), theme: theme() }}>
       <div class="catalog">
-        <h1>soui Component Catalog</h1>
+        <h1>solidout Component Catalog</h1>
         <p class="catalog-subtitle">SolidJS Opinionated UI - Business-focused component library</p>
 
         {/* Global Controls */}
@@ -442,6 +442,6 @@ export function App() {
           />
         </section>
       </div>
-    </SouiProvider>
+    </SolidoutProvider>
   );
 }

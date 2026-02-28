@@ -28,26 +28,26 @@ export function Button(
   return (
     <button
       class={cls(
-        "soui-button",
-        `soui-button--${local.variant ?? "neutral"}`,
-        `soui-button--${local.size ?? "md"}`,
-        local.loading && "soui-button--loading",
+        "so-button",
+        `so-button--${local.variant ?? "neutral"}`,
+        `so-button--${local.size ?? "md"}`,
+        local.loading && "so-button--loading",
         local.class,
       )}
       disabled={local.disabled || local.loading}
       {...others}
     >
       <Show when={local.loading}>
-        <span class="soui-button__spinner" aria-hidden="true" />
+        <span class="so-button__spinner" aria-hidden="true" />
       </Show>
       <Show when={local.iconLeft}>
-        <span class="soui-button__icon" aria-hidden="true">
+        <span class="so-button__icon" aria-hidden="true">
           {local.iconLeft}
         </span>
       </Show>
       {local.children}
       <Show when={local.iconRight}>
-        <span class="soui-button__icon" aria-hidden="true">
+        <span class="so-button__icon" aria-hidden="true">
           {local.iconRight}
         </span>
       </Show>

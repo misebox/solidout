@@ -10,7 +10,7 @@ export function VisuallyHidden(props: VisuallyHiddenProps) {
   const [local, others] = splitProps(props, ["children"]);
 
   return (
-    <span class="soui-visually-hidden" {...others}>
+    <span class="so-visually-hidden" {...others}>
       {local.children}
     </span>
   );

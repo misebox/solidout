@@ -28,7 +28,7 @@ export function RadioGroup(props: RadioGroupProps) {
 
   const context: RadioGroupContextValue = {
     get name() {
-      return local.name ?? `soui-radio-${generatedName}`;
+      return local.name ?? `so-radio-${generatedName}`;
     },
     value: () => local.value,
     onChange(value: string) {
@@ -39,14 +39,14 @@ export function RadioGroup(props: RadioGroupProps) {
   return (
     <RadioGroupContext.Provider value={context}>
       <fieldset
-        class={cls("soui-radio-group", local.class)}
+        class={cls("so-radio-group", local.class)}
         role="radiogroup"
         {...others}
       >
         <Show when={local.label}>
-          <legend class="soui-radio-group__label">{local.label}</legend>
+          <legend class="so-radio-group__label">{local.label}</legend>
         </Show>
-        <div class="soui-radio-group__items">{local.children}</div>
+        <div class="so-radio-group__items">{local.children}</div>
       </fieldset>
     </RadioGroupContext.Provider>
   );

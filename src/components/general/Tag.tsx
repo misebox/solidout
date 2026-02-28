@@ -27,10 +27,10 @@ export function Tag(
   return (
     <span
       class={cls(
-        "soui-tag",
-        `soui-tag--${local.variant ?? "neutral"}`,
-        `soui-tag--${local.size ?? "md"}`,
-        local.fill === "solid" && "soui-tag--solid",
+        "so-tag",
+        `so-tag--${local.variant ?? "neutral"}`,
+        `so-tag--${local.size ?? "md"}`,
+        local.fill === "solid" && "so-tag--solid",
         local.class,
       )}
       {...others}
@@ -39,7 +39,7 @@ export function Tag(
       <Show when={local.onRemove}>
         <button
           type="button"
-          class="soui-tag__remove"
+          class="so-tag__remove"
           aria-label="Remove"
           onClick={local.onRemove}
         >

@@ -85,15 +85,15 @@ export function Table<T extends Record<string, unknown>>(
 
   return (
     <div
-      class={cls("soui-table-wrapper", local.class)}
+      class={cls("so-table-wrapper", local.class)}
       data-density={local.density}
       {...others}
     >
-      <table class="soui-table" role="table">
+      <table class="so-table" role="table">
         <thead>
-          <tr class="soui-table__row soui-table__row--header">
+          <tr class="so-table__row so-table__row--header">
             <Show when={local.selectable}>
-              <th class="soui-table__cell soui-table__cell--checkbox">
+              <th class="so-table__cell so-table__cell--checkbox">
                 <input
                   type="checkbox"
                   checked={allSelected()}
@@ -106,9 +106,9 @@ export function Table<T extends Record<string, unknown>>(
               {(col) => (
                 <th
                   class={cls(
-                    "soui-table__cell",
-                    "soui-table__header",
-                    col.align && `soui-table__cell--${col.align}`,
+                    "so-table__cell",
+                    "so-table__header",
+                    col.align && `so-table__cell--${col.align}`,
                   )}
                   style={{ width: col.width }}
                   aria-sort={
@@ -125,15 +125,15 @@ export function Table<T extends Record<string, unknown>>(
                   >
                     <button
                       type="button"
-                      class="soui-table__sort-button"
+                      class="so-table__sort-button"
                       onClick={() => handleSort(col.key)}
                     >
                       {col.header}
                       <span
                         class={cls(
-                          "soui-table__sort-icon",
+                          "so-table__sort-icon",
                           local.sortKey === col.key &&
-                            `soui-table__sort-icon--${local.sortDirection}`,
+                            `so-table__sort-icon--${local.sortDirection}`,
                         )}
                         aria-hidden="true"
                       />
@@ -151,13 +151,13 @@ export function Table<T extends Record<string, unknown>>(
               return (
                 <tr
                   class={cls(
-                    "soui-table__row",
+                    "so-table__row",
                     local.selectedKeys?.has(key()) &&
-                      "soui-table__row--selected",
+                      "so-table__row--selected",
                   )}
                 >
                   <Show when={local.selectable}>
-                    <td class="soui-table__cell soui-table__cell--checkbox">
+                    <td class="so-table__cell so-table__cell--checkbox">
                       <input
                         type="checkbox"
                         checked={local.selectedKeys?.has(key()) ?? false}
@@ -170,8 +170,8 @@ export function Table<T extends Record<string, unknown>>(
                     {(col) => (
                       <td
                         class={cls(
-                          "soui-table__cell",
-                          col.align && `soui-table__cell--${col.align}`,
+                          "so-table__cell",
+                          col.align && `so-table__cell--${col.align}`,
                         )}
                       >
                         {col.render

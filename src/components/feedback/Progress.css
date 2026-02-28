@@ -1,38 +1,38 @@
-.soui-progress {
+.so-progress {
   width: 100%;
-  background-color: var(--soui-border);
-  border-radius: var(--soui-radius);
+  background-color: var(--so-border);
+  border-radius: var(--so-radius);
   overflow: hidden;
 }
 
-.soui-progress--sm {
+.so-progress--sm {
   height: 4px;
 }
 
-.soui-progress--md {
+.so-progress--md {
   height: 8px;
 }
 
-.soui-progress__bar {
+.so-progress__bar {
   height: 100%;
-  border-radius: var(--soui-radius);
+  border-radius: var(--so-radius);
   transition: width 0.3s ease;
 }
 
 /* --- Variants --- */
 
-.soui-progress--info .soui-progress__bar {
-  background-color: var(--soui-color-info-base);
+.so-progress--info .so-progress__bar {
+  background-color: var(--so-color-info-base);
 }
 
-.soui-progress--success .soui-progress__bar {
-  background-color: var(--soui-color-success-base);
+.so-progress--success .so-progress__bar {
+  background-color: var(--so-color-success-base);
 }
 
-.soui-progress--warning .soui-progress__bar {
-  background-color: var(--soui-color-warning-base);
+.so-progress--warning .so-progress__bar {
+  background-color: var(--so-color-warning-base);
 }
 
-.soui-progress--danger .soui-progress__bar {
-  background-color: var(--soui-color-danger-base);
+.so-progress--danger .so-progress__bar {
+  background-color: var(--so-color-danger-base);
 }

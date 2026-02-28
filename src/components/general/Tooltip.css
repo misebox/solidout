@@ -1,49 +1,49 @@
-.soui-tooltip-wrapper {
+.so-tooltip-wrapper {
   position: relative;
   display: inline-flex;
 }
 
-.soui-tooltip {
+.so-tooltip {
   position: absolute;
   z-index: 1000;
-  padding: var(--soui-space-1) var(--soui-space-2);
-  border-radius: var(--soui-radius);
-  background-color: var(--soui-text);
-  color: var(--soui-bg);
-  font-size: var(--soui-font-size-sm);
-  line-height: var(--soui-line-height);
+  padding: var(--so-space-1) var(--so-space-2);
+  border-radius: var(--so-radius);
+  background-color: var(--so-text);
+  color: var(--so-bg);
+  font-size: var(--so-font-size-sm);
+  line-height: var(--so-line-height);
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s;
 }
 
-.soui-tooltip-wrapper:hover .soui-tooltip,
-.soui-tooltip-wrapper:focus-within .soui-tooltip {
+.so-tooltip-wrapper:hover .so-tooltip,
+.so-tooltip-wrapper:focus-within .so-tooltip {
   opacity: 1;
 }
 
 /* --- Placements --- */
 
-.soui-tooltip--top {
+.so-tooltip--top {
   bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
 }
 
-.soui-tooltip--bottom {
+.so-tooltip--bottom {
   top: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
 }
 
-.soui-tooltip--left {
+.so-tooltip--left {
   right: calc(100% + 6px);
   top: 50%;
   transform: translateY(-50%);
 }
 
-.soui-tooltip--right {
+.so-tooltip--right {
   left: calc(100% + 6px);
   top: 50%;
   transform: translateY(-50%);

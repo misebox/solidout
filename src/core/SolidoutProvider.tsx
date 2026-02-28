@@ -1,15 +1,15 @@
 import { splitProps, createEffect, onCleanup } from "solid-js";
 import type { JSX } from "solid-js";
-import { SouiContext } from "./context";
+import { SolidoutContext } from "./context";
 import { createTheme } from "./theme";
 import type { ThemeConfig, Density } from "./types";
 
-export interface SouiProviderProps {
+export interface SolidoutProviderProps {
   config?: ThemeConfig;
   children: JSX.Element;
 }
 
-export function SouiProvider(props: SouiProviderProps) {
+export function SolidoutProvider(props: SolidoutProviderProps) {
   const [local, others] = splitProps(props, ["config", "children"]);
 
   let rootRef: HTMLDivElement | undefined;
@@ -24,14 +24,14 @@ export function SouiProvider(props: SouiProviderProps) {
 
     el.setAttribute("data-density", density);
     el.setAttribute("data-theme", theme);
-    el.setAttribute("data-soui", "");
+    el.setAttribute("data-so", "");
 
     // Inject custom color CSS if provided
     if (config?.colors && config.colors.length > 0) {
       const { cssText } = createTheme(config.colors);
       if (cssText) {
         const style = document.createElement("style");
-        style.setAttribute("data-soui-theme", "");
+        style.setAttribute("data-so-theme", "");
         style.textContent = cssText;
         document.head.appendChild(style);
 
@@ -48,10 +48,10 @@ export function SouiProvider(props: SouiProviderProps) {
   });
 
   return (
-    <SouiContext.Provider value={contextValue()}>
+    <SolidoutContext.Provider value={contextValue()}>
       <div ref={rootRef} {...others}>
         {local.children}
       </div>
-    </SouiContext.Provider>
+    </SolidoutContext.Provider>
   );
 }

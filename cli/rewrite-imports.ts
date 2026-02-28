@@ -1,8 +1,8 @@
 import * as path from "node:path";
-import type { SouiConfig } from "./config.js";
+import type { SolidoutConfig } from "./config.js";
 
 /**
- * Rewrite internal soui imports in a template file.
+ * Rewrite internal solidout imports in a template file.
  *
  * Template files use relative imports like:
  *   import { cls } from "../../core/utils"
@@ -15,7 +15,7 @@ import type { SouiConfig } from "./config.js";
 export function rewriteImports(
   content: string,
   filePath: string, // path of this file relative to componentDir (e.g. "components/form/TextField.tsx")
-  config: SouiConfig,
+  config: SolidoutConfig,
 ): string {
   // Match import statements with relative paths (starting with . or ..)
   const importRegex =
@@ -40,7 +40,7 @@ export function rewriteImports(
 function buildImportPath(
   targetPathInTemplate: string, // e.g. "core/utils" or "components/form/FormField"
   sourceDir: string, // e.g. "components/form"
-  config: SouiConfig,
+  config: SolidoutConfig,
 ): string {
   if (config.alias) {
     // Use alias: @/components/ui/core/utils

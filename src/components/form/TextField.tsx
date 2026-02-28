@@ -46,8 +46,8 @@ function TextFieldInput(props: {
     <input
       id={ctx?.id}
       class={cls(
-        "soui-text-field__input",
-        `soui-text-field__input--${local.size ?? "md"}`,
+        "so-text-field__input",
+        `so-text-field__input--${local.size ?? "md"}`,
       )}
       type={local.type ?? "text"}
       value={local.value ?? ""}

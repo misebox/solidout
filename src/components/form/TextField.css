@@ -1,55 +1,55 @@
-.soui-text-field__input {
+.so-text-field__input {
   width: 100%;
-  border: 1px solid var(--soui-border);
-  border-radius: var(--soui-radius);
-  background-color: var(--soui-bg);
-  color: var(--soui-text);
+  border: 1px solid var(--so-border);
+  border-radius: var(--so-radius);
+  background-color: var(--so-bg);
+  color: var(--so-text);
   font-family: inherit;
-  line-height: var(--soui-line-height);
+  line-height: var(--so-line-height);
   transition: border-color 0.15s, box-shadow 0.15s;
   box-sizing: border-box;
 }
 
-.soui-text-field__input::placeholder {
-  color: var(--soui-text-muted);
+.so-text-field__input::placeholder {
+  color: var(--so-text-muted);
 }
 
-.soui-text-field__input:focus {
-  outline: 2px solid var(--soui-ring);
+.so-text-field__input:focus {
+  outline: 2px solid var(--so-ring);
   outline-offset: -1px;
   border-color: transparent;
 }
 
-.soui-text-field__input:disabled {
-  opacity: var(--soui-disabled-opacity);
+.so-text-field__input:disabled {
+  opacity: var(--so-disabled-opacity);
   cursor: not-allowed;
 }
 
-.soui-text-field__input[aria-invalid="true"] {
-  border-color: var(--soui-color-danger-base);
+.so-text-field__input[aria-invalid="true"] {
+  border-color: var(--so-color-danger-base);
 }
 
-.soui-text-field__input[aria-invalid="true"]:focus {
-  outline-color: var(--soui-color-danger-base);
+.so-text-field__input[aria-invalid="true"]:focus {
+  outline-color: var(--so-color-danger-base);
   border-color: transparent;
 }
 
 /* --- Sizes --- */
 
-.soui-text-field__input--sm {
-  height: var(--soui-control-height-sm);
-  padding: 0 var(--soui-space-2);
-  font-size: var(--soui-font-size-sm);
+.so-text-field__input--sm {
+  height: var(--so-control-height-sm);
+  padding: 0 var(--so-space-2);
+  font-size: var(--so-font-size-sm);
 }
 
-.soui-text-field__input--md {
-  height: var(--soui-control-height-md);
-  padding: 0 var(--soui-space-3);
-  font-size: var(--soui-font-size-md);
+.so-text-field__input--md {
+  height: var(--so-control-height-md);
+  padding: 0 var(--so-space-3);
+  font-size: var(--so-font-size-md);
 }
 
-.soui-text-field__input--lg {
-  height: var(--soui-control-height-lg);
-  padding: 0 var(--soui-space-4);
-  font-size: var(--soui-font-size-lg);
+.so-text-field__input--lg {
+  height: var(--so-control-height-lg);
+  padding: 0 var(--so-space-4);
+  font-size: var(--so-font-size-lg);
 }

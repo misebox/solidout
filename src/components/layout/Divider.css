@@ -1,16 +1,16 @@
-.soui-divider {
+.so-divider {
   border: none;
   margin: 0;
 }
 
-.soui-divider--horizontal {
+.so-divider--horizontal {
   width: 100%;
   height: 1px;
-  background-color: var(--soui-border);
+  background-color: var(--so-border);
 }
 
-.soui-divider--vertical {
+.so-divider--vertical {
   width: 1px;
   align-self: stretch;
-  background-color: var(--soui-border);
+  background-color: var(--so-border);
 }

@@ -1,8 +1,8 @@
-export { SouiProvider } from "./SouiProvider";
-export type { SouiProviderProps } from "./SouiProvider";
+export { SolidoutProvider } from "./SolidoutProvider";
+export type { SolidoutProviderProps } from "./SolidoutProvider";
 
-export { SouiContext, useSoui } from "./context";
-export type { SouiContextValue } from "./context";
+export { SolidoutContext, useSolidout } from "./context";
+export type { SolidoutContextValue } from "./context";
 
 export { createTheme } from "./theme";
 

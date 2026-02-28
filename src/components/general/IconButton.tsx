@@ -23,9 +23,9 @@ export function IconButton(
   return (
     <button
       class={cls(
-        "soui-icon-button",
-        `soui-icon-button--${local.variant ?? "neutral"}`,
-        `soui-icon-button--${local.size ?? "md"}`,
+        "so-icon-button",
+        `so-icon-button--${local.variant ?? "neutral"}`,
+        `so-icon-button--${local.size ?? "md"}`,
         local.class,
       )}
       disabled={local.disabled}

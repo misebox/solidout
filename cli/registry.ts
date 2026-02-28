@@ -20,7 +20,7 @@ export const registry: Record<string, RegistryEntry> = {
       "core/utils.ts",
       "core/tokens.css",
       "core/context.ts",
-      "core/SouiProvider.tsx",
+      "core/SolidoutProvider.tsx",
       "core/theme.ts",
     ],
     dependencies: [],

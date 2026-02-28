@@ -25,9 +25,9 @@ export function FormField(props: FormFieldProps) {
   ]);
 
   const id = createUniqueId();
-  const fieldId = `soui-field-${id}`;
-  const errorId = `soui-field-error-${id}`;
-  const hintId = `soui-field-hint-${id}`;
+  const fieldId = `so-field-${id}`;
+  const errorId = `so-field-error-${id}`;
+  const hintId = `so-field-hint-${id}`;
 
   const context: FormFieldContextValue = {
     get id() {
@@ -48,28 +48,28 @@ export function FormField(props: FormFieldProps) {
     <FormFieldContext.Provider value={context}>
       <div
         class={cls(
-          "soui-form-field",
-          local.error && "soui-form-field--error",
+          "so-form-field",
+          local.error && "so-form-field--error",
           local.class,
         )}
         {...others}
       >
-        <label class="soui-form-field__label" for={fieldId}>
+        <label class="so-form-field__label" for={fieldId}>
           {local.label}
           <Show when={local.required}>
-            <span class="soui-form-field__required" aria-hidden="true">
+            <span class="so-form-field__required" aria-hidden="true">
               *
             </span>
           </Show>
         </label>
         {local.children}
         <Show when={local.error}>
-          <p class="soui-form-field__error" id={errorId} role="alert">
+          <p class="so-form-field__error" id={errorId} role="alert">
             {local.error}
           </p>
         </Show>
         <Show when={!local.error && local.hint}>
-          <p class="soui-form-field__hint" id={hintId}>
+          <p class="so-form-field__hint" id={hintId}>
             {local.hint}
           </p>
         </Show>

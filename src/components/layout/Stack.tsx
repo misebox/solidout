@@ -21,9 +21,9 @@ export function Stack(props: StackProps & JSX.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       class={cls(
-        "soui-stack",
-        local.gap !== undefined && `soui-stack--gap-${local.gap}`,
-        local.align && `soui-stack--align-${local.align}`,
+        "so-stack",
+        local.gap !== undefined && `so-stack--gap-${local.gap}`,
+        local.align && `so-stack--align-${local.align}`,
         local.class,
       )}
       {...others}

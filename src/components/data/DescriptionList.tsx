@@ -20,8 +20,8 @@ export function DescriptionList(props: DescriptionListProps) {
   return (
     <dl
       class={cls(
-        "soui-description-list",
-        (local.columns ?? 1) === 2 && "soui-description-list--2col",
+        "so-description-list",
+        (local.columns ?? 1) === 2 && "so-description-list--2col",
         local.class,
       )}
       data-density={local.density}
@@ -30,8 +30,8 @@ export function DescriptionList(props: DescriptionListProps) {
       <For each={local.items}>
         {(item) => (
           <>
-            <dt class="soui-description-list__term">{item.term}</dt>
-            <dd class="soui-description-list__detail">{item.description}</dd>
+            <dt class="so-description-list__term">{item.term}</dt>
+            <dd class="so-description-list__detail">{item.description}</dd>
           </>
         )}
       </For>

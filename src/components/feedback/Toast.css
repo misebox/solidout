@@ -1,54 +1,54 @@
-.soui-toast-container {
+.so-toast-container {
   position: fixed;
   z-index: 1100;
   display: flex;
   flex-direction: column;
-  gap: var(--soui-space-2);
-  padding: var(--soui-space-4);
+  gap: var(--so-space-2);
+  padding: var(--so-space-4);
   pointer-events: none;
 }
 
-.soui-toast-container--top-right {
+.so-toast-container--top-right {
   top: 0;
   right: 0;
 }
 
-.soui-toast-container--top-center {
+.so-toast-container--top-center {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.soui-toast-container--bottom-right {
+.so-toast-container--bottom-right {
   bottom: 0;
   right: 0;
 }
 
-.soui-toast-container--bottom-center {
+.so-toast-container--bottom-center {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.soui-toast {
+.so-toast {
   display: flex;
   align-items: center;
-  gap: var(--soui-space-3);
-  padding: var(--soui-space-3) var(--soui-space-4);
-  border-radius: var(--soui-radius);
-  font-size: var(--soui-font-size-md);
+  gap: var(--so-space-3);
+  padding: var(--so-space-3) var(--so-space-4);
+  border-radius: var(--so-radius);
+  font-size: var(--so-font-size-md);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   min-width: 280px;
   max-width: 420px;
   pointer-events: auto;
-  animation: soui-toast-enter 0.2s ease-out;
+  animation: so-toast-enter 0.2s ease-out;
 }
 
-.soui-toast__message {
+.so-toast__message {
   flex: 1;
 }
 
-.soui-toast__dismiss {
+.so-toast__dismiss {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -61,46 +61,46 @@
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  border-radius: var(--soui-radius);
+  border-radius: var(--so-radius);
   opacity: 0.7;
   color: inherit;
 }
 
-.soui-toast__dismiss:hover {
+.so-toast__dismiss:hover {
   opacity: 1;
 }
 
 /* --- Variants --- */
 
-.soui-toast--info {
-  background-color: var(--soui-color-info-subtle);
-  color: var(--soui-color-info-subtle-fg);
-  border-left: 4px solid var(--soui-color-info-base);
+.so-toast--info {
+  background-color: var(--so-color-info-subtle);
+  color: var(--so-color-info-subtle-fg);
+  border-left: 4px solid var(--so-color-info-base);
 }
 
-.soui-toast--success {
-  background-color: var(--soui-color-success-subtle);
-  color: var(--soui-color-success-subtle-fg);
-  border-left: 4px solid var(--soui-color-success-base);
+.so-toast--success {
+  background-color: var(--so-color-success-subtle);
+  color: var(--so-color-success-subtle-fg);
+  border-left: 4px solid var(--so-color-success-base);
 }
 
-.soui-toast--warning {
-  background-color: var(--soui-color-warning-subtle);
-  color: var(--soui-color-warning-subtle-fg);
-  border-left: 4px solid var(--soui-color-warning-base);
+.so-toast--warning {
+  background-color: var(--so-color-warning-subtle);
+  color: var(--so-color-warning-subtle-fg);
+  border-left: 4px solid var(--so-color-warning-base);
 }
 
-.soui-toast--danger {
-  background-color: var(--soui-color-danger-subtle);
-  color: var(--soui-color-danger-subtle-fg);
-  border-left: 4px solid var(--soui-color-danger-base);
+.so-toast--danger {
+  background-color: var(--so-color-danger-subtle);
+  color: var(--so-color-danger-subtle-fg);
+  border-left: 4px solid var(--so-color-danger-base);
 }
 
-.soui-toast--dismissing {
-  animation: soui-toast-exit 0.15s ease-in forwards;
+.so-toast--dismissing {
+  animation: so-toast-exit 0.15s ease-in forwards;
 }
 
-@keyframes soui-toast-enter {
+@keyframes so-toast-enter {
   from {
     opacity: 0;
     transform: translateY(-8px);
@@ -111,7 +111,7 @@
   }
 }
 
-@keyframes soui-toast-exit {
+@keyframes so-toast-exit {
   from {
     opacity: 1;
     transform: translateY(0);

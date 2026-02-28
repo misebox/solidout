@@ -23,9 +23,9 @@ export function Progress(props: ProgressProps) {
   return (
     <div
       class={cls(
-        "soui-progress",
-        `soui-progress--${local.variant ?? "info"}`,
-        `soui-progress--${local.size ?? "md"}`,
+        "so-progress",
+        `so-progress--${local.variant ?? "info"}`,
+        `so-progress--${local.size ?? "md"}`,
         local.class,
       )}
       role="progressbar"
@@ -36,7 +36,7 @@ export function Progress(props: ProgressProps) {
       {...others}
     >
       <div
-        class="soui-progress__bar"
+        class="so-progress__bar"
         style={{ width: `${clampedValue()}%` }}
       />
     </div>

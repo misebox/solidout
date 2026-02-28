@@ -44,7 +44,7 @@ function TextAreaInput(props: {
   return (
     <textarea
       id={ctx?.id}
-      class="soui-textarea__input"
+      class="so-textarea__input"
       value={local.value ?? ""}
       placeholder={local.placeholder}
       rows={local.rows ?? 3}

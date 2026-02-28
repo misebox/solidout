@@ -93,14 +93,14 @@ function checkContrast(
   const baseFgRatio = contrastRatio(roles.base, roles.fg);
   if (baseFgRatio < 4.5) {
     warnings.push(
-      `[soui] Color "${name}": base/fg contrast ratio ${baseFgRatio.toFixed(2)} < 4.5:1`,
+      `[solidout] Color "${name}": base/fg contrast ratio ${baseFgRatio.toFixed(2)} < 4.5:1`,
     );
   }
 
   const subtleRatio = contrastRatio(roles.subtle, roles["subtle-fg"]);
   if (subtleRatio < 4.5) {
     warnings.push(
-      `[soui] Color "${name}": subtle/subtle-fg contrast ratio ${subtleRatio.toFixed(2)} < 4.5:1`,
+      `[solidout] Color "${name}": subtle/subtle-fg contrast ratio ${subtleRatio.toFixed(2)} < 4.5:1`,
     );
   }
 }
@@ -114,7 +114,7 @@ export function createTheme(colors: ColorDefinition[]): ThemeResult {
     checkContrast(name, roles, warnings);
 
     for (const [role, value] of Object.entries(roles)) {
-      lines.push(`  --soui-color-${name}-${role}: ${value};`);
+      lines.push(`  --so-color-${name}-${role}: ${value};`);
     }
   }
 

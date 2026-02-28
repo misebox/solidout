@@ -23,19 +23,19 @@ export function EmptyState(props: EmptyStateProps) {
 
   return (
     <div
-      class={cls("soui-empty-state", local.class)}
+      class={cls("so-empty-state", local.class)}
       data-density={local.density}
       {...others}
     >
       <Show when={local.icon}>
-        <div class="soui-empty-state__icon">{local.icon}</div>
+        <div class="so-empty-state__icon">{local.icon}</div>
       </Show>
-      <h3 class="soui-empty-state__title">{local.title}</h3>
+      <h3 class="so-empty-state__title">{local.title}</h3>
       <Show when={local.description}>
-        <p class="soui-empty-state__description">{local.description}</p>
+        <p class="so-empty-state__description">{local.description}</p>
       </Show>
       <Show when={local.action}>
-        <div class="soui-empty-state__action">{local.action}</div>
+        <div class="so-empty-state__action">{local.action}</div>
       </Show>
     </div>
   );

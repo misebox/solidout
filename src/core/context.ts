@@ -1,18 +1,18 @@
 import { createContext, useContext } from "solid-js";
 import type { DateFormatConfig } from "./types";
 
-export interface SouiContextValue {
+export interface SolidoutContextValue {
   dateFormat: DateFormatConfig;
 }
 
-const defaultContext: SouiContextValue = {
+const defaultContext: SolidoutContextValue = {
   dateFormat: {
     displayFormat: "yyyy/MM/dd",
   },
 };
 
-export const SouiContext = createContext<SouiContextValue>(defaultContext);
+export const SolidoutContext = createContext<SolidoutContextValue>(defaultContext);
 
-export function useSoui(): SouiContextValue {
-  return useContext(SouiContext);
+export function useSolidout(): SolidoutContextValue {
+  return useContext(SolidoutContext);
 }

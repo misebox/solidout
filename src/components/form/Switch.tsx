@@ -52,25 +52,25 @@ export function Switch(props: SwitchProps) {
   return (
     <label
       class={cls(
-        "soui-switch",
-        `soui-switch--${local.size ?? "md"}`,
-        local.disabled && "soui-switch--disabled",
+        "so-switch",
+        `so-switch--${local.size ?? "md"}`,
+        local.disabled && "so-switch--disabled",
         local.class,
       )}
     >
       <button
         type="button"
         role="switch"
-        class="soui-switch__track"
+        class="so-switch__track"
         aria-checked={toggle.pressed()}
         disabled={local.disabled}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
       >
-        <span class="soui-switch__thumb" />
+        <span class="so-switch__thumb" />
       </button>
       <Show when={local.label || local.children}>
-        <span class="soui-switch__label">
+        <span class="so-switch__label">
           {local.children ?? local.label}
         </span>
       </Show>

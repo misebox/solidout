@@ -35,8 +35,8 @@ export function ToastContainer(props: ToastContainerProps) {
     <Portal>
       <div
         class={cls(
-          "soui-toast-container",
-          `soui-toast-container--${local.position ?? "top-right"}`,
+          "so-toast-container",
+          `so-toast-container--${local.position ?? "top-right"}`,
         )}
         aria-live="polite"
         aria-relevant="additions"
@@ -45,16 +45,16 @@ export function ToastContainer(props: ToastContainerProps) {
           {(toast) => (
             <div
               class={cls(
-                "soui-toast",
-                `soui-toast--${toast.variant ?? "info"}`,
-                toast.dismissing && "soui-toast--dismissing",
+                "so-toast",
+                `so-toast--${toast.variant ?? "info"}`,
+                toast.dismissing && "so-toast--dismissing",
               )}
               role={toast.variant === "danger" || toast.variant === "warning" ? "alert" : "status"}
             >
-              <span class="soui-toast__message">{toast.message}</span>
+              <span class="so-toast__message">{toast.message}</span>
               <button
                 type="button"
-                class="soui-toast__dismiss"
+                class="so-toast__dismiss"
                 onClick={() => store.dismiss(toast.id)}
                 aria-label="Dismiss"
               >

@@ -23,8 +23,8 @@ export function Pagination(props: PaginationProps) {
   return (
     <nav
       class={cls(
-        "soui-pagination",
-        `soui-pagination--${local.size ?? "md"}`,
+        "so-pagination",
+        `so-pagination--${local.size ?? "md"}`,
         local.class,
       )}
       aria-label="Pagination"
@@ -33,19 +33,19 @@ export function Pagination(props: PaginationProps) {
     >
       <button
         type="button"
-        class="soui-pagination__button"
+        class="so-pagination__button"
         disabled={local.page <= 1}
         onClick={() => local.onChange(local.page - 1)}
         aria-label="Previous page"
       >
         Prev
       </button>
-      <span class="soui-pagination__info">
+      <span class="so-pagination__info">
         {local.page} / {local.totalPages}
       </span>
       <button
         type="button"
-        class="soui-pagination__button"
+        class="so-pagination__button"
         disabled={local.page >= local.totalPages}
         onClick={() => local.onChange(local.page + 1)}
         aria-label="Next page"

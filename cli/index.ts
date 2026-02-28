@@ -25,17 +25,17 @@ switch (command) {
     break;
   }
   default:
-    console.log("soui - SolidJS Opinionated UI");
+    console.log("solidout - SolidJS Opinionated UI");
     console.log("");
     console.log("Commands:");
-    console.log("  init                  Create soui.config.json with all components");
-    console.log("  add                   Install components based on soui.config.json");
+    console.log("  init                  Create solidout.config.json with all components");
+    console.log("  add                   Install components based on solidout.config.json");
     console.log("  list [--installed]    List available components");
     console.log("       [--not-installed]");
     console.log("");
     console.log("Usage:");
-    console.log("  npx soui init");
-    console.log("  npx soui add");
-    console.log("  npx soui list");
+    console.log("  npx solidout init");
+    console.log("  npx solidout add");
+    console.log("  npx solidout list");
     break;
 }

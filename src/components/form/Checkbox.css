@@ -1,20 +1,20 @@
-.soui-checkbox {
+.so-checkbox {
   display: inline-flex;
   align-items: center;
-  gap: var(--soui-space-2);
+  gap: var(--so-space-2);
   cursor: pointer;
   user-select: none;
-  line-height: var(--soui-line-height);
+  line-height: var(--so-line-height);
 }
 
-.soui-checkbox--disabled {
-  opacity: var(--soui-disabled-opacity);
+.so-checkbox--disabled {
+  opacity: var(--so-disabled-opacity);
   cursor: not-allowed;
 }
 
 /* --- Hidden native input --- */
 
-.soui-checkbox__input {
+.so-checkbox__input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -28,58 +28,58 @@
 
 /* --- Indicator --- */
 
-.soui-checkbox__indicator {
+.so-checkbox__indicator {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--soui-border);
-  border-radius: calc(var(--soui-radius) / 2);
-  background-color: var(--soui-bg);
-  color: var(--soui-color-primary-fg);
+  border: 2px solid var(--so-border);
+  border-radius: calc(var(--so-radius) / 2);
+  background-color: var(--so-bg);
+  color: var(--so-color-primary-fg);
   flex-shrink: 0;
   transition: background-color 0.15s, border-color 0.15s;
 }
 
-.soui-checkbox__input:checked + .soui-checkbox__indicator,
-.soui-checkbox__input:indeterminate + .soui-checkbox__indicator {
-  background-color: var(--soui-color-primary-base);
-  border-color: var(--soui-color-primary-base);
+.so-checkbox__input:checked + .so-checkbox__indicator,
+.so-checkbox__input:indeterminate + .so-checkbox__indicator {
+  background-color: var(--so-color-primary-base);
+  border-color: var(--so-color-primary-base);
 }
 
-.soui-checkbox__input:focus-visible + .soui-checkbox__indicator {
-  outline: 2px solid var(--soui-ring);
+.so-checkbox__input:focus-visible + .so-checkbox__indicator {
+  outline: 2px solid var(--so-ring);
   outline-offset: 2px;
 }
 
 /* --- Icon --- */
 
-.soui-checkbox__icon {
+.so-checkbox__icon {
   width: 100%;
   height: 100%;
 }
 
 /* --- Label --- */
 
-.soui-checkbox__label {
-  color: var(--soui-text);
+.so-checkbox__label {
+  color: var(--so-text);
 }
 
 /* --- Sizes --- */
 
-.soui-checkbox--sm .soui-checkbox__indicator {
+.so-checkbox--sm .so-checkbox__indicator {
   width: 14px;
   height: 14px;
 }
 
-.soui-checkbox--sm .soui-checkbox__label {
-  font-size: var(--soui-font-size-sm);
+.so-checkbox--sm .so-checkbox__label {
+  font-size: var(--so-font-size-sm);
 }
 
-.soui-checkbox--md .soui-checkbox__indicator {
+.so-checkbox--md .so-checkbox__indicator {
   width: 18px;
   height: 18px;
 }
 
-.soui-checkbox--md .soui-checkbox__label {
-  font-size: var(--soui-font-size-md);
+.so-checkbox--md .so-checkbox__label {
+  font-size: var(--so-font-size-md);
 }

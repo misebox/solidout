@@ -24,12 +24,12 @@ export function Breadcrumb(props: BreadcrumbProps) {
 
   return (
     <nav
-      class={cls("soui-breadcrumb", local.class)}
+      class={cls("so-breadcrumb", local.class)}
       aria-label="Breadcrumb"
       data-density={local.density}
       {...others}
     >
-      <ol class="soui-breadcrumb__list">{local.children}</ol>
+      <ol class="so-breadcrumb__list">{local.children}</ol>
     </nav>
   );
 }
@@ -45,8 +45,8 @@ export function BreadcrumbItem(props: BreadcrumbItemProps) {
   return (
     <li
       class={cls(
-        "soui-breadcrumb__item",
-        local.current && "soui-breadcrumb__item--current",
+        "so-breadcrumb__item",
+        local.current && "so-breadcrumb__item--current",
         local.class,
       )}
       {...(local.current ? { "aria-current": "page" } : {})}

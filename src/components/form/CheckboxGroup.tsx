@@ -36,14 +36,14 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
   return (
     <CheckboxGroupContext.Provider value={context}>
       <fieldset
-        class={cls("soui-checkbox-group", local.class)}
+        class={cls("so-checkbox-group", local.class)}
         role="group"
         {...others}
       >
         <Show when={local.label}>
-          <legend class="soui-checkbox-group__label">{local.label}</legend>
+          <legend class="so-checkbox-group__label">{local.label}</legend>
         </Show>
-        <div class="soui-checkbox-group__items">{local.children}</div>
+        <div class="so-checkbox-group__items">{local.children}</div>
       </fieldset>
     </CheckboxGroupContext.Provider>
   );

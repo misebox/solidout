@@ -70,8 +70,8 @@ export function Drawer(props: DrawerProps) {
       <Portal>
         <div
           class={cls(
-            "soui-drawer-backdrop",
-            closing() && "soui-drawer-backdrop--closing",
+            "so-drawer-backdrop",
+            closing() && "so-drawer-backdrop--closing",
           )}
           onClick={handleBackdropClick}
           onAnimationEnd={handleAnimationEnd}
@@ -79,10 +79,10 @@ export function Drawer(props: DrawerProps) {
           <div
             ref={setContainerRef}
             class={cls(
-              "soui-drawer",
-              `soui-drawer--${local.side ?? "right"}`,
-              `soui-drawer--${local.size ?? "md"}`,
-              closing() && "soui-drawer--closing",
+              "so-drawer",
+              `so-drawer--${local.side ?? "right"}`,
+              `so-drawer--${local.size ?? "md"}`,
+              closing() && "so-drawer--closing",
               local.class,
             )}
             role="dialog"

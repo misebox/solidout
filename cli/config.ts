@@ -1,9 +1,9 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-export const CONFIG_FILENAME = "soui.config.json";
+export const CONFIG_FILENAME = "solidout.config.json";
 
-export interface SouiConfig {
+export interface SolidoutConfig {
   /** Directory to install components into, relative to project root */
   componentDir: string;
   /** Import alias (e.g. "@", "~") or empty string for relative paths */
@@ -14,7 +14,7 @@ export interface SouiConfig {
   components: string[];
 }
 
-export const defaultConfig: SouiConfig = {
+export const defaultConfig: SolidoutConfig = {
   componentDir: "src/components/ui",
   alias: "",
   aliasBase: "src",
@@ -25,14 +25,14 @@ export function findConfigPath(cwd: string): string {
   return path.join(cwd, CONFIG_FILENAME);
 }
 
-export function loadConfig(cwd: string): SouiConfig | null {
+export function loadConfig(cwd: string): SolidoutConfig | null {
   const configPath = findConfigPath(cwd);
   if (!fs.existsSync(configPath)) return null;
   const raw = fs.readFileSync(configPath, "utf-8");
-  return JSON.parse(raw) as SouiConfig;
+  return JSON.parse(raw) as SolidoutConfig;
 }
 
-export function saveConfig(cwd: string, config: SouiConfig): void {
+export function saveConfig(cwd: string, config: SolidoutConfig): void {
   const configPath = findConfigPath(cwd);
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2) + "\n", "utf-8");
 }

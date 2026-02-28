@@ -18,8 +18,8 @@ export function Divider(
   return (
     <hr
       class={cls(
-        "soui-divider",
-        `soui-divider--${orientation()}`,
+        "so-divider",
+        `so-divider--${orientation()}`,
         local.class,
       )}
       role="separator"

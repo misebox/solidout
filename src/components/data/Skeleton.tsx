@@ -21,8 +21,8 @@ export function Skeleton(props: SkeletonProps) {
   return (
     <div
       class={cls(
-        "soui-skeleton",
-        `soui-skeleton--${local.variant ?? "text"}`,
+        "so-skeleton",
+        `so-skeleton--${local.variant ?? "text"}`,
         local.class,
       )}
       data-density={local.density}

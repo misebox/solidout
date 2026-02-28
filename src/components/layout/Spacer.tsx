@@ -8,7 +8,7 @@ export function Spacer(props: JSX.HTMLAttributes<HTMLDivElement>) {
 
   return (
     <div
-      class={cls("soui-spacer", local.class)}
+      class={cls("so-spacer", local.class)}
       aria-hidden="true"
       {...others}
     />

@@ -1,206 +1,206 @@
 /* ============================================
-   soui design tokens
+   solidout design tokens
    ============================================ */
 
 /* --- Density: normal (default) --- */
 
 :root,
 [data-density="normal"] {
-  --soui-space-1: 4px;
-  --soui-space-2: 8px;
-  --soui-space-3: 12px;
-  --soui-space-4: 16px;
-  --soui-space-5: 24px;
-  --soui-space-6: 32px;
+  --so-space-1: 4px;
+  --so-space-2: 8px;
+  --so-space-3: 12px;
+  --so-space-4: 16px;
+  --so-space-5: 24px;
+  --so-space-6: 32px;
 
-  --soui-control-height-sm: 28px;
-  --soui-control-height-md: 36px;
-  --soui-control-height-lg: 44px;
+  --so-control-height-sm: 28px;
+  --so-control-height-md: 36px;
+  --so-control-height-lg: 44px;
 
-  --soui-font-size-sm: 12px;
-  --soui-font-size-md: 14px;
-  --soui-font-size-lg: 16px;
+  --so-font-size-sm: 12px;
+  --so-font-size-md: 14px;
+  --so-font-size-lg: 16px;
 
-  --soui-line-height: 1.5;
-  --soui-radius: 6px;
-  --soui-disabled-opacity: 0.5;
+  --so-line-height: 1.5;
+  --so-radius: 6px;
+  --so-disabled-opacity: 0.5;
 }
 
 /* --- Density: dense --- */
 
 [data-density="dense"] {
-  --soui-space-1: 2px;
-  --soui-space-2: 4px;
-  --soui-space-3: 8px;
-  --soui-space-4: 12px;
-  --soui-space-5: 16px;
-  --soui-space-6: 24px;
+  --so-space-1: 2px;
+  --so-space-2: 4px;
+  --so-space-3: 8px;
+  --so-space-4: 12px;
+  --so-space-5: 16px;
+  --so-space-6: 24px;
 
-  --soui-control-height-sm: 24px;
-  --soui-control-height-md: 28px;
-  --soui-control-height-lg: 36px;
+  --so-control-height-sm: 24px;
+  --so-control-height-md: 28px;
+  --so-control-height-lg: 36px;
 
-  --soui-font-size-sm: 11px;
-  --soui-font-size-md: 12px;
-  --soui-font-size-lg: 14px;
+  --so-font-size-sm: 11px;
+  --so-font-size-md: 12px;
+  --so-font-size-lg: 14px;
 
-  --soui-radius: 4px;
+  --so-radius: 4px;
 }
 
 /* --- Semantic colors (light) --- */
 
 :root {
   /* primary */
-  --soui-color-primary-base: #3b82f6;
-  --soui-color-primary-fg: #ffffff;
-  --soui-color-primary-subtle: #eff6ff;
-  --soui-color-primary-subtle-fg: #1e40af;
-  --soui-color-primary-border: #93c5fd;
-  --soui-color-primary-hover: #2563eb;
-  --soui-color-primary-active: #1d4ed8;
+  --so-color-primary-base: #3b82f6;
+  --so-color-primary-fg: #ffffff;
+  --so-color-primary-subtle: #eff6ff;
+  --so-color-primary-subtle-fg: #1e40af;
+  --so-color-primary-border: #93c5fd;
+  --so-color-primary-hover: #2563eb;
+  --so-color-primary-active: #1d4ed8;
 
   /* neutral */
-  --soui-color-neutral-base: #6b7280;
-  --soui-color-neutral-fg: #ffffff;
-  --soui-color-neutral-subtle: #f3f4f6;
-  --soui-color-neutral-subtle-fg: #374151;
-  --soui-color-neutral-border: #d1d5db;
-  --soui-color-neutral-hover: #4b5563;
-  --soui-color-neutral-active: #374151;
+  --so-color-neutral-base: #6b7280;
+  --so-color-neutral-fg: #ffffff;
+  --so-color-neutral-subtle: #f3f4f6;
+  --so-color-neutral-subtle-fg: #374151;
+  --so-color-neutral-border: #d1d5db;
+  --so-color-neutral-hover: #4b5563;
+  --so-color-neutral-active: #374151;
 
   /* danger */
-  --soui-color-danger-base: #ef4444;
-  --soui-color-danger-fg: #ffffff;
-  --soui-color-danger-subtle: #fef2f2;
-  --soui-color-danger-subtle-fg: #991b1b;
-  --soui-color-danger-border: #fca5a5;
-  --soui-color-danger-hover: #dc2626;
-  --soui-color-danger-active: #b91c1c;
+  --so-color-danger-base: #ef4444;
+  --so-color-danger-fg: #ffffff;
+  --so-color-danger-subtle: #fef2f2;
+  --so-color-danger-subtle-fg: #991b1b;
+  --so-color-danger-border: #fca5a5;
+  --so-color-danger-hover: #dc2626;
+  --so-color-danger-active: #b91c1c;
 
   /* success */
-  --soui-color-success-base: #22c55e;
-  --soui-color-success-fg: #ffffff;
-  --soui-color-success-subtle: #f0fdf4;
-  --soui-color-success-subtle-fg: #166534;
-  --soui-color-success-border: #86efac;
-  --soui-color-success-hover: #16a34a;
-  --soui-color-success-active: #15803d;
+  --so-color-success-base: #22c55e;
+  --so-color-success-fg: #ffffff;
+  --so-color-success-subtle: #f0fdf4;
+  --so-color-success-subtle-fg: #166534;
+  --so-color-success-border: #86efac;
+  --so-color-success-hover: #16a34a;
+  --so-color-success-active: #15803d;
 
   /* warning */
-  --soui-color-warning-base: #f59e0b;
-  --soui-color-warning-fg: #ffffff;
-  --soui-color-warning-subtle: #fffbeb;
-  --soui-color-warning-subtle-fg: #92400e;
-  --soui-color-warning-border: #fcd34d;
-  --soui-color-warning-hover: #d97706;
-  --soui-color-warning-active: #b45309;
+  --so-color-warning-base: #f59e0b;
+  --so-color-warning-fg: #ffffff;
+  --so-color-warning-subtle: #fffbeb;
+  --so-color-warning-subtle-fg: #92400e;
+  --so-color-warning-border: #fcd34d;
+  --so-color-warning-hover: #d97706;
+  --so-color-warning-active: #b45309;
 
   /* info */
-  --soui-color-info-base: #06b6d4;
-  --soui-color-info-fg: #ffffff;
-  --soui-color-info-subtle: #ecfeff;
-  --soui-color-info-subtle-fg: #155e75;
-  --soui-color-info-border: #67e8f9;
-  --soui-color-info-hover: #0891b2;
-  --soui-color-info-active: #0e7490;
+  --so-color-info-base: #06b6d4;
+  --so-color-info-fg: #ffffff;
+  --so-color-info-subtle: #ecfeff;
+  --so-color-info-subtle-fg: #155e75;
+  --so-color-info-border: #67e8f9;
+  --so-color-info-hover: #0891b2;
+  --so-color-info-active: #0e7490;
 
   /* global tokens */
-  --soui-bg: #ffffff;
-  --soui-bg-subtle: #f8f9fa;
-  --soui-text: #111827;
-  --soui-text-muted: #6b7280;
-  --soui-border: #e5e7eb;
-  --soui-ring: var(--soui-color-primary-base);
+  --so-bg: #ffffff;
+  --so-bg-subtle: #f8f9fa;
+  --so-text: #111827;
+  --so-text-muted: #6b7280;
+  --so-border: #e5e7eb;
+  --so-ring: var(--so-color-primary-base);
 }
 
 /* --- Dark mode --- */
 
 [data-theme="dark"] {
   /* primary — same hue, keep base usable, white fg */
-  --soui-color-primary-base: #3b82f6;
-  --soui-color-primary-fg: #ffffff;
-  --soui-color-primary-subtle: #172554;
-  --soui-color-primary-subtle-fg: #93c5fd;
-  --soui-color-primary-border: #1d4ed8;
-  --soui-color-primary-hover: #2563eb;
-  --soui-color-primary-active: #1d4ed8;
+  --so-color-primary-base: #3b82f6;
+  --so-color-primary-fg: #ffffff;
+  --so-color-primary-subtle: #172554;
+  --so-color-primary-subtle-fg: #93c5fd;
+  --so-color-primary-border: #1d4ed8;
+  --so-color-primary-hover: #2563eb;
+  --so-color-primary-active: #1d4ed8;
 
   /* neutral — muted gray, white fg */
-  --soui-color-neutral-base: #4b5563;
-  --soui-color-neutral-fg: #ffffff;
-  --soui-color-neutral-subtle: #1f2937;
-  --soui-color-neutral-subtle-fg: #d1d5db;
-  --soui-color-neutral-border: #374151;
-  --soui-color-neutral-hover: #374151;
-  --soui-color-neutral-active: #1f2937;
+  --so-color-neutral-base: #4b5563;
+  --so-color-neutral-fg: #ffffff;
+  --so-color-neutral-subtle: #1f2937;
+  --so-color-neutral-subtle-fg: #d1d5db;
+  --so-color-neutral-border: #374151;
+  --so-color-neutral-hover: #374151;
+  --so-color-neutral-active: #1f2937;
 
   /* danger */
-  --soui-color-danger-base: #dc2626;
-  --soui-color-danger-fg: #ffffff;
-  --soui-color-danger-subtle: #450a0a;
-  --soui-color-danger-subtle-fg: #fca5a5;
-  --soui-color-danger-border: #991b1b;
-  --soui-color-danger-hover: #b91c1c;
-  --soui-color-danger-active: #991b1b;
+  --so-color-danger-base: #dc2626;
+  --so-color-danger-fg: #ffffff;
+  --so-color-danger-subtle: #450a0a;
+  --so-color-danger-subtle-fg: #fca5a5;
+  --so-color-danger-border: #991b1b;
+  --so-color-danger-hover: #b91c1c;
+  --so-color-danger-active: #991b1b;
 
   /* success */
-  --soui-color-success-base: #16a34a;
-  --soui-color-success-fg: #ffffff;
-  --soui-color-success-subtle: #052e16;
-  --soui-color-success-subtle-fg: #86efac;
-  --soui-color-success-border: #15803d;
-  --soui-color-success-hover: #15803d;
-  --soui-color-success-active: #166534;
+  --so-color-success-base: #16a34a;
+  --so-color-success-fg: #ffffff;
+  --so-color-success-subtle: #052e16;
+  --so-color-success-subtle-fg: #86efac;
+  --so-color-success-border: #15803d;
+  --so-color-success-hover: #15803d;
+  --so-color-success-active: #166534;
 
   /* warning */
-  --soui-color-warning-base: #d97706;
-  --soui-color-warning-fg: #ffffff;
-  --soui-color-warning-subtle: #451a03;
-  --soui-color-warning-subtle-fg: #fcd34d;
-  --soui-color-warning-border: #b45309;
-  --soui-color-warning-hover: #b45309;
-  --soui-color-warning-active: #92400e;
+  --so-color-warning-base: #d97706;
+  --so-color-warning-fg: #ffffff;
+  --so-color-warning-subtle: #451a03;
+  --so-color-warning-subtle-fg: #fcd34d;
+  --so-color-warning-border: #b45309;
+  --so-color-warning-hover: #b45309;
+  --so-color-warning-active: #92400e;
 
   /* info */
-  --soui-color-info-base: #0891b2;
-  --soui-color-info-fg: #ffffff;
-  --soui-color-info-subtle: #083344;
-  --soui-color-info-subtle-fg: #67e8f9;
-  --soui-color-info-border: #0e7490;
-  --soui-color-info-hover: #0e7490;
-  --soui-color-info-active: #155e75;
+  --so-color-info-base: #0891b2;
+  --so-color-info-fg: #ffffff;
+  --so-color-info-subtle: #083344;
+  --so-color-info-subtle-fg: #67e8f9;
+  --so-color-info-border: #0e7490;
+  --so-color-info-hover: #0e7490;
+  --so-color-info-active: #155e75;
 
   /* global tokens */
-  --soui-bg: #0f172a;
-  --soui-bg-subtle: #1e293b;
-  --soui-text: #f1f5f9;
-  --soui-text-muted: #94a3b8;
-  --soui-border: #334155;
-  --soui-ring: var(--soui-color-primary-base);
+  --so-bg: #0f172a;
+  --so-bg-subtle: #1e293b;
+  --so-text: #f1f5f9;
+  --so-text-muted: #94a3b8;
+  --so-border: #334155;
+  --so-ring: var(--so-color-primary-base);
 }
 
 /* --- Root container --- */
 
-[data-soui] {
-  background-color: var(--soui-bg);
-  color: var(--soui-text);
+[data-so] {
+  background-color: var(--so-bg);
+  color: var(--so-text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: var(--soui-line-height);
+  line-height: var(--so-line-height);
 }
 
 /* --- Focus ring --- */
 
-:where([data-soui]) :focus-visible {
-  outline: 2px solid var(--soui-ring);
+:where([data-so]) :focus-visible {
+  outline: 2px solid var(--so-ring);
   outline-offset: 2px;
 }
 
 /* --- Reduced motion --- */
 
 @media (prefers-reduced-motion: reduce) {
-  :where([data-soui]) *,
-  :where([data-soui]) *::before,
-  :where([data-soui]) *::after {
+  :where([data-so]) *,
+  :where([data-so]) *::before,
+  :where([data-so]) *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }

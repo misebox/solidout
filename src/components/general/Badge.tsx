@@ -25,10 +25,10 @@ export function Badge(
   return (
     <span
       class={cls(
-        "soui-badge",
-        `soui-badge--${local.variant ?? "neutral"}`,
-        `soui-badge--${local.size ?? "md"}`,
-        local.fill === "solid" && "soui-badge--solid",
+        "so-badge",
+        `so-badge--${local.variant ?? "neutral"}`,
+        `so-badge--${local.size ?? "md"}`,
+        local.fill === "solid" && "so-badge--solid",
         local.class,
       )}
       {...others}

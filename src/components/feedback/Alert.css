@@ -1,19 +1,19 @@
-.soui-alert {
+.so-alert {
   display: flex;
   align-items: flex-start;
-  gap: var(--soui-space-3);
-  padding: var(--soui-space-3) var(--soui-space-4);
+  gap: var(--so-space-3);
+  padding: var(--so-space-3) var(--so-space-4);
   border: 1px solid transparent;
-  border-radius: var(--soui-radius);
-  font-size: var(--soui-font-size-md);
-  line-height: var(--soui-line-height);
+  border-radius: var(--so-radius);
+  font-size: var(--so-font-size-md);
+  line-height: var(--so-line-height);
 }
 
-.soui-alert__content {
+.so-alert__content {
   flex: 1;
 }
 
-.soui-alert__dismiss {
+.so-alert__dismiss {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -26,37 +26,37 @@
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  border-radius: var(--soui-radius);
+  border-radius: var(--so-radius);
   opacity: 0.7;
   color: inherit;
 }
 
-.soui-alert__dismiss:hover {
+.so-alert__dismiss:hover {
   opacity: 1;
 }
 
 /* --- Variants --- */
 
-.soui-alert--info {
-  background-color: var(--soui-color-info-subtle);
-  color: var(--soui-color-info-subtle-fg);
-  border-color: var(--soui-color-info-border);
+.so-alert--info {
+  background-color: var(--so-color-info-subtle);
+  color: var(--so-color-info-subtle-fg);
+  border-color: var(--so-color-info-border);
 }
 
-.soui-alert--success {
-  background-color: var(--soui-color-success-subtle);
-  color: var(--soui-color-success-subtle-fg);
-  border-color: var(--soui-color-success-border);
+.so-alert--success {
+  background-color: var(--so-color-success-subtle);
+  color: var(--so-color-success-subtle-fg);
+  border-color: var(--so-color-success-border);
 }
 
-.soui-alert--warning {
-  background-color: var(--soui-color-warning-subtle);
-  color: var(--soui-color-warning-subtle-fg);
-  border-color: var(--soui-color-warning-border);
+.so-alert--warning {
+  background-color: var(--so-color-warning-subtle);
+  color: var(--so-color-warning-subtle-fg);
+  border-color: var(--so-color-warning-border);
 }
 
-.soui-alert--danger {
-  background-color: var(--soui-color-danger-subtle);
-  color: var(--soui-color-danger-subtle-fg);
-  border-color: var(--soui-color-danger-border);
+.so-alert--danger {
+  background-color: var(--so-color-danger-subtle);
+  color: var(--so-color-danger-subtle-fg);
+  border-color: var(--so-color-danger-border);
 }

@@ -17,7 +17,7 @@ export function Popover(props: PopoverProps) {
 
   return (
     <div
-      class={cls("soui-popover", local.class)}
+      class={cls("so-popover", local.class)}
       data-density={local.density}
       {...others}
     >

@@ -19,9 +19,9 @@ export function Spinner(props: SpinnerProps) {
   return (
     <span
       class={cls(
-        "soui-spinner",
-        `soui-spinner--${local.size ?? "md"}`,
-        `soui-spinner--${local.variant ?? "primary"}`,
+        "so-spinner",
+        `so-spinner--${local.size ?? "md"}`,
+        `so-spinner--${local.variant ?? "primary"}`,
         local.class,
       )}
       role="status"

@@ -23,10 +23,10 @@ export function HStack(props: HStackProps & JSX.HTMLAttributes<HTMLDivElement>) 
   return (
     <div
       class={cls(
-        "soui-hstack",
-        local.gap !== undefined && `soui-hstack--gap-${local.gap}`,
-        local.align && `soui-hstack--align-${local.align}`,
-        local.wrap && "soui-hstack--wrap",
+        "so-hstack",
+        local.gap !== undefined && `so-hstack--gap-${local.gap}`,
+        local.align && `so-hstack--align-${local.align}`,
+        local.wrap && "so-hstack--wrap",
         local.class,
       )}
       {...others}

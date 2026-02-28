@@ -22,19 +22,19 @@ export function Alert(props: AlertProps) {
   return (
     <div
       class={cls(
-        "soui-alert",
-        `soui-alert--${local.variant ?? "info"}`,
+        "so-alert",
+        `so-alert--${local.variant ?? "info"}`,
         local.class,
       )}
       role="alert"
       data-density={local.density}
       {...others}
     >
-      <div class="soui-alert__content">{local.children}</div>
+      <div class="so-alert__content">{local.children}</div>
       <Show when={local.onDismiss}>
         <button
           type="button"
-          class="soui-alert__dismiss"
+          class="so-alert__dismiss"
           onClick={() => local.onDismiss?.()}
           aria-label="Dismiss"
         >

@@ -32,25 +32,25 @@ export function RadioButton(props: RadioButtonProps) {
   return (
     <label
       class={cls(
-        "soui-radio-button",
-        local.disabled && "soui-radio-button--disabled",
+        "so-radio-button",
+        local.disabled && "so-radio-button--disabled",
         local.class,
       )}
     >
       <input
         type="radio"
-        class="soui-radio-button__input"
+        class="so-radio-button__input"
         name={group?.name}
         value={local.value}
         checked={isChecked()}
         disabled={local.disabled}
         onChange={handleChange}
       />
-      <span class="soui-radio-button__indicator" aria-hidden="true">
-        <span class="soui-radio-button__dot" />
+      <span class="so-radio-button__indicator" aria-hidden="true">
+        <span class="so-radio-button__dot" />
       </span>
       <Show when={local.label || local.children}>
-        <span class="soui-radio-button__label">
+        <span class="so-radio-button__label">
           {local.children ?? local.label}
         </span>
       </Show>

@@ -57,34 +57,34 @@ export function Checkbox(props: CheckboxProps) {
   return (
     <label
       class={cls(
-        "soui-checkbox",
-        `soui-checkbox--${local.size ?? "md"}`,
-        local.disabled && "soui-checkbox--disabled",
+        "so-checkbox",
+        `so-checkbox--${local.size ?? "md"}`,
+        local.disabled && "so-checkbox--disabled",
         local.class,
       )}
     >
       <input
         ref={inputRef}
         type="checkbox"
-        class="soui-checkbox__input"
+        class="so-checkbox__input"
         checked={isChecked()}
         disabled={local.disabled}
         onChange={handleChange}
       />
-      <span class="soui-checkbox__indicator" aria-hidden="true">
+      <span class="so-checkbox__indicator" aria-hidden="true">
         <Show when={local.indeterminate}>
-          <svg viewBox="0 0 12 12" fill="none" class="soui-checkbox__icon">
+          <svg viewBox="0 0 12 12" fill="none" class="so-checkbox__icon">
             <line x1="2" y1="6" x2="10" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
         </Show>
         <Show when={!local.indeterminate && isChecked()}>
-          <svg viewBox="0 0 12 12" fill="none" class="soui-checkbox__icon">
+          <svg viewBox="0 0 12 12" fill="none" class="so-checkbox__icon">
             <polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
           </svg>
         </Show>
       </span>
       <Show when={local.label || local.children}>
-        <span class="soui-checkbox__label">
+        <span class="so-checkbox__label">
           {local.children ?? local.label}
         </span>
       </Show>

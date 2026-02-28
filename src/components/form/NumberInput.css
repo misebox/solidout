@@ -1,68 +1,68 @@
-.soui-number-input {
+.so-number-input {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--soui-border);
-  border-radius: var(--soui-radius);
-  background-color: var(--soui-bg);
+  border: 1px solid var(--so-border);
+  border-radius: var(--so-radius);
+  background-color: var(--so-bg);
   overflow: hidden;
   transition: border-color 0.15s, box-shadow 0.15s;
   width: 100%;
 }
 
-.soui-number-input:focus-within {
-  outline: 2px solid var(--soui-ring);
+.so-number-input:focus-within {
+  outline: 2px solid var(--so-ring);
   outline-offset: -1px;
   border-color: transparent;
 }
 
-.soui-number-input:has([aria-invalid="true"]) {
-  border-color: var(--soui-color-danger-base);
+.so-number-input:has([aria-invalid="true"]) {
+  border-color: var(--so-color-danger-base);
 }
 
-.soui-number-input:has([aria-invalid="true"]):focus-within {
-  outline-color: var(--soui-color-danger-base);
+.so-number-input:has([aria-invalid="true"]):focus-within {
+  outline-color: var(--so-color-danger-base);
   border-color: transparent;
 }
 
 /* --- Input --- */
 
-.soui-number-input__input {
+.so-number-input__input {
   flex: 1;
   min-width: 0;
   border: none;
   background: transparent;
-  color: var(--soui-text);
+  color: var(--so-text);
   font-family: inherit;
   text-align: center;
-  line-height: var(--soui-line-height);
+  line-height: var(--so-line-height);
   -moz-appearance: textfield;
   box-sizing: border-box;
 }
 
-.soui-number-input__input::-webkit-inner-spin-button,
-.soui-number-input__input::-webkit-outer-spin-button {
+.so-number-input__input::-webkit-inner-spin-button,
+.so-number-input__input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.soui-number-input__input:focus {
+.so-number-input__input:focus {
   outline: none;
 }
 
-.soui-number-input__input:disabled {
-  opacity: var(--soui-disabled-opacity);
+.so-number-input__input:disabled {
+  opacity: var(--so-disabled-opacity);
   cursor: not-allowed;
 }
 
 /* --- Buttons --- */
 
-.soui-number-input__button {
+.so-number-input__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
-  background-color: var(--soui-color-neutral-subtle);
-  color: var(--soui-text);
+  background-color: var(--so-color-neutral-subtle);
+  color: var(--so-text);
   font-family: inherit;
   font-weight: 600;
   cursor: pointer;
@@ -71,57 +71,57 @@
   transition: background-color 0.15s;
 }
 
-.soui-number-input__button:hover:not(:disabled) {
-  background-color: var(--soui-color-neutral-border);
+.so-number-input__button:hover:not(:disabled) {
+  background-color: var(--so-color-neutral-border);
 }
 
-.soui-number-input__button:active:not(:disabled) {
-  background-color: var(--soui-color-neutral-active);
-  color: var(--soui-color-neutral-fg);
+.so-number-input__button:active:not(:disabled) {
+  background-color: var(--so-color-neutral-active);
+  color: var(--so-color-neutral-fg);
 }
 
-.soui-number-input__button:disabled {
-  opacity: var(--soui-disabled-opacity);
+.so-number-input__button:disabled {
+  opacity: var(--so-disabled-opacity);
   cursor: not-allowed;
 }
 
 /* --- Sizes --- */
 
-.soui-number-input--sm {
-  height: var(--soui-control-height-sm);
+.so-number-input--sm {
+  height: var(--so-control-height-sm);
 }
 
-.soui-number-input--sm .soui-number-input__input {
-  font-size: var(--soui-font-size-sm);
+.so-number-input--sm .so-number-input__input {
+  font-size: var(--so-font-size-sm);
 }
 
-.soui-number-input--sm .soui-number-input__button {
-  width: var(--soui-control-height-sm);
-  font-size: var(--soui-font-size-sm);
+.so-number-input--sm .so-number-input__button {
+  width: var(--so-control-height-sm);
+  font-size: var(--so-font-size-sm);
 }
 
-.soui-number-input--md {
-  height: var(--soui-control-height-md);
+.so-number-input--md {
+  height: var(--so-control-height-md);
 }
 
-.soui-number-input--md .soui-number-input__input {
-  font-size: var(--soui-font-size-md);
+.so-number-input--md .so-number-input__input {
+  font-size: var(--so-font-size-md);
 }
 
-.soui-number-input--md .soui-number-input__button {
-  width: var(--soui-control-height-md);
-  font-size: var(--soui-font-size-md);
+.so-number-input--md .so-number-input__button {
+  width: var(--so-control-height-md);
+  font-size: var(--so-font-size-md);
 }
 
-.soui-number-input--lg {
-  height: var(--soui-control-height-lg);
+.so-number-input--lg {
+  height: var(--so-control-height-lg);
 }
 
-.soui-number-input--lg .soui-number-input__input {
-  font-size: var(--soui-font-size-lg);
+.so-number-input--lg .so-number-input__input {
+  font-size: var(--so-font-size-lg);
 }
 
-.soui-number-input--lg .soui-number-input__button {
-  width: var(--soui-control-height-lg);
-  font-size: var(--soui-font-size-lg);
+.so-number-input--lg .so-number-input__button {
+  width: var(--so-control-height-lg);
+  font-size: var(--so-font-size-lg);
 }

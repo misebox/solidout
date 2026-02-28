@@ -67,7 +67,7 @@ export function createToast(options: ToastOptions = {}): ToastReturn {
 
   function add(input: ToastInput): string {
     toastCounter += 1;
-    const id = `soui-toast-${toastCounter}`;
+    const id = `so-toast-${toastCounter}`;
     const duration = input.duration ?? defaultDuration;
 
     const toast: Toast = {

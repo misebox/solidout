@@ -1,12 +1,12 @@
 // Core
 export {
-  SouiProvider,
-  useSoui,
+  SolidoutProvider,
+  useSolidout,
   createTheme,
 } from "./core";
 export type {
-  SouiProviderProps,
-  SouiContextValue,
+  SolidoutProviderProps,
+  SolidoutContextValue,
   Density,
   Size,
   Variant,

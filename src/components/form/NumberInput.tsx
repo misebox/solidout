@@ -72,13 +72,13 @@ function NumberInputInner(props: {
   return (
     <div
       class={cls(
-        "soui-number-input",
-        `soui-number-input--${local.size ?? "md"}`,
+        "so-number-input",
+        `so-number-input--${local.size ?? "md"}`,
       )}
     >
       <button
         type="button"
-        class="soui-number-input__button soui-number-input__button--decrement"
+        class="so-number-input__button so-number-input__button--decrement"
         disabled={local.disabled}
         tabIndex={-1}
         aria-label="Decrement"
@@ -88,7 +88,7 @@ function NumberInputInner(props: {
       </button>
       <input
         id={ctx?.id}
-        class="soui-number-input__input"
+        class="so-number-input__input"
         type="number"
         value={local.value ?? ""}
         min={local.min}
@@ -104,7 +104,7 @@ function NumberInputInner(props: {
       />
       <button
         type="button"
-        class="soui-number-input__button soui-number-input__button--increment"
+        class="so-number-input__button so-number-input__button--increment"
         disabled={local.disabled}
         tabIndex={-1}
         aria-label="Increment"
