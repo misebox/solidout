@@ -4,11 +4,10 @@
   "type": "module",
   "description": "SolidJS Opinionated UI - copy-paste component toolkit",
   "bin": {
-    "soui": "./dist-cli/index.js"
+    "soui": "./dist/index.js"
   },
   "files": [
-    "dist-cli",
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",

@@ -37,8 +37,8 @@ export function add(cwd: string): void {
 
   console.log(`Installing ${resolved.length} items (including dependencies):`);
 
-  // Find template root: src/ is shipped alongside dist-cli/
-  // dist-cli/commands/add.js → ../../src/
+  // Find template root: src/ is shipped alongside dist/
+  // dist/commands/add.js → ../../src/
   const cliDir = path.dirname(fileURLToPath(import.meta.url));
   const packageRoot = path.resolve(cliDir, "..", "..");
   const templateRoot = path.resolve(packageRoot, "src");
