@@ -1,15 +1,48 @@
-import { splitProps } from "solid-js";
+import { splitProps, Show } from "solid-js";
 import type { JSX } from "solid-js";
+import { cls } from "../../core/utils";
+import "./Tooltip.css";
 
-// TODO: Implement with Popover primitive once available.
+let tooltipCounter = 0;
 
 export interface TooltipProps {
   content?: string;
+  placement?: "top" | "bottom" | "left" | "right";
+  class?: string;
   children: JSX.Element;
 }
 
 export function Tooltip(props: TooltipProps) {
-  const [local] = splitProps(props, ["children"]);
+  const [local, others] = splitProps(props, [
+    "content",
+    "placement",
+    "class",
+    "children",
+  ]);
 
-  return <>{local.children}</>;
+  tooltipCounter += 1;
+  const tooltipId = `soui-tooltip-${tooltipCounter}`;
+
+  return (
+    <Show when={local.content} fallback={<>{local.children}</>}>
+      <span
+        class={cls("soui-tooltip-wrapper", local.class)}
+        {...others}
+      >
+        <span aria-describedby={tooltipId}>
+          {local.children}
+        </span>
+        <span
+          id={tooltipId}
+          class={cls(
+            "soui-tooltip",
+            `soui-tooltip--${local.placement ?? "top"}`,
+          )}
+          role="tooltip"
+        >
+          {local.content}
+        </span>
+      </span>
+    </Show>
+  );
 }

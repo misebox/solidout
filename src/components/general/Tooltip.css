@@ -1,0 +1,50 @@
+.soui-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.soui-tooltip {
+  position: absolute;
+  z-index: 1000;
+  padding: var(--soui-space-1) var(--soui-space-2);
+  border-radius: var(--soui-radius);
+  background-color: var(--soui-text);
+  color: var(--soui-bg);
+  font-size: var(--soui-font-size-sm);
+  line-height: var(--soui-line-height);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.soui-tooltip-wrapper:hover .soui-tooltip,
+.soui-tooltip-wrapper:focus-within .soui-tooltip {
+  opacity: 1;
+}
+
+/* --- Placements --- */
+
+.soui-tooltip--top {
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.soui-tooltip--bottom {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.soui-tooltip--left {
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.soui-tooltip--right {
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
