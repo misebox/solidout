@@ -3,3 +3,4 @@ archived/
 node_modules/
 dist/
 *.tsbuildinfo
+components.tar.gz

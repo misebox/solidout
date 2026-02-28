@@ -13,7 +13,7 @@ switch (command) {
     await init(cwd);
     break;
   case "add":
-    add(cwd);
+    await add(cwd);
     break;
   case "list": {
     const filter = args.includes("--installed")
