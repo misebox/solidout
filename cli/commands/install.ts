@@ -68,10 +68,10 @@ async function fetchAndExtract(
   return files;
 }
 
-export async function add(cwd: string): Promise<void> {
+export async function install(cwd: string): Promise<void> {
   const config = loadConfig(cwd);
   if (config === null) {
-    console.error(`${CONFIG_FILENAME} not found. Run: npx solidout init`);
+    console.error(`${CONFIG_FILENAME} not found. Run: npx solidout init\n`);
     process.exit(1);
     return;
   }
@@ -101,26 +101,20 @@ export async function add(cwd: string): Promise<void> {
 
   let copiedCount = 0;
 
-  const DEFAULT_CSS = "solidout.css";
-  const cssRename = config.cssFilename && config.cssFilename !== DEFAULT_CSS;
-
   for (const name of resolved) {
     const entry = registry[name];
     if (!entry) continue;
 
     for (const file of entry.files) {
+      if (file === "core/solidout.css") continue;
+
       const content = archive.get(file);
       if (content === undefined) {
         console.warn(`  SKIP (not in archive): ${file}`);
         continue;
       }
 
-      let destFile = file;
-      if (cssRename && file === `core/${DEFAULT_CSS}`) {
-        destFile = `core/${config.cssFilename}`;
-      }
-
-      const destPath = path.join(targetRoot, destFile);
+      const destPath = path.join(targetRoot, file);
       const destDir = path.dirname(destPath);
       fs.mkdirSync(destDir, { recursive: true });
 

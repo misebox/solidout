@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { add } from "./commands/add.js";
 import { init } from "./commands/init.js";
+import { install } from "./commands/install.js";
 import { list } from "./commands/list.js";
 
 const args = process.argv.slice(2);
@@ -12,8 +12,8 @@ switch (command) {
   case "init":
     await init(cwd);
     break;
-  case "add":
-    await add(cwd);
+  case "install":
+    await install(cwd);
     break;
   case "list": {
     const filter = args.includes("--installed")
@@ -28,14 +28,14 @@ switch (command) {
     console.log("solidout - SolidJS Opinionated UI");
     console.log("");
     console.log("Commands:");
-    console.log("  init                  Create solidout.config.json with all components");
-    console.log("  add                   Install components based on solidout.config.json");
-    console.log("  list [--installed]    List available components");
+    console.log("  init                  Create solidout.config.json and CSS");
+    console.log("  install               Install components based on solidout.config.json");
+    console.log("  list [--installed]     List available components");
     console.log("       [--not-installed]");
     console.log("");
     console.log("Usage:");
     console.log("  npx solidout init");
-    console.log("  npx solidout add");
+    console.log("  npx solidout install");
     console.log("  npx solidout list");
     break;
 }
