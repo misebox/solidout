@@ -1,7 +1,7 @@
 {
   "name": "solidout",
   "version": "0.1.0",
-  "componentsVersion": "0.1.0",
+  "componentsVersion": "0.1.1",
   "type": "module",
   "description": "SolidJS Opinionated UI - copy-paste component toolkit",
   "license": "MIT",
@@ -9,8 +9,7 @@
     "solidout": "./dist/index.js"
   },
   "files": [
-    "dist",
-    "src/core/solidout.css"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",

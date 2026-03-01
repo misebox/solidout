@@ -106,15 +106,15 @@ export async function install(cwd: string): Promise<void> {
     if (!entry) continue;
 
     for (const file of entry.files) {
-      if (file === "core/solidout.css") continue;
-
       const content = archive.get(file);
       if (content === undefined) {
         console.warn(`  SKIP (not in archive): ${file}`);
         continue;
       }
 
-      const destPath = path.join(targetRoot, file);
+      const destPath = file === "core/solidout.css"
+        ? path.resolve(cwd, config.cssPath)
+        : path.join(targetRoot, file);
       const destDir = path.dirname(destPath);
       fs.mkdirSync(destDir, { recursive: true });
 
