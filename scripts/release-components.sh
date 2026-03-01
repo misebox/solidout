@@ -57,4 +57,9 @@ gh release create "$TAG" components.tar.gz --title "$TAG"
 
 # Clean up
 rm components.tar.gz
+
+# Rebuild CLI so it references the new componentsVersion
+bun run build:cli
+
 echo "Done: ${TAG}"
+echo "To publish CLI with updated componentsVersion: npm publish"

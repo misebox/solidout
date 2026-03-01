@@ -45,13 +45,11 @@ else
 fi
 
 # Build CLI
-npm run build:cli
+bun run build:cli
 
 # Tag and push
 git tag "$TAG"
 git push origin HEAD --tags
 
-# Publish to npm
-npm publish
-
 echo "Done: ${TAG}"
+echo "To publish: npm publish"
