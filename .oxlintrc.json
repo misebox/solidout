@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "typescript/no-non-null-assertion": "error"
+  },
+  "categories": {
+    "correctness": "warn"
+  },
+  "ignorePatterns": ["dist", "tmp", "archived"]
+}
