@@ -1,5 +1,5 @@
 import * as path from "node:path";
-import type { SolidoutConfig } from "./config.js";
+import type { SoluidConfig } from "./config.js";
 
 /**
  * Rewrite internal soluid imports in a template file.
@@ -15,7 +15,7 @@ import type { SolidoutConfig } from "./config.js";
 export function rewriteImports(
   content: string,
   filePath: string, // path of this file relative to componentDir (e.g. "components/form/TextField.tsx")
-  config: SolidoutConfig,
+  config: SoluidConfig,
 ): string {
   // Match import statements with relative paths (starting with . or ..)
   const importRegex =
@@ -43,7 +43,7 @@ export function rewriteImports(
 function buildImportPath(
   targetPathInTemplate: string, // e.g. "core/utils" or "components/form/FormField"
   sourceDir: string, // e.g. "components/form"
-  config: SolidoutConfig,
+  config: SoluidConfig,
 ): string {
   if (config.alias) {
     // Use alias: @/components/ui/core/utils

@@ -2,19 +2,22 @@
 set -euo pipefail
 
 BUMP="${1:-}"
-CURRENT=$(node -p "require('./package.json').componentsVersion")
+
+# Get current version from latest components tag
+CURRENT=$(git tag -l 'components-v*' --sort=-v:refname | head -1 | sed 's/components-v//')
+if [ -z "$CURRENT" ]; then
+  CURRENT="0.0.0"
+fi
 
 if [ -z "$BUMP" ]; then
-  # No argument: release current version if tag doesn't exist
   NEW="$CURRENT"
   TAG="components-v${NEW}"
   if git rev-parse "$TAG" >/dev/null 2>&1; then
     echo "Tag ${TAG} already exists. Specify patch|minor|major to bump." >&2
     exit 1
   fi
-  echo "Releasing componentsVersion: ${NEW}"
+  echo "Releasing: ${TAG}"
 else
-  # Validate bump type
   case "$BUMP" in
     patch|minor|major) ;;
     *) echo "Error: argument must be patch, minor, or major" >&2; exit 1 ;;
@@ -29,19 +32,7 @@ else
 
   NEW="${MAJOR}.${MINOR}.${PATCH}"
   TAG="components-v${NEW}"
-
-  echo "Bumping componentsVersion: ${CURRENT} -> ${NEW}"
-
-  # Update package.json
-  node -e "
-  const fs = require('fs');
-  const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
-  pkg.componentsVersion = '${NEW}';
-  fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
-  "
-
-  git add package.json
-  git commit -m "Release ${TAG}"
+  echo "Bumping: ${CURRENT} -> ${NEW}"
 fi
 
 # Create tarball from src/
@@ -58,8 +49,4 @@ gh release create "$TAG" components.tar.gz --title "$TAG"
 # Clean up
 rm components.tar.gz
 
-# Rebuild CLI so it references the new componentsVersion
-bun run build:cli
-
 echo "Done: ${TAG}"
-echo "To publish CLI with updated componentsVersion: npm publish"

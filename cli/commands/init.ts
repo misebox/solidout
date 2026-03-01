@@ -1,8 +1,8 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import * as readline from "node:readline";
-import { CONFIG_FILENAME, DEFAULT_CSS_FILENAME, PROJECT_NAME, findConfigPath, saveConfig } from "../config.js";
-import type { SolidoutConfig } from "../config.js";
+import { CONFIG_FILENAME, DEFAULT_CSS_FILENAME, PROJECT_NAME, fetchLatestComponentsVersion, findConfigPath, saveConfig } from "../config.js";
+import type { SoluidConfig } from "../config.js";
 import { allComponentNames } from "../registry.js";
 
 function prompt(question: string, defaultValue: string): Promise<string> {
@@ -43,12 +43,16 @@ export async function init(cwd: string): Promise<void> {
 		}
 	}
 
+	console.log("Fetching latest components version...");
+	const componentsVersion = await fetchLatestComponentsVersion();
+
 	const componentDir = await prompt("Component directory?", "src/components/ui");
 	const cssPath = await prompt("CSS path?", `src/styles/${DEFAULT_CSS_FILENAME}`);
 
 	const allNames = allComponentNames();
 
-	const config: SolidoutConfig = {
+	const config: SoluidConfig = {
+		componentsVersion,
 		componentDir,
 		alias: "",
 		aliasBase: "src",
@@ -58,7 +62,7 @@ export async function init(cwd: string): Promise<void> {
 
 	saveConfig(cwd, config);
 
-	console.log(`\nCreated ${CONFIG_FILENAME} with ${allNames.length} components.`);
+	console.log(`\nCreated ${CONFIG_FILENAME} (components v${componentsVersion}, ${allNames.length} components)`);
 	console.log("");
 	console.log("Next steps:");
 	console.log(`  1. Run: npx ${PROJECT_NAME} install`);

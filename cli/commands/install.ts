@@ -1,20 +1,12 @@
 import * as fs from "node:fs";
-import { createRequire } from "node:module";
 import * as path from "node:path";
 import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import { createGunzip } from "node:zlib";
 import { Parser, type ReadEntry } from "tar";
-import { CONFIG_FILENAME, DEFAULT_CSS_FILENAME, PROJECT_NAME, loadConfig } from "../config.js";
+import { CONFIG_FILENAME, DEFAULT_CSS_FILENAME, PROJECT_NAME, RELEASE_URL, loadConfig } from "../config.js";
 import { collectNpmDeps, registry, resolveDependencies } from "../registry.js";
 import { rewriteImports } from "../rewrite-imports.js";
-
-const RELEASE_URL = "https://github.com/misebox/soluid/releases/download";
-
-function getVersion(): string {
-  const require = createRequire(import.meta.url);
-  return require("../../package.json").componentsVersion;
-}
 
 function checkRateLimit(res: Response): void {
   const remaining = res.headers.get("X-RateLimit-Remaining");
@@ -94,7 +86,7 @@ export async function install(cwd: string): Promise<void> {
 
   console.log(`Installing ${resolved.length} items (including dependencies):`);
 
-  const version = getVersion();
+  const version = config.componentsVersion;
   const archive = await fetchAndExtract(version);
 
   const targetRoot = path.resolve(cwd, config.componentDir);
