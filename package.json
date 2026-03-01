@@ -4,6 +4,7 @@
   "componentsVersion": "0.1.0",
   "type": "module",
   "description": "SolidJS Opinionated UI - copy-paste component toolkit",
+  "license": "MIT",
   "bin": {
     "solidout": "./dist/index.js"
   },
