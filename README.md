@@ -2,13 +2,9 @@
 
 SolidJS component toolkit. Copy components into your project and own the code directly.
 
-## Install
+## Usage
 
-```sh
-npm install -D soluid
-```
-
-## CLI
+Install is not required. Run directly with `npx` or `bunx`:
 
 ```sh
 npx soluid init                # create soluid.config.json interactively
