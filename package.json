@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "dev": "vite",
+    "build:catalog": "vite build --config vite.config.catalog.ts",
     "build:cli": "tsc -p cli/tsconfig.json",
     "prepare": "npm run build:cli",
     "typecheck": "tsc --noEmit",

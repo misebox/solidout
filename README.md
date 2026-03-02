@@ -2,6 +2,8 @@
 
 SolidJS component toolkit. Copy components into your project and own the code directly.
 
+[Component Catalog](https://misebox.github.io/soluid/)
+
 ## Usage
 
 Install is not required. Run directly with `npx` or `bunx`:
