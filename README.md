@@ -67,11 +67,3 @@ document.documentElement.setAttribute("data-density", "dense");
 `createFocusTrap`, `createToast`, `createToggle`
 
 Installed automatically as dependencies when any component that requires them is added.
-
-## Dev
-
-```sh
-bun run dev
-```
-
-Starts the component catalog for local preview.
