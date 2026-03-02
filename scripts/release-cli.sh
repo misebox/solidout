@@ -51,5 +51,7 @@ bun run build:cli
 git tag "$TAG"
 git push origin HEAD --tags
 
+# Publish to npm
+npm publish
+
 echo "Done: ${TAG}"
-echo "To publish: npm publish"
