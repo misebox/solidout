@@ -7,10 +7,20 @@
     <style>
       html, body { margin: 0; padding: 0; }
     </style>
-    <script type="module" crossorigin src="/soluid/assets/index-DDLhpLzs.js"></script>
-    <link rel="stylesheet" crossorigin href="/soluid/assets/index-DxNrUef1.css">
+    <script type="module" crossorigin src="/soluid/assets/index-DH36wnH9.js"></script>
+    <link rel="stylesheet" crossorigin href="/soluid/assets/index-3Mu8xDUl.css">
   </head>
   <body>
+    <script>
+      // Restore SPA path from GitHub Pages 404 redirect
+      (function () {
+        var q = location.search;
+        if (q.length > 1 && q[1] === "/") {
+          var path = "/soluid" + q.slice(1).split("&")[0];
+          history.replaceState(null, "", path + location.hash);
+        }
+      })();
+    </script>
     <div id="app"></div>
   </body>
 </html>

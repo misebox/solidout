@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA redirect: encode path as query string
+      var seg = location.pathname.replace("/soluid", "").replace(/^\/+/, "");
+      var query = location.search ? "&" + location.search.slice(1) : "";
+      location.replace(
+        "/soluid/?/" + seg + query + location.hash,
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
