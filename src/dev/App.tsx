@@ -1,6 +1,6 @@
 import { createEffect, createMemo, createSignal } from "solid-js";
 import type { Density } from "../components/ui/soluid/core/types";
-import "../components/ui/soluid/core/soluid.css";
+import "./soluid-all.css";
 import "./catalog.css";
 
 import { Card, CardBody, CardFooter, CardHeader } from "../components/ui/soluid/Card";
