@@ -1,6 +1,6 @@
 {
   "name": "soluid",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "description": "SolidJS Opinionated UI - copy-paste component toolkit",
   "license": "MIT",
@@ -9,7 +9,12 @@
     "url": "git+https://github.com/misebox/soluid.git"
   },
   "homepage": "https://github.com/misebox/soluid",
-  "keywords": ["solidjs", "ui", "components", "cli"],
+  "keywords": [
+    "solidjs",
+    "ui",
+    "components",
+    "cli"
+  ],
   "bin": {
     "soluid": "./dist/index.js"
   },
