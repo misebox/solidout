@@ -9,6 +9,16 @@
     </style>
   </head>
   <body>
+    <script>
+      // Restore SPA path from GitHub Pages 404 redirect
+      (function () {
+        var q = location.search;
+        if (q.length > 1 && q[1] === "/") {
+          var path = "/soluid" + q.slice(1).split("&")[0];
+          history.replaceState(null, "", path + location.hash);
+        }
+      })();
+    </script>
     <div id="app"></div>
     <script type="module" src="/src/dev/index.tsx"></script>
   </body>

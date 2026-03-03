@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "dev": "vite",
+    "generate:api": "npx tsx scripts/generate-api-data.ts",
     "build:catalog": "vite build --config vite.config.catalog.ts",
     "build:cli": "tsc -p cli/tsconfig.json",
     "prepare": "npm run build:cli",
@@ -36,6 +37,7 @@
     "@solid-primitives/active-element": "^2.1.5",
     "@solid-primitives/event-listener": "^2.4.5",
     "@solid-primitives/scheduled": "^1.5.3",
+    "@solidjs/router": "^0.15.4",
     "@types/node": "^20.19.34",
     "dprint": "^0.52.0",
     "oxlint": "^1.50.0",
