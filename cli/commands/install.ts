@@ -127,13 +127,16 @@ export async function install(cwd: string): Promise<void> {
 
   const targetRoot = path.resolve(cwd, config.componentDir);
 
-  let copiedCount = 0;
+  let addedCount = 0;
+  let updatedCount = 0;
   const cssChunks: string[] = [];
   const installedModules: string[] = [];
 
   for (const name of resolved) {
     const entry = registry[name];
     if (!entry) continue;
+
+    let status: "added" | "updated" | "unchanged" = "unchanged";
 
     for (const file of entry.files) {
       const content = archive.get(file);
@@ -147,14 +150,12 @@ export async function install(cwd: string): Promise<void> {
       // CSS files: accumulate for concatenation instead of writing individually
       if (file.endsWith(".css")) {
         cssChunks.push(`/* ${localPath} */\n${content}`);
-        copiedCount++;
         continue;
       }
 
       // TS/TSX files: strip prefix and write to componentDir
       const destPath = path.join(targetRoot, localPath);
       const destDir = path.dirname(destPath);
-      fs.mkdirSync(destDir, { recursive: true });
 
       let output = content;
       if (file.endsWith(".ts") || file.endsWith(".tsx")) {
@@ -162,11 +163,30 @@ export async function install(cwd: string): Promise<void> {
         installedModules.push(localPath);
       }
 
+      // Check if file already exists with same content
+      const isNew = !fs.existsSync(destPath);
+      if (!isNew) {
+        const existing = fs.readFileSync(destPath, "utf-8");
+        if (existing === output) continue;
+      }
+
+      fs.mkdirSync(destDir, { recursive: true });
       fs.writeFileSync(destPath, output, "utf-8");
-      copiedCount++;
+
+      if (isNew) {
+        status = "added";
+        addedCount++;
+      } else if (status !== "added") {
+        status = "updated";
+        updatedCount++;
+      }
     }
 
-    console.log(`  + ${name}`);
+    if (status === "added") {
+      console.log(`  + ${name}`);
+    } else if (status === "updated") {
+      console.log(`  ~ ${name}`);
+    }
   }
 
   // Generate barrel index.ts (core first, then components)
@@ -184,26 +204,52 @@ export async function install(cwd: string): Promise<void> {
   // Write concatenated CSS to cssPath
   if (cssChunks.length > 0) {
     const cssDestPath = path.resolve(cwd, config.cssPath);
-    const cssDestDir = path.dirname(cssDestPath);
-    fs.mkdirSync(cssDestDir, { recursive: true });
-    fs.writeFileSync(cssDestPath, cssChunks.join("\n\n") + "\n", "utf-8");
-    console.log(`\nCSS written to ${config.cssPath}`);
+    const cssContent = cssChunks.join("\n\n") + "\n";
+    const cssUnchanged = fs.existsSync(cssDestPath) && fs.readFileSync(cssDestPath, "utf-8") === cssContent;
+    if (!cssUnchanged) {
+      const cssDestDir = path.dirname(cssDestPath);
+      fs.mkdirSync(cssDestDir, { recursive: true });
+      fs.writeFileSync(cssDestPath, cssContent, "utf-8");
+      console.log(`\nCSS written to ${config.cssPath}`);
+    }
   }
 
-  console.log(`\nCopied ${copiedCount} files to ${config.componentDir}/`);
+  if (addedCount === 0 && updatedCount === 0) {
+    console.log("\nAll components are up to date.");
+  } else {
+    const parts: string[] = [];
+    if (addedCount > 0) parts.push(`${addedCount} added`);
+    if (updatedCount > 0) parts.push(`${updatedCount} updated`);
+    console.log(`\n${parts.join(", ")} in ${config.componentDir}/`);
+  }
 
   if (npmDeps.length > 0) {
-    const { lockfile, command } = detectInstallCommand(cwd);
-    if (lockfile) {
-      console.log(`\nFound ${lockfile}`);
+    // Filter out packages already in package.json
+    const pkgJsonPath = path.join(cwd, "package.json");
+    let installedPkgs: Set<string> = new Set();
+    if (fs.existsSync(pkgJsonPath)) {
+      const pkgJson = JSON.parse(fs.readFileSync(pkgJsonPath, "utf-8"));
+      const allDeps = {
+        ...pkgJson.dependencies,
+        ...pkgJson.devDependencies,
+      };
+      installedPkgs = new Set(Object.keys(allDeps));
     }
-    const cmd = [...command, ...npmDeps].join(" ");
-    console.log(`Required packages: ${npmDeps.join(", ")}`);
-    const ok = await confirm(`Run \`${cmd}\`? [y/N] `);
-    if (ok) {
-      execSync(cmd, { stdio: "inherit", cwd });
-    } else {
-      console.log(`  ${cmd}`);
+    const missingDeps = npmDeps.filter((d) => !installedPkgs.has(d));
+
+    if (missingDeps.length > 0) {
+      const { lockfile, command } = detectInstallCommand(cwd);
+      if (lockfile) {
+        console.log(`\nFound ${lockfile}`);
+      }
+      const cmd = [...command, ...missingDeps].join(" ");
+      console.log(`Required packages: ${missingDeps.join(", ")}`);
+      const ok = await confirm(`Run \`${cmd}\`? [y/N] `);
+      if (ok) {
+        execSync(cmd, { stdio: "inherit", cwd });
+      } else {
+        console.log(`  ${cmd}`);
+      }
     }
   }
 
