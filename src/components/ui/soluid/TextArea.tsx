@@ -1,16 +1,15 @@
 import { splitProps } from "solid-js";
 import type { JSX } from "solid-js";
-import type { CommonProps } from "./core/types";
+import type { InteractiveProps } from "./core/types";
 import { cls } from "./core/utils";
 import { FormField } from "./FormField";
 import { useFormField } from "./FormFieldContext";
 
-export interface TextAreaProps extends CommonProps {
+export interface TextAreaProps extends InteractiveProps {
   value?: string;
   onInput?: (value: string) => void;
   placeholder?: string;
   rows?: number;
-  disabled?: boolean;
   label: string;
   error?: string;
   hint?: string;
@@ -24,6 +23,7 @@ function TextAreaInput(props: {
   rows?: number;
   disabled?: boolean;
   required?: boolean;
+  size?: "sm" | "md" | "lg";
 }) {
   const [local] = splitProps(props, [
     "value",
@@ -32,6 +32,7 @@ function TextAreaInput(props: {
     "rows",
     "disabled",
     "required",
+    "size",
   ]);
 
   const ctx = useFormField();
@@ -43,7 +44,10 @@ function TextAreaInput(props: {
   return (
     <textarea
       id={ctx?.id}
-      class="so-textarea__input"
+      class={cls(
+        "so-textarea__input",
+        `so-textarea__input--${local.size ?? "md"}`,
+      )}
       value={local.value ?? ""}
       placeholder={local.placeholder}
       rows={local.rows ?? 3}
@@ -63,6 +67,7 @@ export function TextArea(props: TextAreaProps) {
     "placeholder",
     "rows",
     "disabled",
+    "size",
     "class",
     "density",
   ]);
@@ -92,6 +97,7 @@ export function TextArea(props: TextAreaProps) {
         rows={local.rows}
         disabled={local.disabled}
         required={props.required}
+        size={local.size}
       />
     </FormField>
   );

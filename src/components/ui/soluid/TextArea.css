@@ -36,3 +36,20 @@
   outline-color: var(--so-color-danger-base);
   border-color: transparent;
 }
+
+/* --- Sizes --- */
+
+.so-textarea__input--sm {
+  padding: var(--so-space-1) var(--so-space-2);
+  font-size: var(--so-font-size-sm);
+}
+
+.so-textarea__input--md {
+  padding: var(--so-space-2) var(--so-space-3);
+  font-size: var(--so-font-size-md);
+}
+
+.so-textarea__input--lg {
+  padding: var(--so-space-3) var(--so-space-4);
+  font-size: var(--so-font-size-lg);
+}
