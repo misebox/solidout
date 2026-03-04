@@ -4,11 +4,16 @@ import { A } from "@solidjs/router";
 import { Accordion, AccordionItem } from "../../components/ui/soluid/Accordion";
 import { Avatar } from "../../components/ui/soluid/Avatar";
 import { Card, CardBody, CardFooter, CardHeader } from "../../components/ui/soluid/Card";
+import { CheckboxGroup } from "../../components/ui/soluid/CheckboxGroup";
 import { DescriptionList } from "../../components/ui/soluid/DescriptionList";
+import { Drawer, DrawerHeader } from "../../components/ui/soluid/Drawer";
 import { EmptyState } from "../../components/ui/soluid/EmptyState";
 import { Menu, MenuItem, MenuSeparator } from "../../components/ui/soluid/Menu";
+import { Popover } from "../../components/ui/soluid/Popover";
 import { Skeleton } from "../../components/ui/soluid/Skeleton";
 import { Table } from "../../components/ui/soluid/Table";
+import { ToastContainer, useToast } from "../../components/ui/soluid/Toast";
+import { Tooltip } from "../../components/ui/soluid/Tooltip";
 import { Alert } from "../../components/ui/soluid/Alert";
 import { Dialog, DialogBody, DialogFooter, DialogHeader } from "../../components/ui/soluid/Dialog";
 import { Progress } from "../../components/ui/soluid/Progress";
@@ -47,6 +52,10 @@ export function CatalogPage() {
   const [sortDir, setSortDir] = createSignal<"asc" | "desc">("asc");
   const [menuOpen, setMenuOpen] = createSignal(false);
   const [page2, setPage2] = createSignal(3);
+  const [drawerOpen, setDrawerOpen] = createSignal(false);
+  const [popoverOpen, setPopoverOpen] = createSignal(false);
+  const [checkboxGroupValue, setCheckboxGroupValue] = createSignal<string[]>(["email"]);
+  const toast = useToast();
 
   const tableData = [
     { id: "1", name: "Tanaka Taro", email: "tanaka@example.com", role: "Admin", age: 32 },
@@ -163,6 +172,22 @@ export function CatalogPage() {
           <Avatar name="Sato Jiro" size="lg" variant="danger" />
           <Avatar size="md" variant="neutral" />
         </div>
+
+        {apiLink("Tooltip")}
+        <div class="catalog-row">
+          <Tooltip content="Top tooltip">
+            <Button variant="neutral" size="sm">Top</Button>
+          </Tooltip>
+          <Tooltip content="Bottom tooltip" placement="bottom">
+            <Button variant="neutral" size="sm">Bottom</Button>
+          </Tooltip>
+          <Tooltip content="Left tooltip" placement="left">
+            <Button variant="neutral" size="sm">Left</Button>
+          </Tooltip>
+          <Tooltip content="Right tooltip" placement="right">
+            <Button variant="neutral" size="sm">Right</Button>
+          </Tooltip>
+        </div>
       </section>
 
       {/* Form */}
@@ -242,6 +267,19 @@ export function CatalogPage() {
           <Checkbox checked indeterminate label="Indeterminate" />
           <Checkbox disabled label="Disabled" />
         </div>
+
+        {apiLink("CheckboxGroup")}
+        <CheckboxGroup
+          value={checkboxGroupValue()}
+          onChange={setCheckboxGroupValue}
+          label="Notifications"
+        >
+          <HStack gap={4}>
+            <Checkbox value="email" label="Email" />
+            <Checkbox value="sms" label="SMS" />
+            <Checkbox value="push" label="Push" />
+          </HStack>
+        </CheckboxGroup>
 
         {apiLink("RadioGroup")}
         <RadioGroup
@@ -391,6 +429,34 @@ export function CatalogPage() {
             </HStack>
           </DialogFooter>
         </Dialog>
+
+        {apiLink("Drawer")}
+        <Button variant="primary" onClick={() => setDrawerOpen(true)}>
+          Open Drawer
+        </Button>
+        <Drawer open={drawerOpen()} onClose={() => setDrawerOpen(false)}>
+          <DrawerHeader>Settings</DrawerHeader>
+          <div style={{ padding: "var(--so-space-4)" }}>
+            <p>Drawer content goes here.</p>
+          </div>
+        </Drawer>
+
+        {apiLink("Toast")}
+        <div class="catalog-row">
+          <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Info notification", variant: "info" })}>
+            Info
+          </Button>
+          <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Success!", variant: "success" })}>
+            Success
+          </Button>
+          <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Warning issued", variant: "warning" })}>
+            Warning
+          </Button>
+          <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Something failed", variant: "danger" })}>
+            Danger
+          </Button>
+        </div>
+        <ToastContainer />
       </section>
 
       {/* Navigation */}
@@ -437,6 +503,20 @@ export function CatalogPage() {
             maxVisible={7}
           />
         </Stack>
+
+        {apiLink("Popover")}
+        <Popover
+          open={popoverOpen()}
+          onOpenChange={setPopoverOpen}
+          content={
+            <Stack gap={2}>
+              <p style={{ margin: "0", "font-size": "var(--so-font-size-sm)" }}>Popover content</p>
+              <Button variant="primary" size="sm" onClick={() => setPopoverOpen(false)}>Close</Button>
+            </Stack>
+          }
+        >
+          Open Popover
+        </Popover>
 
         {apiLink("Menu")}
         <Menu
