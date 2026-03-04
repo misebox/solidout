@@ -34,6 +34,7 @@
     "lint:fix": "oxlint --fix src/ cli/"
   },
   "devDependencies": {
+    "@floating-ui/dom": "^1.7.5",
     "@solid-primitives/active-element": "^2.1.5",
     "@solid-primitives/event-listener": "^2.4.5",
     "@solid-primitives/scheduled": "^1.5.3",
