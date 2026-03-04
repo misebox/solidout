@@ -17,3 +17,15 @@
   flex-direction: column;
   gap: var(--so-space-2);
 }
+
+.so-radio-group__error {
+  margin: var(--so-space-1) 0 0;
+  font-size: var(--so-font-size-sm);
+  color: var(--so-color-danger-base);
+}
+
+.so-radio-group__hint {
+  margin: var(--so-space-1) 0 0;
+  font-size: var(--so-font-size-sm);
+  color: var(--so-text-muted);
+}

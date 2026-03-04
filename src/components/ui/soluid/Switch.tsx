@@ -1,4 +1,4 @@
-import { createMemo, Show, splitProps } from "solid-js";
+import { createMemo, createUniqueId, Show, splitProps } from "solid-js";
 import type { JSX } from "solid-js";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
@@ -10,6 +10,8 @@ export interface SwitchProps extends CommonProps {
   disabled?: boolean;
   size?: "sm" | "md";
   label?: string;
+  error?: string;
+  hint?: string;
   children?: JSX.Element;
 }
 
@@ -21,8 +23,14 @@ export function Switch(props: SwitchProps) {
     "disabled",
     "size",
     "label",
+    "error",
+    "hint",
     "children",
   ]);
+
+  const id = createUniqueId();
+  const errorId = `so-sw-error-${id}`;
+  const hintId = `so-sw-hint-${id}`;
 
   const pressedAccessor = createMemo(() => local.checked ?? false);
 
@@ -48,31 +56,47 @@ export function Switch(props: SwitchProps) {
     }
   };
 
+  const describedBy = () => {
+    if (local.error) return errorId;
+    if (local.hint) return hintId;
+    return undefined;
+  };
+
   return (
-    <label
-      class={cls(
-        "so-switch",
-        `so-switch--${local.size ?? "md"}`,
-        local.disabled && "so-switch--disabled",
-        local.class,
-      )}
-    >
-      <button
-        type="button"
-        role="switch"
-        class="so-switch__track"
-        aria-checked={toggle.pressed()}
-        disabled={local.disabled}
-        onClick={handleClick}
-        onKeyDown={handleKeyDown}
+    <div class={cls("so-switch-wrapper", local.error && "so-switch-wrapper--error")}>
+      <label
+        class={cls(
+          "so-switch",
+          `so-switch--${local.size ?? "md"}`,
+          local.disabled && "so-switch--disabled",
+          local.class,
+        )}
       >
-        <span class="so-switch__thumb" />
-      </button>
-      <Show when={local.label || local.children}>
-        <span class="so-switch__label">
-          {local.children ?? local.label}
-        </span>
+        <button
+          type="button"
+          role="switch"
+          class="so-switch__track"
+          aria-checked={toggle.pressed()}
+          aria-invalid={local.error ? true : undefined}
+          aria-describedby={describedBy()}
+          disabled={local.disabled}
+          onClick={handleClick}
+          onKeyDown={handleKeyDown}
+        >
+          <span class="so-switch__thumb" />
+        </button>
+        <Show when={local.label || local.children}>
+          <span class="so-switch__label">
+            {local.children ?? local.label}
+          </span>
+        </Show>
+      </label>
+      <Show when={local.error}>
+        <p class="so-switch__error" id={errorId} role="alert">{local.error}</p>
       </Show>
-    </label>
+      <Show when={!local.error && local.hint}>
+        <p class="so-switch__hint" id={hintId}>{local.hint}</p>
+      </Show>
+    </div>
   );
 }

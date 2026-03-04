@@ -1,4 +1,4 @@
-import { createEffect, Show, splitProps } from "solid-js";
+import { createEffect, createUniqueId, Show, splitProps } from "solid-js";
 import type { JSX } from "solid-js";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
@@ -12,6 +12,8 @@ export interface CheckboxProps extends CommonProps {
   size?: "sm" | "md";
   label?: string;
   value?: string;
+  error?: string;
+  hint?: string;
   children?: JSX.Element;
 }
 
@@ -25,12 +27,18 @@ export function Checkbox(props: CheckboxProps) {
     "size",
     "label",
     "value",
+    "error",
+    "hint",
     "children",
   ]);
 
   let inputRef: HTMLInputElement | undefined;
 
   const group = useCheckboxGroup();
+
+  const id = createUniqueId();
+  const errorId = `so-cb-error-${id}`;
+  const hintId = `so-cb-hint-${id}`;
 
   const isChecked = () => {
     if (group && local.value != null) {
@@ -47,6 +55,12 @@ export function Checkbox(props: CheckboxProps) {
     local.onChange?.(next);
   };
 
+  const describedBy = () => {
+    if (local.error) return errorId;
+    if (local.hint) return hintId;
+    return undefined;
+  };
+
   createEffect(() => {
     if (inputRef) {
       inputRef.indeterminate = local.indeterminate ?? false;
@@ -54,54 +68,64 @@ export function Checkbox(props: CheckboxProps) {
   });
 
   return (
-    <label
-      class={cls(
-        "so-checkbox",
-        `so-checkbox--${local.size ?? "md"}`,
-        local.disabled && "so-checkbox--disabled",
-        local.class,
-      )}
-    >
-      <input
-        ref={inputRef}
-        type="checkbox"
-        class="so-checkbox__input"
-        checked={isChecked()}
-        disabled={local.disabled}
-        onChange={handleChange}
-      />
-      <span class="so-checkbox__indicator" aria-hidden="true">
-        <Show when={local.indeterminate}>
-          <svg viewBox="0 0 12 12" fill="none" class="so-checkbox__icon">
-            <line
-              x1="2"
-              y1="6"
-              x2="10"
-              y2="6"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </Show>
-        <Show when={!local.indeterminate && isChecked()}>
-          <svg viewBox="0 0 12 12" fill="none" class="so-checkbox__icon">
-            <polyline
-              points="2,6 5,9 10,3"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-          </svg>
-        </Show>
-      </span>
-      <Show when={local.label || local.children}>
-        <span class="so-checkbox__label">
-          {local.children ?? local.label}
+    <div class={cls("so-checkbox-wrapper", local.error && "so-checkbox-wrapper--error")}>
+      <label
+        class={cls(
+          "so-checkbox",
+          `so-checkbox--${local.size ?? "md"}`,
+          local.disabled && "so-checkbox--disabled",
+          local.class,
+        )}
+      >
+        <input
+          ref={inputRef}
+          type="checkbox"
+          class="so-checkbox__input"
+          checked={isChecked()}
+          disabled={local.disabled}
+          onChange={handleChange}
+          aria-invalid={local.error ? true : undefined}
+          aria-describedby={describedBy()}
+        />
+        <span class="so-checkbox__indicator" aria-hidden="true">
+          <Show when={local.indeterminate}>
+            <svg viewBox="0 0 12 12" fill="none" class="so-checkbox__icon">
+              <line
+                x1="2"
+                y1="6"
+                x2="10"
+                y2="6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </Show>
+          <Show when={!local.indeterminate && isChecked()}>
+            <svg viewBox="0 0 12 12" fill="none" class="so-checkbox__icon">
+              <polyline
+                points="2,6 5,9 10,3"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+          </Show>
         </span>
+        <Show when={local.label || local.children}>
+          <span class="so-checkbox__label">
+            {local.children ?? local.label}
+          </span>
+        </Show>
+      </label>
+      <Show when={local.error}>
+        <p class="so-checkbox__error" id={errorId} role="alert">{local.error}</p>
       </Show>
-    </label>
+      <Show when={!local.error && local.hint}>
+        <p class="so-checkbox__hint" id={hintId}>{local.hint}</p>
+      </Show>
+    </div>
   );
 }

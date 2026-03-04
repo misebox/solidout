@@ -93,3 +93,22 @@
 .so-switch--md .so-switch__label {
   font-size: var(--so-font-size-md);
 }
+
+/* --- Error / Hint --- */
+
+.so-switch-wrapper--error .so-switch__track {
+  outline: 2px solid var(--so-color-danger-base);
+  outline-offset: 2px;
+}
+
+.so-switch__error {
+  margin: var(--so-space-1) 0 0;
+  font-size: var(--so-font-size-sm);
+  color: var(--so-color-danger-base);
+}
+
+.so-switch__hint {
+  margin: var(--so-space-1) 0 0;
+  font-size: var(--so-font-size-sm);
+  color: var(--so-text-muted);
+}

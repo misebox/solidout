@@ -83,3 +83,21 @@
 .so-checkbox--md .so-checkbox__label {
   font-size: var(--so-font-size-md);
 }
+
+/* --- Error / Hint --- */
+
+.so-checkbox-wrapper--error .so-checkbox__indicator {
+  border-color: var(--so-color-danger-base);
+}
+
+.so-checkbox__error {
+  margin: var(--so-space-1) 0 0;
+  font-size: var(--so-font-size-sm);
+  color: var(--so-color-danger-base);
+}
+
+.so-checkbox__hint {
+  margin: var(--so-space-1) 0 0;
+  font-size: var(--so-font-size-sm);
+  color: var(--so-text-muted);
+}

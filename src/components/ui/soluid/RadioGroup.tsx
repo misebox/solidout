@@ -10,6 +10,8 @@ export interface RadioGroupProps extends CommonProps {
   onChange?: (value: string) => void;
   name?: string;
   label?: string;
+  error?: string;
+  hint?: string;
   children: JSX.Element;
 }
 
@@ -20,10 +22,21 @@ export function RadioGroup(props: RadioGroupProps) {
     "onChange",
     "name",
     "label",
+    "error",
+    "hint",
     "children",
   ]);
 
   const generatedName = createUniqueId();
+  const id = createUniqueId();
+  const errorId = `so-rg-error-${id}`;
+  const hintId = `so-rg-hint-${id}`;
+
+  const describedBy = () => {
+    if (local.error) return errorId;
+    if (local.hint) return hintId;
+    return undefined;
+  };
 
   const context: RadioGroupContextValue = {
     get name() {
@@ -38,14 +51,22 @@ export function RadioGroup(props: RadioGroupProps) {
   return (
     <RadioGroupContext.Provider value={context}>
       <fieldset
-        class={cls("so-radio-group", local.class)}
+        class={cls("so-radio-group", local.error && "so-radio-group--error", local.class)}
         role="radiogroup"
+        aria-invalid={local.error ? true : undefined}
+        aria-describedby={describedBy()}
         {...others}
       >
         <Show when={local.label}>
           <legend class="so-radio-group__label">{local.label}</legend>
         </Show>
         <div class="so-radio-group__items">{local.children}</div>
+        <Show when={local.error}>
+          <p class="so-radio-group__error" id={errorId} role="alert">{local.error}</p>
+        </Show>
+        <Show when={!local.error && local.hint}>
+          <p class="so-radio-group__hint" id={hintId}>{local.hint}</p>
+        </Show>
       </fieldset>
     </RadioGroupContext.Provider>
   );
