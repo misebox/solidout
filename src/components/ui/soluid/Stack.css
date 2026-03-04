@@ -34,3 +34,19 @@
 .so-stack--align-stretch {
   align-items: stretch;
 }
+
+.so-stack--justify-start {
+  justify-content: flex-start;
+}
+.so-stack--justify-center {
+  justify-content: center;
+}
+.so-stack--justify-end {
+  justify-content: flex-end;
+}
+.so-stack--justify-between {
+  justify-content: space-between;
+}
+.so-stack--justify-around {
+  justify-content: space-around;
+}

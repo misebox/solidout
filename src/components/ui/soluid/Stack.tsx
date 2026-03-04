@@ -6,6 +6,7 @@ import { cls } from "./core/utils";
 export interface StackProps extends CommonProps {
   gap?: 1 | 2 | 3 | 4 | 5 | 6;
   align?: "start" | "center" | "end" | "stretch";
+  justify?: "start" | "center" | "end" | "between" | "around";
   children: JSX.Element;
 }
 
@@ -14,6 +15,7 @@ export function Stack(props: StackProps & JSX.HTMLAttributes<HTMLDivElement>) {
     "class",
     "gap",
     "align",
+    "justify",
     "children",
   ]);
 
@@ -23,6 +25,7 @@ export function Stack(props: StackProps & JSX.HTMLAttributes<HTMLDivElement>) {
         "so-stack",
         local.gap !== undefined && `so-stack--gap-${local.gap}`,
         local.align && `so-stack--align-${local.align}`,
+        local.justify && `so-stack--justify-${local.justify}`,
         local.class,
       )}
       {...others}

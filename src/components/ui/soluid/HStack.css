@@ -38,3 +38,19 @@
 .so-hstack--align-stretch {
   align-items: stretch;
 }
+
+.so-hstack--justify-start {
+  justify-content: flex-start;
+}
+.so-hstack--justify-center {
+  justify-content: center;
+}
+.so-hstack--justify-end {
+  justify-content: flex-end;
+}
+.so-hstack--justify-between {
+  justify-content: space-between;
+}
+.so-hstack--justify-around {
+  justify-content: space-around;
+}
