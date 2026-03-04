@@ -2,18 +2,18 @@
 
 SolidJS component toolkit. Copy components into your project and own the code directly.
 
-[Component Catalog](https://misebox.github.io/soluid/)
+[Website](https://misebox.github.io/soluid/)
 
 ## Usage
 
-Install is not required. Run directly with `npx` or `bunx`:
+Install is not required. Run directly with `bunx` or `npx`:
 
 ```sh
-npx soluid init                # create soluid.config.json interactively
-npx soluid install             # download and install components + CSS
-npx soluid add <component...>  # add components to config
-npx soluid remove <comp...>    # remove components from config
-npx soluid list                # list available components
+bunx soluid init                # create soluid.config.json interactively
+bunx soluid install             # download and install components + CSS
+bunx soluid add <component...>  # add components to config
+bunx soluid remove <comp...>    # remove components from config
+bunx soluid list                # list available components
 ```
 
 ## Config
