@@ -1,4 +1,4 @@
-import { createContext, Show, splitProps, useContext } from "solid-js";
+import { children as resolveChildren, createContext, createUniqueId, Show, splitProps, useContext } from "solid-js";
 import type { Accessor, JSX } from "solid-js";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
@@ -6,6 +6,7 @@ import { cls } from "./core/utils";
 interface TabsContextValue {
   value: Accessor<string>;
   onChange: (value: string) => void;
+  baseId: string;
 }
 
 const TabsContext = createContext<TabsContextValue>();
@@ -51,9 +52,12 @@ export function Tabs(props: TabsProps) {
     "children",
   ]);
 
+  const baseId = `so-tabs-${createUniqueId()}`;
+
   const context: TabsContextValue = {
     value: () => local.value,
     onChange: (v: string) => local.onChange(v),
+    baseId,
   };
 
   return (
@@ -72,10 +76,41 @@ export function Tabs(props: TabsProps) {
 export function TabList(props: TabListProps) {
   const [local, others] = splitProps(props, ["class", "children"]);
 
+  function handleKeyDown(e: KeyboardEvent) {
+    const target = e.currentTarget as HTMLElement;
+    const tabs = Array.from(
+      target.querySelectorAll<HTMLButtonElement>('[role="tab"]:not(:disabled)'),
+    );
+    if (tabs.length === 0) return;
+
+    const current = document.activeElement as HTMLElement;
+    const idx = tabs.indexOf(current as HTMLButtonElement);
+    if (idx === -1) return;
+
+    let next: number | undefined;
+    if (e.key === "ArrowRight") {
+      next = (idx + 1) % tabs.length;
+    } else if (e.key === "ArrowLeft") {
+      next = (idx - 1 + tabs.length) % tabs.length;
+    } else if (e.key === "Home") {
+      next = 0;
+    } else if (e.key === "End") {
+      next = tabs.length - 1;
+    }
+
+    if (next != null) {
+      e.preventDefault();
+      tabs[next].focus();
+      tabs[next].click();
+    }
+  }
+
   return (
     <div
       class={cls("so-tab-list", local.class)}
       role="tablist"
+      aria-orientation="horizontal"
+      onKeyDown={handleKeyDown}
       {...others}
     >
       {local.children}
@@ -102,7 +137,9 @@ export function Tab(props: TabProps) {
         local.class,
       )}
       role="tab"
+      id={`${ctx.baseId}-tab-${local.value}`}
       aria-selected={ctx.value() === local.value}
+      aria-controls={`${ctx.baseId}-panel-${local.value}`}
       disabled={local.disabled}
       onClick={() => {
         if (!local.disabled) {
@@ -126,6 +163,8 @@ export function TabPanel(props: TabPanelProps) {
       <div
         class={cls("so-tab-panel", local.class)}
         role="tabpanel"
+        id={`${ctx.baseId}-panel-${local.value}`}
+        aria-labelledby={`${ctx.baseId}-tab-${local.value}`}
         {...others}
       >
         {local.children}
