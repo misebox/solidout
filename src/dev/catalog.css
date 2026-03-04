@@ -215,7 +215,6 @@
   font-size: 28px;
   font-weight: 700;
   color: var(--so-text);
-  margin-bottom: var(--so-space-4);
 }
 
 .gs-page p {
@@ -225,11 +224,20 @@
   margin-bottom: var(--so-space-2);
 }
 
-.gs-page p code {
+.gs-page p code,
+.gs-page li code {
   font-size: var(--so-font-size-sm);
   background: var(--so-bg-subtle);
   padding: 1px 4px;
   border-radius: 3px;
+}
+
+.gs-list {
+  margin: 0 0 var(--so-space-2);
+  padding-left: var(--so-space-4);
+  font-size: var(--so-font-size-md);
+  color: var(--so-text);
+  line-height: 1.8;
 }
 
 .gs-code {
