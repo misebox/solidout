@@ -1,15 +1,24 @@
-import { createEffect, createSignal, on, Show, splitProps } from "solid-js";
+import { createContext, createEffect, createSignal, on, Show, splitProps, useContext } from "solid-js";
 import type { JSX } from "solid-js";
 import { Portal } from "solid-js/web";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
 import { createFocusTrap } from "./core/createFocusTrap";
 
+let drawerCounter = 0;
+
+const DrawerContext = createContext<string>();
+
 export interface DrawerProps extends CommonProps {
   open: boolean;
   onClose: () => void;
   side?: "left" | "right";
   size?: "sm" | "md" | "lg";
+  children: JSX.Element;
+}
+
+export interface DrawerHeaderProps {
+  class?: string;
   children: JSX.Element;
 }
 
@@ -23,6 +32,9 @@ export function Drawer(props: DrawerProps) {
     "size",
     "children",
   ]);
+
+  drawerCounter += 1;
+  const titleId = `so-drawer-title-${drawerCounter}`;
 
   const [mounted, setMounted] = createSignal(false);
   const [closing, setClosing] = createSignal(false);
@@ -67,32 +79,46 @@ export function Drawer(props: DrawerProps) {
   return (
     <Show when={mounted()}>
       <Portal>
-        <div
-          class={cls(
-            "so-drawer-backdrop",
-            closing() && "so-drawer-backdrop--closing",
-          )}
-          onClick={handleBackdropClick}
-          onAnimationEnd={handleAnimationEnd}
-        >
+        <DrawerContext.Provider value={titleId}>
           <div
-            ref={setContainerRef}
             class={cls(
-              "so-drawer",
-              `so-drawer--${local.side ?? "right"}`,
-              `so-drawer--${local.size ?? "md"}`,
-              closing() && "so-drawer--closing",
-              local.class,
+              "so-drawer-backdrop",
+              closing() && "so-drawer-backdrop--closing",
             )}
-            role="dialog"
-            aria-modal="true"
-            data-density={local.density}
-            {...others}
+            onClick={handleBackdropClick}
+            onAnimationEnd={handleAnimationEnd}
           >
-            {local.children}
+            <div
+              ref={setContainerRef}
+              class={cls(
+                "so-drawer",
+                `so-drawer--${local.side ?? "right"}`,
+                `so-drawer--${local.size ?? "md"}`,
+                closing() && "so-drawer--closing",
+                local.class,
+              )}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={titleId}
+              data-density={local.density}
+              {...others}
+            >
+              {local.children}
+            </div>
           </div>
-        </div>
+        </DrawerContext.Provider>
       </Portal>
     </Show>
+  );
+}
+
+export function DrawerHeader(props: DrawerHeaderProps) {
+  const [local, others] = splitProps(props, ["class", "children"]);
+  const titleId = useContext(DrawerContext);
+
+  return (
+    <div id={titleId} class={cls("so-drawer__header", local.class)} {...others}>
+      {local.children}
+    </div>
   );
 }

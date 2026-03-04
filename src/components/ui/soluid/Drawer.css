@@ -59,6 +59,16 @@
   max-width: 80vw;
 }
 
+/* --- Header --- */
+
+.so-drawer__header {
+  padding: var(--so-space-4);
+  font-size: var(--so-font-size-lg);
+  font-weight: 600;
+  color: var(--so-text);
+  border-bottom: 1px solid var(--so-border);
+}
+
 /* --- Animations --- */
 
 @keyframes so-drawer-backdrop-in {
