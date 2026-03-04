@@ -44,7 +44,7 @@ git tag "$TAG"
 git push origin HEAD --tags
 
 # Create GitHub release with tarball
-gh release create "$TAG" components.tar.gz --title "$TAG"
+gh release create "$TAG" components.tar.gz --title "$TAG" --notes ""
 
 # Clean up
 rm components.tar.gz
