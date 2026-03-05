@@ -19,8 +19,7 @@ export function Layout(props: ParentProps) {
         <A href="/" class="site-logo">soluid</A>
         <nav class="site-nav">
           <A href="/getting-started" class="site-nav-link" activeClass="active">Getting Started</A>
-          <A href="/catalog" class="site-nav-link" activeClass="active">Catalog</A>
-          <A href="/api" class="site-nav-link" activeClass="active">API</A>
+          <A href="/components" class="site-nav-link" activeClass="active">Components</A>
         </nav>
         <Spacer />
         <div class="site-controls">

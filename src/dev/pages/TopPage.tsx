@@ -51,8 +51,7 @@ export function TopPage() {
         </div>
         <div class="top-links">
           <A href="/getting-started" class="top-link">Getting Started</A>
-          <A href="/catalog" class="top-link">Browse Catalog</A>
-          <A href="/api" class="top-link">API Reference</A>
+          <A href="/components" class="top-link">Browse Components</A>
         </div>
       </section>
     </div>

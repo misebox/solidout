@@ -55,18 +55,117 @@
   flex: 1;
 }
 
-/* ===== Catalog Page ===== */
-.catalog {
+/* ===== Components Page ===== */
+.components-page {
+  display: flex;
+  min-height: calc(100vh - 56px);
+}
+
+.components-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  border-right: 1px solid var(--so-border);
+  background: var(--so-bg-subtle);
+  padding: var(--so-space-3);
+}
+
+.sidebar-search {
+  margin-bottom: var(--so-space-3);
+}
+
+.sidebar-search-input {
+  width: 100%;
+  padding: var(--so-space-2);
+  font-size: var(--so-font-size-sm);
+  border: 1px solid var(--so-border);
+  border-radius: var(--so-radius);
+  background: var(--so-bg);
+  color: var(--so-text);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.sidebar-search-input:focus {
+  border-color: var(--so-primary);
+  box-shadow: 0 0 0 2px var(--so-primary-subtle);
+}
+
+.sidebar-search-input::placeholder {
+  color: var(--so-text-muted);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--so-space-1);
+}
+
+.sidebar-category {
+  margin-bottom: var(--so-space-2);
+}
+
+.sidebar-category-label {
+  font-size: var(--so-font-size-xs);
+  font-weight: 600;
+  color: var(--so-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--so-space-1) var(--so-space-2);
+  margin-bottom: var(--so-space-1);
+}
+
+.sidebar-link {
+  display: block;
+  font-size: var(--so-font-size-sm);
+  color: var(--so-text-muted);
+  text-decoration: none;
+  padding: 2px var(--so-space-2) 2px var(--so-space-3);
+  border-radius: var(--so-radius);
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-link:hover {
+  color: var(--so-text);
+  background: var(--so-bg);
+}
+
+.sidebar-link--active {
+  color: var(--so-primary);
+  background: var(--so-primary-subtle);
+  font-weight: 500;
+}
+
+.components-content {
+  flex: 1;
   max-width: 960px;
-  margin: 0 auto;
   padding: var(--so-space-5);
 }
 
-.catalog-section {
+.components-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--so-space-1);
+  margin-bottom: var(--so-space-4);
+}
+
+.components-badge-link {
+  text-decoration: none;
+}
+
+.components-badge-link:hover .so-badge {
+  background: var(--so-primary-subtle);
+  color: var(--so-primary);
+}
+
+.components-category {
   margin-bottom: var(--so-space-6);
 }
 
-.catalog-section h2 {
+.components-category h2 {
   font-size: 20px;
   font-weight: 600;
   color: var(--so-text);
@@ -75,14 +174,31 @@
   border-bottom: 1px solid var(--so-border);
 }
 
-.catalog-section h3 {
-  font-size: var(--so-font-size-lg);
-  font-weight: 500;
-  color: var(--so-text);
-  margin-bottom: var(--so-space-2);
-  margin-top: var(--so-space-4);
+.component-card-anchor {
+  margin-bottom: var(--so-space-4);
+  scroll-margin-top: 16px;
 }
 
+.component-demo {
+  padding: var(--so-space-3) 0;
+}
+
+.component-api {
+  padding: var(--so-space-2) 0;
+}
+
+.api-sub-section {
+  margin-bottom: var(--so-space-3);
+}
+
+.api-sub-name {
+  font-size: var(--so-font-size-md);
+  font-weight: 600;
+  color: var(--so-text);
+  margin-bottom: var(--so-space-2);
+}
+
+/* Demo helper classes (kept for componentDemos) */
 .catalog-row {
   display: flex;
   gap: var(--so-space-3);
@@ -95,10 +211,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--so-space-3);
-  margin-bottom: var(--so-space-3);
-}
-
-.catalog-block {
   margin-bottom: var(--so-space-3);
 }
 
@@ -252,101 +364,7 @@
   line-height: 1.5;
 }
 
-/* ===== Catalog API Link ===== */
-.catalog-api-link {
-  color: var(--so-text);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.catalog-api-link:hover {
-  color: var(--so-primary);
-  text-decoration: underline;
-}
-
-/* ===== API Page ===== */
-.api-page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: var(--so-space-5);
-}
-
-.api-header {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--so-space-3);
-  margin-bottom: var(--so-space-3);
-}
-
-.api-index {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--so-space-1);
-}
-
-.api-index-badge {
-  text-decoration: none;
-}
-
-.api-index-badge:hover .so-badge {
-  background: var(--so-primary-subtle);
-  color: var(--so-primary);
-}
-
-.api-search {
-  position: relative;
-  flex-shrink: 0;
-  width: 220px;
-}
-
-.api-search-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--so-text-muted);
-  pointer-events: none;
-}
-
-.api-search-input {
-  width: 100%;
-  padding: var(--so-space-2) var(--so-space-2) var(--so-space-2) 34px;
-  font-size: var(--so-font-size-sm);
-  border: 1px solid var(--so-border);
-  border-radius: var(--so-radius);
-  background: var(--so-bg);
-  color: var(--so-text);
-  outline: none;
-  box-sizing: border-box;
-}
-
-.api-search-input:focus {
-  border-color: var(--so-primary);
-  box-shadow: 0 0 0 2px var(--so-primary-subtle);
-}
-
-.api-search-input::placeholder {
-  color: var(--so-text-muted);
-}
-
-.api-count {
-  font-size: var(--so-font-size-sm);
-  color: var(--so-text-muted);
-  margin-bottom: var(--so-space-4);
-}
-
-.api-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--so-space-4);
-}
-
-.api-card .api-component-name {
-  font-size: var(--so-font-size-lg);
-  font-weight: 600;
-  color: var(--so-text);
-}
+/* ===== API Table (used in component cards) ===== */
 
 .api-description {
   font-size: var(--so-font-size-sm);
