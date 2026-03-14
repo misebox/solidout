@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+echo "[pre-push] build:cli"
+bun run build:cli
+
+echo "[pre-push] check-build-freshness"
+sh bin/check-build-freshness.sh
+
+echo "[pre-push] check-version-drift"
+bash scripts/check-version-drift.sh && echo "No unreleased changes." || echo "WARNING: Unreleased changes detected (see above)."
