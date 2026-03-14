@@ -1,9 +1,9 @@
 import { createUniqueId, Show, splitProps } from "solid-js";
 import type { JSX } from "solid-js";
-import type { CommonProps } from "./core/types";
-import { cls } from "./core/utils";
 import { CheckboxGroupContext } from "./CheckboxGroupContext";
 import type { CheckboxGroupContextValue } from "./CheckboxGroupContext";
+import type { CommonProps } from "./core/types";
+import { cls } from "./core/utils";
 
 export interface CheckboxGroupProps extends CommonProps {
   value?: string[];

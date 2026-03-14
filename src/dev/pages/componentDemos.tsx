@@ -1,66 +1,86 @@
 import { createMemo, createSignal, type JSX } from "solid-js";
 
 import { Accordion, AccordionItem } from "../../components/ui/soluid/Accordion";
+import { Alert } from "../../components/ui/soluid/Alert";
 import { Avatar } from "../../components/ui/soluid/Avatar";
+import { Badge } from "../../components/ui/soluid/Badge";
+import { Breadcrumb, BreadcrumbItem } from "../../components/ui/soluid/Breadcrumb";
+import { Button } from "../../components/ui/soluid/Button";
 import { Card, CardBody, CardFooter, CardHeader } from "../../components/ui/soluid/Card";
+import { Checkbox } from "../../components/ui/soluid/Checkbox";
 import { CheckboxGroup } from "../../components/ui/soluid/CheckboxGroup";
 import { DescriptionList } from "../../components/ui/soluid/DescriptionList";
+import { Dialog, DialogBody, DialogFooter, DialogHeader } from "../../components/ui/soluid/Dialog";
+import { Divider } from "../../components/ui/soluid/Divider";
 import { Drawer, DrawerHeader } from "../../components/ui/soluid/Drawer";
 import { EmptyState } from "../../components/ui/soluid/EmptyState";
+import { HStack } from "../../components/ui/soluid/HStack";
+import { IconButton } from "../../components/ui/soluid/IconButton";
 import { Menu, MenuItem, MenuSeparator } from "../../components/ui/soluid/Menu";
-import { Popover } from "../../components/ui/soluid/Popover";
-import { Skeleton } from "../../components/ui/soluid/Skeleton";
-import { Table } from "../../components/ui/soluid/Table";
-import { ToastContainer, useToast } from "../../components/ui/soluid/Toast";
-import { Tooltip } from "../../components/ui/soluid/Tooltip";
-import { Alert } from "../../components/ui/soluid/Alert";
-import { Dialog, DialogBody, DialogFooter, DialogHeader } from "../../components/ui/soluid/Dialog";
-import { Progress } from "../../components/ui/soluid/Progress";
-import { Spinner } from "../../components/ui/soluid/Spinner";
-import { Checkbox } from "../../components/ui/soluid/Checkbox";
 import { NumberInput } from "../../components/ui/soluid/NumberInput";
+import { Pagination } from "../../components/ui/soluid/Pagination";
+import { Popover } from "../../components/ui/soluid/Popover";
+import { Progress } from "../../components/ui/soluid/Progress";
 import { RadioButton } from "../../components/ui/soluid/RadioButton";
 import { RadioGroup } from "../../components/ui/soluid/RadioGroup";
 import { Select } from "../../components/ui/soluid/Select";
+import { Skeleton } from "../../components/ui/soluid/Skeleton";
+import { Spacer } from "../../components/ui/soluid/Spacer";
+import { Spinner } from "../../components/ui/soluid/Spinner";
+import { Stack } from "../../components/ui/soluid/Stack";
 import { Switch } from "../../components/ui/soluid/Switch";
+import { Table } from "../../components/ui/soluid/Table";
+import { Tab, TabList, TabPanel, Tabs } from "../../components/ui/soluid/Tabs";
+import { Tag } from "../../components/ui/soluid/Tag";
 import { TextArea } from "../../components/ui/soluid/TextArea";
 import { TextField } from "../../components/ui/soluid/TextField";
-import { Badge } from "../../components/ui/soluid/Badge";
-import { Button } from "../../components/ui/soluid/Button";
-import { IconButton } from "../../components/ui/soluid/IconButton";
-import { Tag } from "../../components/ui/soluid/Tag";
-import { Divider } from "../../components/ui/soluid/Divider";
-import { HStack } from "../../components/ui/soluid/HStack";
-import { Spacer } from "../../components/ui/soluid/Spacer";
-import { Stack } from "../../components/ui/soluid/Stack";
-import { Breadcrumb, BreadcrumbItem } from "../../components/ui/soluid/Breadcrumb";
-import { Pagination } from "../../components/ui/soluid/Pagination";
-import { Tab, TabList, TabPanel, Tabs } from "../../components/ui/soluid/Tabs";
+import { ToastContainer, useToast } from "../../components/ui/soluid/Toast";
+import { Tooltip } from "../../components/ui/soluid/Tooltip";
 
 /* ---------- Categories ---------- */
 
 export const CATEGORIES = [
-  { slug: "layout",     labelKey: "cat.layout",      components: ["Stack", "Divider", "Spacer"] },
-  { slug: "general",    labelKey: "cat.general",      components: ["Button", "IconButton", "Badge", "Tag", "Avatar", "Tooltip"] },
-  { slug: "form",       labelKey: "cat.form",         components: ["TextField", "TextArea", "NumberInput", "Select", "Checkbox", "CheckboxGroup", "RadioGroup", "Switch"] },
-  { slug: "data",       labelKey: "cat.data",         components: ["Table", "Card", "DescriptionList", "Skeleton", "EmptyState", "Accordion"] },
-  { slug: "feedback",   labelKey: "cat.feedback",     components: ["Alert", "Progress", "Spinner", "Dialog", "Drawer", "Toast"] },
-  { slug: "navigation", labelKey: "cat.navigation",   components: ["Tabs", "Breadcrumb", "Pagination", "Popover", "Menu"] },
+  { slug: "layout", labelKey: "cat.layout", components: ["Stack", "Divider", "Spacer"] },
+  {
+    slug: "general",
+    labelKey: "cat.general",
+    components: ["Button", "IconButton", "Badge", "Tag", "Avatar", "Tooltip"],
+  },
+  {
+    slug: "form",
+    labelKey: "cat.form",
+    components: ["TextField", "TextArea", "NumberInput", "Select", "Checkbox", "CheckboxGroup", "RadioGroup", "Switch"],
+  },
+  {
+    slug: "data",
+    labelKey: "cat.data",
+    components: ["Table", "Card", "DescriptionList", "Skeleton", "EmptyState", "Accordion"],
+  },
+  {
+    slug: "feedback",
+    labelKey: "cat.feedback",
+    components: ["Alert", "Progress", "Spinner", "Dialog", "Drawer", "Toast"],
+  },
+  {
+    slug: "navigation",
+    labelKey: "cat.navigation",
+    components: ["Tabs", "Breadcrumb", "Pagination", "Popover", "Menu"],
+  },
 ];
 
 /* ---------- Sub-component groups for API tab ---------- */
 
 export const SUB_COMPONENTS: Record<string, string[]> = {
-  Stack:         ["Stack", "HStack"],
-  Card:          ["Card", "CardHeader", "CardBody", "CardFooter"],
-  Dialog:        ["Dialog", "DialogHeader", "DialogBody", "DialogFooter"],
-  Drawer:        ["Drawer", "DrawerHeader"],
-  Tabs:          ["Tabs", "TabList", "Tab", "TabPanel"],
-  Breadcrumb:    ["Breadcrumb", "BreadcrumbItem"],
-  Accordion:     ["Accordion", "AccordionItem"],
-  RadioGroup:    ["RadioGroup", "RadioButton"],
-  Menu:          ["Menu", "MenuItem", "MenuSeparator"],
-  Toast:         ["ToastContainer"],
+  Stack: ["Stack", "HStack"],
+  Card: ["Card", "CardHeader", "CardBody", "CardFooter"],
+  Dialog: ["Dialog", "DialogHeader", "DialogBody", "DialogFooter"],
+  Drawer: ["Drawer", "DrawerHeader"],
+  Tabs: ["Tabs", "TabList", "Tab", "TabPanel"],
+  Breadcrumb: ["Breadcrumb", "BreadcrumbItem"],
+  Accordion: ["Accordion", "AccordionItem"],
+  RadioGroup: ["RadioGroup", "RadioButton"],
+  Menu: ["Menu", "MenuItem", "MenuSeparator"],
+  Toast: ["ToastContainer"],
 };
 
 /* ---------- Code examples ---------- */
@@ -639,7 +659,10 @@ function TableDemo(): JSX.Element {
       rowKey={(row) => row.id}
       sortKey={sortKey()}
       sortDirection={sortDir()}
-      onSort={(key, dir) => { setSortKey(key); setSortDir(dir); }}
+      onSort={(key, dir) => {
+        setSortKey(key);
+        setSortDir(dir);
+      }}
     />
   );
 }
@@ -798,10 +821,30 @@ function ToastDemo(): JSX.Element {
   return (
     <>
       <div class="catalog-row">
-        <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Info notification", variant: "info" })}>Info</Button>
-        <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Success!", variant: "success" })}>Success</Button>
-        <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Warning issued", variant: "warning" })}>Warning</Button>
-        <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Something failed", variant: "danger" })}>Danger</Button>
+        <Button
+          variant="neutral"
+          size="sm"
+          onClick={() => toast.add({ message: "Info notification", variant: "info" })}
+        >
+          Info
+        </Button>
+        <Button variant="neutral" size="sm" onClick={() => toast.add({ message: "Success!", variant: "success" })}>
+          Success
+        </Button>
+        <Button
+          variant="neutral"
+          size="sm"
+          onClick={() => toast.add({ message: "Warning issued", variant: "warning" })}
+        >
+          Warning
+        </Button>
+        <Button
+          variant="neutral"
+          size="sm"
+          onClick={() => toast.add({ message: "Something failed", variant: "danger" })}
+        >
+          Danger
+        </Button>
       </div>
       <ToastContainer />
     </>
@@ -817,9 +860,15 @@ function TabsDemo(): JSX.Element {
         <Tab value="tab2">Details</Tab>
         <Tab value="tab3">Settings</Tab>
       </TabList>
-      <TabPanel value="tab1"><p>Overview content goes here.</p></TabPanel>
-      <TabPanel value="tab2"><p>Details content goes here.</p></TabPanel>
-      <TabPanel value="tab3"><p>Settings content goes here.</p></TabPanel>
+      <TabPanel value="tab1">
+        <p>Overview content goes here.</p>
+      </TabPanel>
+      <TabPanel value="tab2">
+        <p>Details content goes here.</p>
+      </TabPanel>
+      <TabPanel value="tab3">
+        <p>Settings content goes here.</p>
+      </TabPanel>
     </Tabs>
   );
 }
@@ -878,38 +927,38 @@ function MenuDemo(): JSX.Element {
 /* ---------- Demo registry ---------- */
 
 export const DEMOS: Record<string, () => JSX.Element> = {
-  Stack:         StackDemo,
-  Divider:       DividerDemo,
-  Spacer:        SpacerDemo,
-  Button:        ButtonDemo,
-  IconButton:    IconButtonDemo,
-  Badge:         BadgeDemo,
-  Tag:           TagDemo,
-  Avatar:        AvatarDemo,
-  Tooltip:       TooltipDemo,
-  TextField:     TextFieldDemo,
-  TextArea:      TextAreaDemo,
-  NumberInput:   NumberInputDemo,
-  Select:        SelectDemo,
-  Checkbox:      CheckboxDemo,
+  Stack: StackDemo,
+  Divider: DividerDemo,
+  Spacer: SpacerDemo,
+  Button: ButtonDemo,
+  IconButton: IconButtonDemo,
+  Badge: BadgeDemo,
+  Tag: TagDemo,
+  Avatar: AvatarDemo,
+  Tooltip: TooltipDemo,
+  TextField: TextFieldDemo,
+  TextArea: TextAreaDemo,
+  NumberInput: NumberInputDemo,
+  Select: SelectDemo,
+  Checkbox: CheckboxDemo,
   CheckboxGroup: CheckboxGroupDemo,
-  RadioGroup:    RadioGroupDemo,
-  Switch:        SwitchDemo,
-  Table:         TableDemo,
-  Card:          CardDemo,
+  RadioGroup: RadioGroupDemo,
+  Switch: SwitchDemo,
+  Table: TableDemo,
+  Card: CardDemo,
   DescriptionList: DescriptionListDemo,
-  Skeleton:      SkeletonDemo,
-  EmptyState:    EmptyStateDemo,
-  Accordion:     AccordionDemo,
-  Alert:         AlertDemo,
-  Progress:      ProgressDemo,
-  Spinner:       SpinnerDemo,
-  Dialog:        DialogDemo,
-  Drawer:        DrawerDemo,
-  Toast:         ToastDemo,
-  Tabs:          TabsDemo,
-  Breadcrumb:    BreadcrumbDemo,
-  Pagination:    PaginationDemo,
-  Popover:       PopoverDemo,
-  Menu:          MenuDemo,
+  Skeleton: SkeletonDemo,
+  EmptyState: EmptyStateDemo,
+  Accordion: AccordionDemo,
+  Alert: AlertDemo,
+  Progress: ProgressDemo,
+  Spinner: SpinnerDemo,
+  Dialog: DialogDemo,
+  Drawer: DrawerDemo,
+  Toast: ToastDemo,
+  Tabs: TabsDemo,
+  Breadcrumb: BreadcrumbDemo,
+  Pagination: PaginationDemo,
+  Popover: PopoverDemo,
+  Menu: MenuDemo,
 };

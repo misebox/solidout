@@ -1,6 +1,6 @@
-import * as ts from "typescript";
-import * as path from "path";
 import * as fs from "fs";
+import * as path from "path";
+import * as ts from "typescript";
 import { fileURLToPath } from "url";
 import { registry } from "../cli/registry";
 
