@@ -1,16 +1,44 @@
 import { createMemo, createSignal, For, onCleanup, onMount, Show } from "solid-js";
-import apiData from "../api-data.json";
 import { Badge } from "../../components/ui/soluid/Badge";
 import { Card, CardBody, CardHeader } from "../../components/ui/soluid/Card";
 import { Tab, TabList, TabPanel, Tabs } from "../../components/ui/soluid/Tabs";
-import { CATEGORIES, CODE_EXAMPLES, DEMOS, SUB_COMPONENTS } from "./componentDemos";
+import apiData from "../api-data.json";
 import { lang } from "../lang";
 import { t } from "../locales";
+import { CATEGORIES, CODE_EXAMPLES, DEMOS, SUB_COMPONENTS } from "./componentDemos";
+
+/* ---------- CopyableCode ---------- */
+
+function CopyableCode(props: { code: string }) {
+  const [copied, setCopied] = createSignal(false);
+
+  function copy() {
+    navigator.clipboard.writeText(props.code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
+
+  return (
+    <div class="code-wrapper">
+      <pre class="code-block"><code>{props.code}</code></pre>
+      <button class="copy-btn" onClick={copy}>{copied() ? "Copied" : "Copy"}</button>
+    </div>
+  );
+}
 
 /* ---------- Types ---------- */
 
-interface PropInfo { name: string; type: string; optional: boolean }
-interface ComponentApi { name: string; description: string; dependencies: string[]; props: PropInfo[] }
+interface PropInfo {
+  name: string;
+  type: string;
+  optional: boolean;
+}
+interface ComponentApi {
+  name: string;
+  description: string;
+  dependencies: string[];
+  props: PropInfo[];
+}
 
 const data = apiData as ComponentApi[];
 
@@ -98,7 +126,10 @@ export function ComponentsPage() {
                     <a
                       class={`sidebar-link${activeId() === name ? " sidebar-link--active" : ""}`}
                       href={`#component-${name}`}
-                      onClick={(e) => { e.preventDefault(); scrollTo(name); }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollTo(name);
+                      }}
                     >
                       {name}
                     </a>
@@ -119,7 +150,10 @@ export function ComponentsPage() {
               <a
                 class="components-badge-link"
                 href={`#component-${name}`}
-                onClick={(e) => { e.preventDefault(); scrollTo(name); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(name);
+                }}
               >
                 <Badge variant="neutral" size="sm">{name}</Badge>
               </a>
@@ -133,9 +167,7 @@ export function ComponentsPage() {
             <section class="components-category">
               <h2>{t(lang(), cat.labelKey)}</h2>
               <For each={cat.components}>
-                {(name) => (
-                  <ComponentCard name={name} />
-                )}
+                {(name) => <ComponentCard name={name} />}
               </For>
             </section>
           )}
@@ -182,7 +214,7 @@ function ComponentCard(props: { name: string }) {
             <TabPanel value="code">
               <div class="component-code">
                 <Show when={codeExample()} fallback={<p>{t(lang(), "ui.noCode")}</p>}>
-                  {(code) => <pre class="code-block"><code>{code()}</code></pre>}
+                  {(code) => <CopyableCode code={code()} />}
                 </Show>
               </div>
             </TabPanel>
@@ -213,8 +245,12 @@ function ComponentCard(props: { name: string }) {
                               <For each={comp.props}>
                                 {(prop) => (
                                   <tr>
-                                    <td><code>{prop.name}</code></td>
-                                    <td><code>{prop.type}</code></td>
+                                    <td>
+                                      <code>{prop.name}</code>
+                                    </td>
+                                    <td>
+                                      <code>{prop.type}</code>
+                                    </td>
                                     <td>{prop.optional ? "" : "Yes"}</td>
                                     <td class="api-table-desc">{(() => t(lang(), `${comp.name}.${prop.name}`))()}</td>
                                   </tr>

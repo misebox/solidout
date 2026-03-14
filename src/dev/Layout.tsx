@@ -1,7 +1,7 @@
-import { createEffect, createSignal, type ParentProps } from "solid-js";
 import { A } from "@solidjs/router";
-import type { Density } from "../components/ui/soluid/core/types";
+import { createEffect, createSignal, type ParentProps } from "solid-js";
 import { Button } from "../components/ui/soluid/Button";
+import type { Density } from "../components/ui/soluid/core/types";
 import { Spacer } from "../components/ui/soluid/Spacer";
 import { type Lang, lang, setLang } from "./lang";
 import { t } from "./locales";
