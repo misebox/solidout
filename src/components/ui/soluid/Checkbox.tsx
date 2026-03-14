@@ -1,8 +1,8 @@
 import { createEffect, createUniqueId, Show, splitProps } from "solid-js";
 import type { JSX } from "solid-js";
+import { useCheckboxGroup } from "./CheckboxGroupContext";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
-import { useCheckboxGroup } from "./CheckboxGroupContext";
 
 export interface CheckboxProps extends CommonProps {
   checked?: boolean;

@@ -396,7 +396,8 @@ export const ja: Record<string, string> = {
   // ===== Top Page =====
   "top.heroSub": "SolidJS向けのコピー&ペースト型UIコンポーネントツールキット",
   "top.featureCopyOwn": "コピー&所有",
-  "top.featureCopyOwnDesc": "コンポーネントはプロジェクトにコピーされます。ランタイム依存なし — コードはあなたのものです。",
+  "top.featureCopyOwnDesc":
+    "コンポーネントはプロジェクトにコピーされます。ランタイム依存なし — コードはあなたのものです。",
   "top.featureAccessible": "アクセシブル",
   "top.featureAccessibleDesc": "ARIA属性、フォーカストラップ、キーボード操作を標準搭載。",
   "top.featureThemeable": "テーマ対応",

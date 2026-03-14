@@ -6,7 +6,7 @@ import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import { createGunzip } from "node:zlib";
 import { Parser, type ReadEntry } from "tar";
-import { CONFIG_FILENAME, PROJECT_NAME, RELEASE_URL, loadConfig } from "../config.js";
+import { CONFIG_FILENAME, loadConfig, PROJECT_NAME, RELEASE_URL } from "../config.js";
 import { collectNpmDeps, registry, resolveDependencies } from "../registry.js";
 import { rewriteImports } from "../rewrite-imports.js";
 

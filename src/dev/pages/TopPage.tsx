@@ -54,7 +54,9 @@ export function TopPage() {
         <div class="top-links">
           <A href="/getting-started" class="top-link">{t(lang(), "nav.gettingStarted")}</A>
           <A href="/components" class="top-link">{t(lang(), "nav.browseComponents")}</A>
-          <a href="https://github.com/misebox/soluid" target="_blank" rel="noopener noreferrer" class="top-link">GitHub</a>
+          <a href="https://github.com/misebox/soluid" target="_blank" rel="noopener noreferrer" class="top-link">
+            GitHub
+          </a>
         </div>
       </section>
     </div>

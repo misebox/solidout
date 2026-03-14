@@ -1,9 +1,9 @@
 import { createContext, createEffect, createSignal, on, Show, splitProps, useContext } from "solid-js";
 import type { JSX } from "solid-js";
 import { Portal } from "solid-js/web";
+import { createFocusTrap } from "./core/createFocusTrap";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
-import { createFocusTrap } from "./core/createFocusTrap";
 
 let drawerCounter = 0;
 

@@ -1,8 +1,8 @@
 import { createMemo, createUniqueId, Show, splitProps } from "solid-js";
 import type { JSX } from "solid-js";
+import { createToggle } from "./core/createToggle";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
-import { createToggle } from "./core/createToggle";
 
 export interface SwitchProps extends CommonProps {
   checked?: boolean;
