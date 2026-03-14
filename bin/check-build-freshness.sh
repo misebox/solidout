@@ -2,6 +2,7 @@
 
 echo "Running build:catalog..."
 bun run build:catalog > /dev/null 2>&1
+bun run fmt > /dev/null 2>&1
 
 if ! git diff --quiet docs/ src/dev/soluid-all.css src/dev/api-data.json; then
   echo ""
