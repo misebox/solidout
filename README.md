@@ -1,12 +1,24 @@
 # soluid
 
-SolidJS component toolkit. Copy components into your project and own the code directly.
+[![npm version](https://img.shields.io/npm/v/soluid)](https://www.npmjs.com/package/soluid)
+[![license](https://img.shields.io/npm/l/soluid)](./LICENSE)
 
-[Website](https://misebox.github.io/soluid/)
+CLI that installs SolidJS UI components directly into your project. Own the code, no runtime dependency.
+
+[Website & Demo](https://misebox.github.io/soluid/)
+
+## Features
+
+- **34 components** — layout, form, data display, feedback, navigation
+- **CLI-driven install** — `bunx soluid install`, no manual copy-paste
+- **Own the code** — components live in your repo, fully customizable
+- **No runtime dependency** — zero JS added to your bundle
+- **Dark mode & density** — CSS variable-based theming out of the box
+- **TypeScript** — fully typed props for every component
 
 ## Usage
 
-Install is not required. Run directly with `bunx` or `npx`:
+No global install required. Run directly:
 
 ```sh
 bunx soluid init                # create soluid.config.json interactively
@@ -49,7 +61,7 @@ document.documentElement.setAttribute("data-density", "dense");
 ## Components (34)
 
 | Category | Components |
-|---|---|
+| --- | --- |
 | Layout | Stack, HStack, Divider, Spacer |
 | General | Button, IconButton, Badge, Tag, Tooltip, Avatar |
 | Form | FormField, TextField, TextArea, NumberInput, Select, Checkbox, CheckboxGroup, RadioGroup, Switch |
