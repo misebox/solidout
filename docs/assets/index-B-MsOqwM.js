@@ -2844,120 +2844,20 @@ function ys(t) {
         s;
     })();
 }
-var vs = v(
-    "<div class=top-page><section class=top-hero><h1>soluid</h1><p class=top-hero-sub></p><pre class=top-install><code>bunx soluid init</code></pre></section><section class=top-features><div class=top-feature-grid><div class=top-feature-card><h3></h3><p></p></div><div class=top-feature-card><h3></h3><p></p></div><div class=top-feature-card><h3></h3><p></p></div></div></section><section class=top-categories><h2></h2><div class=top-feature-grid></div><div class=top-links><a href=https://github.com/misebox/soluid target=_blank rel=\"noopener noreferrer\"class=top-link>GitHub",
-  ),
-  Ps = v("<div class=top-category-card><h3></h3><p>");
-const Ss = [
-  { labelKey: "cat.layout", components: "Stack, HStack, Divider, Spacer" },
-  { labelKey: "cat.general", components: "Button, IconButton, Badge, Tag, Tooltip, Avatar" },
-  { labelKey: "cat.form", components: "TextField, TextArea, NumberInput, Select, Checkbox, RadioGroup, Switch" },
-  { labelKey: "cat.data", components: "Table, Card, DescriptionList, Skeleton, EmptyState, Accordion" },
-  { labelKey: "cat.feedback", components: "Dialog, Drawer, Alert, Toast, Progress, Spinner" },
-  { labelKey: "cat.navigation", components: "Tabs, Breadcrumb, Pagination, Menu" },
-];
-function ws() {
+var vs = v("<span>");
+function J(t) {
+  const [e, n] = x(t, ["class", "variant", "fill", "size", "children"]);
   return (() => {
-    var t = vs(),
-      e = t.firstChild,
-      n = e.firstChild,
-      r = n.nextSibling,
-      o = e.nextSibling,
-      s = o.firstChild,
-      i = s.firstChild,
-      a = i.firstChild,
-      l = a.nextSibling,
-      c = i.nextSibling,
-      p = c.firstChild,
-      u = p.nextSibling,
-      h = c.nextSibling,
-      f = h.firstChild,
-      g = f.nextSibling,
-      b = o.nextSibling,
-      y = b.firstChild,
-      P = y.nextSibling,
-      S = P.nextSibling,
-      $ = S.firstChild;
-    return m(r, () => B(E(), "top.heroSub")),
-      m(a, () => B(E(), "top.featureCopyOwn")),
-      m(l, () => B(E(), "top.featureCopyOwnDesc")),
-      m(p, () => B(E(), "top.featureAccessible")),
-      m(u, () => B(E(), "top.featureAccessibleDesc")),
-      m(f, () => B(E(), "top.featureThemeable")),
-      m(g, () => B(E(), "top.featureThemeableDesc")),
-      m(y, () => B(E(), "top.componentsHeading")),
-      m(P, () =>
-        Ss.map(_ =>
-          (() => {
-            var R = Ps(), H = R.firstChild, le = H.nextSibling;
-            return m(H, () => B(E(), _.labelKey)), m(le, () => _.components), R;
-          })()
-        )),
-      m(
-        S,
-        d(Je, {
-          href: "/getting-started",
-          class: "top-link",
-          get children() {
-            return B(E(), "nav.gettingStarted");
-          },
-        }),
-        $,
-      ),
-      m(
-        S,
-        d(Je, {
-          href: "/components",
-          class: "top-link",
-          get children() {
-            return B(E(), "nav.browseComponents");
-          },
-        }),
-        $,
-      ),
-      t;
-  })();
-}
-var Cs = v("<div>");
-function Ce(t) {
-  const [e, n] = x(t, ["class", "gap", "align", "justify", "children"]);
-  return (() => {
-    var r = Cs();
+    var r = vs();
     return T(
       r,
       A({
         get class() {
           return C(
-            "so-stack",
-            e.gap !== void 0 && `so-stack--gap-${e.gap}`,
-            e.align && `so-stack--align-${e.align}`,
-            e.justify && `so-stack--justify-${e.justify}`,
-            e.class,
-          );
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(r, () => e.children),
-      r;
-  })();
-}
-var $s = v("<div>");
-function pe(t) {
-  const [e, n] = x(t, ["class", "gap", "align", "justify", "wrap", "children"]);
-  return (() => {
-    var r = $s();
-    return T(
-      r,
-      A({
-        get class() {
-          return C(
-            "so-hstack",
-            e.gap !== void 0 && `so-hstack--gap-${e.gap}`,
-            e.align && `so-hstack--align-${e.align}`,
-            e.justify && `so-hstack--justify-${e.justify}`,
-            e.wrap && "so-hstack--wrap",
+            "so-badge",
+            `so-badge--${e.variant ?? "neutral"}`,
+            `so-badge--${e.size ?? "md"}`,
+            e.fill === "solid" && "so-badge--solid",
             e.class,
           );
         },
@@ -3027,7 +2927,7 @@ function wt(t) {
       r;
   })();
 }
-function xs(t) {
+function Ps(t) {
   const [e, n] = x(t, ["class", "children"]);
   return (() => {
     var r = Dt();
@@ -3045,417 +2945,24 @@ function xs(t) {
       r;
   })();
 }
+var Ss = v("<div>"),
+  ws = v("<div role=tablist aria-orientation=horizontal>"),
+  Cs = v("<button type=button role=tab>"),
+  $s = v("<div role=tabpanel>");
 const vr = Se();
-function _s() {
-  return me(vr);
-}
-var ks = v("<legend class=so-radio-group__label>"),
-  Ds = v("<p class=so-radio-group__error role=alert>"),
-  As = v("<p class=so-radio-group__hint>"),
-  Ts = v("<fieldset role=radiogroup><div class=so-radio-group__items>");
-function Pr(t) {
-  const [e, n] = x(t, ["class", "value", "onChange", "name", "label", "error", "hint", "children"]),
-    r = ue(),
-    o = ue(),
-    s = `so-rg-error-${o}`,
-    i = `so-rg-hint-${o}`,
-    a = () => {
-      if (e.error) return s;
-      if (e.hint) return i;
-    },
-    l = {
-      get name() {
-        return e.name ?? `so-radio-${r}`;
-      },
-      value: () => e.value,
-      onChange(c) {
-        var p;
-        (p = e.onChange) == null || p.call(e, c);
-      },
-    };
-  return d(vr.Provider, {
-    value: l,
-    get children() {
-      var c = Ts(), p = c.firstChild;
-      return T(
-        c,
-        A({
-          get class() {
-            return C("so-radio-group", e.error && "so-radio-group--error", e.class);
-          },
-          get "aria-invalid"() {
-            return e.error ? !0 : void 0;
-          },
-          get "aria-describedby"() {
-            return a();
-          },
-        }, n),
-        !1,
-        !0,
-      ),
-        m(
-          c,
-          d(k, {
-            get when() {
-              return e.label;
-            },
-            get children() {
-              var u = ks();
-              return m(u, () => e.label), u;
-            },
-          }),
-          p,
-        ),
-        m(p, () => e.children),
-        m(
-          c,
-          d(k, {
-            get when() {
-              return e.error;
-            },
-            get children() {
-              var u = Ds();
-              return w(u, "id", s), m(u, () => e.error), u;
-            },
-          }),
-          null,
-        ),
-        m(
-          c,
-          d(k, {
-            get when() {
-              return U(() => !e.error)() && e.hint;
-            },
-            get children() {
-              var u = As();
-              return w(u, "id", i), m(u, () => e.hint), u;
-            },
-          }),
-          null,
-        ),
-        c;
-    },
-  });
-}
-var Is = v("<span class=so-radio-button__label>"),
-  Es = v(
-    "<label><input type=radio class=so-radio-button__input><span class=so-radio-button__indicator aria-hidden=true><span class=so-radio-button__dot>",
-  );
-function Ue(t) {
-  const [e, n] = x(t, ["class", "value", "label", "disabled", "children"]),
-    r = _s(),
-    o = () => (r == null ? void 0 : r.value()) === e.value,
-    s = () => {
-      r == null || r.onChange(e.value);
-    };
-  return (() => {
-    var i = Es(), a = i.firstChild;
-    return a.nextSibling,
-      a.addEventListener("change", s),
-      m(
-        i,
-        d(k, {
-          get when() {
-            return e.label || e.children;
-          },
-          get children() {
-            var l = Is();
-            return m(l, () => e.children ?? e.label), l;
-          },
-        }),
-        null,
-      ),
-      D(l => {
-        var c = C("so-radio-button", e.disabled && "so-radio-button--disabled", e.class),
-          p = r == null ? void 0 : r.name,
-          u = e.disabled;
-        return c !== l.e && G(i, l.e = c), p !== l.t && w(a, "name", l.t = p), u !== l.a && (a.disabled = l.a = u), l;
-      }, { e: void 0, t: void 0, a: void 0 }),
-      D(() => a.value = e.value),
-      D(() => a.checked = o()),
-      i;
-  })();
-}
-var Bs = v("<pre class=gs-code><code>"),
-  _e = v("<p>"),
-  Rs = v("<code>"),
-  Os = v("<h1>"),
-  Ls = v(
-    "<ul class=gs-list><li><code>componentDir</code> — </li><li><code>cssPath</code> — </li><li><code>components</code> — ",
-  ),
-  Fs = v("<div class=gs-page>");
-function ge(t) {
-  return (() => {
-    var e = Bs(), n = e.firstChild;
-    return m(n, () => t.children), e;
-  })();
-}
-function xe(t) {
-  return d(Pt, {
-    get children() {
-      return [
-        d(St, {
-          get children() {
-            return B(E(), t.titleKey);
-          },
-        }),
-        d(wt, {
-          get children() {
-            return t.children;
-          },
-        }),
-      ];
-    },
-  });
-}
-function Kt(t) {
-  const e = () => B(E(), t.textKey);
-  return (() => {
-    var n = _e();
-    return m(n, () => {
-      const r = e().split("{code}");
-      return r.length === 1 ? r[0] : [
-        U(() => r[0]),
-        (() => {
-          var o = Rs();
-          return m(o, () => t.code), o;
-        })(),
-        U(() => r[1]),
-      ];
-    }),
-      n;
-  })();
-}
-const zs = `{
-  "componentDir": "src/components/ui",
-  "cssPath": "src/styles/soluid.css",
-  "components": ["Button", "TextField", "Dialog"]
-}`;
-function Ms() {
-  const [t, e] = I("bunx"), n = r => `${t()} soluid ${r}`;
-  return (() => {
-    var r = Fs();
-    return m(
-      r,
-      d(pe, {
-        gap: 4,
-        align: "center",
-        get children() {
-          return [
-            (() => {
-              var o = Os();
-              return m(o, () => B(E(), "gs.title")), o;
-            })(),
-            d(Pr, {
-              get value() {
-                return t();
-              },
-              onChange: o => e(o),
-              get children() {
-                return d(pe, {
-                  gap: 3,
-                  get children() {
-                    return [d(Ue, { value: "bunx", label: "bunx" }), d(Ue, { value: "npx", label: "npx" })];
-                  },
-                });
-              },
-            }),
-          ];
-        },
-      }),
-      null,
-    ),
-      m(
-        r,
-        d(Ce, {
-          gap: 4,
-          get children() {
-            return [
-              d(xe, {
-                titleKey: "gs.step1.title",
-                get children() {
-                  return [
-                    (() => {
-                      var o = _e();
-                      return m(o, () => B(E(), "gs.step1.p1")), o;
-                    })(),
-                    d(ge, {
-                      get children() {
-                        return n("init");
-                      },
-                    }),
-                    d(Kt, { textKey: "gs.step1.p2", code: "soluid.config.json" }),
-                  ];
-                },
-              }),
-              d(xe, {
-                titleKey: "gs.step2.title",
-                get children() {
-                  return [
-                    d(Kt, { textKey: "gs.step2.p1", code: "soluid.config.json" }),
-                    d(ge, { children: zs }),
-                    (() => {
-                      var o = Ls(), s = o.firstChild, i = s.firstChild;
-                      i.nextSibling;
-                      var a = s.nextSibling, l = a.firstChild;
-                      l.nextSibling;
-                      var c = a.nextSibling, p = c.firstChild;
-                      return p.nextSibling,
-                        m(s, () => B(E(), "gs.step2.componentDir"), null),
-                        m(a, () => B(E(), "gs.step2.cssPath"), null),
-                        m(c, () => B(E(), "gs.step2.components"), null),
-                        o;
-                    })(),
-                    (() => {
-                      var o = _e();
-                      return m(o, () => B(E(), "gs.step2.p2")), o;
-                    })(),
-                    d(ge, {
-                      get children() {
-                        return `${n("add Checkbox Switch Tabs")}
-${n("remove Switch")}`;
-                      },
-                    }),
-                  ];
-                },
-              }),
-              d(xe, {
-                titleKey: "gs.step3.title",
-                get children() {
-                  return [
-                    (() => {
-                      var o = _e();
-                      return m(o, () => B(E(), "gs.step3.p1")), o;
-                    })(),
-                    d(ge, {
-                      get children() {
-                        return n("install");
-                      },
-                    }),
-                    d(Kt, { textKey: "gs.step3.p2", code: "cssPath" }),
-                  ];
-                },
-              }),
-              d(xe, {
-                titleKey: "gs.step4.title",
-                get children() {
-                  return [
-                    (() => {
-                      var o = _e();
-                      return m(o, () => B(E(), "gs.step4.p1")), o;
-                    })(),
-                    d(ge, {
-                      children: `// src/index.tsx
-import "./styles/soluid.css";`,
-                    }),
-                  ];
-                },
-              }),
-              d(xe, {
-                titleKey: "gs.step5.title",
-                get children() {
-                  return [
-                    (() => {
-                      var o = _e();
-                      return m(o, () => B(E(), "gs.step5.p1")), o;
-                    })(),
-                    d(ge, {
-                      children: `import { Button, TextField } from "./components/ui";
-
-function App() {
-  return (
-    <div>
-      <TextField label="Name" placeholder="Enter your name" />
-      <Button variant="primary">Submit</Button>
-    </div>
-  );
-}`,
-                    }),
-                  ];
-                },
-              }),
-              d(xe, {
-                titleKey: "gs.theme.title",
-                get children() {
-                  return [
-                    (() => {
-                      var o = _e();
-                      return m(o, () => B(E(), "gs.theme.p1")), o;
-                    })(),
-                    d(ge, {
-                      children: `document.documentElement.setAttribute("data-theme", "dark");
-document.documentElement.setAttribute("data-density", "dense");`,
-                    }),
-                  ];
-                },
-              }),
-              d(xe, {
-                titleKey: "gs.other.title",
-                get children() {
-                  return d(ge, {
-                    get children() {
-                      return `${n("list")}                # list available components
-${n("add <component...>")}  # add components to config
-${n("remove <comp...>")}    # remove from config
-${n("install")}             # re-download and rebuild CSS`;
-                    },
-                  });
-                },
-              }),
-            ];
-          },
-        }),
-        null,
-      ),
-      r;
-  })();
-}
-const Ns = JSON.parse(
-  "[{\"name\":\"AccordionItemProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"title\",\"type\":\"string\",\"optional\":false},{\"name\":\"open\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"AccordionProps\",\"description\":\"Collapsible content sections\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"AlertProps\",\"description\":\"Inline notification\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"FeedbackVariant\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"onDismiss\",\"type\":\"(() => void)\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"AvatarProps\",\"description\":\"User avatar with image and initials fallback\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"src\",\"type\":\"string\",\"optional\":true},{\"name\":\"alt\",\"type\":\"string\",\"optional\":true},{\"name\":\"name\",\"type\":\"string\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"variant\",\"type\":\"Variant\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"BadgeProps\",\"description\":\"Status label\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"Variant\",\"optional\":true},{\"name\":\"fill\",\"type\":\"\\\"subtle\\\" | \\\"solid\\\"\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"BreadcrumbItemProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"href\",\"type\":\"string\",\"optional\":true},{\"name\":\"current\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"BreadcrumbProps\",\"description\":\"Breadcrumb navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"ButtonProps\",\"description\":\"Primary, neutral, danger button with icon and loading\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"iconLeft\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"iconRight\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"loading\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"variant\",\"type\":\"ButtonVariant\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"CardBodyProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"CardFooterProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"CardHeaderProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"CardProps\",\"description\":\"Content card with header/body/footer\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"\\\"outlined\\\" | \\\"elevated\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"CheckboxGroupProps\",\"description\":\"Checkbox group with shared state\",\"dependencies\":[\"core\",\"Checkbox\"],\"props\":[{\"name\":\"value\",\"type\":\"string[]\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((value: string[]) => void)\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"CheckboxProps\",\"description\":\"Checkbox with indeterminate support\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"checked\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((checked: boolean) => void)\",\"optional\":true},{\"name\":\"indeterminate\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DescriptionListProps\",\"description\":\"Key-value display\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"items\",\"type\":\"{ term: string; description: JSX.Element; }[]\",\"optional\":false},{\"name\":\"columns\",\"type\":\"1 | 2\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DialogBodyProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DialogFooterProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DialogHeaderProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DialogProps\",\"description\":\"Modal dialog with focus trap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onClose\",\"type\":\"() => void\",\"optional\":false},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\" | \\\"lg\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DividerProps\",\"description\":\"Horizontal/vertical separator\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"orientation\",\"type\":\"\\\"horizontal\\\" | \\\"vertical\\\"\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DrawerHeaderProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DrawerProps\",\"description\":\"Side panel with focus trap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onClose\",\"type\":\"() => void\",\"optional\":false},{\"name\":\"side\",\"type\":\"\\\"left\\\" | \\\"right\\\"\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\" | \\\"lg\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"EmptyStateProps\",\"description\":\"Empty data display with action\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"title\",\"type\":\"string\",\"optional\":false},{\"name\":\"description\",\"type\":\"string\",\"optional\":true},{\"name\":\"icon\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"action\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"FormFieldProps\",\"description\":\"Label + error/hint wrapper for form inputs\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"HStackProps\",\"description\":\"Horizontal flex layout with gap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"gap\",\"type\":\"1 | 2 | 3 | 4 | 5 | 6\",\"optional\":true},{\"name\":\"align\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"stretch\\\"\",\"optional\":true},{\"name\":\"justify\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"between\\\" | \\\"around\\\"\",\"optional\":true},{\"name\":\"wrap\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"IconButtonProps\",\"description\":\"Icon-only button with aria-label\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"icon\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"aria-label\",\"type\":\"string\",\"optional\":false},{\"name\":\"variant\",\"type\":\"ButtonVariant\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"MenuItemProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"onSelect\",\"type\":\"(() => void)\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"MenuProps\",\"description\":\"Dropdown menu with keyboard navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onOpenChange\",\"type\":\"(open: boolean) => void\",\"optional\":false},{\"name\":\"placement\",\"type\":\"Placement\",\"optional\":true},{\"name\":\"trigger\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"MenuSeparatorProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true}]},{\"name\":\"NumberInputProps\",\"description\":\"Number input with stepper buttons\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"number\",\"optional\":true},{\"name\":\"onInput\",\"type\":\"((value: number) => void)\",\"optional\":true},{\"name\":\"min\",\"type\":\"number\",\"optional\":true},{\"name\":\"max\",\"type\":\"number\",\"optional\":true},{\"name\":\"step\",\"type\":\"number\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"PaginationProps\",\"description\":\"Page navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"page\",\"type\":\"number\",\"optional\":false},{\"name\":\"totalPages\",\"type\":\"number\",\"optional\":false},{\"name\":\"onChange\",\"type\":\"(page: number) => void\",\"optional\":false},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"showPages\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"maxVisible\",\"type\":\"number\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"PopoverProps\",\"description\":\"Floating element with trigger and panel\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onOpenChange\",\"type\":\"(open: boolean) => void\",\"optional\":false},{\"name\":\"placement\",\"type\":\"Placement\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"content\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"ProgressProps\",\"description\":\"Progress bar\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"value\",\"type\":\"number\",\"optional\":false},{\"name\":\"variant\",\"type\":\"FeedbackVariant\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"aria-label\",\"type\":\"string\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"RadioButtonProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"RadioGroupProps\",\"description\":\"Radio button group\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((value: string) => void)\",\"optional\":true},{\"name\":\"name\",\"type\":\"string\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SelectProps\",\"description\":\"Native select dropdown\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"T\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((value: T) => void)\",\"optional\":true},{\"name\":\"options\",\"type\":\"SelectOption<T>[]\",\"optional\":false},{\"name\":\"placeholder\",\"type\":\"string\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SkeletonProps\",\"description\":\"Loading placeholder\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"\\\"text\\\" | \\\"circle\\\" | \\\"rect\\\"\",\"optional\":true},{\"name\":\"width\",\"type\":\"string\",\"optional\":true},{\"name\":\"height\",\"type\":\"string\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SpinnerProps\",\"description\":\"Loading spinner\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\" | \\\"lg\\\"\",\"optional\":true},{\"name\":\"variant\",\"type\":\"\\\"primary\\\" | \\\"neutral\\\"\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"StackProps\",\"description\":\"Vertical flex layout with gap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"gap\",\"type\":\"1 | 2 | 3 | 4 | 5 | 6\",\"optional\":true},{\"name\":\"align\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"stretch\\\"\",\"optional\":true},{\"name\":\"justify\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"between\\\" | \\\"around\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SwitchProps\",\"description\":\"Toggle switch\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"checked\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((checked: boolean) => void)\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TableProps\",\"description\":\"Data table with sort, pagination, row selection\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"columns\",\"type\":\"Column<T>[]\",\"optional\":false},{\"name\":\"data\",\"type\":\"T[]\",\"optional\":false},{\"name\":\"sortKey\",\"type\":\"string\",\"optional\":true},{\"name\":\"sortDirection\",\"type\":\"\\\"asc\\\" | \\\"desc\\\"\",\"optional\":true},{\"name\":\"onSort\",\"type\":\"((key: string, direction: \\\"asc\\\" | \\\"desc\\\") => void)\",\"optional\":true},{\"name\":\"selectable\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"selectedKeys\",\"type\":\"Set<string>\",\"optional\":true},{\"name\":\"onSelect\",\"type\":\"((keys: Set<string>) => void)\",\"optional\":true},{\"name\":\"rowKey\",\"type\":\"((row: T) => string)\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TabListProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"TabPanelProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"TabProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"TabsProps\",\"description\":\"Tab navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"onChange\",\"type\":\"(value: string) => void\",\"optional\":false},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TagProps\",\"description\":\"Removable label for filters\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"Variant\",\"optional\":true},{\"name\":\"fill\",\"type\":\"\\\"subtle\\\" | \\\"solid\\\"\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"onRemove\",\"type\":\"(() => void)\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TextAreaProps\",\"description\":\"Multiline text input\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"onInput\",\"type\":\"((value: string) => void)\",\"optional\":true},{\"name\":\"placeholder\",\"type\":\"string\",\"optional\":true},{\"name\":\"rows\",\"type\":\"number\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TextFieldProps\",\"description\":\"Text input with label/error/hint\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"onInput\",\"type\":\"((value: string) => void)\",\"optional\":true},{\"name\":\"placeholder\",\"type\":\"string\",\"optional\":true},{\"name\":\"type\",\"type\":\"\\\"text\\\" | \\\"email\\\" | \\\"password\\\" | \\\"url\\\" | \\\"tel\\\"\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"ToastContainerProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"position\",\"type\":\"\\\"top-right\\\" | \\\"top-center\\\" | \\\"bottom-right\\\" | \\\"bottom-center\\\"\",\"optional\":true}]},{\"name\":\"TooltipProps\",\"description\":\"Tooltip\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"content\",\"type\":\"string\",\"optional\":true},{\"name\":\"placement\",\"type\":\"\\\"left\\\" | \\\"right\\\" | \\\"top\\\" | \\\"bottom\\\"\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"VisuallyHiddenProps\",\"description\":\"Screen reader only content\",\"dependencies\":[],\"props\":[{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]}]",
-);
-var Hs = v("<span>");
-function J(t) {
-  const [e, n] = x(t, ["class", "variant", "fill", "size", "children"]);
-  return (() => {
-    var r = Hs();
-    return T(
-      r,
-      A({
-        get class() {
-          return C(
-            "so-badge",
-            `so-badge--${e.variant ?? "neutral"}`,
-            `so-badge--${e.size ?? "md"}`,
-            e.fill === "solid" && "so-badge--solid",
-            e.class,
-          );
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(r, () => e.children),
-      r;
-  })();
-}
-var Gs = v("<div>"),
-  Ks = v("<div role=tablist aria-orientation=horizontal>"),
-  qs = v("<button type=button role=tab>"),
-  js = v("<div role=tabpanel>");
-const Sr = Se();
-function wr() {
-  const t = me(Sr);
+function Pr() {
+  const t = me(vr);
   if (!t) throw new Error("Tab components must be used within <Tabs>");
   return t;
 }
-function Cr(t) {
+function Sr(t) {
   const [e, n] = x(t, ["class", "density", "value", "onChange", "children"]),
     r = `so-tabs-${ue()}`,
     o = { value: () => e.value, onChange: s => e.onChange(s), baseId: r };
-  return d(Sr.Provider, {
+  return d(vr.Provider, {
     value: o,
     get children() {
-      var s = Gs();
+      var s = Ss();
       return T(
         s,
         A({
@@ -3474,7 +2981,7 @@ function Cr(t) {
     },
   });
 }
-function $r(t) {
+function wr(t) {
   const [e, n] = x(t, ["class", "children"]);
   function r(o) {
     const s = o.currentTarget, i = Array.from(s.querySelectorAll("[role=\"tab\"]:not(:disabled)"));
@@ -3491,7 +2998,7 @@ function $r(t) {
       : o.key === "End" && (c = i.length - 1), c != null && (o.preventDefault(), i[c].focus(), i[c].click());
   }
   return (() => {
-    var o = Ks();
+    var o = ws();
     return o.$$keydown = r,
       T(
         o,
@@ -3508,9 +3015,9 @@ function $r(t) {
   })();
 }
 function Re(t) {
-  const [e, n] = x(t, ["value", "disabled", "class", "children"]), r = wr();
+  const [e, n] = x(t, ["value", "disabled", "class", "children"]), r = Pr();
   return (() => {
-    var o = qs();
+    var o = Cs();
     return o.$$click = () => {
       e.disabled || r.onChange(e.value);
     },
@@ -3544,13 +3051,13 @@ function Re(t) {
   })();
 }
 function Oe(t) {
-  const [e, n] = x(t, ["value", "class", "children"]), r = wr();
+  const [e, n] = x(t, ["value", "class", "children"]), r = Pr();
   return d(k, {
     get when() {
       return r.value() === e.value;
     },
     get children() {
-      var o = js();
+      var o = $s();
       return T(
         o,
         A({
@@ -3573,14 +3080,17 @@ function Oe(t) {
   });
 }
 q(["keydown", "click"]);
-var Vs = v("<div>"),
-  Xs = v(
+const xs = JSON.parse(
+  "[{\"name\":\"AccordionItemProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"title\",\"type\":\"string\",\"optional\":false},{\"name\":\"open\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"AccordionProps\",\"description\":\"Collapsible content sections\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"AlertProps\",\"description\":\"Inline notification\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"FeedbackVariant\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"onDismiss\",\"type\":\"(() => void)\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"AvatarProps\",\"description\":\"User avatar with image and initials fallback\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"src\",\"type\":\"string\",\"optional\":true},{\"name\":\"alt\",\"type\":\"string\",\"optional\":true},{\"name\":\"name\",\"type\":\"string\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"variant\",\"type\":\"Variant\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"BadgeProps\",\"description\":\"Status label\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"Variant\",\"optional\":true},{\"name\":\"fill\",\"type\":\"\\\"subtle\\\" | \\\"solid\\\"\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"BreadcrumbItemProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"href\",\"type\":\"string\",\"optional\":true},{\"name\":\"current\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"BreadcrumbProps\",\"description\":\"Breadcrumb navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"ButtonProps\",\"description\":\"Primary, neutral, danger button with icon and loading\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"iconLeft\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"iconRight\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"loading\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"variant\",\"type\":\"ButtonVariant\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"CardBodyProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"CardFooterProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"CardHeaderProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"CardProps\",\"description\":\"Content card with header/body/footer\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"\\\"outlined\\\" | \\\"elevated\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"CheckboxGroupProps\",\"description\":\"Checkbox group with shared state\",\"dependencies\":[\"core\",\"Checkbox\"],\"props\":[{\"name\":\"value\",\"type\":\"string[]\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((value: string[]) => void)\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"CheckboxProps\",\"description\":\"Checkbox with indeterminate support\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"checked\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((checked: boolean) => void)\",\"optional\":true},{\"name\":\"indeterminate\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DescriptionListProps\",\"description\":\"Key-value display\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"items\",\"type\":\"{ term: string; description: JSX.Element; }[]\",\"optional\":false},{\"name\":\"columns\",\"type\":\"1 | 2\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DialogBodyProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DialogFooterProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DialogHeaderProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DialogProps\",\"description\":\"Modal dialog with focus trap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onClose\",\"type\":\"() => void\",\"optional\":false},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\" | \\\"lg\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DividerProps\",\"description\":\"Horizontal/vertical separator\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"orientation\",\"type\":\"\\\"horizontal\\\" | \\\"vertical\\\"\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"DrawerHeaderProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"DrawerProps\",\"description\":\"Side panel with focus trap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onClose\",\"type\":\"() => void\",\"optional\":false},{\"name\":\"side\",\"type\":\"\\\"left\\\" | \\\"right\\\"\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\" | \\\"lg\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"EmptyStateProps\",\"description\":\"Empty data display with action\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"title\",\"type\":\"string\",\"optional\":false},{\"name\":\"description\",\"type\":\"string\",\"optional\":true},{\"name\":\"icon\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"action\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"FormFieldProps\",\"description\":\"Label + error/hint wrapper for form inputs\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"HStackProps\",\"description\":\"Horizontal flex layout with gap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"gap\",\"type\":\"1 | 2 | 3 | 4 | 5 | 6\",\"optional\":true},{\"name\":\"align\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"stretch\\\"\",\"optional\":true},{\"name\":\"justify\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"between\\\" | \\\"around\\\"\",\"optional\":true},{\"name\":\"wrap\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"IconButtonProps\",\"description\":\"Icon-only button with aria-label\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"icon\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"aria-label\",\"type\":\"string\",\"optional\":false},{\"name\":\"variant\",\"type\":\"ButtonVariant\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"MenuItemProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"onSelect\",\"type\":\"(() => void)\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"MenuProps\",\"description\":\"Dropdown menu with keyboard navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onOpenChange\",\"type\":\"(open: boolean) => void\",\"optional\":false},{\"name\":\"placement\",\"type\":\"Placement\",\"optional\":true},{\"name\":\"trigger\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"MenuSeparatorProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true}]},{\"name\":\"NumberInputProps\",\"description\":\"Number input with stepper buttons\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"number\",\"optional\":true},{\"name\":\"onInput\",\"type\":\"((value: number) => void)\",\"optional\":true},{\"name\":\"min\",\"type\":\"number\",\"optional\":true},{\"name\":\"max\",\"type\":\"number\",\"optional\":true},{\"name\":\"step\",\"type\":\"number\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"PaginationProps\",\"description\":\"Page navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"page\",\"type\":\"number\",\"optional\":false},{\"name\":\"totalPages\",\"type\":\"number\",\"optional\":false},{\"name\":\"onChange\",\"type\":\"(page: number) => void\",\"optional\":false},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"showPages\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"maxVisible\",\"type\":\"number\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"PopoverProps\",\"description\":\"Floating element with trigger and panel\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"open\",\"type\":\"boolean\",\"optional\":false},{\"name\":\"onOpenChange\",\"type\":\"(open: boolean) => void\",\"optional\":false},{\"name\":\"placement\",\"type\":\"Placement\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"content\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"ProgressProps\",\"description\":\"Progress bar\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"value\",\"type\":\"number\",\"optional\":false},{\"name\":\"variant\",\"type\":\"FeedbackVariant\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"aria-label\",\"type\":\"string\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"RadioButtonProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"RadioGroupProps\",\"description\":\"Radio button group\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((value: string) => void)\",\"optional\":true},{\"name\":\"name\",\"type\":\"string\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SelectProps\",\"description\":\"Native select dropdown\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"T\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((value: T) => void)\",\"optional\":true},{\"name\":\"options\",\"type\":\"SelectOption<T>[]\",\"optional\":false},{\"name\":\"placeholder\",\"type\":\"string\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SkeletonProps\",\"description\":\"Loading placeholder\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"\\\"text\\\" | \\\"circle\\\" | \\\"rect\\\"\",\"optional\":true},{\"name\":\"width\",\"type\":\"string\",\"optional\":true},{\"name\":\"height\",\"type\":\"string\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SpinnerProps\",\"description\":\"Loading spinner\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\" | \\\"lg\\\"\",\"optional\":true},{\"name\":\"variant\",\"type\":\"\\\"primary\\\" | \\\"neutral\\\"\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"StackProps\",\"description\":\"Vertical flex layout with gap\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"gap\",\"type\":\"1 | 2 | 3 | 4 | 5 | 6\",\"optional\":true},{\"name\":\"align\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"stretch\\\"\",\"optional\":true},{\"name\":\"justify\",\"type\":\"\\\"start\\\" | \\\"center\\\" | \\\"end\\\" | \\\"between\\\" | \\\"around\\\"\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"SwitchProps\",\"description\":\"Toggle switch\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"checked\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"onChange\",\"type\":\"((checked: boolean) => void)\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":true},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TableProps\",\"description\":\"Data table with sort, pagination, row selection\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"columns\",\"type\":\"Column<T>[]\",\"optional\":false},{\"name\":\"data\",\"type\":\"T[]\",\"optional\":false},{\"name\":\"sortKey\",\"type\":\"string\",\"optional\":true},{\"name\":\"sortDirection\",\"type\":\"\\\"asc\\\" | \\\"desc\\\"\",\"optional\":true},{\"name\":\"onSort\",\"type\":\"((key: string, direction: \\\"asc\\\" | \\\"desc\\\") => void)\",\"optional\":true},{\"name\":\"selectable\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"selectedKeys\",\"type\":\"Set<string>\",\"optional\":true},{\"name\":\"onSelect\",\"type\":\"((keys: Set<string>) => void)\",\"optional\":true},{\"name\":\"rowKey\",\"type\":\"((row: T) => string)\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TabListProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"TabPanelProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"TabProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"TabsProps\",\"description\":\"Tab navigation\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":false},{\"name\":\"onChange\",\"type\":\"(value: string) => void\",\"optional\":false},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TagProps\",\"description\":\"Removable label for filters\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"variant\",\"type\":\"Variant\",\"optional\":true},{\"name\":\"fill\",\"type\":\"\\\"subtle\\\" | \\\"solid\\\"\",\"optional\":true},{\"name\":\"size\",\"type\":\"\\\"sm\\\" | \\\"md\\\"\",\"optional\":true},{\"name\":\"onRemove\",\"type\":\"(() => void)\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TextAreaProps\",\"description\":\"Multiline text input\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"onInput\",\"type\":\"((value: string) => void)\",\"optional\":true},{\"name\":\"placeholder\",\"type\":\"string\",\"optional\":true},{\"name\":\"rows\",\"type\":\"number\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"TextFieldProps\",\"description\":\"Text input with label/error/hint\",\"dependencies\":[\"core\",\"FormField\"],\"props\":[{\"name\":\"value\",\"type\":\"string\",\"optional\":true},{\"name\":\"onInput\",\"type\":\"((value: string) => void)\",\"optional\":true},{\"name\":\"placeholder\",\"type\":\"string\",\"optional\":true},{\"name\":\"type\",\"type\":\"\\\"text\\\" | \\\"email\\\" | \\\"password\\\" | \\\"url\\\" | \\\"tel\\\"\",\"optional\":true},{\"name\":\"label\",\"type\":\"string\",\"optional\":false},{\"name\":\"error\",\"type\":\"string\",\"optional\":true},{\"name\":\"hint\",\"type\":\"string\",\"optional\":true},{\"name\":\"required\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"disabled\",\"type\":\"boolean\",\"optional\":true},{\"name\":\"size\",\"type\":\"Size\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"density\",\"type\":\"Density\",\"optional\":true}]},{\"name\":\"ToastContainerProps\",\"description\":\"\",\"dependencies\":[],\"props\":[{\"name\":\"position\",\"type\":\"\\\"top-right\\\" | \\\"top-center\\\" | \\\"bottom-right\\\" | \\\"bottom-center\\\"\",\"optional\":true}]},{\"name\":\"TooltipProps\",\"description\":\"Tooltip\",\"dependencies\":[\"core\"],\"props\":[{\"name\":\"content\",\"type\":\"string\",\"optional\":true},{\"name\":\"placement\",\"type\":\"\\\"left\\\" | \\\"right\\\" | \\\"top\\\" | \\\"bottom\\\"\",\"optional\":true},{\"name\":\"class\",\"type\":\"string\",\"optional\":true},{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]},{\"name\":\"VisuallyHiddenProps\",\"description\":\"Screen reader only content\",\"dependencies\":[],\"props\":[{\"name\":\"children\",\"type\":\"JSX.Element\",\"optional\":false}]}]",
+);
+var _s = v("<div>"),
+  ks = v(
     "<details><summary class=so-accordion-item__trigger><span class=so-accordion-item__title></span><svg class=so-accordion-item__chevron width=16 height=16 viewBox=\"0 0 24 24\"fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round aria-hidden=true><polyline points=\"6 9 12 15 18 9\"></polyline></svg></summary><div class=so-accordion-item__content>",
   );
-function Js(t) {
+function Ds(t) {
   const [e, n] = x(t, ["class", "density", "children"]);
   return (() => {
-    var r = Vs();
+    var r = _s();
     return T(
       r,
       A({
@@ -3598,10 +3108,10 @@ function Js(t) {
       r;
   })();
 }
-function qt(t) {
+function Kt(t) {
   const [e, n] = x(t, ["title", "open", "disabled", "class", "children"]);
   return (() => {
-    var r = Xs(), o = r.firstChild, s = o.firstChild, i = o.nextSibling;
+    var r = ks(), o = r.firstChild, s = o.firstChild, i = o.nextSibling;
     return T(
       r,
       A({
@@ -3624,22 +3134,63 @@ function qt(t) {
   })();
 }
 q(["click"]);
-var Us = v("<img class=so-avatar__img>"),
-  Ws = v("<span class=so-avatar__initials aria-hidden=true>"),
-  Ys = v(
+var As = v("<button type=button class=so-alert__dismiss aria-label=Dismiss>&times;"),
+  Ts = v("<div role=alert><div class=so-alert__content>");
+function lt(t) {
+  const [e, n] = x(t, ["class", "density", "variant", "children", "onDismiss"]);
+  return (() => {
+    var r = Ts(), o = r.firstChild;
+    return T(
+      r,
+      A({
+        get class() {
+          return C("so-alert", `so-alert--${e.variant ?? "info"}`, e.class);
+        },
+        get "data-density"() {
+          return e.density;
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(o, () => e.children),
+      m(
+        r,
+        d(k, {
+          get when() {
+            return e.onDismiss;
+          },
+          get children() {
+            var s = As();
+            return s.$$click = () => {
+              var i;
+              return (i = e.onDismiss) == null ? void 0 : i.call(e);
+            },
+              s;
+          },
+        }),
+        null,
+      ),
+      r;
+  })();
+}
+q(["click"]);
+var Is = v("<img class=so-avatar__img>"),
+  Es = v("<span class=so-avatar__initials aria-hidden=true>"),
+  Bs = v(
     "<svg class=so-avatar__fallback viewBox=\"0 0 24 24\"fill=currentColor aria-hidden=true><path d=\"M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z\">",
   ),
-  Qs = v("<span role=img>");
-function Zs(t) {
+  Rs = v("<span role=img>");
+function Os(t) {
   return t.split(/\s+/).slice(0, 2).map(e => e.charAt(0).toUpperCase()).join("");
 }
-function lt(t) {
+function ct(t) {
   const [e, n] = x(t, ["class", "density", "src", "alt", "name", "size", "variant"]),
     [r, o] = I(!1),
     s = () => e.src && !r(),
-    i = () => e.name ? Zs(e.name) : "";
+    i = () => e.name ? Os(e.name) : "";
   return (() => {
-    var a = Qs();
+    var a = Rs();
     return T(
       a,
       A({
@@ -3663,7 +3214,7 @@ function lt(t) {
             return s();
           },
           get children() {
-            var l = Us();
+            var l = Is();
             return l.addEventListener("error", () => o(!0)),
               D(c => {
                 var p = e.src, u = e.alt ?? e.name ?? "";
@@ -3681,7 +3232,7 @@ function lt(t) {
             return U(() => !s())() && i();
           },
           get children() {
-            var l = Ws();
+            var l = Es();
             return m(l, i), l;
           },
         }),
@@ -3694,7 +3245,7 @@ function lt(t) {
             return U(() => !s())() && !i();
           },
           get children() {
-            return Ys();
+            return Bs();
           },
         }),
         null,
@@ -3702,15 +3253,208 @@ function lt(t) {
       a;
   })();
 }
-const xr = Se();
-function ei() {
-  return me(xr);
+var Ls = v("<nav aria-label=Breadcrumb><ol class=so-breadcrumb__list>"),
+  Fs = v("<a>"),
+  zs = v("<li>"),
+  Ms = v("<span>");
+function Ns(t) {
+  const [e, n] = x(t, ["class", "density", "children"]);
+  return (() => {
+    var r = Ls(), o = r.firstChild;
+    return T(
+      r,
+      A({
+        get class() {
+          return C("so-breadcrumb", e.class);
+        },
+        get "data-density"() {
+          return e.density;
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(o, () => e.children),
+      r;
+  })();
 }
-var ti = v("<legend class=so-checkbox-group__label>"),
-  ni = v("<p class=so-checkbox-group__error role=alert>"),
-  ri = v("<p class=so-checkbox-group__hint>"),
-  oi = v("<fieldset role=group><div class=so-checkbox-group__items>");
-function si(t) {
+function qt(t) {
+  const [e, n] = x(t, ["href", "current", "class", "children"]);
+  return (() => {
+    var r = zs();
+    return T(
+      r,
+      A(
+        {
+          get class() {
+            return C("so-breadcrumb__item", e.current && "so-breadcrumb__item--current", e.class);
+          },
+        },
+        () => e.current ? { "aria-current": "page" } : {},
+        n,
+      ),
+      !1,
+      !0,
+    ),
+      m(
+        r,
+        d(k, {
+          get when() {
+            return U(() => !!e.href)() && !e.current;
+          },
+          get fallback() {
+            return (() => {
+              var o = Ms();
+              return m(o, () => e.children), o;
+            })();
+          },
+          get children() {
+            var o = Fs();
+            return m(o, () => e.children), D(() => w(o, "href", e.href)), o;
+          },
+        }),
+      ),
+      r;
+  })();
+}
+const Cr = Se();
+function Hs() {
+  return me(Cr);
+}
+var Gs = v(
+    "<svg viewBox=\"0 0 12 12\"fill=none class=so-checkbox__icon><line x1=2 y1=6 x2=10 y2=6 stroke=currentColor stroke-width=2 stroke-linecap=round>",
+  ),
+  Ks = v(
+    "<svg viewBox=\"0 0 12 12\"fill=none class=so-checkbox__icon><polyline points=\"2,6 5,9 10,3\"stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round fill=none>",
+  ),
+  qs = v("<span class=so-checkbox__label>"),
+  js = v("<p class=so-checkbox__error role=alert>"),
+  Vs = v("<p class=so-checkbox__hint>"),
+  Xs = v(
+    "<div><label><input type=checkbox class=so-checkbox__input><span class=so-checkbox__indicator aria-hidden=true>",
+  );
+function Le(t) {
+  const [e, n] = x(t, [
+    "class",
+    "checked",
+    "onChange",
+    "indeterminate",
+    "disabled",
+    "size",
+    "label",
+    "value",
+    "error",
+    "hint",
+    "children",
+  ]);
+  let r;
+  const o = Hs(),
+    s = ue(),
+    i = `so-cb-error-${s}`,
+    a = `so-cb-hint-${s}`,
+    l = () => o && e.value != null ? o.value().includes(e.value) : e.checked ?? !1,
+    c = () => {
+      var h;
+      const u = !l();
+      o && e.value != null && o.onChange(e.value, u), (h = e.onChange) == null || h.call(e, u);
+    },
+    p = () => {
+      if (e.error) return i;
+      if (e.hint) return a;
+    };
+  return ie(() => {
+    r && (r.indeterminate = e.indeterminate ?? !1);
+  }),
+    (() => {
+      var u = Xs(), h = u.firstChild, f = h.firstChild, g = f.nextSibling;
+      f.addEventListener("change", c);
+      var b = r;
+      return typeof b == "function" ? ye(b, f) : r = f,
+        m(
+          g,
+          d(k, {
+            get when() {
+              return e.indeterminate;
+            },
+            get children() {
+              return Gs();
+            },
+          }),
+          null,
+        ),
+        m(
+          g,
+          d(k, {
+            get when() {
+              return U(() => !e.indeterminate)() && l();
+            },
+            get children() {
+              return Ks();
+            },
+          }),
+          null,
+        ),
+        m(
+          h,
+          d(k, {
+            get when() {
+              return e.label || e.children;
+            },
+            get children() {
+              var y = qs();
+              return m(y, () => e.children ?? e.label), y;
+            },
+          }),
+          null,
+        ),
+        m(
+          u,
+          d(k, {
+            get when() {
+              return e.error;
+            },
+            get children() {
+              var y = js();
+              return w(y, "id", i), m(y, () => e.error), y;
+            },
+          }),
+          null,
+        ),
+        m(
+          u,
+          d(k, {
+            get when() {
+              return U(() => !e.error)() && e.hint;
+            },
+            get children() {
+              var y = Vs();
+              return w(y, "id", a), m(y, () => e.hint), y;
+            },
+          }),
+          null,
+        ),
+        D(y => {
+          var P = C("so-checkbox-wrapper", e.error && "so-checkbox-wrapper--error"),
+            S = C("so-checkbox", `so-checkbox--${e.size ?? "md"}`, e.disabled && "so-checkbox--disabled", e.class),
+            $ = e.disabled,
+            _ = e.error ? !0 : void 0,
+            R = p();
+          return P !== y.e && G(u, y.e = P),
+            S !== y.t && G(h, y.t = S),
+            $ !== y.a && (f.disabled = y.a = $),
+            _ !== y.o && w(f, "aria-invalid", y.o = _),
+            R !== y.i && w(f, "aria-describedby", y.i = R),
+            y;
+        }, { e: void 0, t: void 0, a: void 0, o: void 0, i: void 0 }),
+        D(() => f.checked = l()),
+        u;
+    })();
+}
+var Js = v("<legend class=so-checkbox-group__label>"),
+  Us = v("<p class=so-checkbox-group__error role=alert>"),
+  Ws = v("<p class=so-checkbox-group__hint>"),
+  Ys = v("<fieldset role=group><div class=so-checkbox-group__items>");
+function Qs(t) {
   const [e, n] = x(t, ["class", "value", "onChange", "label", "error", "hint", "children"]),
     r = ue(),
     o = `so-cbg-error-${r}`,
@@ -3727,10 +3471,10 @@ function si(t) {
         (h = e.onChange) == null || h.call(e, u);
       },
     };
-  return d(xr.Provider, {
+  return d(Cr.Provider, {
     value: a,
     get children() {
-      var l = oi(), c = l.firstChild;
+      var l = Ys(), c = l.firstChild;
       return T(
         l,
         A({
@@ -3754,7 +3498,7 @@ function si(t) {
               return e.label;
             },
             get children() {
-              var p = ti();
+              var p = Js();
               return m(p, () => e.label), p;
             },
           }),
@@ -3768,7 +3512,7 @@ function si(t) {
               return e.error;
             },
             get children() {
-              var p = ni();
+              var p = Us();
               return w(p, "id", o), m(p, () => e.error), p;
             },
           }),
@@ -3781,7 +3525,7 @@ function si(t) {
               return U(() => !e.error)() && e.hint;
             },
             get children() {
-              var p = ri();
+              var p = Ws();
               return w(p, "id", s), m(p, () => e.hint), p;
             },
           }),
@@ -3791,11 +3535,11 @@ function si(t) {
     },
   });
 }
-var ii = v("<dl>"), ai = v("<dt class=so-description-list__term>"), li = v("<dd class=so-description-list__detail>");
-function _r(t) {
+var Zs = v("<dl>"), ei = v("<dt class=so-description-list__term>"), ti = v("<dd class=so-description-list__detail>");
+function $r(t) {
   const [e, n] = x(t, ["class", "density", "items", "columns"]);
   return (() => {
-    var r = ii();
+    var r = Zs();
     return T(
       r,
       A({
@@ -3817,11 +3561,11 @@ function _r(t) {
           },
           children: o => [
             (() => {
-              var s = ai();
+              var s = ei();
               return m(s, () => o.term), s;
             })(),
             (() => {
-              var s = li();
+              var s = ti();
               return m(s, () => o.description), s;
             })(),
           ],
@@ -3830,23 +3574,23 @@ function _r(t) {
       r;
   })();
 }
-const ci = ne;
-function di(t, e, n) {
+const ni = ne;
+function ri(t, e, n) {
   return I(e(), n);
 }
 function ln(t, e, n, r) {
-  return t.addEventListener(e, n, r), ci(t.removeEventListener.bind(t, e, n, r));
+  return t.addEventListener(e, n, r), ni(t.removeEventListener.bind(t, e, n, r));
 }
-const kr = () => document.activeElement === document.body ? null : document.activeElement;
-function ui(t) {
-  const e = () => t(kr()), n = ln(window, "blur", e, !0), r = ln(window, "focus", e, !0);
+const xr = () => document.activeElement === document.body ? null : document.activeElement;
+function oi(t) {
+  const e = () => t(xr()), n = ln(window, "blur", e, !0), r = ln(window, "focus", e, !0);
   return () => (n(), r());
 }
-function pi() {
-  const [t, e] = di(null, kr);
-  return ui(e), t;
+function si() {
+  const [t, e] = ri(null, xr);
+  return oi(e), t;
 }
-const mi = [
+const ii = [
   "a[href]",
   "button:not([disabled])",
   "input:not([disabled])",
@@ -3855,10 +3599,10 @@ const mi = [
   "[tabindex]:not([tabindex=\"-1\"])",
 ].join(", ");
 function In(t) {
-  return Array.from(t.querySelectorAll(mi));
+  return Array.from(t.querySelectorAll(ii));
 }
-function Dr(t) {
-  const e = pi();
+function _r(t) {
+  const e = si();
   let n = null;
   Qn(() => {
     t.isActive() && (n = e(), r());
@@ -3892,13 +3636,13 @@ function Dr(t) {
       n && n instanceof HTMLElement && n.focus();
     });
 }
-var hi = v("<div><div role=dialog aria-modal=true>"), fi = v("<div>");
+var ai = v("<div><div role=dialog aria-modal=true>"), Pn = v("<div>");
 let En = 0;
-const Ar = Se();
-function gi(t) {
-  const [e, n] = x(t, ["class", "density", "open", "onClose", "side", "size", "children"]);
+const kr = Se();
+function li(t) {
+  const [e, n] = x(t, ["class", "density", "open", "onClose", "size", "children"]);
   En += 1;
-  const r = `so-drawer-title-${En}`, [o, s] = I(!1), [i, a] = I(!1);
+  const r = `so-dialog-title-${En}`, [o, s] = I(!1), [i, a] = I(!1);
   ie(Te(() => e.open, h => {
     h ? (a(!1), s(!0)) : o() && a(!0);
   }));
@@ -3906,7 +3650,140 @@ function gi(t) {
     i() && (s(!1), a(!1));
   }
   const [c, p] = I(void 0);
-  Dr({ container: c, isActive: () => e.open, onClose: () => e.onClose() });
+  _r({ container: c, isActive: () => e.open, onClose: () => e.onClose() });
+  function u(h) {
+    h.target === h.currentTarget && e.onClose();
+  }
+  return d(k, {
+    get when() {
+      return o();
+    },
+    get children() {
+      return d(tt, {
+        get children() {
+          return d(kr.Provider, {
+            value: r,
+            get children() {
+              var h = ai(), f = h.firstChild;
+              return h.addEventListener("animationend", l),
+                h.$$click = u,
+                ye(p, f),
+                w(f, "aria-labelledby", r),
+                T(
+                  f,
+                  A({
+                    get class() {
+                      return C("so-dialog", `so-dialog--${e.size ?? "md"}`, i() && "so-dialog--closing", e.class);
+                    },
+                    get "data-density"() {
+                      return e.density;
+                    },
+                  }, n),
+                  !1,
+                  !0,
+                ),
+                m(f, () => e.children),
+                D(() => G(h, C("so-dialog-backdrop", i() && "so-dialog-backdrop--closing"))),
+                h;
+            },
+          });
+        },
+      });
+    },
+  });
+}
+function ci(t) {
+  const [e, n] = x(t, ["class", "children"]), r = me(kr);
+  return (() => {
+    var o = Pn();
+    return w(o, "id", r),
+      T(
+        o,
+        A({
+          get class() {
+            return C("so-dialog__header", e.class);
+          },
+        }, n),
+        !1,
+        !0,
+      ),
+      m(o, () => e.children),
+      o;
+  })();
+}
+function di(t) {
+  const [e, n] = x(t, ["class", "children"]);
+  return (() => {
+    var r = Pn();
+    return T(
+      r,
+      A({
+        get class() {
+          return C("so-dialog__body", e.class);
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(r, () => e.children),
+      r;
+  })();
+}
+function ui(t) {
+  const [e, n] = x(t, ["class", "children"]);
+  return (() => {
+    var r = Pn();
+    return T(
+      r,
+      A({
+        get class() {
+          return C("so-dialog__footer", e.class);
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(r, () => e.children),
+      r;
+  })();
+}
+q(["click"]);
+var pi = v("<hr role=separator>");
+function Dr(t) {
+  const [e, n] = x(t, ["class", "orientation"]), r = () => e.orientation ?? "horizontal";
+  return (() => {
+    var o = pi();
+    return T(
+      o,
+      A({
+        get class() {
+          return C("so-divider", `so-divider--${r()}`, e.class);
+        },
+        get "aria-orientation"() {
+          return r();
+        },
+      }, n),
+      !1,
+      !1,
+    ),
+      o;
+  })();
+}
+var mi = v("<div><div role=dialog aria-modal=true>"), hi = v("<div>");
+let Bn = 0;
+const Ar = Se();
+function fi(t) {
+  const [e, n] = x(t, ["class", "density", "open", "onClose", "side", "size", "children"]);
+  Bn += 1;
+  const r = `so-drawer-title-${Bn}`, [o, s] = I(!1), [i, a] = I(!1);
+  ie(Te(() => e.open, h => {
+    h ? (a(!1), s(!0)) : o() && a(!0);
+  }));
+  function l() {
+    i() && (s(!1), a(!1));
+  }
+  const [c, p] = I(void 0);
+  _r({ container: c, isActive: () => e.open, onClose: () => e.onClose() });
   function u(h) {
     h.target === h.currentTarget && e.onClose();
   }
@@ -3920,7 +3797,7 @@ function gi(t) {
           return d(Ar.Provider, {
             value: r,
             get children() {
-              var h = hi(), f = h.firstChild;
+              var h = mi(), f = h.firstChild;
               return h.addEventListener("animationend", l),
                 h.$$click = u,
                 ye(p, f),
@@ -3954,10 +3831,10 @@ function gi(t) {
     },
   });
 }
-function bi(t) {
+function gi(t) {
   const [e, n] = x(t, ["class", "children"]), r = me(Ar);
   return (() => {
-    var o = fi();
+    var o = hi();
     return w(o, "id", r),
       T(
         o,
@@ -3974,14 +3851,14 @@ function bi(t) {
   })();
 }
 q(["click"]);
-var yi = v("<div class=so-empty-state__icon>"),
-  vi = v("<p class=so-empty-state__description>"),
-  Pi = v("<div class=so-empty-state__action>"),
-  Si = v("<div><h3 class=so-empty-state__title>");
-function wi(t) {
+var bi = v("<div class=so-empty-state__icon>"),
+  yi = v("<p class=so-empty-state__description>"),
+  vi = v("<div class=so-empty-state__action>"),
+  Pi = v("<div><h3 class=so-empty-state__title>");
+function Si(t) {
   const [e, n] = x(t, ["class", "density", "title", "description", "icon", "action"]);
   return (() => {
-    var r = Si(), o = r.firstChild;
+    var r = Pi(), o = r.firstChild;
     return T(
       r,
       A({
@@ -4002,7 +3879,7 @@ function wi(t) {
             return e.icon;
           },
           get children() {
-            var s = yi();
+            var s = bi();
             return m(s, () => e.icon), s;
           },
         }),
@@ -4016,7 +3893,7 @@ function wi(t) {
             return e.description;
           },
           get children() {
-            var s = vi();
+            var s = yi();
             return m(s, () => e.description), s;
           },
         }),
@@ -4029,7 +3906,7 @@ function wi(t) {
             return e.action;
           },
           get children() {
-            var s = Pi();
+            var s = vi();
             return m(s, () => e.action), s;
           },
         }),
@@ -4038,14 +3915,67 @@ function wi(t) {
       r;
   })();
 }
+var wi = v("<div>");
+function pe(t) {
+  const [e, n] = x(t, ["class", "gap", "align", "justify", "wrap", "children"]);
+  return (() => {
+    var r = wi();
+    return T(
+      r,
+      A({
+        get class() {
+          return C(
+            "so-hstack",
+            e.gap !== void 0 && `so-hstack--gap-${e.gap}`,
+            e.align && `so-hstack--align-${e.align}`,
+            e.justify && `so-hstack--justify-${e.justify}`,
+            e.wrap && "so-hstack--wrap",
+            e.class,
+          );
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(r, () => e.children),
+      r;
+  })();
+}
+var Ci = v("<button>");
+function jt(t) {
+  const [e, n] = x(t, ["class", "variant", "size", "disabled", "icon"]);
+  return (() => {
+    var r = Ci();
+    return T(
+      r,
+      A({
+        get class() {
+          return C(
+            "so-icon-button",
+            `so-icon-button--${e.variant ?? "neutral"}`,
+            `so-icon-button--${e.size ?? "md"}`,
+            e.class,
+          );
+        },
+        get disabled() {
+          return e.disabled;
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(r, () => e.icon),
+      r;
+  })();
+}
 const cn = Math.min,
-  Le = Math.max,
+  Fe = Math.max,
   Ct = Math.round,
   se = t => ({ x: t, y: t }),
-  Ci = { left: "right", right: "left", bottom: "top", top: "bottom" },
-  $i = { start: "end", end: "start" };
-function Bn(t, e, n) {
-  return Le(t, cn(e, n));
+  $i = { left: "right", right: "left", bottom: "top", top: "bottom" },
+  xi = { start: "end", end: "start" };
+function Rn(t, e, n) {
+  return Fe(t, cn(e, n));
 }
 function At(t, e) {
   return typeof t == "function" ? t(e) : t;
@@ -4062,58 +3992,58 @@ function Tr(t) {
 function Ir(t) {
   return t === "y" ? "height" : "width";
 }
-const xi = new Set(["top", "bottom"]);
+const _i = new Set(["top", "bottom"]);
 function be(t) {
-  return xi.has(Ae(t)) ? "y" : "x";
+  return _i.has(Ae(t)) ? "y" : "x";
 }
 function Er(t) {
   return Tr(be(t));
 }
-function _i(t, e, n) {
+function ki(t, e, n) {
   n === void 0 && (n = !1);
   const r = Tt(t), o = Er(t), s = Ir(o);
   let i = o === "x" ? r === (n ? "end" : "start") ? "right" : "left" : r === "start" ? "bottom" : "top";
   return e.reference[s] > e.floating[s] && (i = $t(i)), [i, $t(i)];
 }
-function ki(t) {
+function Di(t) {
   const e = $t(t);
   return [dn(t), e, dn(e)];
 }
 function dn(t) {
-  return t.replace(/start|end/g, e => $i[e]);
+  return t.replace(/start|end/g, e => xi[e]);
 }
-const Rn = ["left", "right"], On = ["right", "left"], Di = ["top", "bottom"], Ai = ["bottom", "top"];
-function Ti(t, e, n) {
+const On = ["left", "right"], Ln = ["right", "left"], Ai = ["top", "bottom"], Ti = ["bottom", "top"];
+function Ii(t, e, n) {
   switch (t) {
     case "top":
     case "bottom":
-      return n ? e ? On : Rn : e ? Rn : On;
+      return n ? e ? Ln : On : e ? On : Ln;
     case "left":
     case "right":
-      return e ? Di : Ai;
+      return e ? Ai : Ti;
     default:
       return [];
   }
 }
-function Ii(t, e, n, r) {
+function Ei(t, e, n, r) {
   const o = Tt(t);
-  let s = Ti(Ae(t), n === "start", r);
+  let s = Ii(Ae(t), n === "start", r);
   return o && (s = s.map(i => i + "-" + o), e && (s = s.concat(s.map(dn)))), s;
 }
 function $t(t) {
-  return t.replace(/left|right|bottom|top/g, e => Ci[e]);
-}
-function Ei(t) {
-  return { top: 0, right: 0, bottom: 0, left: 0, ...t };
+  return t.replace(/left|right|bottom|top/g, e => $i[e]);
 }
 function Bi(t) {
-  return typeof t != "number" ? Ei(t) : { top: t, right: t, bottom: t, left: t };
+  return { top: 0, right: 0, bottom: 0, left: 0, ...t };
+}
+function Ri(t) {
+  return typeof t != "number" ? Bi(t) : { top: t, right: t, bottom: t, left: t };
 }
 function xt(t) {
   const { x: e, y: n, width: r, height: o } = t;
   return { width: r, height: o, top: n, left: e, right: e + r, bottom: n + o, x: e, y: n };
 }
-function Ln(t, e, n) {
+function Fn(t, e, n) {
   let { reference: r, floating: o } = t;
   const s = be(e),
     i = Er(e),
@@ -4150,7 +4080,7 @@ function Ln(t, e, n) {
   }
   return f;
 }
-async function Ri(t, e) {
+async function Oi(t, e) {
   var n;
   e === void 0 && (e = {});
   const { x: r, y: o, platform: s, rects: i, elements: a, strategy: l } = t,
@@ -4161,7 +4091,7 @@ async function Ri(t, e) {
       altBoundary: h = !1,
       padding: f = 0,
     } = At(e, t),
-    g = Bi(f),
+    g = Ri(f),
     y = a[h ? u === "floating" ? "reference" : "floating" : u],
     P = xt(
       await s.getClippingRect({
@@ -4195,12 +4125,12 @@ async function Ri(t, e) {
     right: (R.right - P.right + g.right) / _.x,
   };
 }
-const Oi = async (t, e, n) => {
+const Li = async (t, e, n) => {
     const { placement: r = "bottom", strategy: o = "absolute", middleware: s = [], platform: i } = n,
       a = s.filter(Boolean),
       l = await (i.isRTL == null ? void 0 : i.isRTL(e));
     let c = await i.getElementRects({ reference: t, floating: e, strategy: o }),
-      { x: p, y: u } = Ln(c, r, l),
+      { x: p, y: u } = Fn(c, r, l),
       h = r,
       f = {},
       g = 0;
@@ -4215,7 +4145,7 @@ const Oi = async (t, e, n) => {
           strategy: o,
           middlewareData: f,
           rects: c,
-          platform: { ...i, detectOverflow: (b = i.detectOverflow) != null ? b : Ri },
+          platform: { ...i, detectOverflow: (b = i.detectOverflow) != null ? b : Oi },
           elements: { reference: t, floating: e },
         });
       p = $ ?? p,
@@ -4226,12 +4156,12 @@ const Oi = async (t, e, n) => {
             H.rects && (c = H.rects === !0
               ? await i.getElementRects({ reference: t, floating: e, strategy: o })
               : H.rects),
-            { x: p, y: u } = Ln(c, h, l)),
+            { x: p, y: u } = Fn(c, h, l)),
           y = -1);
     }
     return { x: p, y: u, placement: h, strategy: o, middlewareData: f };
   },
-  Li = function(t) {
+  Fi = function(t) {
     return t === void 0 && (t = {}), {
       name: "flip",
       options: t,
@@ -4252,13 +4182,13 @@ const Oi = async (t, e, n) => {
           S = be(a),
           $ = Ae(a) === a,
           _ = await (l.isRTL == null ? void 0 : l.isRTL(c.floating)),
-          R = h || ($ || !b ? [$t(a)] : ki(a)),
+          R = h || ($ || !b ? [$t(a)] : Di(a)),
           H = g !== "none";
-        !h && H && R.push(...Ii(a, b, g, _));
+        !h && H && R.push(...Ei(a, b, g, _));
         const le = [a, ...R], qe = await l.detectOverflow(e, y), $e = [];
         let fe = ((r = s.flip) == null ? void 0 : r.overflows) || [];
         if (p && $e.push(qe[P]), u) {
-          const O = _i(o, i, _);
+          const O = ki(o, i, _);
           $e.push(qe[O[0]], qe[O[1]]);
         }
         if (fe = [...fe, { placement: o, overflows: $e }], !$e.every(O => O <= 0)) {
@@ -4302,14 +4232,14 @@ const Oi = async (t, e, n) => {
       },
     };
   },
-  Fi = new Set(["left", "top"]);
-async function zi(t, e) {
+  zi = new Set(["left", "top"]);
+async function Mi(t, e) {
   const { placement: n, platform: r, elements: o } = t,
     s = await (r.isRTL == null ? void 0 : r.isRTL(o.floating)),
     i = Ae(n),
     a = Tt(n),
     l = be(n) === "y",
-    c = Fi.has(i) ? -1 : 1,
+    c = zi.has(i) ? -1 : 1,
     p = s && l ? -1 : 1,
     u = At(e, t);
   let { mainAxis: h, crossAxis: f, alignmentAxis: g } = typeof u == "number"
@@ -4318,20 +4248,20 @@ async function zi(t, e) {
   return a && typeof g == "number" && (f = a === "end" ? g * -1 : g),
     l ? { x: f * p, y: h * c } : { x: h * c, y: f * p };
 }
-const Mi = function(t) {
+const Ni = function(t) {
     return t === void 0 && (t = 0), {
       name: "offset",
       options: t,
       async fn(e) {
         var n, r;
-        const { x: o, y: s, placement: i, middlewareData: a } = e, l = await zi(e, t);
+        const { x: o, y: s, placement: i, middlewareData: a } = e, l = await Mi(e, t);
         return i === ((n = a.offset) == null ? void 0 : n.placement) && (r = a.arrow) != null && r.alignmentOffset
           ? {}
           : { x: o + l.x, y: s + l.y, data: { ...l, placement: i } };
       },
     };
   },
-  Ni = function(t) {
+  Hi = function(t) {
     return t === void 0 && (t = {}), {
       name: "shift",
       options: t,
@@ -4355,11 +4285,11 @@ const Mi = function(t) {
         let g = p[f], b = p[h];
         if (i) {
           const P = f === "y" ? "top" : "left", S = f === "y" ? "bottom" : "right", $ = g + u[P], _ = g - u[S];
-          g = Bn($, g, _);
+          g = Rn($, g, _);
         }
         if (a) {
           const P = h === "y" ? "top" : "left", S = h === "y" ? "bottom" : "right", $ = b + u[P], _ = b - u[S];
-          b = Bn($, b, _);
+          b = Rn($, b, _);
         }
         const y = l.fn({ ...e, [f]: g, [h]: b });
         return { ...y, data: { x: y.x - n, y: y.y - r, enabled: { [f]: i, [h]: a } } };
@@ -4389,21 +4319,21 @@ function re(t) {
 function ae(t) {
   return It() ? t instanceof HTMLElement || t instanceof Q(t).HTMLElement : !1;
 }
-function Fn(t) {
+function zn(t) {
   return !It() || typeof ShadowRoot > "u" ? !1 : t instanceof ShadowRoot || t instanceof Q(t).ShadowRoot;
 }
-const Hi = new Set(["inline", "contents"]);
+const Gi = new Set(["inline", "contents"]);
 function nt(t) {
   const { overflow: e, overflowX: n, overflowY: r, display: o } = oe(t);
-  return /auto|scroll|overlay|hidden|clip/.test(e + r + n) && !Hi.has(o);
+  return /auto|scroll|overlay|hidden|clip/.test(e + r + n) && !Gi.has(o);
 }
-const Gi = new Set(["table", "td", "th"]);
-function Ki(t) {
-  return Gi.has(Ke(t));
+const Ki = new Set(["table", "td", "th"]);
+function qi(t) {
+  return Ki.has(Ke(t));
 }
-const qi = [":popover-open", ":modal"];
+const ji = [":popover-open", ":modal"];
 function Et(t) {
-  return qi.some(e => {
+  return ji.some(e => {
     try {
       return t.matches(e);
     } catch {
@@ -4411,30 +4341,30 @@ function Et(t) {
     }
   });
 }
-const ji = ["transform", "translate", "scale", "rotate", "perspective"],
-  Vi = ["transform", "translate", "scale", "rotate", "perspective", "filter"],
-  Xi = ["paint", "layout", "strict", "content"];
-function Pn(t) {
-  const e = Sn(), n = re(t) ? oe(t) : t;
-  return ji.some(r => n[r] ? n[r] !== "none" : !1) || (n.containerType ? n.containerType !== "normal" : !1)
+const Vi = ["transform", "translate", "scale", "rotate", "perspective"],
+  Xi = ["transform", "translate", "scale", "rotate", "perspective", "filter"],
+  Ji = ["paint", "layout", "strict", "content"];
+function Sn(t) {
+  const e = wn(), n = re(t) ? oe(t) : t;
+  return Vi.some(r => n[r] ? n[r] !== "none" : !1) || (n.containerType ? n.containerType !== "normal" : !1)
     || !e && (n.backdropFilter ? n.backdropFilter !== "none" : !1) || !e && (n.filter ? n.filter !== "none" : !1)
-    || Vi.some(r => (n.willChange || "").includes(r)) || Xi.some(r => (n.contain || "").includes(r));
+    || Xi.some(r => (n.willChange || "").includes(r)) || Ji.some(r => (n.contain || "").includes(r));
 }
-function Ji(t) {
+function Ui(t) {
   let e = ve(t);
   for (; ae(e) && !Ge(e);) {
-    if (Pn(e)) return e;
+    if (Sn(e)) return e;
     if (Et(e)) return null;
     e = ve(e);
   }
   return null;
 }
-function Sn() {
+function wn() {
   return typeof CSS > "u" || !CSS.supports ? !1 : CSS.supports("-webkit-backdrop-filter", "none");
 }
-const Ui = new Set(["html", "body", "#document"]);
+const Wi = new Set(["html", "body", "#document"]);
 function Ge(t) {
-  return Ui.has(Ke(t));
+  return Wi.has(Ke(t));
 }
 function oe(t) {
   return Q(t).getComputedStyle(t);
@@ -4444,8 +4374,8 @@ function Bt(t) {
 }
 function ve(t) {
   if (Ke(t) === "html") return t;
-  const e = t.assignedSlot || t.parentNode || Fn(t) && t.host || he(t);
-  return Fn(e) ? e.host : e;
+  const e = t.assignedSlot || t.parentNode || zn(t) && t.host || he(t);
+  return zn(e) ? e.host : e;
 }
 function Rr(t) {
   const e = ve(t);
@@ -4469,33 +4399,33 @@ function Lr(t) {
 function Fr(t) {
   return re(t) ? t : t.contextElement;
 }
-function Fe(t) {
+function ze(t) {
   const e = Fr(t);
   if (!ae(e)) return se(1);
   const n = e.getBoundingClientRect(), { width: r, height: o, $: s } = Lr(e);
   let i = (s ? Ct(n.width) : n.width) / r, a = (s ? Ct(n.height) : n.height) / o;
   return (!i || !Number.isFinite(i)) && (i = 1), (!a || !Number.isFinite(a)) && (a = 1), { x: i, y: a };
 }
-const Wi = se(0);
+const Yi = se(0);
 function zr(t) {
   const e = Q(t);
-  return !Sn() || !e.visualViewport ? Wi : { x: e.visualViewport.offsetLeft, y: e.visualViewport.offsetTop };
+  return !wn() || !e.visualViewport ? Yi : { x: e.visualViewport.offsetLeft, y: e.visualViewport.offsetTop };
 }
-function Yi(t, e, n) {
+function Qi(t, e, n) {
   return e === void 0 && (e = !1), !n || e && n !== Q(t) ? !1 : e;
 }
 function Ze(t, e, n, r) {
   e === void 0 && (e = !1), n === void 0 && (n = !1);
   const o = t.getBoundingClientRect(), s = Fr(t);
   let i = se(1);
-  e && (r ? re(r) && (i = Fe(r)) : i = Fe(t));
-  const a = Yi(s, n, r) ? zr(s) : se(0);
+  e && (r ? re(r) && (i = ze(r)) : i = ze(t));
+  const a = Qi(s, n, r) ? zr(s) : se(0);
   let l = (o.left + a.x) / i.x, c = (o.top + a.y) / i.y, p = o.width / i.x, u = o.height / i.y;
   if (s) {
     const h = Q(s), f = r && re(r) ? Q(r) : r;
     let g = h, b = un(g);
     for (; b && r && f !== g;) {
-      const y = Fe(b),
+      const y = ze(b),
         P = b.getBoundingClientRect(),
         S = oe(b),
         $ = P.left + (b.clientLeft + parseFloat(S.paddingLeft)) * y.x,
@@ -4513,7 +4443,7 @@ function Mr(t, e) {
   const n = t.getBoundingClientRect(), r = n.left + e.scrollLeft - Rt(t, n), o = n.top + e.scrollTop;
   return { x: r, y: o };
 }
-function Qi(t) {
+function Zi(t) {
   let { elements: e, rect: n, offsetParent: r, strategy: o } = t;
   const s = o === "fixed", i = he(r), a = e ? Et(e.floating) : !1;
   if (r === i || a && s) return n;
@@ -4521,7 +4451,7 @@ function Qi(t) {
   const p = se(0), u = ae(r);
   if ((u || !u && !s) && ((Ke(r) !== "body" || nt(i)) && (l = Bt(r)), ae(r))) {
     const f = Ze(r);
-    c = Fe(r), p.x = f.x + r.clientLeft, p.y = f.y + r.clientTop;
+    c = ze(r), p.x = f.x + r.clientLeft, p.y = f.y + r.clientTop;
   }
   const h = i && !u && !s ? Mr(i, l) : se(0);
   return {
@@ -4531,26 +4461,26 @@ function Qi(t) {
     y: n.y * c.y - l.scrollTop * c.y + p.y + h.y,
   };
 }
-function Zi(t) {
+function ea(t) {
   return Array.from(t.getClientRects());
 }
-function ea(t) {
+function ta(t) {
   const e = he(t),
     n = Bt(t),
     r = t.ownerDocument.body,
-    o = Le(e.scrollWidth, e.clientWidth, r.scrollWidth, r.clientWidth),
-    s = Le(e.scrollHeight, e.clientHeight, r.scrollHeight, r.clientHeight);
+    o = Fe(e.scrollWidth, e.clientWidth, r.scrollWidth, r.clientWidth),
+    s = Fe(e.scrollHeight, e.clientHeight, r.scrollHeight, r.clientHeight);
   let i = -n.scrollLeft + Rt(t);
   const a = -n.scrollTop;
-  return oe(r).direction === "rtl" && (i += Le(e.clientWidth, r.clientWidth) - o), { width: o, height: s, x: i, y: a };
+  return oe(r).direction === "rtl" && (i += Fe(e.clientWidth, r.clientWidth) - o), { width: o, height: s, x: i, y: a };
 }
-const zn = 25;
-function ta(t, e) {
+const Mn = 25;
+function na(t, e) {
   const n = Q(t), r = he(t), o = n.visualViewport;
   let s = r.clientWidth, i = r.clientHeight, a = 0, l = 0;
   if (o) {
     s = o.width, i = o.height;
-    const p = Sn();
+    const p = wn();
     (!p || p && e === "fixed") && (a = o.offsetLeft, l = o.offsetTop);
   }
   const c = Rt(r);
@@ -4560,27 +4490,27 @@ function ta(t, e) {
       h = getComputedStyle(u),
       f = p.compatMode === "CSS1Compat" && parseFloat(h.marginLeft) + parseFloat(h.marginRight) || 0,
       g = Math.abs(r.clientWidth - u.clientWidth - f);
-    g <= zn && (s -= g);
-  } else c <= zn && (s += c);
+    g <= Mn && (s -= g);
+  } else c <= Mn && (s += c);
   return { width: s, height: i, x: a, y: l };
 }
-const na = new Set(["absolute", "fixed"]);
-function ra(t, e) {
+const ra = new Set(["absolute", "fixed"]);
+function oa(t, e) {
   const n = Ze(t, !0, e === "fixed"),
     r = n.top + t.clientTop,
     o = n.left + t.clientLeft,
-    s = ae(t) ? Fe(t) : se(1),
+    s = ae(t) ? ze(t) : se(1),
     i = t.clientWidth * s.x,
     a = t.clientHeight * s.y,
     l = o * s.x,
     c = r * s.y;
   return { width: i, height: a, x: l, y: c };
 }
-function Mn(t, e, n) {
+function Nn(t, e, n) {
   let r;
-  if (e === "viewport") r = ta(t, n);
-  else if (e === "document") r = ea(he(t));
-  else if (re(e)) r = ra(e, n);
+  if (e === "viewport") r = na(t, n);
+  else if (e === "document") r = ta(he(t));
+  else if (re(e)) r = oa(e, n);
   else {
     const o = zr(t);
     r = { x: e.x - o.x, y: e.y - o.y, width: e.width, height: e.height };
@@ -4591,41 +4521,41 @@ function Nr(t, e) {
   const n = ve(t);
   return n === e || !re(n) || Ge(n) ? !1 : oe(n).position === "fixed" || Nr(n, e);
 }
-function oa(t, e) {
+function sa(t, e) {
   const n = e.get(t);
   if (n) return n;
   let r = Or(t, []).filter(a => re(a) && Ke(a) !== "body"), o = null;
   const s = oe(t).position === "fixed";
   let i = s ? ve(t) : t;
   for (; re(i) && !Ge(i);) {
-    const a = oe(i), l = Pn(i);
+    const a = oe(i), l = Sn(i);
     !l && a.position === "fixed" && (o = null),
-      (s ? !l && !o : !l && a.position === "static" && !!o && na.has(o.position) || nt(i) && !l && Nr(t, i))
+      (s ? !l && !o : !l && a.position === "static" && !!o && ra.has(o.position) || nt(i) && !l && Nr(t, i))
         ? r = r.filter(p => p !== i)
         : o = a,
       i = ve(i);
   }
   return e.set(t, r), r;
 }
-function sa(t) {
+function ia(t) {
   let { element: e, boundary: n, rootBoundary: r, strategy: o } = t;
-  const i = [...n === "clippingAncestors" ? Et(e) ? [] : oa(e, this._c) : [].concat(n), r],
+  const i = [...n === "clippingAncestors" ? Et(e) ? [] : sa(e, this._c) : [].concat(n), r],
     a = i[0],
     l = i.reduce((c, p) => {
-      const u = Mn(e, p, o);
-      return c.top = Le(u.top, c.top),
+      const u = Nn(e, p, o);
+      return c.top = Fe(u.top, c.top),
         c.right = cn(u.right, c.right),
         c.bottom = cn(u.bottom, c.bottom),
-        c.left = Le(u.left, c.left),
+        c.left = Fe(u.left, c.left),
         c;
-    }, Mn(e, a, o));
+    }, Nn(e, a, o));
   return { width: l.right - l.left, height: l.bottom - l.top, x: l.left, y: l.top };
 }
-function ia(t) {
+function aa(t) {
   const { width: e, height: n } = Lr(t);
   return { width: e, height: n };
 }
-function aa(t, e, n) {
+function la(t, e, n) {
   const r = ae(e), o = he(e), s = n === "fixed", i = Ze(t, !0, s, e);
   let a = { scrollLeft: 0, scrollTop: 0 };
   const l = se(0);
@@ -4644,10 +4574,10 @@ function aa(t, e, n) {
     h = i.top + a.scrollTop - l.y - p.y;
   return { x: u, y: h, width: i.width, height: i.height };
 }
-function jt(t) {
+function Vt(t) {
   return oe(t).position === "static";
 }
-function Nn(t, e) {
+function Hn(t, e) {
   if (!ae(t) || oe(t).position === "fixed") return null;
   if (e) return e(t);
   let n = t.offsetParent;
@@ -4659,50 +4589,50 @@ function Hr(t, e) {
   if (!ae(t)) {
     let o = ve(t);
     for (; o && !Ge(o);) {
-      if (re(o) && !jt(o)) return o;
+      if (re(o) && !Vt(o)) return o;
       o = ve(o);
     }
     return n;
   }
-  let r = Nn(t, e);
-  for (; r && Ki(r) && jt(r);) r = Nn(r, e);
-  return r && Ge(r) && jt(r) && !Pn(r) ? n : r || Ji(t) || n;
+  let r = Hn(t, e);
+  for (; r && qi(r) && Vt(r);) r = Hn(r, e);
+  return r && Ge(r) && Vt(r) && !Sn(r) ? n : r || Ui(t) || n;
 }
-const la = async function(t) {
+const ca = async function(t) {
   const e = this.getOffsetParent || Hr, n = this.getDimensions, r = await n(t.floating);
   return {
-    reference: aa(t.reference, await e(t.floating), t.strategy),
+    reference: la(t.reference, await e(t.floating), t.strategy),
     floating: { x: 0, y: 0, width: r.width, height: r.height },
   };
 };
-function ca(t) {
+function da(t) {
   return oe(t).direction === "rtl";
 }
-const da = {
-    convertOffsetParentRelativeRectToViewportRelativeRect: Qi,
+const ua = {
+    convertOffsetParentRelativeRectToViewportRelativeRect: Zi,
     getDocumentElement: he,
-    getClippingRect: sa,
+    getClippingRect: ia,
     getOffsetParent: Hr,
-    getElementRects: la,
-    getClientRects: Zi,
-    getDimensions: ia,
-    getScale: Fe,
+    getElementRects: ca,
+    getClientRects: ea,
+    getDimensions: aa,
+    getScale: ze,
     isElement: re,
-    isRTL: ca,
+    isRTL: da,
   },
-  Gr = Mi,
-  Kr = Ni,
-  qr = Li,
+  Gr = Ni,
+  Kr = Hi,
+  qr = Fi,
   jr = (t, e, n) => {
-    const r = new Map(), o = { platform: da, ...n }, s = { ...o.platform, _c: r };
-    return Oi(t, e, { ...o, platform: s });
+    const r = new Map(), o = { platform: ua, ...n }, s = { ...o.platform, _c: r };
+    return Li(t, e, { ...o, platform: s });
   };
-var ua = v("<div class=so-menu role=menu>"),
-  pa = v("<span><button type=button class=so-menu-trigger aria-haspopup=menu>"),
-  ma = v("<div role=menuitem>"),
-  ha = v("<div role=separator>");
-const Hn = "[role=\"menuitem\"]:not([aria-disabled=\"true\"])";
-function fa(t) {
+var pa = v("<div class=so-menu role=menu>"),
+  ma = v("<span><button type=button class=so-menu-trigger aria-haspopup=menu>"),
+  ha = v("<div role=menuitem>"),
+  fa = v("<div role=separator>");
+const Gn = "[role=\"menuitem\"]:not([aria-disabled=\"true\"])";
+function ga(t) {
   const [e, n] = x(t, ["class", "density", "open", "onOpenChange", "placement", "trigger", "children"]),
     r = `so-menu-${ue()}`;
   let o;
@@ -4724,7 +4654,7 @@ function fa(t) {
   function l() {
     const h = s();
     if (!h) return;
-    const f = h.querySelector(Hn);
+    const f = h.querySelector(Gn);
     f == null || f.focus();
   }
   function c(h) {
@@ -4735,7 +4665,7 @@ function fa(t) {
     }
     const f = s();
     if (!f) return;
-    const g = Array.from(f.querySelectorAll(Hn));
+    const g = Array.from(f.querySelectorAll(Gn));
     if (g.length === 0) return;
     const b = document.activeElement, y = g.indexOf(b);
     if (h.key === "ArrowDown") {
@@ -4767,7 +4697,7 @@ function fa(t) {
     e.onOpenChange(!e.open);
   }
   return (() => {
-    var h = pa(), f = h.firstChild;
+    var h = ma(), f = h.firstChild;
     T(
       h,
       A({
@@ -4793,7 +4723,7 @@ function fa(t) {
           get children() {
             return d(tt, {
               get children() {
-                var b = ua();
+                var b = pa();
                 return ye(i, b), w(b, "id", r), m(b, () => e.children), b;
               },
             });
@@ -4808,7 +4738,7 @@ function fa(t) {
       h;
   })();
 }
-function Vt(t) {
+function Xt(t) {
   const [e, n] = x(t, ["class", "disabled", "onSelect", "children"]);
   function r() {
     var s;
@@ -4819,7 +4749,7 @@ function Vt(t) {
     (s.key === "Enter" || s.key === " ") && !e.disabled && (s.preventDefault(), (i = e.onSelect) == null || i.call(e));
   }
   return (() => {
-    var s = ma();
+    var s = ha();
     return s.$$keydown = o,
       s.$$click = r,
       T(
@@ -4842,10 +4772,10 @@ function Vt(t) {
       s;
   })();
 }
-function ga(t) {
+function ba(t) {
   const [e, n] = x(t, ["class"]);
   return (() => {
-    var r = ha();
+    var r = fa();
     return T(
       r,
       A({
@@ -4860,764 +4790,14 @@ function ga(t) {
   })();
 }
 q(["click", "keydown"]);
-var ba = v("<div class=so-popover role=dialog>"),
-  ya = v("<span><button type=button class=so-popover-trigger aria-haspopup=dialog>");
-function va(t) {
-  const [e, n] = x(t, ["class", "density", "open", "onOpenChange", "placement", "content", "children"]),
-    r = `so-popover-${ue()}`;
-  let o;
-  const [s, i] = I(void 0);
-  function a() {
-    const u = s();
-    !o || !u
-      || jr(o, u, { placement: e.placement ?? "bottom-start", middleware: [Gr(4), qr(), Kr({ padding: 8 })] }).then(
-        ({ x: h, y: f }) => {
-          u.style.left = `${h}px`, u.style.top = `${f}px`;
-        },
-      );
-  }
-  ie(Te(() => e.open, u => {
-    u && requestAnimationFrame(a);
-  }));
-  function l(u) {
-    u.key === "Escape" && e.open && (u.stopPropagation(), e.onOpenChange(!1), o == null || o.focus());
-  }
-  function c(u) {
-    if (!e.open) return;
-    const h = s(), f = u.target;
-    o != null && o.contains(f) || h != null && h.contains(f) || e.onOpenChange(!1);
-  }
-  ie(() => {
-    e.open
-      ? (document.addEventListener("mousedown", c), document.addEventListener("keydown", l))
-      : (document.removeEventListener("mousedown", c), document.removeEventListener("keydown", l));
-  }),
-    ne(() => {
-      document.removeEventListener("mousedown", c), document.removeEventListener("keydown", l);
-    });
-  function p() {
-    e.onOpenChange(!e.open);
-  }
-  return (() => {
-    var u = ya(), h = u.firstChild;
-    T(
-      u,
-      A({
-        get class() {
-          return C("so-popover-anchor", e.class);
-        },
-        get "data-density"() {
-          return e.density;
-        },
-      }, n),
-      !1,
-      !0,
-    ), h.$$click = p;
-    var f = o;
-    return typeof f == "function" ? ye(f, h) : o = h,
-      m(h, () => e.children),
-      m(
-        u,
-        d(k, {
-          get when() {
-            return e.open;
-          },
-          get children() {
-            return d(tt, {
-              get children() {
-                var g = ba();
-                return ye(i, g), w(g, "id", r), m(g, () => e.content), g;
-              },
-            });
-          },
-        }),
-        null,
-      ),
-      D(g => {
-        var b = e.open, y = e.open ? r : void 0;
-        return b !== g.e && w(h, "aria-expanded", g.e = b), y !== g.t && w(h, "aria-controls", g.t = y), g;
-      }, { e: void 0, t: void 0 }),
-      u;
-  })();
-}
-q(["click"]);
-var Pa = v("<div aria-hidden=true>");
-function Xt(t) {
-  const [e, n] = x(t, ["class", "density", "variant", "width", "height"]);
-  return (() => {
-    var r = Pa();
-    return T(
-      r,
-      A({
-        get class() {
-          return C("so-skeleton", `so-skeleton--${e.variant ?? "text"}`, e.class);
-        },
-        get "data-density"() {
-          return e.density;
-        },
-        get style() {
-          return { width: e.width, height: e.height };
-        },
-      }, n),
-      !1,
-      !1,
-    ),
-      r;
-  })();
-}
-var Sa = v(
-    "<th class=\"so-table__cell so-table__cell--checkbox\"><input type=checkbox aria-label=\"Select all rows\">",
-  ),
-  wa = v(
-    "<div><table class=so-table role=table><thead><tr class=\"so-table__row so-table__row--header\"></tr></thead><tbody>",
-  ),
-  Ca = v("<button type=button class=so-table__sort-button><span aria-hidden=true>"),
-  $a = v("<th scope=col>"),
-  xa = v("<td class=\"so-table__cell so-table__cell--checkbox\"><input type=checkbox>"),
-  _a = v("<tr>"),
-  ka = v("<td>");
-function Da(t) {
-  const [e, n] = x(t, [
-    "class",
-    "density",
-    "columns",
-    "data",
-    "sortKey",
-    "sortDirection",
-    "onSort",
-    "selectable",
-    "selectedKeys",
-    "onSelect",
-    "rowKey",
-  ]);
-  function r(l, c) {
-    return e.rowKey ? e.rowKey(l) : String(c);
-  }
-  function o(l) {
-    if (!e.onSort) return;
-    const c = e.sortKey === l && e.sortDirection === "asc" ? "desc" : "asc";
-    e.onSort(l, c);
-  }
-  const s = M(() =>
-    !e.selectable || !e.selectedKeys || e.data.length === 0 ? !1 : e.data.every((l, c) => {
-      var p;
-      return (p = e.selectedKeys) == null ? void 0 : p.has(r(l, c));
-    })
-  );
-  function i() {
-    if (e.onSelect) {
-      if (s()) e.onSelect(new Set());
-      else {
-        const l = new Set(e.data.map((c, p) => r(c, p)));
-        e.onSelect(l);
-      }
-    }
-  }
-  function a(l) {
-    if (!e.onSelect) return;
-    const c = new Set(e.selectedKeys);
-    c.has(l) ? c.delete(l) : c.add(l), e.onSelect(c);
-  }
-  return (() => {
-    var l = wa(), c = l.firstChild, p = c.firstChild, u = p.firstChild, h = p.nextSibling;
-    return T(
-      l,
-      A({
-        get class() {
-          return C("so-table-wrapper", e.class);
-        },
-        get "data-density"() {
-          return e.density;
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(
-        u,
-        d(k, {
-          get when() {
-            return e.selectable;
-          },
-          get children() {
-            var f = Sa(), g = f.firstChild;
-            return g.addEventListener("change", i), D(() => g.checked = s()), f;
-          },
-        }),
-        null,
-      ),
-      m(
-        u,
-        d(Y, {
-          get each() {
-            return e.columns;
-          },
-          children: f =>
-            (() => {
-              var g = $a();
-              return m(
-                g,
-                d(k, {
-                  get when() {
-                    return f.sortable;
-                  },
-                  get fallback() {
-                    return f.header;
-                  },
-                  get children() {
-                    var b = Ca(), y = b.firstChild;
-                    return b.$$click = () => o(f.key),
-                      m(b, () => f.header, y),
-                      D(() =>
-                        G(y, C("so-table__sort-icon", e.sortKey === f.key && `so-table__sort-icon--${e.sortDirection}`))
-                      ),
-                      b;
-                  },
-                }),
-              ),
-                D(b => {
-                  var y = C("so-table__cell", "so-table__header", f.align && `so-table__cell--${f.align}`),
-                    P = f.width,
-                    S = e.sortKey === f.key ? e.sortDirection === "asc" ? "ascending" : "descending" : void 0;
-                  return y !== b.e && G(g, b.e = y),
-                    P !== b.t && or(g, "width", b.t = P),
-                    S !== b.a && w(g, "aria-sort", b.a = S),
-                    b;
-                }, { e: void 0, t: void 0, a: void 0 }),
-                g;
-            })(),
-        }),
-        null,
-      ),
-      m(
-        h,
-        d(Y, {
-          get each() {
-            return e.data;
-          },
-          children: (f, g) => {
-            const b = () => r(f, g());
-            return (() => {
-              var y = _a();
-              return m(
-                y,
-                d(k, {
-                  get when() {
-                    return e.selectable;
-                  },
-                  get children() {
-                    var P = xa(), S = P.firstChild;
-                    return S.addEventListener("change", () => a(b())),
-                      D(() => w(S, "aria-label", `Select row ${b()}`)),
-                      D(() => {
-                        var $;
-                        return S.checked = (($ = e.selectedKeys) == null ? void 0 : $.has(b())) ?? !1;
-                      }),
-                      P;
-                  },
-                }),
-                null,
-              ),
-                m(
-                  y,
-                  d(Y, {
-                    get each() {
-                      return e.columns;
-                    },
-                    children: P =>
-                      (() => {
-                        var S = ka();
-                        return m(
-                          S,
-                          (() => {
-                            var $ = U(() => !!P.render);
-                            return () => $() ? P.render(f[P.key], f) : f[P.key];
-                          })(),
-                        ),
-                          D(() => G(S, C("so-table__cell", P.align && `so-table__cell--${P.align}`))),
-                          S;
-                      })(),
-                  }),
-                  null,
-                ),
-                D(() => {
-                  var P;
-                  return G(
-                    y,
-                    C(
-                      "so-table__row",
-                      ((P = e.selectedKeys) == null ? void 0 : P.has(b())) && "so-table__row--selected",
-                    ),
-                  );
-                }),
-                y;
-            })();
-          },
-        }),
-      ),
-      l;
-  })();
-}
-q(["click"]);
-const Aa = (t, e) => {
-    let n;
-    const r = () => clearTimeout(n);
-    return kt() && ne(r),
-      Object.assign((...s) => {
-        n !== void 0 && r(), n = setTimeout(() => t(...s), e);
-      }, { clear: r });
-  },
-  Ta = 150;
-let Gn = 0;
-function Ia(t = {}) {
-  const e = t.defaultDuration ?? 5e3, [n, r] = cs([]), o = new Map();
-  function s(l) {
-    r(Gt(c => {
-      const p = c.findIndex(u => u.id === l);
-      p !== -1 && c.splice(p, 1);
-    }));
-  }
-  function i(l) {
-    const c = o.get(l);
-    c && (c.clear(), o.delete(l)),
-      r(Gt(p => {
-        const u = p.find(h => h.id === l);
-        u && (u.dismissing = !0);
-      })),
-      setTimeout(() => s(l), Ta);
-  }
-  function a(l) {
-    Gn += 1;
-    const c = `so-toast-${Gn}`, p = l.duration ?? e, u = { id: c, message: l.message, variant: l.variant, duration: p };
-    if (
-      r(Gt(h => {
-        h.push(u);
-      })), p > 0
-    ) {
-      const h = Aa(() => i(c), p);
-      o.set(c, h), h();
-    }
-    return c;
-  }
-  return { toasts: n, add: a, dismiss: i };
-}
-var Ea = v("<div aria-live=polite aria-relevant=additions>"),
-  Ba = v(
-    "<div><span class=so-toast__message></span><button type=button class=so-toast__dismiss aria-label=Dismiss>&times;",
-  );
-let Jt;
-function Vr() {
-  return Jt || (Jt = Ia()), Jt;
-}
-function Ra() {
-  const t = Vr();
-  return { add: e => t.add(e), dismiss: e => t.dismiss(e) };
-}
-function Oa(t) {
-  const [e] = x(t, ["position"]), n = Vr();
-  return d(tt, {
-    get children() {
-      var r = Ea();
-      return m(
-        r,
-        d(Y, {
-          get each() {
-            return n.toasts;
-          },
-          children: o =>
-            (() => {
-              var s = Ba(), i = s.firstChild, a = i.nextSibling;
-              return m(i, () => o.message),
-                a.$$click = () => n.dismiss(o.id),
-                D(l => {
-                  var c = C("so-toast", `so-toast--${o.variant ?? "info"}`, o.dismissing && "so-toast--dismissing"),
-                    p = o.variant === "danger" || o.variant === "warning" ? "alert" : "status";
-                  return c !== l.e && G(s, l.e = c), p !== l.t && w(s, "role", l.t = p), l;
-                }, { e: void 0, t: void 0 }),
-                s;
-            })(),
-        }),
-      ),
-        D(() => G(r, C("so-toast-container", `so-toast-container--${e.position ?? "top-right"}`))),
-        r;
-    },
-  });
-}
-q(["click"]);
-var La = v("<span><span></span><span role=tooltip>");
-let Kn = 0;
-function ct(t) {
-  const [e, n] = x(t, ["content", "placement", "class", "children"]);
-  Kn += 1;
-  const r = `so-tooltip-${Kn}`;
-  return d(k, {
-    get when() {
-      return e.content;
-    },
-    get fallback() {
-      return U(() => e.children);
-    },
-    get children() {
-      var o = La(), s = o.firstChild, i = s.nextSibling;
-      return T(
-        o,
-        A({
-          get class() {
-            return C("so-tooltip-wrapper", e.class);
-          },
-        }, n),
-        !1,
-        !0,
-      ),
-        w(s, "aria-describedby", r),
-        m(s, () => e.children),
-        w(i, "id", r),
-        m(i, () => e.content),
-        D(() => G(i, C("so-tooltip", `so-tooltip--${e.placement ?? "top"}`))),
-        o;
-    },
-  });
-}
-var Fa = v("<button type=button class=so-alert__dismiss aria-label=Dismiss>&times;"),
-  za = v("<div role=alert><div class=so-alert__content>");
-function dt(t) {
-  const [e, n] = x(t, ["class", "density", "variant", "children", "onDismiss"]);
-  return (() => {
-    var r = za(), o = r.firstChild;
-    return T(
-      r,
-      A({
-        get class() {
-          return C("so-alert", `so-alert--${e.variant ?? "info"}`, e.class);
-        },
-        get "data-density"() {
-          return e.density;
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(o, () => e.children),
-      m(
-        r,
-        d(k, {
-          get when() {
-            return e.onDismiss;
-          },
-          get children() {
-            var s = Fa();
-            return s.$$click = () => {
-              var i;
-              return (i = e.onDismiss) == null ? void 0 : i.call(e);
-            },
-              s;
-          },
-        }),
-        null,
-      ),
-      r;
-  })();
-}
-q(["click"]);
-var Ma = v("<div><div role=dialog aria-modal=true>"), wn = v("<div>");
-let qn = 0;
-const Xr = Se();
-function Na(t) {
-  const [e, n] = x(t, ["class", "density", "open", "onClose", "size", "children"]);
-  qn += 1;
-  const r = `so-dialog-title-${qn}`, [o, s] = I(!1), [i, a] = I(!1);
-  ie(Te(() => e.open, h => {
-    h ? (a(!1), s(!0)) : o() && a(!0);
-  }));
-  function l() {
-    i() && (s(!1), a(!1));
-  }
-  const [c, p] = I(void 0);
-  Dr({ container: c, isActive: () => e.open, onClose: () => e.onClose() });
-  function u(h) {
-    h.target === h.currentTarget && e.onClose();
-  }
-  return d(k, {
-    get when() {
-      return o();
-    },
-    get children() {
-      return d(tt, {
-        get children() {
-          return d(Xr.Provider, {
-            value: r,
-            get children() {
-              var h = Ma(), f = h.firstChild;
-              return h.addEventListener("animationend", l),
-                h.$$click = u,
-                ye(p, f),
-                w(f, "aria-labelledby", r),
-                T(
-                  f,
-                  A({
-                    get class() {
-                      return C("so-dialog", `so-dialog--${e.size ?? "md"}`, i() && "so-dialog--closing", e.class);
-                    },
-                    get "data-density"() {
-                      return e.density;
-                    },
-                  }, n),
-                  !1,
-                  !0,
-                ),
-                m(f, () => e.children),
-                D(() => G(h, C("so-dialog-backdrop", i() && "so-dialog-backdrop--closing"))),
-                h;
-            },
-          });
-        },
-      });
-    },
-  });
-}
-function Ha(t) {
-  const [e, n] = x(t, ["class", "children"]), r = me(Xr);
-  return (() => {
-    var o = wn();
-    return w(o, "id", r),
-      T(
-        o,
-        A({
-          get class() {
-            return C("so-dialog__header", e.class);
-          },
-        }, n),
-        !1,
-        !0,
-      ),
-      m(o, () => e.children),
-      o;
-  })();
-}
-function Ga(t) {
-  const [e, n] = x(t, ["class", "children"]);
-  return (() => {
-    var r = wn();
-    return T(
-      r,
-      A({
-        get class() {
-          return C("so-dialog__body", e.class);
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(r, () => e.children),
-      r;
-  })();
-}
-function Ka(t) {
-  const [e, n] = x(t, ["class", "children"]);
-  return (() => {
-    var r = wn();
-    return T(
-      r,
-      A({
-        get class() {
-          return C("so-dialog__footer", e.class);
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(r, () => e.children),
-      r;
-  })();
-}
-q(["click"]);
-var qa = v("<div role=progressbar aria-valuemin=0 aria-valuemax=100><div class=so-progress__bar>");
-function Ut(t) {
-  const [e, n] = x(t, ["class", "density", "value", "variant", "size", "aria-label"]),
-    r = () => Math.max(0, Math.min(100, e.value));
-  return (() => {
-    var o = qa(), s = o.firstChild;
-    return T(
-      o,
-      A({
-        get class() {
-          return C("so-progress", `so-progress--${e.variant ?? "info"}`, `so-progress--${e.size ?? "md"}`, e.class);
-        },
-        get "aria-valuenow"() {
-          return r();
-        },
-        get "aria-label"() {
-          return e["aria-label"];
-        },
-        get "data-density"() {
-          return e.density;
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      D(i => or(s, "width", `${r()}%`)),
-      o;
-  })();
-}
-var ja = v("<span role=status aria-label=Loading>");
-function ut(t) {
-  const [e, n] = x(t, ["class", "density", "size", "variant"]);
-  return (() => {
-    var r = ja();
-    return T(
-      r,
-      A({
-        get class() {
-          return C("so-spinner", `so-spinner--${e.size ?? "md"}`, `so-spinner--${e.variant ?? "primary"}`, e.class);
-        },
-        get "data-density"() {
-          return e.density;
-        },
-      }, n),
-      !1,
-      !1,
-    ),
-      r;
-  })();
-}
-var Va = v(
-    "<svg viewBox=\"0 0 12 12\"fill=none class=so-checkbox__icon><line x1=2 y1=6 x2=10 y2=6 stroke=currentColor stroke-width=2 stroke-linecap=round>",
-  ),
-  Xa = v(
-    "<svg viewBox=\"0 0 12 12\"fill=none class=so-checkbox__icon><polyline points=\"2,6 5,9 10,3\"stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round fill=none>",
-  ),
-  Ja = v("<span class=so-checkbox__label>"),
-  Ua = v("<p class=so-checkbox__error role=alert>"),
-  Wa = v("<p class=so-checkbox__hint>"),
-  Ya = v(
-    "<div><label><input type=checkbox class=so-checkbox__input><span class=so-checkbox__indicator aria-hidden=true>",
-  );
-function ze(t) {
-  const [e, n] = x(t, [
-    "class",
-    "checked",
-    "onChange",
-    "indeterminate",
-    "disabled",
-    "size",
-    "label",
-    "value",
-    "error",
-    "hint",
-    "children",
-  ]);
-  let r;
-  const o = ei(),
-    s = ue(),
-    i = `so-cb-error-${s}`,
-    a = `so-cb-hint-${s}`,
-    l = () => o && e.value != null ? o.value().includes(e.value) : e.checked ?? !1,
-    c = () => {
-      var h;
-      const u = !l();
-      o && e.value != null && o.onChange(e.value, u), (h = e.onChange) == null || h.call(e, u);
-    },
-    p = () => {
-      if (e.error) return i;
-      if (e.hint) return a;
-    };
-  return ie(() => {
-    r && (r.indeterminate = e.indeterminate ?? !1);
-  }),
-    (() => {
-      var u = Ya(), h = u.firstChild, f = h.firstChild, g = f.nextSibling;
-      f.addEventListener("change", c);
-      var b = r;
-      return typeof b == "function" ? ye(b, f) : r = f,
-        m(
-          g,
-          d(k, {
-            get when() {
-              return e.indeterminate;
-            },
-            get children() {
-              return Va();
-            },
-          }),
-          null,
-        ),
-        m(
-          g,
-          d(k, {
-            get when() {
-              return U(() => !e.indeterminate)() && l();
-            },
-            get children() {
-              return Xa();
-            },
-          }),
-          null,
-        ),
-        m(
-          h,
-          d(k, {
-            get when() {
-              return e.label || e.children;
-            },
-            get children() {
-              var y = Ja();
-              return m(y, () => e.children ?? e.label), y;
-            },
-          }),
-          null,
-        ),
-        m(
-          u,
-          d(k, {
-            get when() {
-              return e.error;
-            },
-            get children() {
-              var y = Ua();
-              return w(y, "id", i), m(y, () => e.error), y;
-            },
-          }),
-          null,
-        ),
-        m(
-          u,
-          d(k, {
-            get when() {
-              return U(() => !e.error)() && e.hint;
-            },
-            get children() {
-              var y = Wa();
-              return w(y, "id", a), m(y, () => e.hint), y;
-            },
-          }),
-          null,
-        ),
-        D(y => {
-          var P = C("so-checkbox-wrapper", e.error && "so-checkbox-wrapper--error"),
-            S = C("so-checkbox", `so-checkbox--${e.size ?? "md"}`, e.disabled && "so-checkbox--disabled", e.class),
-            $ = e.disabled,
-            _ = e.error ? !0 : void 0,
-            R = p();
-          return P !== y.e && G(u, y.e = P),
-            S !== y.t && G(h, y.t = S),
-            $ !== y.a && (f.disabled = y.a = $),
-            _ !== y.o && w(f, "aria-invalid", y.o = _),
-            R !== y.i && w(f, "aria-describedby", y.i = R),
-            y;
-        }, { e: void 0, t: void 0, a: void 0, o: void 0, i: void 0 }),
-        D(() => f.checked = l()),
-        u;
-    })();
-}
-const Jr = Se();
+const Vr = Se();
 function Ot() {
-  return me(Jr);
+  return me(Vr);
 }
-var Qa = v("<span class=so-form-field__required aria-hidden=true>*"),
-  Za = v("<p class=so-form-field__error role=alert>"),
-  el = v("<p class=so-form-field__hint>"),
-  tl = v("<div><label class=so-form-field__label>");
+var ya = v("<span class=so-form-field__required aria-hidden=true>*"),
+  va = v("<p class=so-form-field__error role=alert>"),
+  Pa = v("<p class=so-form-field__hint>"),
+  Sa = v("<div><label class=so-form-field__label>");
 function Lt(t) {
   const [e, n] = x(t, ["class", "label", "error", "hint", "required", "children"]),
     r = ue(),
@@ -5638,10 +4818,10 @@ function Lt(t) {
         return !!e.error;
       },
     };
-  return d(Jr.Provider, {
+  return d(Vr.Provider, {
     value: a,
     get children() {
-      var l = tl(), c = l.firstChild;
+      var l = Sa(), c = l.firstChild;
       return T(
         l,
         A({
@@ -5661,7 +4841,7 @@ function Lt(t) {
               return e.required;
             },
             get children() {
-              return Qa();
+              return ya();
             },
           }),
           null,
@@ -5674,7 +4854,7 @@ function Lt(t) {
               return e.error;
             },
             get children() {
-              var p = Za();
+              var p = va();
               return w(p, "id", s), m(p, () => e.error), p;
             },
           }),
@@ -5687,7 +4867,7 @@ function Lt(t) {
               return U(() => !e.error)() && e.hint;
             },
             get children() {
-              var p = el();
+              var p = Pa();
               return w(p, "id", i), m(p, () => e.hint), p;
             },
           }),
@@ -5697,10 +4877,10 @@ function Lt(t) {
     },
   });
 }
-var nl = v(
+var wa = v(
   "<div><button type=button class=\"so-number-input__button so-number-input__button--decrement\"tabindex=-1 aria-label=Decrement>-</button><input class=so-number-input__input type=number><button type=button class=\"so-number-input__button so-number-input__button--increment\"tabindex=-1 aria-label=Increment>+",
 );
-function rl(t) {
+function Ca(t) {
   const [e] = x(t, ["value", "onInput", "min", "max", "step", "disabled", "required", "size"]),
     n = Ot(),
     r = () => e.step ?? 1;
@@ -5724,7 +4904,7 @@ function rl(t) {
     Number.isNaN(c) || (p = e.onInput) == null || p.call(e, o(c));
   };
   return (() => {
-    var l = nl(), c = l.firstChild, p = c.nextSibling, u = p.nextSibling;
+    var l = wa(), c = l.firstChild, p = c.nextSibling, u = p.nextSibling;
     return c.$$click = i,
       p.$$input = a,
       u.$$click = s,
@@ -5769,7 +4949,7 @@ function rl(t) {
       l;
   })();
 }
-function ol(t) {
+function $a(t) {
   const [e] = x(t, ["value", "onInput", "min", "max", "step", "disabled", "size", "class", "density"]),
     [n] = x(t, ["label", "error", "hint", "required", "class", "density"]);
   return d(Lt, {
@@ -5792,7 +4972,7 @@ function ol(t) {
       return n.density;
     },
     get children() {
-      return d(rl, {
+      return d(Ca, {
         get value() {
           return e.value;
         },
@@ -5822,12 +5002,338 @@ function ol(t) {
   });
 }
 q(["click", "input"]);
-var sl = v(
+var xa = v(
+    "<nav aria-label=Pagination><button type=button class=so-pagination__button aria-label=\"Previous page\">Prev</button><button type=button class=so-pagination__button aria-label=\"Next page\">Next",
+  ),
+  _a = v("<span class=so-pagination__info> / "),
+  ka = v("<button type=button>"),
+  Da = v("<span class=so-pagination__ellipsis aria-hidden=true>…");
+function Aa(t, e, n) {
+  if (e <= n) return Array.from({ length: e }, (a, l) => l + 1);
+  const r = Math.floor((n - 3) / 2), o = [1];
+  let s = Math.max(2, t - r), i = Math.min(e - 1, t + r);
+  t <= r + 2 && (i = Math.min(e - 1, n - 2)),
+    t >= e - r - 1 && (s = Math.max(2, e - n + 3)),
+    s > 2 && o.push("ellipsis");
+  for (let a = s; a <= i; a++) o.push(a);
+  return i < e - 1 && o.push("ellipsis"), o.push(e), o;
+}
+function Kn(t) {
+  const [e, n] = x(t, ["class", "density", "page", "totalPages", "onChange", "size", "showPages", "maxVisible"]),
+    r = () => Aa(e.page, e.totalPages, e.maxVisible ?? 5);
+  return (() => {
+    var o = xa(), s = o.firstChild, i = s.nextSibling;
+    return T(
+      o,
+      A({
+        get class() {
+          return C("so-pagination", `so-pagination--${e.size ?? "md"}`, e.class);
+        },
+        get "data-density"() {
+          return e.density;
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      s.$$click = () => e.onChange(e.page - 1),
+      m(
+        o,
+        d(k, {
+          get when() {
+            return e.showPages;
+          },
+          get fallback() {
+            return (() => {
+              var a = _a(), l = a.firstChild;
+              return m(a, () => e.page, l), m(a, () => e.totalPages, null), a;
+            })();
+          },
+          get children() {
+            return d(Y, {
+              get each() {
+                return r();
+              },
+              children: a =>
+                d(k, {
+                  when: a !== "ellipsis",
+                  get fallback() {
+                    return Da();
+                  },
+                  get children() {
+                    var l = ka();
+                    return l.$$click = () => e.onChange(a),
+                      w(l, "aria-label", `Page ${a}`),
+                      m(l, a),
+                      D(c => {
+                        var p = C("so-pagination__page", e.page === a && "so-pagination__page--active"),
+                          u = e.page === a ? "page" : void 0;
+                        return p !== c.e && G(l, c.e = p), u !== c.t && w(l, "aria-current", c.t = u), c;
+                      }, { e: void 0, t: void 0 }),
+                      l;
+                  },
+                }),
+            });
+          },
+        }),
+        i,
+      ),
+      i.$$click = () => e.onChange(e.page + 1),
+      D(a => {
+        var l = e.page <= 1, c = e.page >= e.totalPages;
+        return l !== a.e && (s.disabled = a.e = l), c !== a.t && (i.disabled = a.t = c), a;
+      }, { e: void 0, t: void 0 }),
+      o;
+  })();
+}
+q(["click"]);
+var Ta = v("<div class=so-popover role=dialog>"),
+  Ia = v("<span><button type=button class=so-popover-trigger aria-haspopup=dialog>");
+function Ea(t) {
+  const [e, n] = x(t, ["class", "density", "open", "onOpenChange", "placement", "content", "children"]),
+    r = `so-popover-${ue()}`;
+  let o;
+  const [s, i] = I(void 0);
+  function a() {
+    const u = s();
+    !o || !u
+      || jr(o, u, { placement: e.placement ?? "bottom-start", middleware: [Gr(4), qr(), Kr({ padding: 8 })] }).then(
+        ({ x: h, y: f }) => {
+          u.style.left = `${h}px`, u.style.top = `${f}px`;
+        },
+      );
+  }
+  ie(Te(() => e.open, u => {
+    u && requestAnimationFrame(a);
+  }));
+  function l(u) {
+    u.key === "Escape" && e.open && (u.stopPropagation(), e.onOpenChange(!1), o == null || o.focus());
+  }
+  function c(u) {
+    if (!e.open) return;
+    const h = s(), f = u.target;
+    o != null && o.contains(f) || h != null && h.contains(f) || e.onOpenChange(!1);
+  }
+  ie(() => {
+    e.open
+      ? (document.addEventListener("mousedown", c), document.addEventListener("keydown", l))
+      : (document.removeEventListener("mousedown", c), document.removeEventListener("keydown", l));
+  }),
+    ne(() => {
+      document.removeEventListener("mousedown", c), document.removeEventListener("keydown", l);
+    });
+  function p() {
+    e.onOpenChange(!e.open);
+  }
+  return (() => {
+    var u = Ia(), h = u.firstChild;
+    T(
+      u,
+      A({
+        get class() {
+          return C("so-popover-anchor", e.class);
+        },
+        get "data-density"() {
+          return e.density;
+        },
+      }, n),
+      !1,
+      !0,
+    ), h.$$click = p;
+    var f = o;
+    return typeof f == "function" ? ye(f, h) : o = h,
+      m(h, () => e.children),
+      m(
+        u,
+        d(k, {
+          get when() {
+            return e.open;
+          },
+          get children() {
+            return d(tt, {
+              get children() {
+                var g = Ta();
+                return ye(i, g), w(g, "id", r), m(g, () => e.content), g;
+              },
+            });
+          },
+        }),
+        null,
+      ),
+      D(g => {
+        var b = e.open, y = e.open ? r : void 0;
+        return b !== g.e && w(h, "aria-expanded", g.e = b), y !== g.t && w(h, "aria-controls", g.t = y), g;
+      }, { e: void 0, t: void 0 }),
+      u;
+  })();
+}
+q(["click"]);
+var Ba = v("<div role=progressbar aria-valuemin=0 aria-valuemax=100><div class=so-progress__bar>");
+function Jt(t) {
+  const [e, n] = x(t, ["class", "density", "value", "variant", "size", "aria-label"]),
+    r = () => Math.max(0, Math.min(100, e.value));
+  return (() => {
+    var o = Ba(), s = o.firstChild;
+    return T(
+      o,
+      A({
+        get class() {
+          return C("so-progress", `so-progress--${e.variant ?? "info"}`, `so-progress--${e.size ?? "md"}`, e.class);
+        },
+        get "aria-valuenow"() {
+          return r();
+        },
+        get "aria-label"() {
+          return e["aria-label"];
+        },
+        get "data-density"() {
+          return e.density;
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      D(i => or(s, "width", `${r()}%`)),
+      o;
+  })();
+}
+const Xr = Se();
+function Ra() {
+  return me(Xr);
+}
+var Oa = v("<span class=so-radio-button__label>"),
+  La = v(
+    "<label><input type=radio class=so-radio-button__input><span class=so-radio-button__indicator aria-hidden=true><span class=so-radio-button__dot>",
+  );
+function Ue(t) {
+  const [e, n] = x(t, ["class", "value", "label", "disabled", "children"]),
+    r = Ra(),
+    o = () => (r == null ? void 0 : r.value()) === e.value,
+    s = () => {
+      r == null || r.onChange(e.value);
+    };
+  return (() => {
+    var i = La(), a = i.firstChild;
+    return a.nextSibling,
+      a.addEventListener("change", s),
+      m(
+        i,
+        d(k, {
+          get when() {
+            return e.label || e.children;
+          },
+          get children() {
+            var l = Oa();
+            return m(l, () => e.children ?? e.label), l;
+          },
+        }),
+        null,
+      ),
+      D(l => {
+        var c = C("so-radio-button", e.disabled && "so-radio-button--disabled", e.class),
+          p = r == null ? void 0 : r.name,
+          u = e.disabled;
+        return c !== l.e && G(i, l.e = c), p !== l.t && w(a, "name", l.t = p), u !== l.a && (a.disabled = l.a = u), l;
+      }, { e: void 0, t: void 0, a: void 0 }),
+      D(() => a.value = e.value),
+      D(() => a.checked = o()),
+      i;
+  })();
+}
+var Fa = v("<legend class=so-radio-group__label>"),
+  za = v("<p class=so-radio-group__error role=alert>"),
+  Ma = v("<p class=so-radio-group__hint>"),
+  Na = v("<fieldset role=radiogroup><div class=so-radio-group__items>");
+function Jr(t) {
+  const [e, n] = x(t, ["class", "value", "onChange", "name", "label", "error", "hint", "children"]),
+    r = ue(),
+    o = ue(),
+    s = `so-rg-error-${o}`,
+    i = `so-rg-hint-${o}`,
+    a = () => {
+      if (e.error) return s;
+      if (e.hint) return i;
+    },
+    l = {
+      get name() {
+        return e.name ?? `so-radio-${r}`;
+      },
+      value: () => e.value,
+      onChange(c) {
+        var p;
+        (p = e.onChange) == null || p.call(e, c);
+      },
+    };
+  return d(Xr.Provider, {
+    value: l,
+    get children() {
+      var c = Na(), p = c.firstChild;
+      return T(
+        c,
+        A({
+          get class() {
+            return C("so-radio-group", e.error && "so-radio-group--error", e.class);
+          },
+          get "aria-invalid"() {
+            return e.error ? !0 : void 0;
+          },
+          get "aria-describedby"() {
+            return a();
+          },
+        }, n),
+        !1,
+        !0,
+      ),
+        m(
+          c,
+          d(k, {
+            get when() {
+              return e.label;
+            },
+            get children() {
+              var u = Fa();
+              return m(u, () => e.label), u;
+            },
+          }),
+          p,
+        ),
+        m(p, () => e.children),
+        m(
+          c,
+          d(k, {
+            get when() {
+              return e.error;
+            },
+            get children() {
+              var u = za();
+              return w(u, "id", s), m(u, () => e.error), u;
+            },
+          }),
+          null,
+        ),
+        m(
+          c,
+          d(k, {
+            get when() {
+              return U(() => !e.error)() && e.hint;
+            },
+            get children() {
+              var u = Ma();
+              return w(u, "id", i), m(u, () => e.hint), u;
+            },
+          }),
+          null,
+        ),
+        c;
+    },
+  });
+}
+var Ha = v(
     "<div class=so-select__wrapper><select></select><svg class=so-select__arrow viewBox=\"0 0 12 12\"fill=none xmlns=http://www.w3.org/2000/svg><path d=\"M2.5 4.5L6 8l3.5-3.5\"stroke=currentColor stroke-width=1.5 stroke-linecap=round stroke-linejoin=round>",
   ),
-  il = v("<option value disabled>"),
-  al = v("<option>");
-function ll(t) {
+  Ga = v("<option value disabled>"),
+  Ka = v("<option>");
+function qa(t) {
   const [e] = x(t, ["value", "onChange", "options", "placeholder", "disabled", "required", "size"]),
     n = Ot(),
     r = o => {
@@ -5835,7 +5341,7 @@ function ll(t) {
       (s = e.onChange) == null || s.call(e, o.currentTarget.value);
     };
   return (() => {
-    var o = sl(), s = o.firstChild;
+    var o = Ha(), s = o.firstChild;
     return s.addEventListener("change", r),
       m(
         s,
@@ -5843,7 +5349,7 @@ function ll(t) {
           var i = U(() => !!e.placeholder);
           return () =>
             i() && (() => {
-              var a = il();
+              var a = Ga();
               return m(a, () => e.placeholder), a;
             })();
         })(),
@@ -5857,7 +5363,7 @@ function ll(t) {
           },
           children: i =>
             (() => {
-              var a = al();
+              var a = Ka();
               return m(a, () => i.label), D(() => a.disabled = i.disabled), D(() => a.value = i.value), a;
             })(),
         }),
@@ -5882,7 +5388,7 @@ function ll(t) {
       o;
   })();
 }
-function cl(t) {
+function ja(t) {
   const [e] = x(t, ["value", "onChange", "options", "placeholder", "disabled", "size", "class", "density"]),
     [n] = x(t, ["label", "error", "hint", "required", "class", "density"]);
   return d(Lt, {
@@ -5905,7 +5411,7 @@ function cl(t) {
       return n.density;
     },
     get children() {
-      return d(ll, {
+      return d(qa, {
         get value() {
           return e.value;
         },
@@ -5931,7 +5437,77 @@ function cl(t) {
     },
   });
 }
-function dl(t = {}) {
+var Va = v("<div aria-hidden=true>");
+function Ut(t) {
+  const [e, n] = x(t, ["class", "density", "variant", "width", "height"]);
+  return (() => {
+    var r = Va();
+    return T(
+      r,
+      A({
+        get class() {
+          return C("so-skeleton", `so-skeleton--${e.variant ?? "text"}`, e.class);
+        },
+        get "data-density"() {
+          return e.density;
+        },
+        get style() {
+          return { width: e.width, height: e.height };
+        },
+      }, n),
+      !1,
+      !1,
+    ),
+      r;
+  })();
+}
+var Xa = v("<span role=status aria-label=Loading>");
+function dt(t) {
+  const [e, n] = x(t, ["class", "density", "size", "variant"]);
+  return (() => {
+    var r = Xa();
+    return T(
+      r,
+      A({
+        get class() {
+          return C("so-spinner", `so-spinner--${e.size ?? "md"}`, `so-spinner--${e.variant ?? "primary"}`, e.class);
+        },
+        get "data-density"() {
+          return e.density;
+        },
+      }, n),
+      !1,
+      !1,
+    ),
+      r;
+  })();
+}
+var Ja = v("<div>");
+function Ce(t) {
+  const [e, n] = x(t, ["class", "gap", "align", "justify", "children"]);
+  return (() => {
+    var r = Ja();
+    return T(
+      r,
+      A({
+        get class() {
+          return C(
+            "so-stack",
+            e.gap !== void 0 && `so-stack--gap-${e.gap}`,
+            e.align && `so-stack--align-${e.align}`,
+            e.justify && `so-stack--justify-${e.justify}`,
+            e.class,
+          );
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(r, () => e.children),
+      r;
+  })();
+}
+function Ua(t = {}) {
   const [e, n] = I(t.defaultPressed ?? !1), r = t.pressed ?? e;
   function o(i) {
     var a;
@@ -5942,17 +5518,17 @@ function dl(t = {}) {
   }
   return { pressed: r, toggle: s, setPressed: o, props: { "aria-pressed": r, onClick: s } };
 }
-var ul = v("<span class=so-switch__label>"),
-  pl = v("<p class=so-switch__error role=alert>"),
-  ml = v("<p class=so-switch__hint>"),
-  hl = v("<div><label><button type=button role=switch class=so-switch__track><span class=so-switch__thumb>");
-function jn(t) {
+var Wa = v("<span class=so-switch__label>"),
+  Ya = v("<p class=so-switch__error role=alert>"),
+  Qa = v("<p class=so-switch__hint>"),
+  Za = v("<div><label><button type=button role=switch class=so-switch__track><span class=so-switch__thumb>");
+function qn(t) {
   const [e, n] = x(t, ["class", "checked", "onChange", "disabled", "size", "label", "error", "hint", "children"]),
     r = ue(),
     o = `so-sw-error-${r}`,
     s = `so-sw-hint-${r}`,
     i = M(() => e.checked ?? !1),
-    a = dl({
+    a = Ua({
       pressed: i,
       onPressedChange(u) {
         var h;
@@ -5970,7 +5546,7 @@ function jn(t) {
       if (e.hint) return s;
     };
   return (() => {
-    var u = hl(), h = u.firstChild, f = h.firstChild;
+    var u = Za(), h = u.firstChild, f = h.firstChild;
     return f.$$keydown = c,
       f.$$click = l,
       m(
@@ -5980,7 +5556,7 @@ function jn(t) {
             return e.label || e.children;
           },
           get children() {
-            var g = ul();
+            var g = Wa();
             return m(g, () => e.children ?? e.label), g;
           },
         }),
@@ -5993,7 +5569,7 @@ function jn(t) {
             return e.error;
           },
           get children() {
-            var g = pl();
+            var g = Ya();
             return w(g, "id", o), m(g, () => e.error), g;
           },
         }),
@@ -6006,7 +5582,7 @@ function jn(t) {
             return U(() => !e.error)() && e.hint;
           },
           get children() {
-            var g = ml();
+            var g = Qa();
             return w(g, "id", s), m(g, () => e.hint), g;
           },
         }),
@@ -6031,8 +5607,241 @@ function jn(t) {
   })();
 }
 q(["click", "keydown"]);
-var fl = v("<textarea>");
-function gl(t) {
+var el = v(
+    "<th class=\"so-table__cell so-table__cell--checkbox\"><input type=checkbox aria-label=\"Select all rows\">",
+  ),
+  tl = v(
+    "<div><table class=so-table role=table><thead><tr class=\"so-table__row so-table__row--header\"></tr></thead><tbody>",
+  ),
+  nl = v("<button type=button class=so-table__sort-button><span aria-hidden=true>"),
+  rl = v("<th scope=col>"),
+  ol = v("<td class=\"so-table__cell so-table__cell--checkbox\"><input type=checkbox>"),
+  sl = v("<tr>"),
+  il = v("<td>");
+function al(t) {
+  const [e, n] = x(t, [
+    "class",
+    "density",
+    "columns",
+    "data",
+    "sortKey",
+    "sortDirection",
+    "onSort",
+    "selectable",
+    "selectedKeys",
+    "onSelect",
+    "rowKey",
+  ]);
+  function r(l, c) {
+    return e.rowKey ? e.rowKey(l) : String(c);
+  }
+  function o(l) {
+    if (!e.onSort) return;
+    const c = e.sortKey === l && e.sortDirection === "asc" ? "desc" : "asc";
+    e.onSort(l, c);
+  }
+  const s = M(() =>
+    !e.selectable || !e.selectedKeys || e.data.length === 0 ? !1 : e.data.every((l, c) => {
+      var p;
+      return (p = e.selectedKeys) == null ? void 0 : p.has(r(l, c));
+    })
+  );
+  function i() {
+    if (e.onSelect) {
+      if (s()) e.onSelect(new Set());
+      else {
+        const l = new Set(e.data.map((c, p) => r(c, p)));
+        e.onSelect(l);
+      }
+    }
+  }
+  function a(l) {
+    if (!e.onSelect) return;
+    const c = new Set(e.selectedKeys);
+    c.has(l) ? c.delete(l) : c.add(l), e.onSelect(c);
+  }
+  return (() => {
+    var l = tl(), c = l.firstChild, p = c.firstChild, u = p.firstChild, h = p.nextSibling;
+    return T(
+      l,
+      A({
+        get class() {
+          return C("so-table-wrapper", e.class);
+        },
+        get "data-density"() {
+          return e.density;
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(
+        u,
+        d(k, {
+          get when() {
+            return e.selectable;
+          },
+          get children() {
+            var f = el(), g = f.firstChild;
+            return g.addEventListener("change", i), D(() => g.checked = s()), f;
+          },
+        }),
+        null,
+      ),
+      m(
+        u,
+        d(Y, {
+          get each() {
+            return e.columns;
+          },
+          children: f =>
+            (() => {
+              var g = rl();
+              return m(
+                g,
+                d(k, {
+                  get when() {
+                    return f.sortable;
+                  },
+                  get fallback() {
+                    return f.header;
+                  },
+                  get children() {
+                    var b = nl(), y = b.firstChild;
+                    return b.$$click = () => o(f.key),
+                      m(b, () => f.header, y),
+                      D(() =>
+                        G(y, C("so-table__sort-icon", e.sortKey === f.key && `so-table__sort-icon--${e.sortDirection}`))
+                      ),
+                      b;
+                  },
+                }),
+              ),
+                D(b => {
+                  var y = C("so-table__cell", "so-table__header", f.align && `so-table__cell--${f.align}`),
+                    P = f.width,
+                    S = e.sortKey === f.key ? e.sortDirection === "asc" ? "ascending" : "descending" : void 0;
+                  return y !== b.e && G(g, b.e = y),
+                    P !== b.t && or(g, "width", b.t = P),
+                    S !== b.a && w(g, "aria-sort", b.a = S),
+                    b;
+                }, { e: void 0, t: void 0, a: void 0 }),
+                g;
+            })(),
+        }),
+        null,
+      ),
+      m(
+        h,
+        d(Y, {
+          get each() {
+            return e.data;
+          },
+          children: (f, g) => {
+            const b = () => r(f, g());
+            return (() => {
+              var y = sl();
+              return m(
+                y,
+                d(k, {
+                  get when() {
+                    return e.selectable;
+                  },
+                  get children() {
+                    var P = ol(), S = P.firstChild;
+                    return S.addEventListener("change", () => a(b())),
+                      D(() => w(S, "aria-label", `Select row ${b()}`)),
+                      D(() => {
+                        var $;
+                        return S.checked = (($ = e.selectedKeys) == null ? void 0 : $.has(b())) ?? !1;
+                      }),
+                      P;
+                  },
+                }),
+                null,
+              ),
+                m(
+                  y,
+                  d(Y, {
+                    get each() {
+                      return e.columns;
+                    },
+                    children: P =>
+                      (() => {
+                        var S = il();
+                        return m(
+                          S,
+                          (() => {
+                            var $ = U(() => !!P.render);
+                            return () => $() ? P.render(f[P.key], f) : f[P.key];
+                          })(),
+                        ),
+                          D(() => G(S, C("so-table__cell", P.align && `so-table__cell--${P.align}`))),
+                          S;
+                      })(),
+                  }),
+                  null,
+                ),
+                D(() => {
+                  var P;
+                  return G(
+                    y,
+                    C(
+                      "so-table__row",
+                      ((P = e.selectedKeys) == null ? void 0 : P.has(b())) && "so-table__row--selected",
+                    ),
+                  );
+                }),
+                y;
+            })();
+          },
+        }),
+      ),
+      l;
+  })();
+}
+q(["click"]);
+var ll = v("<button type=button class=so-tag__remove aria-label=Remove>&#x2715;"), cl = v("<span>");
+function Wt(t) {
+  const [e, n] = x(t, ["class", "variant", "fill", "size", "onRemove", "children"]);
+  return (() => {
+    var r = cl();
+    return T(
+      r,
+      A({
+        get class() {
+          return C(
+            "so-tag",
+            `so-tag--${e.variant ?? "neutral"}`,
+            `so-tag--${e.size ?? "md"}`,
+            e.fill === "solid" && "so-tag--solid",
+            e.class,
+          );
+        },
+      }, n),
+      !1,
+      !0,
+    ),
+      m(r, () => e.children, null),
+      m(
+        r,
+        d(k, {
+          get when() {
+            return e.onRemove;
+          },
+          get children() {
+            var o = ll();
+            return rr(o, "click", e.onRemove, !0), o;
+          },
+        }),
+        null,
+      ),
+      r;
+  })();
+}
+q(["click"]);
+var dl = v("<textarea>");
+function ul(t) {
   const [e] = x(t, ["value", "onInput", "placeholder", "rows", "disabled", "required", "size"]),
     n = Ot(),
     r = o => {
@@ -6040,7 +5849,7 @@ function gl(t) {
       (s = e.onInput) == null || s.call(e, o.currentTarget.value);
     };
   return (() => {
-    var o = fl();
+    var o = dl();
     return o.$$input = r,
       D(s => {
         var i = n == null ? void 0 : n.id,
@@ -6065,7 +5874,7 @@ function gl(t) {
       o;
   })();
 }
-function bl(t) {
+function pl(t) {
   const [e, n] = x(t, ["value", "onInput", "placeholder", "rows", "disabled", "size", "class", "density"]),
     [r] = x(t, ["label", "error", "hint", "required", "class", "density"]);
   return d(Lt, {
@@ -6088,7 +5897,7 @@ function bl(t) {
       return r.density;
     },
     get children() {
-      return d(gl, {
+      return d(ul, {
         get value() {
           return e.value;
         },
@@ -6115,8 +5924,8 @@ function bl(t) {
   });
 }
 q(["input"]);
-var yl = v("<input>");
-function vl(t) {
+var ml = v("<input>");
+function hl(t) {
   const [e] = x(t, ["value", "onInput", "placeholder", "type", "disabled", "required", "size"]),
     n = Ot(),
     r = o => {
@@ -6124,7 +5933,7 @@ function vl(t) {
       (s = e.onInput) == null || s.call(e, o.currentTarget.value);
     };
   return (() => {
-    var o = yl();
+    var o = ml();
     return o.$$input = r,
       D(s => {
         var i = n == null ? void 0 : n.id,
@@ -6149,7 +5958,7 @@ function vl(t) {
       o;
   })();
 }
-function Wt(t) {
+function Yt(t) {
   const [e, n] = x(t, ["value", "onInput", "placeholder", "type", "disabled", "size", "class", "density"]),
     [r] = x(t, ["label", "error", "hint", "required", "class", "density"]);
   return d(Lt, {
@@ -6172,7 +5981,7 @@ function Wt(t) {
       return r.density;
     },
     get children() {
-      return d(vl, {
+      return d(hl, {
         get value() {
           return e.value;
         },
@@ -6199,255 +6008,138 @@ function Wt(t) {
   });
 }
 q(["input"]);
-var Pl = v("<button>");
-function Yt(t) {
-  const [e, n] = x(t, ["class", "variant", "size", "disabled", "icon"]);
-  return (() => {
-    var r = Pl();
-    return T(
-      r,
-      A({
-        get class() {
-          return C(
-            "so-icon-button",
-            `so-icon-button--${e.variant ?? "neutral"}`,
-            `so-icon-button--${e.size ?? "md"}`,
-            e.class,
-          );
-        },
-        get disabled() {
-          return e.disabled;
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(r, () => e.icon),
-      r;
-  })();
+const fl = (t, e) => {
+    let n;
+    const r = () => clearTimeout(n);
+    return kt() && ne(r),
+      Object.assign((...s) => {
+        n !== void 0 && r(), n = setTimeout(() => t(...s), e);
+      }, { clear: r });
+  },
+  gl = 150;
+let jn = 0;
+function bl(t = {}) {
+  const e = t.defaultDuration ?? 5e3, [n, r] = cs([]), o = new Map();
+  function s(l) {
+    r(Gt(c => {
+      const p = c.findIndex(u => u.id === l);
+      p !== -1 && c.splice(p, 1);
+    }));
+  }
+  function i(l) {
+    const c = o.get(l);
+    c && (c.clear(), o.delete(l)),
+      r(Gt(p => {
+        const u = p.find(h => h.id === l);
+        u && (u.dismissing = !0);
+      })),
+      setTimeout(() => s(l), gl);
+  }
+  function a(l) {
+    jn += 1;
+    const c = `so-toast-${jn}`, p = l.duration ?? e, u = { id: c, message: l.message, variant: l.variant, duration: p };
+    if (
+      r(Gt(h => {
+        h.push(u);
+      })), p > 0
+    ) {
+      const h = fl(() => i(c), p);
+      o.set(c, h), h();
+    }
+    return c;
+  }
+  return { toasts: n, add: a, dismiss: i };
 }
-var Sl = v("<button type=button class=so-tag__remove aria-label=Remove>&#x2715;"), wl = v("<span>");
-function Qt(t) {
-  const [e, n] = x(t, ["class", "variant", "fill", "size", "onRemove", "children"]);
-  return (() => {
-    var r = wl();
-    return T(
-      r,
-      A({
-        get class() {
-          return C(
-            "so-tag",
-            `so-tag--${e.variant ?? "neutral"}`,
-            `so-tag--${e.size ?? "md"}`,
-            e.fill === "solid" && "so-tag--solid",
-            e.class,
-          );
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(r, () => e.children, null),
-      m(
+var yl = v("<div aria-live=polite aria-relevant=additions>"),
+  vl = v(
+    "<div><span class=so-toast__message></span><button type=button class=so-toast__dismiss aria-label=Dismiss>&times;",
+  );
+let Qt;
+function Ur() {
+  return Qt || (Qt = bl()), Qt;
+}
+function Pl() {
+  const t = Ur();
+  return { add: e => t.add(e), dismiss: e => t.dismiss(e) };
+}
+function Sl(t) {
+  const [e] = x(t, ["position"]), n = Ur();
+  return d(tt, {
+    get children() {
+      var r = yl();
+      return m(
         r,
-        d(k, {
-          get when() {
-            return e.onRemove;
+        d(Y, {
+          get each() {
+            return n.toasts;
           },
-          get children() {
-            var o = Sl();
-            return rr(o, "click", e.onRemove, !0), o;
-          },
+          children: o =>
+            (() => {
+              var s = vl(), i = s.firstChild, a = i.nextSibling;
+              return m(i, () => o.message),
+                a.$$click = () => n.dismiss(o.id),
+                D(l => {
+                  var c = C("so-toast", `so-toast--${o.variant ?? "info"}`, o.dismissing && "so-toast--dismissing"),
+                    p = o.variant === "danger" || o.variant === "warning" ? "alert" : "status";
+                  return c !== l.e && G(s, l.e = c), p !== l.t && w(s, "role", l.t = p), l;
+                }, { e: void 0, t: void 0 }),
+                s;
+            })(),
         }),
-        null,
       ),
-      r;
-  })();
+        D(() => G(r, C("so-toast-container", `so-toast-container--${e.position ?? "top-right"}`))),
+        r;
+    },
+  });
 }
 q(["click"]);
-var Cl = v("<hr role=separator>");
-function Ur(t) {
-  const [e, n] = x(t, ["class", "orientation"]), r = () => e.orientation ?? "horizontal";
-  return (() => {
-    var o = Cl();
-    return T(
-      o,
-      A({
-        get class() {
-          return C("so-divider", `so-divider--${r()}`, e.class);
-        },
-        get "aria-orientation"() {
-          return r();
-        },
-      }, n),
-      !1,
-      !1,
-    ),
-      o;
-  })();
-}
-var $l = v("<nav aria-label=Breadcrumb><ol class=so-breadcrumb__list>"),
-  xl = v("<a>"),
-  _l = v("<li>"),
-  kl = v("<span>");
-function Dl(t) {
-  const [e, n] = x(t, ["class", "density", "children"]);
-  return (() => {
-    var r = $l(), o = r.firstChild;
-    return T(
-      r,
-      A({
-        get class() {
-          return C("so-breadcrumb", e.class);
-        },
-        get "data-density"() {
-          return e.density;
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      m(o, () => e.children),
-      r;
-  })();
-}
-function Zt(t) {
-  const [e, n] = x(t, ["href", "current", "class", "children"]);
-  return (() => {
-    var r = _l();
-    return T(
-      r,
-      A(
-        {
-          get class() {
-            return C("so-breadcrumb__item", e.current && "so-breadcrumb__item--current", e.class);
-          },
-        },
-        () => e.current ? { "aria-current": "page" } : {},
-        n,
-      ),
-      !1,
-      !0,
-    ),
-      m(
-        r,
-        d(k, {
-          get when() {
-            return U(() => !!e.href)() && !e.current;
-          },
-          get fallback() {
-            return (() => {
-              var o = kl();
-              return m(o, () => e.children), o;
-            })();
-          },
-          get children() {
-            var o = xl();
-            return m(o, () => e.children), D(() => w(o, "href", e.href)), o;
-          },
-        }),
-      ),
-      r;
-  })();
-}
-var Al = v(
-    "<nav aria-label=Pagination><button type=button class=so-pagination__button aria-label=\"Previous page\">Prev</button><button type=button class=so-pagination__button aria-label=\"Next page\">Next",
-  ),
-  Tl = v("<span class=so-pagination__info> / "),
-  Il = v("<button type=button>"),
-  El = v("<span class=so-pagination__ellipsis aria-hidden=true>…");
-function Bl(t, e, n) {
-  if (e <= n) return Array.from({ length: e }, (a, l) => l + 1);
-  const r = Math.floor((n - 3) / 2), o = [1];
-  let s = Math.max(2, t - r), i = Math.min(e - 1, t + r);
-  t <= r + 2 && (i = Math.min(e - 1, n - 2)),
-    t >= e - r - 1 && (s = Math.max(2, e - n + 3)),
-    s > 2 && o.push("ellipsis");
-  for (let a = s; a <= i; a++) o.push(a);
-  return i < e - 1 && o.push("ellipsis"), o.push(e), o;
-}
-function Vn(t) {
-  const [e, n] = x(t, ["class", "density", "page", "totalPages", "onChange", "size", "showPages", "maxVisible"]),
-    r = () => Bl(e.page, e.totalPages, e.maxVisible ?? 5);
-  return (() => {
-    var o = Al(), s = o.firstChild, i = s.nextSibling;
-    return T(
-      o,
-      A({
-        get class() {
-          return C("so-pagination", `so-pagination--${e.size ?? "md"}`, e.class);
-        },
-        get "data-density"() {
-          return e.density;
-        },
-      }, n),
-      !1,
-      !0,
-    ),
-      s.$$click = () => e.onChange(e.page - 1),
-      m(
+var wl = v("<span><span></span><span role=tooltip>");
+let Vn = 0;
+function ut(t) {
+  const [e, n] = x(t, ["content", "placement", "class", "children"]);
+  Vn += 1;
+  const r = `so-tooltip-${Vn}`;
+  return d(k, {
+    get when() {
+      return e.content;
+    },
+    get fallback() {
+      return U(() => e.children);
+    },
+    get children() {
+      var o = wl(), s = o.firstChild, i = s.nextSibling;
+      return T(
         o,
-        d(k, {
-          get when() {
-            return e.showPages;
+        A({
+          get class() {
+            return C("so-tooltip-wrapper", e.class);
           },
-          get fallback() {
-            return (() => {
-              var a = Tl(), l = a.firstChild;
-              return m(a, () => e.page, l), m(a, () => e.totalPages, null), a;
-            })();
-          },
-          get children() {
-            return d(Y, {
-              get each() {
-                return r();
-              },
-              children: a =>
-                d(k, {
-                  when: a !== "ellipsis",
-                  get fallback() {
-                    return El();
-                  },
-                  get children() {
-                    var l = Il();
-                    return l.$$click = () => e.onChange(a),
-                      w(l, "aria-label", `Page ${a}`),
-                      m(l, a),
-                      D(c => {
-                        var p = C("so-pagination__page", e.page === a && "so-pagination__page--active"),
-                          u = e.page === a ? "page" : void 0;
-                        return p !== c.e && G(l, c.e = p), u !== c.t && w(l, "aria-current", c.t = u), c;
-                      }, { e: void 0, t: void 0 }),
-                      l;
-                  },
-                }),
-            });
-          },
-        }),
-        i,
+        }, n),
+        !1,
+        !0,
       ),
-      i.$$click = () => e.onChange(e.page + 1),
-      D(a => {
-        var l = e.page <= 1, c = e.page >= e.totalPages;
-        return l !== a.e && (s.disabled = a.e = l), c !== a.t && (i.disabled = a.t = c), a;
-      }, { e: void 0, t: void 0 }),
-      o;
-  })();
+        w(s, "aria-describedby", r),
+        m(s, () => e.children),
+        w(i, "id", r),
+        m(i, () => e.content),
+        D(() => G(i, C("so-tooltip", `so-tooltip--${e.placement ?? "top"}`))),
+        o;
+    },
+  });
 }
-q(["click"]);
 var ee = v("<div class=catalog-row>"),
-  Rl = v("<span>+"),
-  Ol = v("<span>*"),
-  Ll = v("<span>x"),
-  Fl = v("<p>Card content goes here. Supports any JSX."),
-  zl = v("<div class=catalog-grid>"),
-  Ml = v("<code>npx soluid install"),
-  Nl = v("<p>Are you sure you want to proceed with this action?"),
-  Hl = v("<div style=padding:var(--so-space-4)><p>Drawer content goes here."),
-  Gl = v("<p>Overview content goes here."),
-  Kl = v("<p>Details content goes here."),
-  ql = v("<p>Settings content goes here."),
-  jl = v("<p style=margin:0;font-size:var(--so-font-size-sm)>Popover content");
+  Cl = v("<span>+"),
+  $l = v("<span>*"),
+  xl = v("<span>x"),
+  _l = v("<p>Card content goes here. Supports any JSX."),
+  kl = v("<div class=catalog-grid>"),
+  Dl = v("<code>npx soluid install"),
+  Al = v("<p>Are you sure you want to proceed with this action?"),
+  Tl = v("<div style=padding:var(--so-space-4)><p>Drawer content goes here."),
+  Il = v("<p>Overview content goes here."),
+  El = v("<p>Details content goes here."),
+  Bl = v("<p>Settings content goes here."),
+  Rl = v("<p style=margin:0;font-size:var(--so-font-size-sm)>Popover content");
 const pn = [{ slug: "layout", labelKey: "cat.layout", components: ["Stack", "Divider", "Spacer"] }, {
     slug: "general",
     labelKey: "cat.general",
@@ -6469,7 +6161,7 @@ const pn = [{ slug: "layout", labelKey: "cat.layout", components: ["Stack", "Div
     labelKey: "cat.navigation",
     components: ["Tabs", "Breadcrumb", "Pagination", "Popover", "Menu"],
   }],
-  Vl = {
+  Ol = {
     Stack: ["Stack", "HStack"],
     Card: ["Card", "CardHeader", "CardBody", "CardFooter"],
     Dialog: ["Dialog", "DialogHeader", "DialogBody", "DialogFooter"],
@@ -6481,7 +6173,7 @@ const pn = [{ slug: "layout", labelKey: "cat.layout", components: ["Stack", "Div
     Menu: ["Menu", "MenuItem", "MenuSeparator"],
     Toast: ["ToastContainer"],
   },
-  Xl = {
+  Ll = {
     Stack: `import { Stack } from "./soluid/Stack";
 import { HStack } from "./soluid/HStack";
 
@@ -6782,7 +6474,7 @@ const [open, setOpen] = createSignal(false);
   <MenuItem onSelect={() => {}}>Delete</MenuItem>
 </Menu>`,
   };
-function Jl() {
+function Fl() {
   return d(pe, {
     gap: 3,
     get children() {
@@ -6797,7 +6489,7 @@ function Jl() {
             ];
           },
         }),
-        d(Ur, { orientation: "vertical" }),
+        d(Dr, { orientation: "vertical" }),
         d(pe, {
           gap: 2,
           get children() {
@@ -6812,10 +6504,10 @@ function Jl() {
     },
   });
 }
-function Ul() {
-  return d(Ur, {});
+function zl() {
+  return d(Dr, {});
 }
-function Wl() {
+function Ml() {
   return d(pe, {
     gap: 2,
     style: { border: "1px dashed var(--so-border)", padding: "var(--so-space-2)" },
@@ -6828,7 +6520,7 @@ function Wl() {
     },
   });
 }
-function Yl() {
+function Nl() {
   return [
     (() => {
       var t = ee();
@@ -6848,38 +6540,38 @@ function Yl() {
     })(),
   ];
 }
-function Ql() {
+function Hl() {
   return (() => {
     var t = ee();
     return m(
       t,
-      d(Yt, {
+      d(jt, {
         variant: "primary",
         "aria-label": "Add",
         get icon() {
-          return Rl();
+          return Cl();
         },
       }),
       null,
     ),
       m(
         t,
-        d(Yt, {
+        d(jt, {
           variant: "neutral",
           "aria-label": "Settings",
           get icon() {
-            return Ol();
+            return $l();
           },
         }),
         null,
       ),
       m(
         t,
-        d(Yt, {
+        d(jt, {
           variant: "danger",
           "aria-label": "Delete",
           get icon() {
-            return Ll();
+            return xl();
           },
         }),
         null,
@@ -6887,7 +6579,7 @@ function Ql() {
       t;
   })();
 }
-function Zl() {
+function Gl() {
   return (() => {
     var t = ee();
     return m(t, d(J, { variant: "primary", children: "Primary" }), null),
@@ -6899,31 +6591,31 @@ function Zl() {
       t;
   })();
 }
-function ec() {
+function Kl() {
   return (() => {
     var t = ee();
-    return m(t, d(Qt, { variant: "primary", onRemove: () => {}, children: "Removable" }), null),
-      m(t, d(Qt, { variant: "success", children: "Status: OK" }), null),
-      m(t, d(Qt, { variant: "danger", onRemove: () => {}, children: "Error" }), null),
+    return m(t, d(Wt, { variant: "primary", onRemove: () => {}, children: "Removable" }), null),
+      m(t, d(Wt, { variant: "success", children: "Status: OK" }), null),
+      m(t, d(Wt, { variant: "danger", onRemove: () => {}, children: "Error" }), null),
       t;
   })();
 }
-function tc() {
+function ql() {
   return (() => {
     var t = ee();
-    return m(t, d(lt, { name: "Tanaka Taro", size: "sm", variant: "primary" }), null),
-      m(t, d(lt, { name: "Suzuki Hanako", size: "md", variant: "success" }), null),
-      m(t, d(lt, { name: "Sato Jiro", size: "lg", variant: "danger" }), null),
-      m(t, d(lt, { size: "md", variant: "neutral" }), null),
+    return m(t, d(ct, { name: "Tanaka Taro", size: "sm", variant: "primary" }), null),
+      m(t, d(ct, { name: "Suzuki Hanako", size: "md", variant: "success" }), null),
+      m(t, d(ct, { name: "Sato Jiro", size: "lg", variant: "danger" }), null),
+      m(t, d(ct, { size: "md", variant: "neutral" }), null),
       t;
   })();
 }
-function nc() {
+function jl() {
   return (() => {
     var t = ee();
     return m(
       t,
-      d(ct, {
+      d(ut, {
         content: "Top tooltip",
         get children() {
           return d(z, { variant: "neutral", size: "sm", children: "Top" });
@@ -6933,7 +6625,7 @@ function nc() {
     ),
       m(
         t,
-        d(ct, {
+        d(ut, {
           content: "Bottom tooltip",
           placement: "bottom",
           get children() {
@@ -6944,7 +6636,7 @@ function nc() {
       ),
       m(
         t,
-        d(ct, {
+        d(ut, {
           content: "Left tooltip",
           placement: "left",
           get children() {
@@ -6955,7 +6647,7 @@ function nc() {
       ),
       m(
         t,
-        d(ct, {
+        d(ut, {
           content: "Right tooltip",
           placement: "right",
           get children() {
@@ -6967,13 +6659,13 @@ function nc() {
       t;
   })();
 }
-function rc() {
+function Vl() {
   const [t, e] = I("");
   return d(Ce, {
     gap: 3,
     get children() {
       return [
-        d(Wt, {
+        d(Yt, {
           label: "Name",
           placeholder: "Enter your name",
           get value() {
@@ -6981,18 +6673,18 @@ function rc() {
           },
           onInput: e,
         }),
-        d(Wt, { label: "Email", type: "email", placeholder: "user@example.com", hint: "We will not share your email" }),
-        d(Wt, { label: "With Error", error: "This field is required", required: !0 }),
+        d(Yt, { label: "Email", type: "email", placeholder: "user@example.com", hint: "We will not share your email" }),
+        d(Yt, { label: "With Error", error: "This field is required", required: !0 }),
       ];
     },
   });
 }
-function oc() {
-  return d(bl, { label: "Description", placeholder: "Enter description...", hint: "Max 500 characters" });
+function Xl() {
+  return d(pl, { label: "Description", placeholder: "Enter description...", hint: "Max 500 characters" });
 }
-function sc() {
+function Jl() {
   const [t, e] = I(0);
-  return d(ol, {
+  return d($a, {
     label: "Quantity",
     get value() {
       return t();
@@ -7003,9 +6695,9 @@ function sc() {
     step: 1,
   });
 }
-function ic() {
+function Ul() {
   const [t, e] = I("");
-  return d(cl, {
+  return d(ja, {
     label: "Role",
     placeholder: "Select a role",
     get value() {
@@ -7018,13 +6710,13 @@ function ic() {
     }],
   });
 }
-function ac() {
+function Wl() {
   const [t, e] = I(!1);
   return (() => {
     var n = ee();
     return m(
       n,
-      d(ze, {
+      d(Le, {
         get checked() {
           return t();
         },
@@ -7033,14 +6725,14 @@ function ac() {
       }),
       null,
     ),
-      m(n, d(ze, { checked: !0, indeterminate: !0, label: "Indeterminate" }), null),
-      m(n, d(ze, { disabled: !0, label: "Disabled" }), null),
+      m(n, d(Le, { checked: !0, indeterminate: !0, label: "Indeterminate" }), null),
+      m(n, d(Le, { disabled: !0, label: "Disabled" }), null),
       n;
   })();
 }
-function lc() {
+function Yl() {
   const [t, e] = I(["email"]);
-  return d(si, {
+  return d(Qs, {
     get value() {
       return t();
     },
@@ -7051,18 +6743,18 @@ function lc() {
         gap: 4,
         get children() {
           return [
-            d(ze, { value: "email", label: "Email" }),
-            d(ze, { value: "sms", label: "SMS" }),
-            d(ze, { value: "push", label: "Push" }),
+            d(Le, { value: "email", label: "Email" }),
+            d(Le, { value: "sms", label: "SMS" }),
+            d(Le, { value: "push", label: "Push" }),
           ];
         },
       });
     },
   });
 }
-function cc() {
+function Ql() {
   const [t, e] = I("a");
-  return d(Pr, {
+  return d(Jr, {
     get value() {
       return t();
     },
@@ -7082,13 +6774,13 @@ function cc() {
     },
   });
 }
-function dc() {
+function Zl() {
   const [t, e] = I(!1);
   return (() => {
     var n = ee();
     return m(
       n,
-      d(jn, {
+      d(qn, {
         get checked() {
           return t();
         },
@@ -7097,11 +6789,11 @@ function dc() {
       }),
       null,
     ),
-      m(n, d(jn, { checked: !0, disabled: !0, label: "Disabled (on)" }), null),
+      m(n, d(qn, { checked: !0, disabled: !0, label: "Disabled (on)" }), null),
       n;
   })();
 }
-function uc() {
+function ec() {
   const [t, e] = I(""),
     [n, r] = I("asc"),
     o = [
@@ -7123,7 +6815,7 @@ function uc() {
         })
         : o;
     });
-  return d(Da, {
+  return d(al, {
     columns: [{ key: "name", header: "Name", sortable: !0 }, { key: "email", header: "Email" }, {
       key: "role",
       header: "Role",
@@ -7144,9 +6836,9 @@ function uc() {
     },
   });
 }
-function pc() {
+function tc() {
   return (() => {
-    var t = zl();
+    var t = kl();
     return m(
       t,
       d(Pt, {
@@ -7155,10 +6847,10 @@ function pc() {
             d(St, { children: "Card Title" }),
             d(wt, {
               get children() {
-                return Fl();
+                return _l();
               },
             }),
-            d(xs, {
+            d(Ps, {
               get children() {
                 return d(pe, {
                   gap: 2,
@@ -7184,7 +6876,7 @@ function pc() {
               d(St, { children: "User Details" }),
               d(wt, {
                 get children() {
-                  return d(_r, {
+                  return d($r, {
                     items: [{ term: "Name", description: "Tanaka Taro" }, { term: "Role", description: "Admin" }, {
                       term: "Email",
                       description: "tanaka@example.com",
@@ -7200,24 +6892,24 @@ function pc() {
       t;
   })();
 }
-function mc() {
-  return d(_r, {
+function nc() {
+  return d($r, {
     items: [{ term: "Name", description: "Tanaka Taro" }, { term: "Role", description: "Admin" }, {
       term: "Email",
       description: "tanaka@example.com",
     }],
   });
 }
-function hc() {
+function rc() {
   return (() => {
     var t = ee();
-    return m(t, d(Xt, { variant: "circle", width: "40px", height: "40px" }), null),
+    return m(t, d(Ut, { variant: "circle", width: "40px", height: "40px" }), null),
       m(
         t,
         d(Ce, {
           gap: 2,
           get children() {
-            return [d(Xt, { variant: "text", width: "200px" }), d(Xt, { variant: "text", width: "150px" })];
+            return [d(Ut, { variant: "text", width: "200px" }), d(Ut, { variant: "text", width: "150px" })];
           },
         }),
         null,
@@ -7225,8 +6917,8 @@ function hc() {
       t;
   })();
 }
-function fc() {
-  return d(wi, {
+function oc() {
+  return d(Si, {
     title: "No data",
     description: "There are no items to display yet.",
     get action() {
@@ -7234,79 +6926,79 @@ function fc() {
     },
   });
 }
-function gc() {
-  return d(Js, {
+function sc() {
+  return d(Ds, {
     get children() {
       return [
-        d(qt, {
+        d(Kt, {
           title: "What is soluid?",
           open: !0,
           children: "A SolidJS component toolkit. Copy components into your project and own the code directly.",
         }),
-        d(qt, {
+        d(Kt, {
           title: "How do I install components?",
           get children() {
-            return ["Run ", Ml(), " to download and install components + CSS."];
+            return ["Run ", Dl(), " to download and install components + CSS."];
           },
         }),
-        d(qt, { title: "Disabled item", disabled: !0, children: "This content is not accessible." }),
+        d(Kt, { title: "Disabled item", disabled: !0, children: "This content is not accessible." }),
       ];
     },
   });
 }
-function bc() {
+function ic() {
   return d(Ce, {
     gap: 2,
     get children() {
       return [
-        d(dt, { variant: "info", children: "Informational message." }),
-        d(dt, { variant: "success", children: "Operation completed successfully." }),
-        d(dt, { variant: "warning", children: "Please check your input." }),
-        d(dt, { variant: "danger", onDismiss: () => {}, children: "An error occurred. Please try again." }),
+        d(lt, { variant: "info", children: "Informational message." }),
+        d(lt, { variant: "success", children: "Operation completed successfully." }),
+        d(lt, { variant: "warning", children: "Please check your input." }),
+        d(lt, { variant: "danger", onDismiss: () => {}, children: "An error occurred. Please try again." }),
       ];
     },
   });
 }
-function yc() {
+function ac() {
   return d(Ce, {
     gap: 2,
     get children() {
       return [
-        d(Ut, { value: 30, variant: "info" }),
-        d(Ut, { value: 65, variant: "success" }),
-        d(Ut, { value: 90, variant: "warning" }),
+        d(Jt, { value: 30, variant: "info" }),
+        d(Jt, { value: 65, variant: "success" }),
+        d(Jt, { value: 90, variant: "warning" }),
       ];
     },
   });
 }
-function vc() {
+function lc() {
   return (() => {
     var t = ee();
-    return m(t, d(ut, { size: "sm" }), null),
-      m(t, d(ut, { size: "md" }), null),
-      m(t, d(ut, { size: "lg" }), null),
-      m(t, d(ut, { size: "md", variant: "primary" }), null),
+    return m(t, d(dt, { size: "sm" }), null),
+      m(t, d(dt, { size: "md" }), null),
+      m(t, d(dt, { size: "lg" }), null),
+      m(t, d(dt, { size: "md", variant: "primary" }), null),
       t;
   })();
 }
-function Pc() {
+function cc() {
   const [t, e] = I(!1);
   return [
     d(z, { variant: "primary", onClick: () => e(!0), children: "Open Dialog" }),
-    d(Na, {
+    d(li, {
       get open() {
         return t();
       },
       onClose: () => e(!1),
       get children() {
         return [
-          d(Ha, { children: "Confirm Action" }),
-          d(Ga, {
+          d(ci, { children: "Confirm Action" }),
+          d(di, {
             get children() {
-              return Nl();
+              return Al();
             },
           }),
-          d(Ka, {
+          d(ui, {
             get children() {
               return d(pe, {
                 gap: 2,
@@ -7334,23 +7026,23 @@ function Pc() {
     }),
   ];
 }
-function Sc() {
+function dc() {
   const [t, e] = I(!1);
   return [
     d(z, { variant: "primary", onClick: () => e(!0), children: "Open Drawer" }),
-    d(gi, {
+    d(fi, {
       get open() {
         return t();
       },
       onClose: () => e(!1),
       get children() {
-        return [d(bi, { children: "Settings" }), Hl()];
+        return [d(gi, { children: "Settings" }), Tl()];
       },
     }),
   ];
 }
-function wc() {
-  const t = Ra();
+function uc() {
+  const t = Pl();
   return [
     (() => {
       var e = ee();
@@ -7396,19 +7088,19 @@ function wc() {
         ),
         e;
     })(),
-    d(Oa, {}),
+    d(Sl, {}),
   ];
 }
-function Cc() {
+function pc() {
   const [t, e] = I("tab1");
-  return d(Cr, {
+  return d(Sr, {
     get value() {
       return t();
     },
     onChange: e,
     get children() {
       return [
-        d($r, {
+        d(wr, {
           get children() {
             return [
               d(Re, { value: "tab1", children: "Overview" }),
@@ -7420,50 +7112,50 @@ function Cc() {
         d(Oe, {
           value: "tab1",
           get children() {
-            return Gl();
+            return Il();
           },
         }),
         d(Oe, {
           value: "tab2",
           get children() {
-            return Kl();
+            return El();
           },
         }),
         d(Oe, {
           value: "tab3",
           get children() {
-            return ql();
+            return Bl();
           },
         }),
       ];
     },
   });
 }
-function $c() {
-  return d(Dl, {
+function mc() {
+  return d(Ns, {
     get children() {
       return [
-        d(Zt, { href: "#", children: "Home" }),
-        d(Zt, { href: "#", children: "Users" }),
-        d(Zt, { current: !0, children: "Tanaka Taro" }),
+        d(qt, { href: "#", children: "Home" }),
+        d(qt, { href: "#", children: "Users" }),
+        d(qt, { current: !0, children: "Tanaka Taro" }),
       ];
     },
   });
 }
-function xc() {
+function hc() {
   const [t, e] = I(1), [n, r] = I(3);
   return d(Ce, {
     gap: 3,
     get children() {
       return [
-        d(Vn, {
+        d(Kn, {
           get page() {
             return t();
           },
           totalPages: 10,
           onChange: e,
         }),
-        d(Vn, {
+        d(Kn, {
           get page() {
             return n();
           },
@@ -7476,9 +7168,9 @@ function xc() {
     },
   });
 }
-function _c() {
+function fc() {
   const [t, e] = I(!1);
-  return d(va, {
+  return d(Ea, {
     get open() {
       return t();
     },
@@ -7487,16 +7179,16 @@ function _c() {
       return d(Ce, {
         gap: 2,
         get children() {
-          return [jl(), d(z, { variant: "primary", size: "sm", onClick: () => e(!1), children: "Close" })];
+          return [Rl(), d(z, { variant: "primary", size: "sm", onClick: () => e(!1), children: "Close" })];
         },
       });
     },
     children: "Open Popover",
   });
 }
-function kc() {
+function gc() {
   const [t, e] = I(!1);
-  return d(fa, {
+  return d(ga, {
     get open() {
       return t();
     },
@@ -7506,75 +7198,75 @@ function kc() {
     },
     get children() {
       return [
-        d(Vt, { onSelect: () => e(!1), children: "Edit" }),
-        d(Vt, { onSelect: () => e(!1), children: "Duplicate" }),
-        d(ga, {}),
-        d(Vt, { onSelect: () => e(!1), children: "Delete" }),
+        d(Xt, { onSelect: () => e(!1), children: "Edit" }),
+        d(Xt, { onSelect: () => e(!1), children: "Duplicate" }),
+        d(ba, {}),
+        d(Xt, { onSelect: () => e(!1), children: "Delete" }),
       ];
     },
   });
 }
-const Dc = {
-  Stack: Jl,
-  Divider: Ul,
-  Spacer: Wl,
-  Button: Yl,
-  IconButton: Ql,
-  Badge: Zl,
-  Tag: ec,
-  Avatar: tc,
-  Tooltip: nc,
-  TextField: rc,
-  TextArea: oc,
-  NumberInput: sc,
-  Select: ic,
-  Checkbox: ac,
-  CheckboxGroup: lc,
-  RadioGroup: cc,
-  Switch: dc,
-  Table: uc,
-  Card: pc,
-  DescriptionList: mc,
-  Skeleton: hc,
-  EmptyState: fc,
-  Accordion: gc,
-  Alert: bc,
-  Progress: yc,
-  Spinner: vc,
-  Dialog: Pc,
-  Drawer: Sc,
-  Toast: wc,
-  Tabs: Cc,
-  Breadcrumb: $c,
-  Pagination: xc,
-  Popover: _c,
-  Menu: kc,
+const bc = {
+  Stack: Fl,
+  Divider: zl,
+  Spacer: Ml,
+  Button: Nl,
+  IconButton: Hl,
+  Badge: Gl,
+  Tag: Kl,
+  Avatar: ql,
+  Tooltip: jl,
+  TextField: Vl,
+  TextArea: Xl,
+  NumberInput: Jl,
+  Select: Ul,
+  Checkbox: Wl,
+  CheckboxGroup: Yl,
+  RadioGroup: Ql,
+  Switch: Zl,
+  Table: ec,
+  Card: tc,
+  DescriptionList: nc,
+  Skeleton: rc,
+  EmptyState: oc,
+  Accordion: sc,
+  Alert: ic,
+  Progress: ac,
+  Spinner: lc,
+  Dialog: cc,
+  Drawer: dc,
+  Toast: uc,
+  Tabs: pc,
+  Breadcrumb: mc,
+  Pagination: hc,
+  Popover: fc,
+  Menu: gc,
 };
-var Ac = v(
+var yc = v(
     "<div class=components-page><aside class=components-sidebar><div class=sidebar-search><input type=text class=sidebar-search-input></div><nav class=sidebar-nav></nav></aside><div class=components-content><div class=components-badges>",
   ),
-  Tc = v("<div class=sidebar-category><div class=sidebar-category-label>"),
-  Ic = v("<a>"),
-  Ec = v("<a class=components-badge-link>"),
-  Bc = v("<section class=components-category><h2>"),
-  Rc = v("<div><span class=component-card-name>"),
-  Oc = v("<div class=component-demo>"),
-  Lc = v("<div class=component-code>"),
-  Fc = v("<div class=component-api>"),
-  zc = v("<div class=component-card-anchor>"),
-  Mc = v("<p class=component-card-desc>"),
-  en = v("<p>"),
-  Nc = v("<pre class=code-block><code>"),
-  Hc = v("<h4 class=api-sub-name>"),
-  Gc = v(
+  vc = v("<div class=sidebar-category><div class=sidebar-category-label>"),
+  Pc = v("<a>"),
+  Sc = v("<a class=components-badge-link>"),
+  wc = v("<section class=components-category><h2>"),
+  Cc = v("<div><span class=component-card-name>"),
+  $c = v("<div class=component-demo>"),
+  xc = v("<div class=component-code>"),
+  _c = v("<div class=component-api>"),
+  kc = v("<div class=component-card-anchor>"),
+  Dc = v("<p class=component-card-desc>"),
+  Zt = v("<p>"),
+  Ac = v("<pre class=code-block><code>"),
+  Tc = v("<h4 class=api-sub-name>"),
+  Ic = v(
     "<div class=api-sub-section><table class=api-table><thead><tr><th>Prop</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>",
   ),
-  Kc = v("<p class=api-description>"),
-  qc = v("<tr><td><code></code></td><td><code></code></td><td></td><td class=api-table-desc>");
-const jc = Ns,
-  Vc = t => (Vl[t] ?? [t]).map(n => jc.find(r => r.name === `${n}Props`)).filter(n => n != null),
-  Xc = pn.flatMap(t => t.components);
-function Jc() {
+  Ec = v("<p class=api-description>"),
+  Bc = v("<tr><td><code></code></td><td><code></code></td><td></td><td class=api-table-desc>");
+const Rc = xs,
+  Oc = t => (Ol[t] ?? [t]).map(n => Rc.find(r => r.name === `${n}Props`)).filter(n => n != null),
+  Lc = pn.flatMap(t => t.components);
+function Fc() {
   const [t, e] = I(""),
     [n, r] = I(""),
     o = M(() => {
@@ -7592,7 +7284,7 @@ function Jc() {
       for (const p of c) p.isIntersecting && r(p.target.id.replace("component-", ""));
     }, { rootMargin: "-80px 0px -60% 0px", threshold: 0 });
     i.push(l);
-    for (const c of Xc) {
+    for (const c of Lc) {
       const p = document.getElementById(`component-${c}`);
       p && l.observe(p);
     }
@@ -7605,7 +7297,7 @@ function Jc() {
     c && c.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   return (() => {
-    var l = Ac(),
+    var l = yc(),
       c = l.firstChild,
       p = c.firstChild,
       u = p.firstChild,
@@ -7621,7 +7313,7 @@ function Jc() {
           },
           children: b =>
             (() => {
-              var y = Tc(), P = y.firstChild;
+              var y = vc(), P = y.firstChild;
               return m(P, () => B(E(), b.labelKey)),
                 m(
                   y,
@@ -7631,7 +7323,7 @@ function Jc() {
                     },
                     children: S =>
                       (() => {
-                        var $ = Ic();
+                        var $ = Pc();
                         return $.$$click = _ => {
                           _.preventDefault(), a(S);
                         },
@@ -7655,7 +7347,7 @@ function Jc() {
           },
           children: b =>
             (() => {
-              var y = Ec();
+              var y = Sc();
               return y.$$click = P => {
                 P.preventDefault(), a(b);
               },
@@ -7673,7 +7365,7 @@ function Jc() {
           },
           children: b =>
             (() => {
-              var y = Bc(), P = y.firstChild;
+              var y = wc(), P = y.firstChild;
               return m(P, () => B(E(), b.labelKey)),
                 m(
                   y,
@@ -7681,7 +7373,7 @@ function Jc() {
                     get each() {
                       return b.components;
                     },
-                    children: S => d(Uc, { name: S }),
+                    children: S => d(zc, { name: S }),
                   }),
                   null,
                 ),
@@ -7695,14 +7387,14 @@ function Jc() {
       l;
   })();
 }
-function Uc(t) {
+function zc(t) {
   const [e, n] = I("demo"),
-    r = M(() => Vc(t.name)),
-    o = () => Dc[t.name],
+    r = M(() => Oc(t.name)),
+    o = () => bc[t.name],
     s = () => B(E(), `desc.${t.name}`),
-    i = () => Xl[t.name];
+    i = () => Ll[t.name];
   return (() => {
-    var a = zc();
+    var a = kc();
     return m(
       a,
       d(Pt, {
@@ -7710,7 +7402,7 @@ function Uc(t) {
           return [
             d(St, {
               get children() {
-                var l = Rc(), c = l.firstChild;
+                var l = Cc(), c = l.firstChild;
                 return m(c, () => t.name),
                   m(
                     l,
@@ -7720,7 +7412,7 @@ function Uc(t) {
                       },
                       children: p =>
                         (() => {
-                          var u = Mc();
+                          var u = Dc();
                           return m(u, p), u;
                         })(),
                     }),
@@ -7731,14 +7423,14 @@ function Uc(t) {
             }),
             d(wt, {
               get children() {
-                return d(Cr, {
+                return d(Sr, {
                   get value() {
                     return e();
                   },
                   onChange: n,
                   get children() {
                     return [
-                      d($r, {
+                      d(wr, {
                         get children() {
                           return [
                             d(Re, {
@@ -7765,7 +7457,7 @@ function Uc(t) {
                       d(Oe, {
                         value: "demo",
                         get children() {
-                          var l = Oc();
+                          var l = $c();
                           return m(
                             l,
                             d(k, {
@@ -7774,7 +7466,7 @@ function Uc(t) {
                               },
                               get fallback() {
                                 return (() => {
-                                  var c = en();
+                                  var c = Zt();
                                   return m(c, () => B(E(), "ui.noDemo")), c;
                                 })();
                               },
@@ -7787,7 +7479,7 @@ function Uc(t) {
                       d(Oe, {
                         value: "code",
                         get children() {
-                          var l = Lc();
+                          var l = xc();
                           return m(
                             l,
                             d(k, {
@@ -7796,13 +7488,13 @@ function Uc(t) {
                               },
                               get fallback() {
                                 return (() => {
-                                  var c = en();
+                                  var c = Zt();
                                   return m(c, () => B(E(), "ui.noCode")), c;
                                 })();
                               },
                               children: c =>
                                 (() => {
-                                  var p = Nc(), u = p.firstChild;
+                                  var p = Ac(), u = p.firstChild;
                                   return m(u, c), p;
                                 })(),
                             }),
@@ -7813,7 +7505,7 @@ function Uc(t) {
                       d(Oe, {
                         value: "api",
                         get children() {
-                          var l = Fc();
+                          var l = _c();
                           return m(
                             l,
                             d(k, {
@@ -7822,7 +7514,7 @@ function Uc(t) {
                               },
                               get fallback() {
                                 return (() => {
-                                  var c = en();
+                                  var c = Zt();
                                   return m(c, () => B(E(), "ui.noApi")), c;
                                 })();
                               },
@@ -7834,7 +7526,7 @@ function Uc(t) {
                                   children: c => {
                                     const p = c.name.replace(/Props$/, "");
                                     return (() => {
-                                      var u = Gc(), h = u.firstChild, f = h.firstChild, g = f.nextSibling;
+                                      var u = Ic(), h = u.firstChild, f = h.firstChild, g = f.nextSibling;
                                       return m(
                                         u,
                                         d(k, {
@@ -7842,7 +7534,7 @@ function Uc(t) {
                                             return r().length > 1;
                                           },
                                           get children() {
-                                            var b = Hc();
+                                            var b = Tc();
                                             return m(b, p), b;
                                           },
                                         }),
@@ -7856,7 +7548,7 @@ function Uc(t) {
                                             },
                                             children: b =>
                                               (() => {
-                                                var y = Kc();
+                                                var y = Ec();
                                                 return m(y, b), y;
                                               })(),
                                           }),
@@ -7870,7 +7562,7 @@ function Uc(t) {
                                             },
                                             children: b =>
                                               (() => {
-                                                var y = qc(),
+                                                var y = Bc(),
                                                   P = y.firstChild,
                                                   S = P.firstChild,
                                                   $ = P.nextSibling,
@@ -7909,15 +7601,323 @@ function Uc(t) {
   })();
 }
 q(["input", "click"]);
+var Mc = v("<pre class=gs-code><code>"),
+  _e = v("<p>"),
+  Nc = v("<code>"),
+  Hc = v("<h1>"),
+  Gc = v(
+    "<ul class=gs-list><li><code>componentDir</code> — </li><li><code>cssPath</code> — </li><li><code>components</code> — ",
+  ),
+  Kc = v("<div class=gs-page>");
+function ge(t) {
+  return (() => {
+    var e = Mc(), n = e.firstChild;
+    return m(n, () => t.children), e;
+  })();
+}
+function xe(t) {
+  return d(Pt, {
+    get children() {
+      return [
+        d(St, {
+          get children() {
+            return B(E(), t.titleKey);
+          },
+        }),
+        d(wt, {
+          get children() {
+            return t.children;
+          },
+        }),
+      ];
+    },
+  });
+}
+function en(t) {
+  const e = () => B(E(), t.textKey);
+  return (() => {
+    var n = _e();
+    return m(n, () => {
+      const r = e().split("{code}");
+      return r.length === 1 ? r[0] : [
+        U(() => r[0]),
+        (() => {
+          var o = Nc();
+          return m(o, () => t.code), o;
+        })(),
+        U(() => r[1]),
+      ];
+    }),
+      n;
+  })();
+}
+const qc = `{
+  "componentDir": "src/components/ui",
+  "cssPath": "src/styles/soluid.css",
+  "components": ["Button", "TextField", "Dialog"]
+}`;
+function jc() {
+  const [t, e] = I("bunx"), n = r => `${t()} soluid ${r}`;
+  return (() => {
+    var r = Kc();
+    return m(
+      r,
+      d(pe, {
+        gap: 4,
+        align: "center",
+        get children() {
+          return [
+            (() => {
+              var o = Hc();
+              return m(o, () => B(E(), "gs.title")), o;
+            })(),
+            d(Jr, {
+              get value() {
+                return t();
+              },
+              onChange: o => e(o),
+              get children() {
+                return d(pe, {
+                  gap: 3,
+                  get children() {
+                    return [d(Ue, { value: "bunx", label: "bunx" }), d(Ue, { value: "npx", label: "npx" })];
+                  },
+                });
+              },
+            }),
+          ];
+        },
+      }),
+      null,
+    ),
+      m(
+        r,
+        d(Ce, {
+          gap: 4,
+          get children() {
+            return [
+              d(xe, {
+                titleKey: "gs.step1.title",
+                get children() {
+                  return [
+                    (() => {
+                      var o = _e();
+                      return m(o, () => B(E(), "gs.step1.p1")), o;
+                    })(),
+                    d(ge, {
+                      get children() {
+                        return n("init");
+                      },
+                    }),
+                    d(en, { textKey: "gs.step1.p2", code: "soluid.config.json" }),
+                  ];
+                },
+              }),
+              d(xe, {
+                titleKey: "gs.step2.title",
+                get children() {
+                  return [
+                    d(en, { textKey: "gs.step2.p1", code: "soluid.config.json" }),
+                    d(ge, { children: qc }),
+                    (() => {
+                      var o = Gc(), s = o.firstChild, i = s.firstChild;
+                      i.nextSibling;
+                      var a = s.nextSibling, l = a.firstChild;
+                      l.nextSibling;
+                      var c = a.nextSibling, p = c.firstChild;
+                      return p.nextSibling,
+                        m(s, () => B(E(), "gs.step2.componentDir"), null),
+                        m(a, () => B(E(), "gs.step2.cssPath"), null),
+                        m(c, () => B(E(), "gs.step2.components"), null),
+                        o;
+                    })(),
+                    (() => {
+                      var o = _e();
+                      return m(o, () => B(E(), "gs.step2.p2")), o;
+                    })(),
+                    d(ge, {
+                      get children() {
+                        return `${n("add Checkbox Switch Tabs")}
+${n("remove Switch")}`;
+                      },
+                    }),
+                  ];
+                },
+              }),
+              d(xe, {
+                titleKey: "gs.step3.title",
+                get children() {
+                  return [
+                    (() => {
+                      var o = _e();
+                      return m(o, () => B(E(), "gs.step3.p1")), o;
+                    })(),
+                    d(ge, {
+                      get children() {
+                        return n("install");
+                      },
+                    }),
+                    d(en, { textKey: "gs.step3.p2", code: "cssPath" }),
+                  ];
+                },
+              }),
+              d(xe, {
+                titleKey: "gs.step4.title",
+                get children() {
+                  return [
+                    (() => {
+                      var o = _e();
+                      return m(o, () => B(E(), "gs.step4.p1")), o;
+                    })(),
+                    d(ge, {
+                      children: `// src/index.tsx
+import "./styles/soluid.css";`,
+                    }),
+                  ];
+                },
+              }),
+              d(xe, {
+                titleKey: "gs.step5.title",
+                get children() {
+                  return [
+                    (() => {
+                      var o = _e();
+                      return m(o, () => B(E(), "gs.step5.p1")), o;
+                    })(),
+                    d(ge, {
+                      children: `import { Button, TextField } from "./components/ui";
+
+function App() {
+  return (
+    <div>
+      <TextField label="Name" placeholder="Enter your name" />
+      <Button variant="primary">Submit</Button>
+    </div>
+  );
+}`,
+                    }),
+                  ];
+                },
+              }),
+              d(xe, {
+                titleKey: "gs.theme.title",
+                get children() {
+                  return [
+                    (() => {
+                      var o = _e();
+                      return m(o, () => B(E(), "gs.theme.p1")), o;
+                    })(),
+                    d(ge, {
+                      children: `document.documentElement.setAttribute("data-theme", "dark");
+document.documentElement.setAttribute("data-density", "dense");`,
+                    }),
+                  ];
+                },
+              }),
+              d(xe, {
+                titleKey: "gs.other.title",
+                get children() {
+                  return d(ge, {
+                    get children() {
+                      return `${n("list")}                # list available components
+${n("add <component...>")}  # add components to config
+${n("remove <comp...>")}    # remove from config
+${n("install")}             # re-download and rebuild CSS`;
+                    },
+                  });
+                },
+              }),
+            ];
+          },
+        }),
+        null,
+      ),
+      r;
+  })();
+}
+var Vc = v(
+    "<div class=top-page><section class=top-hero><h1>soluid</h1><p class=top-hero-sub></p><pre class=top-install><code>bunx soluid init</code></pre></section><section class=top-features><div class=top-feature-grid><div class=top-feature-card><h3></h3><p></p></div><div class=top-feature-card><h3></h3><p></p></div><div class=top-feature-card><h3></h3><p></p></div></div></section><section class=top-categories><h2></h2><div class=top-feature-grid></div><div class=top-links><a href=https://github.com/misebox/soluid target=_blank rel=\"noopener noreferrer\"class=top-link>GitHub",
+  ),
+  Xc = v("<div class=top-category-card><h3></h3><p>");
+const Jc = [
+  { labelKey: "cat.layout", components: "Stack, HStack, Divider, Spacer" },
+  { labelKey: "cat.general", components: "Button, IconButton, Badge, Tag, Tooltip, Avatar" },
+  { labelKey: "cat.form", components: "TextField, TextArea, NumberInput, Select, Checkbox, RadioGroup, Switch" },
+  { labelKey: "cat.data", components: "Table, Card, DescriptionList, Skeleton, EmptyState, Accordion" },
+  { labelKey: "cat.feedback", components: "Dialog, Drawer, Alert, Toast, Progress, Spinner" },
+  { labelKey: "cat.navigation", components: "Tabs, Breadcrumb, Pagination, Menu" },
+];
+function Uc() {
+  return (() => {
+    var t = Vc(),
+      e = t.firstChild,
+      n = e.firstChild,
+      r = n.nextSibling,
+      o = e.nextSibling,
+      s = o.firstChild,
+      i = s.firstChild,
+      a = i.firstChild,
+      l = a.nextSibling,
+      c = i.nextSibling,
+      p = c.firstChild,
+      u = p.nextSibling,
+      h = c.nextSibling,
+      f = h.firstChild,
+      g = f.nextSibling,
+      b = o.nextSibling,
+      y = b.firstChild,
+      P = y.nextSibling,
+      S = P.nextSibling,
+      $ = S.firstChild;
+    return m(r, () => B(E(), "top.heroSub")),
+      m(a, () => B(E(), "top.featureCopyOwn")),
+      m(l, () => B(E(), "top.featureCopyOwnDesc")),
+      m(p, () => B(E(), "top.featureAccessible")),
+      m(u, () => B(E(), "top.featureAccessibleDesc")),
+      m(f, () => B(E(), "top.featureThemeable")),
+      m(g, () => B(E(), "top.featureThemeableDesc")),
+      m(y, () => B(E(), "top.componentsHeading")),
+      m(P, () =>
+        Jc.map(_ =>
+          (() => {
+            var R = Xc(), H = R.firstChild, le = H.nextSibling;
+            return m(H, () => B(E(), _.labelKey)), m(le, () => _.components), R;
+          })()
+        )),
+      m(
+        S,
+        d(Je, {
+          href: "/getting-started",
+          class: "top-link",
+          get children() {
+            return B(E(), "nav.gettingStarted");
+          },
+        }),
+        $,
+      ),
+      m(
+        S,
+        d(Je, {
+          href: "/components",
+          class: "top-link",
+          get children() {
+            return B(E(), "nav.browseComponents");
+          },
+        }),
+        $,
+      ),
+      t;
+  })();
+}
 function Wc() {
   return d(rs, {
     base: "/soluid",
     root: ys,
     get children() {
       return [
-        d(Ht, { path: "/", component: ws }),
-        d(Ht, { path: "/getting-started", component: Ms }),
-        d(Ht, { path: "/components", component: Jc }),
+        d(Ht, { path: "/", component: Uc }),
+        d(Ht, { path: "/getting-started", component: jc }),
+        d(Ht, { path: "/components", component: Fc }),
       ];
     },
   });

@@ -1,7 +1,13 @@
-## Development
+## Setup
 
 ```sh
 bun install                  # install dependencies
+sh bin/setup-hooks.sh        # install git hooks (pre-commit, pre-push)
+```
+
+## Development
+
+```sh
 bun run dev                  # start catalog dev server (localhost:5173)
 bun run typecheck            # type check
 bun run lint                 # lint (oxlint)
