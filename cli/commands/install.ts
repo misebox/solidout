@@ -123,7 +123,14 @@ export async function install(cwd: string): Promise<void> {
   console.log(`Installing ${resolved.length} items (including dependencies):`);
 
   const version = config.componentsVersion;
-  const archive = await fetchAndExtract(version);
+  let archive: Map<string, string>;
+  try {
+    archive = await fetchAndExtract(version);
+  } catch (e) {
+    console.error(`Failed to fetch components: ${e instanceof Error ? e.message : e}`);
+    process.exit(1);
+    return;
+  }
 
   const targetRoot = path.resolve(cwd, config.componentDir);
 

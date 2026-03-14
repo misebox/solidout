@@ -9,12 +9,12 @@ export function remove(cwd: string, names: string[]): void {
 	}
 
 	const existing = new Set(config.components);
-	const removed: string[] = [];
-	for (const name of names) {
-		if (existing.has(name)) {
-			removed.push(name);
-		}
+	const notInConfig = names.filter((name) => !existing.has(name));
+	if (notInConfig.length > 0) {
+		console.warn(`Not in config (skipped): ${notInConfig.join(", ")}`);
 	}
+
+	const removed = names.filter((name) => existing.has(name));
 
 	if (removed.length === 0) {
 		console.log("None of the specified components are in config.");
