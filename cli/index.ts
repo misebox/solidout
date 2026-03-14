@@ -43,7 +43,7 @@ switch (command) {
     break;
   }
   default:
-    console.log(`${PROJECT_NAME} - SolidJS Opinionated UI`);
+    console.log(`${PROJECT_NAME} - CLI that installs SolidJS UI components into your project`);
     console.log("");
     console.log("Commands:");
     console.log(`  init                    Create ${CONFIG_FILENAME}`);

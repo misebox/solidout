@@ -51,7 +51,14 @@ export async function init(cwd: string): Promise<void> {
   }
 
   console.log("Fetching latest components version...");
-  const componentsVersion = await fetchLatestComponentsVersion();
+  let componentsVersion: string;
+  try {
+    componentsVersion = await fetchLatestComponentsVersion();
+  } catch (e) {
+    console.error(`Failed to fetch version: ${e instanceof Error ? e.message : e}`);
+    process.exit(1);
+    return;
+  }
 
   const componentDir = await prompt("Component directory?", "src/components/ui");
   const cssPath = await prompt("CSS path?", `src/styles/${DEFAULT_CSS_FILENAME}`);
