@@ -5,6 +5,7 @@ import { init } from "./commands/init.js";
 import { install } from "./commands/install.js";
 import { list } from "./commands/list.js";
 import { remove } from "./commands/remove.js";
+import { update } from "./commands/update.js";
 import { CONFIG_FILENAME, PROJECT_NAME } from "./config.js";
 
 const args = process.argv.slice(2);
@@ -33,6 +34,9 @@ switch (command) {
     }
     remove(cwd, rest);
     break;
+  case "update":
+    await update(cwd);
+    break;
   case "list": {
     const filter = args.includes("--installed")
       ? "installed" as const
@@ -48,6 +52,7 @@ switch (command) {
     console.log("Commands:");
     console.log(`  init                    Create ${CONFIG_FILENAME}`);
     console.log("  install                 Install components and CSS");
+    console.log("  update                  Update to latest components version");
     console.log("  add <component...>      Add components to config");
     console.log("  remove <component...>   Remove components from config");
     console.log("  list [--installed]       List available components");
