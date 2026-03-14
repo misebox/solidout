@@ -11,7 +11,20 @@ import { t } from "../locales";
 type Runner = "bunx" | "npx";
 
 function CodeBlock(props: { children: string }) {
-  return <pre class="gs-code"><code>{props.children}</code></pre>;
+  const [copied, setCopied] = createSignal(false);
+
+  function copy() {
+    navigator.clipboard.writeText(props.children);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
+
+  return (
+    <div class="code-wrapper">
+      <pre class="gs-code"><code>{props.children}</code></pre>
+      <button class="copy-btn" onClick={copy}>{copied() ? "Copied" : "Copy"}</button>
+    </div>
+  );
 }
 
 function Step(props: { titleKey: string; children: JSX.Element }) {

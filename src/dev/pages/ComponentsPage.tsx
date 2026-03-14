@@ -7,6 +7,25 @@ import { lang } from "../lang";
 import { t } from "../locales";
 import { CATEGORIES, CODE_EXAMPLES, DEMOS, SUB_COMPONENTS } from "./componentDemos";
 
+/* ---------- CopyableCode ---------- */
+
+function CopyableCode(props: { code: string }) {
+  const [copied, setCopied] = createSignal(false);
+
+  function copy() {
+    navigator.clipboard.writeText(props.code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
+
+  return (
+    <div class="code-wrapper">
+      <pre class="code-block"><code>{props.code}</code></pre>
+      <button class="copy-btn" onClick={copy}>{copied() ? "Copied" : "Copy"}</button>
+    </div>
+  );
+}
+
 /* ---------- Types ---------- */
 
 interface PropInfo {
@@ -195,7 +214,7 @@ function ComponentCard(props: { name: string }) {
             <TabPanel value="code">
               <div class="component-code">
                 <Show when={codeExample()} fallback={<p>{t(lang(), "ui.noCode")}</p>}>
-                  {(code) => <pre class="code-block"><code>{code()}</code></pre>}
+                  {(code) => <CopyableCode code={code()} />}
                 </Show>
               </div>
             </TabPanel>
