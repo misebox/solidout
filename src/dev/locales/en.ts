@@ -522,7 +522,8 @@ export const en: Record<string, string> = {
   "gs.step2.p2": "You can also add or remove components via CLI:",
   "gs.step3.title": "3. Install",
   "gs.step3.p1": "Download component source files and generate CSS:",
-  "gs.step3.p2": "Components are copied to your project directory. All CSS is concatenated into a single file at {code}.",
+  "gs.step3.p2":
+    "Components are copied to your project directory. All CSS is concatenated into a single file at {code}.",
   "gs.step4.title": "4. Import CSS",
   "gs.step4.p1": "Add the CSS import to your app entry point:",
   "gs.step5.title": "5. Use Components",

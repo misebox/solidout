@@ -83,16 +83,20 @@ export function Pagination(props: PaginationProps) {
         Prev
       </button>
 
-      <Show when={local.showPages} fallback={
-        <span class="so-pagination__info">
-          {local.page} / {local.totalPages}
-        </span>
-      }>
+      <Show
+        when={local.showPages}
+        fallback={
+          <span class="so-pagination__info">
+            {local.page} / {local.totalPages}
+          </span>
+        }
+      >
         <For each={pageList()}>
           {(item) => (
-            <Show when={item !== "ellipsis"} fallback={
-              <span class="so-pagination__ellipsis" aria-hidden="true">…</span>
-            }>
+            <Show
+              when={item !== "ellipsis"}
+              fallback={<span class="so-pagination__ellipsis" aria-hidden="true">…</span>}
+            >
               <button
                 type="button"
                 class={cls(

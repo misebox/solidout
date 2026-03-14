@@ -1,8 +1,8 @@
 import { For, splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
-import { cls } from "./core/utils";
 import { createToast } from "./core/createToast";
 import type { ToastInput, ToastReturn } from "./core/createToast";
+import { cls } from "./core/utils";
 
 export interface ToastContainerProps {
   position?: "top-right" | "top-center" | "bottom-right" | "bottom-center";

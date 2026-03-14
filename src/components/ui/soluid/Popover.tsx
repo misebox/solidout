@@ -1,8 +1,8 @@
+import { computePosition, flip, offset, shift } from "@floating-ui/dom";
+import type { Placement } from "@floating-ui/dom";
 import { createEffect, createSignal, createUniqueId, on, onCleanup, Show, splitProps } from "solid-js";
 import type { JSX } from "solid-js";
 import { Portal } from "solid-js/web";
-import { computePosition, flip, offset, shift } from "@floating-ui/dom";
-import type { Placement } from "@floating-ui/dom";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";
 

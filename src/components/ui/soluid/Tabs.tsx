@@ -79,7 +79,7 @@ export function TabList(props: TabListProps) {
   function handleKeyDown(e: KeyboardEvent) {
     const target = e.currentTarget as HTMLElement;
     const tabs = Array.from(
-      target.querySelectorAll<HTMLButtonElement>('[role="tab"]:not(:disabled)'),
+      target.querySelectorAll<HTMLButtonElement>("[role=\"tab\"]:not(:disabled)"),
     );
     if (tabs.length === 0) return;
 
