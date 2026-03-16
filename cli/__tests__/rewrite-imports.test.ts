@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { rewriteImports } from "../rewrite-imports";
+import { rewriteImports } from "../rewrite-imports.js";
 
 describe("rewriteImports", () => {
   test("keeps same-dir imports unchanged", () => {

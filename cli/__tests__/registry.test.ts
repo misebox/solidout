@@ -1,9 +1,10 @@
 import { describe, expect, test } from "vitest";
-import { allComponentNames, collectNpmDeps, registry, resolveDependencies } from "../registry";
+import type { RegistryEntry } from "../registry.js";
+import { allComponentNames, collectNpmDeps, registry, resolveDependencies } from "../registry.js";
 
 describe("registry", () => {
   test("all entries have required fields", () => {
-    for (const [key, entry] of Object.entries(registry)) {
+    for (const [key, entry] of Object.entries(registry) as [string, RegistryEntry][]) {
       expect(entry.name).toBe(key);
       expect(entry.files.length).toBeGreaterThan(0);
       expect(entry.description).toBeTruthy();
@@ -24,10 +25,10 @@ describe("registry", () => {
 
   test("deduplicates dependencies", () => {
     const resolved = resolveDependencies(["TextField", "TextArea"]);
-    const counts = resolved.reduce((acc, name) => {
-      acc[name] = (acc[name] ?? 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+    const counts: Record<string, number> = {};
+    for (const name of resolved) {
+      counts[name] = (counts[name] ?? 0) + 1;
+    }
     for (const count of Object.values(counts)) {
       expect(count).toBe(1);
     }
