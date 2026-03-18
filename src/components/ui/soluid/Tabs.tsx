@@ -1,4 +1,4 @@
-import { children as resolveChildren, createContext, createUniqueId, Show, splitProps, useContext } from "solid-js";
+import { createContext, createUniqueId, Show, splitProps, useContext } from "solid-js";
 import type { Accessor, JSX } from "solid-js";
 import type { CommonProps } from "./core/types";
 import { cls } from "./core/utils";

@@ -1,6 +1,5 @@
 import { A } from "@solidjs/router";
 import { createEffect, createSignal, type ParentProps } from "solid-js";
-import type { JSX } from "solid-js";
 import type { Density } from "../components/ui/soluid/core/types";
 import { IconButton } from "../components/ui/soluid/IconButton";
 import { Spacer } from "../components/ui/soluid/Spacer";
