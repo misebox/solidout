@@ -1,10 +1,36 @@
 import { A } from "@solidjs/router";
 import { createEffect, createSignal, type ParentProps } from "solid-js";
-import { Button } from "../components/ui/soluid/Button";
+import type { JSX } from "solid-js";
 import type { Density } from "../components/ui/soluid/core/types";
+import { IconButton } from "../components/ui/soluid/IconButton";
 import { Spacer } from "../components/ui/soluid/Spacer";
 import { type Lang, lang, setLang } from "./lang";
 import { t } from "./locales";
+
+const SunIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="5" />
+    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+);
+
+const DensityNormalIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 6h18M3 12h18M3 18h18" />
+  </svg>
+);
+
+const DensityDenseIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 5h18M3 9h18M3 13h18M3 17h18" />
+  </svg>
+);
 
 export function Layout(props: ParentProps) {
   const [density, setDensity] = createSignal<Density>("normal");
@@ -26,20 +52,13 @@ export function Layout(props: ParentProps) {
         </nav>
         <Spacer />
         <div class="site-controls">
-          <Button
-            variant={density() === "normal" ? "primary" : "neutral"}
+          <IconButton
+            icon={density() === "normal" ? <DensityNormalIcon /> : <DensityDenseIcon />}
+            aria-label={density() === "normal" ? "Switch to dense" : "Switch to normal"}
+            variant="ghost"
             size="sm"
-            onClick={() => setDensity("normal")}
-          >
-            Normal
-          </Button>
-          <Button
-            variant={density() === "dense" ? "primary" : "neutral"}
-            size="sm"
-            onClick={() => setDensity("dense")}
-          >
-            Dense
-          </Button>
+            onClick={() => setDensity(density() === "normal" ? "dense" : "normal")}
+          />
           <select
             class="lang-select"
             value={lang()}
@@ -48,20 +67,13 @@ export function Layout(props: ParentProps) {
             <option value="en">EN</option>
             <option value="ja">JA</option>
           </select>
-          <Button
-            variant={theme() === "light" ? "primary" : "neutral"}
+          <IconButton
+            icon={theme() === "light" ? <SunIcon /> : <MoonIcon />}
+            aria-label={theme() === "light" ? "Switch to dark mode" : "Switch to light mode"}
+            variant="ghost"
             size="sm"
-            onClick={() => setTheme("light")}
-          >
-            Light
-          </Button>
-          <Button
-            variant={theme() === "dark" ? "primary" : "neutral"}
-            size="sm"
-            onClick={() => setTheme("dark")}
-          >
-            Dark
-          </Button>
+            onClick={() => setTheme(theme() === "light" ? "dark" : "light")}
+          />
           <a
             href="https://github.com/misebox/soluid"
             target="_blank"
