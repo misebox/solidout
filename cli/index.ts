@@ -15,7 +15,7 @@ const cwd = process.cwd();
 
 switch (command) {
   case "init":
-    await init(cwd);
+    await init(cwd, { interactive: !args.includes("--no-interactive") });
     break;
   case "install":
     await install(cwd);
@@ -50,7 +50,7 @@ switch (command) {
     console.log(`${PROJECT_NAME} - CLI that installs SolidJS UI components into your project`);
     console.log("");
     console.log("Commands:");
-    console.log(`  init                    Create ${CONFIG_FILENAME}`);
+    console.log(`  init [--no-interactive]  Create ${CONFIG_FILENAME}`);
     console.log("  install                 Install components and CSS");
     console.log("  update                  Update to latest components version");
     console.log("  add <component...>      Add components to config");

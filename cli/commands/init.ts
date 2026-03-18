@@ -32,7 +32,12 @@ function confirm(question: string): Promise<boolean> {
   });
 }
 
-export async function init(cwd: string): Promise<void> {
+interface InitOptions {
+  interactive?: boolean;
+}
+
+export async function init(cwd: string, options: InitOptions = {}): Promise<void> {
+  const interactive = options.interactive !== false;
   const configPath = findConfigPath(cwd);
 
   if (fs.existsSync(configPath)) {
@@ -42,7 +47,7 @@ export async function init(cwd: string): Promise<void> {
   }
 
   const pkgPath = path.join(cwd, "package.json");
-  if (!fs.existsSync(pkgPath)) {
+  if (!fs.existsSync(pkgPath) && interactive) {
     const ok = await confirm("package.json not found. Continue anyway? (y/n) ");
     if (!ok) {
       console.log("Aborted.");
@@ -60,8 +65,12 @@ export async function init(cwd: string): Promise<void> {
     return;
   }
 
-  const componentDir = await prompt("Component directory?", "src/components/ui");
-  const cssPath = await prompt("CSS path?", `src/styles/${DEFAULT_CSS_FILENAME}`);
+  const componentDir = interactive
+    ? await prompt("Component directory?", "src/components/ui")
+    : "src/components/ui";
+  const cssPath = interactive
+    ? await prompt("CSS path?", `src/styles/${DEFAULT_CSS_FILENAME}`)
+    : `src/styles/${DEFAULT_CSS_FILENAME}`;
 
   const allNames = allComponentNames();
 
