@@ -25,15 +25,7 @@ function TextFieldInput(props: {
   required?: boolean;
   size?: "sm" | "md" | "lg";
 }) {
-  const [local] = splitProps(props, [
-    "value",
-    "onInput",
-    "placeholder",
-    "type",
-    "disabled",
-    "required",
-    "size",
-  ]);
+  const [local] = splitProps(props, ["value", "onInput", "placeholder", "type", "disabled", "required", "size"]);
 
   const ctx = useFormField();
 
@@ -44,10 +36,7 @@ function TextFieldInput(props: {
   return (
     <input
       id={ctx?.id}
-      class={cls(
-        "so-text-field__input",
-        `so-text-field__input--${local.size ?? "md"}`,
-      )}
+      class={cls("so-text-field__input", `so-text-field__input--${local.size ?? "md"}`)}
       type={local.type ?? "text"}
       value={local.value ?? ""}
       placeholder={local.placeholder}
@@ -72,14 +61,7 @@ export function TextField(props: TextFieldProps) {
     "density",
   ]);
 
-  const [formProps] = splitProps(props, [
-    "label",
-    "error",
-    "hint",
-    "required",
-    "class",
-    "density",
-  ]);
+  const [formProps] = splitProps(props, ["label", "error", "hint", "required", "class", "density"]);
 
   return (
     <FormField

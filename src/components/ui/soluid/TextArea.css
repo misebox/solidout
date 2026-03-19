@@ -9,7 +9,9 @@
   line-height: var(--so-line-height);
   padding: var(--so-space-2) var(--so-space-3);
   resize: vertical;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
   box-sizing: border-box;
 }
 

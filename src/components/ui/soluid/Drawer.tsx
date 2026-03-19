@@ -23,15 +23,7 @@ export interface DrawerHeaderProps {
 }
 
 export function Drawer(props: DrawerProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "open",
-    "onClose",
-    "side",
-    "size",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "open", "onClose", "side", "size", "children"]);
 
   drawerCounter += 1;
   const titleId = `so-drawer-title-${drawerCounter}`;
@@ -60,9 +52,7 @@ export function Drawer(props: DrawerProps) {
     }
   }
 
-  const [containerRef, setContainerRef] = createSignal<HTMLElement | undefined>(
-    undefined,
-  );
+  const [containerRef, setContainerRef] = createSignal<HTMLElement | undefined>(undefined);
 
   createFocusTrap({
     container: containerRef,
@@ -81,10 +71,7 @@ export function Drawer(props: DrawerProps) {
       <Portal>
         <DrawerContext.Provider value={titleId}>
           <div
-            class={cls(
-              "so-drawer-backdrop",
-              closing() && "so-drawer-backdrop--closing",
-            )}
+            class={cls("so-drawer-backdrop", closing() && "so-drawer-backdrop--closing")}
             onClick={handleBackdropClick}
             onAnimationEnd={handleAnimationEnd}
           >

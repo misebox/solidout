@@ -6,7 +6,10 @@
   border-radius: var(--so-radius);
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
   user-select: none;
   padding: 0;
 }

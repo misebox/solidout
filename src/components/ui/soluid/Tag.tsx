@@ -11,17 +11,8 @@ export interface TagProps extends CommonProps {
   children: JSX.Element;
 }
 
-export function Tag(
-  props: TagProps & JSX.HTMLAttributes<HTMLSpanElement>,
-) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "variant",
-    "fill",
-    "size",
-    "onRemove",
-    "children",
-  ]);
+export function Tag(props: TagProps & JSX.HTMLAttributes<HTMLSpanElement>) {
+  const [local, others] = splitProps(props, ["class", "variant", "fill", "size", "onRemove", "children"]);
 
   return (
     <span
@@ -36,12 +27,7 @@ export function Tag(
     >
       {local.children}
       <Show when={local.onRemove}>
-        <button
-          type="button"
-          class="so-tag__remove"
-          aria-label="Remove"
-          onClick={local.onRemove}
-        >
+        <button type="button" class="so-tag__remove" aria-label="Remove" onClick={local.onRemove}>
           &#x2715;
         </button>
       </Show>

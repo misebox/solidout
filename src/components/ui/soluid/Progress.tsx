@@ -10,14 +10,7 @@ export interface ProgressProps extends CommonProps {
 }
 
 export function Progress(props: ProgressProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "value",
-    "variant",
-    "size",
-    "aria-label",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "value", "variant", "size", "aria-label"]);
 
   const clampedValue = () => Math.max(0, Math.min(100, local.value));
 
@@ -37,10 +30,7 @@ export function Progress(props: ProgressProps) {
       data-density={local.density}
       {...others}
     >
-      <div
-        class="so-progress__bar"
-        style={{ width: `${clampedValue()}%` }}
-      />
+      <div class="so-progress__bar" style={{ width: `${clampedValue()}%` }} />
     </div>
   );
 }

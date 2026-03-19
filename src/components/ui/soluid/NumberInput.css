@@ -5,7 +5,9 @@
   border-radius: var(--so-radius);
   background-color: var(--so-bg);
   overflow: hidden;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
   width: 100%;
 }
 

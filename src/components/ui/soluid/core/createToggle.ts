@@ -21,9 +21,7 @@ export interface ToggleReturn {
 }
 
 export function createToggle(options: ToggleOptions = {}): ToggleReturn {
-  const [internalPressed, setInternalPressed] = createSignal(
-    options.defaultPressed ?? false,
-  );
+  const [internalPressed, setInternalPressed] = createSignal(options.defaultPressed ?? false);
 
   const pressed: Accessor<boolean> = options.pressed ?? internalPressed;
 

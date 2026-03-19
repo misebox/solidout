@@ -13,7 +13,9 @@
   line-height: var(--so-line-height);
   cursor: pointer;
   appearance: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
   box-sizing: border-box;
 }
 

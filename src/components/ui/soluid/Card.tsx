@@ -28,11 +28,7 @@ export function Card(props: CardProps) {
 
   return (
     <div
-      class={cls(
-        "so-card",
-        local.variant === "elevated" && "so-card--elevated",
-        local.class,
-      )}
+      class={cls("so-card", local.variant === "elevated" && "so-card--elevated", local.class)}
       data-density={local.density}
       {...others}
     >

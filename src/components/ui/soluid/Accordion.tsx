@@ -16,39 +16,21 @@ export interface AccordionItemProps {
 }
 
 export function Accordion(props: AccordionProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "children"]);
 
   return (
-    <div
-      class={cls("so-accordion", local.class)}
-      data-density={local.density}
-      {...others}
-    >
+    <div class={cls("so-accordion", local.class)} data-density={local.density} {...others}>
       {local.children}
     </div>
   );
 }
 
 export function AccordionItem(props: AccordionItemProps) {
-  const [local, others] = splitProps(props, [
-    "title",
-    "open",
-    "disabled",
-    "class",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["title", "open", "disabled", "class", "children"]);
 
   return (
     <details
-      class={cls(
-        "so-accordion-item",
-        local.disabled && "so-accordion-item--disabled",
-        local.class,
-      )}
+      class={cls("so-accordion-item", local.disabled && "so-accordion-item--disabled", local.class)}
       open={local.open}
       {...others}
     >
@@ -76,9 +58,7 @@ export function AccordionItem(props: AccordionItemProps) {
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </summary>
-      <div class="so-accordion-item__content">
-        {local.children}
-      </div>
+      <div class="so-accordion-item__content">{local.children}</div>
     </details>
   );
 }

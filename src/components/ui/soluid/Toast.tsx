@@ -33,10 +33,7 @@ export function ToastContainer(props: ToastContainerProps) {
   return (
     <Portal>
       <div
-        class={cls(
-          "so-toast-container",
-          `so-toast-container--${local.position ?? "top-right"}`,
-        )}
+        class={cls("so-toast-container", `so-toast-container--${local.position ?? "top-right"}`)}
         aria-live="polite"
         aria-relevant="additions"
       >

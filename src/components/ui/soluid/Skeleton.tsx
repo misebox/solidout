@@ -9,21 +9,11 @@ export interface SkeletonProps extends CommonProps {
 }
 
 export function Skeleton(props: SkeletonProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "variant",
-    "width",
-    "height",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "variant", "width", "height"]);
 
   return (
     <div
-      class={cls(
-        "so-skeleton",
-        `so-skeleton--${local.variant ?? "text"}`,
-        local.class,
-      )}
+      class={cls("so-skeleton", `so-skeleton--${local.variant ?? "text"}`, local.class)}
       data-density={local.density}
       style={{
         width: local.width,

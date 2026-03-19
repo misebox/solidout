@@ -65,9 +65,7 @@ export async function init(cwd: string, options: InitOptions = {}): Promise<void
     return;
   }
 
-  const componentDir = interactive
-    ? await prompt("Component directory?", "src/components/ui")
-    : "src/components/ui";
+  const componentDir = interactive ? await prompt("Component directory?", "src/components/ui") : "src/components/ui";
   const cssPath = interactive
     ? await prompt("CSS path?", `src/styles/${DEFAULT_CSS_FILENAME}`)
     : `src/styles/${DEFAULT_CSS_FILENAME}`;

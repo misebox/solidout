@@ -62,10 +62,14 @@ export function RadioGroup(props: RadioGroupProps) {
         </Show>
         <div class="so-radio-group__items">{local.children}</div>
         <Show when={local.error}>
-          <p class="so-radio-group__error" id={errorId} role="alert">{local.error}</p>
+          <p class="so-radio-group__error" id={errorId} role="alert">
+            {local.error}
+          </p>
         </Show>
         <Show when={!local.error && local.hint}>
-          <p class="so-radio-group__hint" id={hintId}>{local.hint}</p>
+          <p class="so-radio-group__hint" id={hintId}>
+            {local.hint}
+          </p>
         </Show>
       </fieldset>
     </RadioGroupContext.Provider>

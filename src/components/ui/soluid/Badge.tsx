@@ -10,16 +10,8 @@ export interface BadgeProps extends CommonProps {
   children: JSX.Element;
 }
 
-export function Badge(
-  props: BadgeProps & JSX.HTMLAttributes<HTMLSpanElement>,
-) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "variant",
-    "fill",
-    "size",
-    "children",
-  ]);
+export function Badge(props: BadgeProps & JSX.HTMLAttributes<HTMLSpanElement>) {
+  const [local, others] = splitProps(props, ["class", "variant", "fill", "size", "children"]);
 
   return (
     <span

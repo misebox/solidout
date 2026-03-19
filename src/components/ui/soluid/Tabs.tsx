@@ -44,13 +44,7 @@ export interface TabPanelProps {
 }
 
 export function Tabs(props: TabsProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "value",
-    "onChange",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "value", "onChange", "children"]);
 
   const baseId = `so-tabs-${createUniqueId()}`;
 
@@ -62,11 +56,7 @@ export function Tabs(props: TabsProps) {
 
   return (
     <TabsContext.Provider value={context}>
-      <div
-        class={cls("so-tabs", local.class)}
-        data-density={local.density}
-        {...others}
-      >
+      <div class={cls("so-tabs", local.class)} data-density={local.density} {...others}>
         {local.children}
       </div>
     </TabsContext.Provider>
@@ -78,9 +68,7 @@ export function TabList(props: TabListProps) {
 
   function handleKeyDown(e: KeyboardEvent) {
     const target = e.currentTarget as HTMLElement;
-    const tabs = Array.from(
-      target.querySelectorAll<HTMLButtonElement>("[role=\"tab\"]:not(:disabled)"),
-    );
+    const tabs = Array.from(target.querySelectorAll<HTMLButtonElement>('[role="tab"]:not(:disabled)'));
     if (tabs.length === 0) return;
 
     const current = document.activeElement as HTMLElement;
@@ -119,23 +107,14 @@ export function TabList(props: TabListProps) {
 }
 
 export function Tab(props: TabProps) {
-  const [local, others] = splitProps(props, [
-    "value",
-    "disabled",
-    "class",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["value", "disabled", "class", "children"]);
 
   const ctx = useTabsContext();
 
   return (
     <button
       type="button"
-      class={cls(
-        "so-tab",
-        ctx.value() === local.value && "so-tab--active",
-        local.class,
-      )}
+      class={cls("so-tab", ctx.value() === local.value && "so-tab--active", local.class)}
       role="tab"
       id={`${ctx.baseId}-tab-${local.value}`}
       aria-selected={ctx.value() === local.value}

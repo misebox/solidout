@@ -16,9 +16,7 @@ export function TopPage() {
     <div class="top-page">
       <section class="top-hero">
         <h1>soluid</h1>
-        <p class="top-hero-sub">
-          {t(lang(), "top.heroSub")}
-        </p>
+        <p class="top-hero-sub">{t(lang(), "top.heroSub")}</p>
         <pre class="top-install">
           <code>bunx soluid init</code>
         </pre>
@@ -52,8 +50,12 @@ export function TopPage() {
           ))}
         </div>
         <div class="top-links">
-          <A href="/getting-started" class="top-link">{t(lang(), "nav.gettingStarted")}</A>
-          <A href="/components" class="top-link">{t(lang(), "nav.browseComponents")}</A>
+          <A href="/getting-started" class="top-link">
+            {t(lang(), "nav.gettingStarted")}
+          </A>
+          <A href="/components" class="top-link">
+            {t(lang(), "nav.browseComponents")}
+          </A>
           <a href="https://github.com/misebox/soluid" target="_blank" rel="noopener noreferrer" class="top-link">
             GitHub
           </a>

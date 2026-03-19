@@ -22,7 +22,9 @@
   font-weight: 500;
   color: var(--so-text-muted);
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
   white-space: nowrap;
   margin-bottom: -1px;
 }

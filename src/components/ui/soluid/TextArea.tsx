@@ -25,15 +25,7 @@ function TextAreaInput(props: {
   required?: boolean;
   size?: "sm" | "md" | "lg";
 }) {
-  const [local] = splitProps(props, [
-    "value",
-    "onInput",
-    "placeholder",
-    "rows",
-    "disabled",
-    "required",
-    "size",
-  ]);
+  const [local] = splitProps(props, ["value", "onInput", "placeholder", "rows", "disabled", "required", "size"]);
 
   const ctx = useFormField();
 
@@ -44,10 +36,7 @@ function TextAreaInput(props: {
   return (
     <textarea
       id={ctx?.id}
-      class={cls(
-        "so-textarea__input",
-        `so-textarea__input--${local.size ?? "md"}`,
-      )}
+      class={cls("so-textarea__input", `so-textarea__input--${local.size ?? "md"}`)}
       value={local.value ?? ""}
       placeholder={local.placeholder}
       rows={local.rows ?? 3}
@@ -72,14 +61,7 @@ export function TextArea(props: TextAreaProps) {
     "density",
   ]);
 
-  const [formProps] = splitProps(props, [
-    "label",
-    "error",
-    "hint",
-    "required",
-    "class",
-    "density",
-  ]);
+  const [formProps] = splitProps(props, ["label", "error", "hint", "required", "class", "density"]);
 
   return (
     <FormField

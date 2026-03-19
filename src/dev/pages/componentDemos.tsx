@@ -461,13 +461,23 @@ function ButtonDemo(): JSX.Element {
         <Button variant="primary">Primary</Button>
         <Button variant="neutral">Neutral</Button>
         <Button variant="danger">Danger</Button>
-        <Button variant="primary" disabled>Disabled</Button>
-        <Button variant="primary" loading>Loading</Button>
+        <Button variant="primary" disabled>
+          Disabled
+        </Button>
+        <Button variant="primary" loading>
+          Loading
+        </Button>
       </div>
       <div class="catalog-row">
-        <Button variant="primary" size="sm">Small</Button>
-        <Button variant="primary" size="md">Medium</Button>
-        <Button variant="primary" size="lg">Large</Button>
+        <Button variant="primary" size="sm">
+          Small
+        </Button>
+        <Button variant="primary" size="md">
+          Medium
+        </Button>
+        <Button variant="primary" size="lg">
+          Large
+        </Button>
       </div>
     </>
   );
@@ -499,9 +509,13 @@ function BadgeDemo(): JSX.Element {
 function TagDemo(): JSX.Element {
   return (
     <div class="catalog-row">
-      <Tag variant="primary" onRemove={() => {}}>Removable</Tag>
+      <Tag variant="primary" onRemove={() => {}}>
+        Removable
+      </Tag>
       <Tag variant="success">Status: OK</Tag>
-      <Tag variant="danger" onRemove={() => {}}>Error</Tag>
+      <Tag variant="danger" onRemove={() => {}}>
+        Error
+      </Tag>
     </div>
   );
 }
@@ -521,16 +535,24 @@ function TooltipDemo(): JSX.Element {
   return (
     <div class="catalog-row">
       <Tooltip content="Top tooltip">
-        <Button variant="neutral" size="sm">Top</Button>
+        <Button variant="neutral" size="sm">
+          Top
+        </Button>
       </Tooltip>
       <Tooltip content="Bottom tooltip" placement="bottom">
-        <Button variant="neutral" size="sm">Bottom</Button>
+        <Button variant="neutral" size="sm">
+          Bottom
+        </Button>
       </Tooltip>
       <Tooltip content="Left tooltip" placement="left">
-        <Button variant="neutral" size="sm">Left</Button>
+        <Button variant="neutral" size="sm">
+          Left
+        </Button>
       </Tooltip>
       <Tooltip content="Right tooltip" placement="right">
-        <Button variant="neutral" size="sm">Right</Button>
+        <Button variant="neutral" size="sm">
+          Right
+        </Button>
       </Tooltip>
     </div>
   );
@@ -677,8 +699,12 @@ function CardDemo(): JSX.Element {
         </CardBody>
         <CardFooter>
           <HStack gap={2}>
-            <Button variant="primary" size="sm">Action</Button>
-            <Button variant="neutral" size="sm">Cancel</Button>
+            <Button variant="primary" size="sm">
+              Action
+            </Button>
+            <Button variant="neutral" size="sm">
+              Cancel
+            </Button>
           </HStack>
         </CardFooter>
       </Card>
@@ -727,7 +753,11 @@ function EmptyStateDemo(): JSX.Element {
     <EmptyState
       title="No data"
       description="There are no items to display yet."
-      action={<Button variant="primary" size="sm">Create New</Button>}
+      action={
+        <Button variant="primary" size="sm">
+          Create New
+        </Button>
+      }
     />
   );
 }
@@ -754,7 +784,9 @@ function AlertDemo(): JSX.Element {
       <Alert variant="info">Informational message.</Alert>
       <Alert variant="success">Operation completed successfully.</Alert>
       <Alert variant="warning">Please check your input.</Alert>
-      <Alert variant="danger" onDismiss={() => {}}>An error occurred. Please try again.</Alert>
+      <Alert variant="danger" onDismiss={() => {}}>
+        An error occurred. Please try again.
+      </Alert>
     </Stack>
   );
 }
@@ -784,7 +816,9 @@ function DialogDemo(): JSX.Element {
   const [open, setOpen] = createSignal(false);
   return (
     <>
-      <Button variant="primary" onClick={() => setOpen(true)}>Open Dialog</Button>
+      <Button variant="primary" onClick={() => setOpen(true)}>
+        Open Dialog
+      </Button>
       <Dialog open={open()} onClose={() => setOpen(false)}>
         <DialogHeader>Confirm Action</DialogHeader>
         <DialogBody>
@@ -792,8 +826,12 @@ function DialogDemo(): JSX.Element {
         </DialogBody>
         <DialogFooter>
           <HStack gap={2}>
-            <Button variant="neutral" size="sm" onClick={() => setOpen(false)}>Cancel</Button>
-            <Button variant="primary" size="sm" onClick={() => setOpen(false)}>Confirm</Button>
+            <Button variant="neutral" size="sm" onClick={() => setOpen(false)}>
+              Cancel
+            </Button>
+            <Button variant="primary" size="sm" onClick={() => setOpen(false)}>
+              Confirm
+            </Button>
           </HStack>
         </DialogFooter>
       </Dialog>
@@ -805,7 +843,9 @@ function DrawerDemo(): JSX.Element {
   const [open, setOpen] = createSignal(false);
   return (
     <>
-      <Button variant="primary" onClick={() => setOpen(true)}>Open Drawer</Button>
+      <Button variant="primary" onClick={() => setOpen(true)}>
+        Open Drawer
+      </Button>
       <Drawer open={open()} onClose={() => setOpen(false)}>
         <DrawerHeader>Settings</DrawerHeader>
         <div style={{ padding: "var(--so-space-4)" }}>
@@ -903,7 +943,9 @@ function PopoverDemo(): JSX.Element {
       content={
         <Stack gap={2}>
           <p style={{ margin: "0", "font-size": "var(--so-font-size-sm)" }}>Popover content</p>
-          <Button variant="primary" size="sm" onClick={() => setOpen(false)}>Close</Button>
+          <Button variant="primary" size="sm" onClick={() => setOpen(false)}>
+            Close
+          </Button>
         </Stack>
       }
     >

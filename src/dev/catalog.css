@@ -44,7 +44,9 @@
   text-decoration: none;
   padding: var(--so-space-1) var(--so-space-2);
   border-radius: var(--so-radius);
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .site-nav-link:hover {
@@ -158,7 +160,9 @@
   text-decoration: none;
   padding: 2px var(--so-space-2) 2px var(--so-space-3);
   border-radius: var(--so-radius);
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .sidebar-link:hover {
@@ -247,7 +251,9 @@
   background: var(--so-bg);
   color: var(--so-text-muted);
   cursor: pointer;
-  transition: color 0.15s, background 0.15s;
+  transition:
+    color 0.15s,
+    background 0.15s;
 }
 
 .copy-btn:hover {

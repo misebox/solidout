@@ -10,33 +10,18 @@ export interface AlertProps extends CommonProps {
 }
 
 export function Alert(props: AlertProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "variant",
-    "children",
-    "onDismiss",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "variant", "children", "onDismiss"]);
 
   return (
     <div
-      class={cls(
-        "so-alert",
-        `so-alert--${local.variant ?? "info"}`,
-        local.class,
-      )}
+      class={cls("so-alert", `so-alert--${local.variant ?? "info"}`, local.class)}
       role="alert"
       data-density={local.density}
       {...others}
     >
       <div class="so-alert__content">{local.children}</div>
       <Show when={local.onDismiss}>
-        <button
-          type="button"
-          class="so-alert__dismiss"
-          onClick={() => local.onDismiss?.()}
-          aria-label="Dismiss"
-        >
+        <button type="button" class="so-alert__dismiss" onClick={() => local.onDismiss?.()} aria-label="Dismiss">
           &times;
         </button>
       </Show>

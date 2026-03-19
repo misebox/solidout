@@ -8,12 +8,7 @@ export interface SpinnerProps extends CommonProps {
 }
 
 export function Spinner(props: SpinnerProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "size",
-    "variant",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "size", "variant"]);
 
   return (
     <span

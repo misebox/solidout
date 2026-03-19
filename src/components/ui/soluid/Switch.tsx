@@ -86,16 +86,18 @@ export function Switch(props: SwitchProps) {
           <span class="so-switch__thumb" />
         </button>
         <Show when={local.label || local.children}>
-          <span class="so-switch__label">
-            {local.children ?? local.label}
-          </span>
+          <span class="so-switch__label">{local.children ?? local.label}</span>
         </Show>
       </label>
       <Show when={local.error}>
-        <p class="so-switch__error" id={errorId} role="alert">{local.error}</p>
+        <p class="so-switch__error" id={errorId} role="alert">
+          {local.error}
+        </p>
       </Show>
       <Show when={!local.error && local.hint}>
-        <p class="so-switch__hint" id={hintId}>{local.hint}</p>
+        <p class="so-switch__hint" id={hintId}>
+          {local.hint}
+        </p>
       </Show>
     </div>
   );

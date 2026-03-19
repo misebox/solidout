@@ -14,14 +14,7 @@ export interface FormFieldProps extends CommonProps {
 }
 
 export function FormField(props: FormFieldProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "label",
-    "error",
-    "hint",
-    "required",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "label", "error", "hint", "required", "children"]);
 
   const id = createUniqueId();
   const fieldId = `so-field-${id}`;
@@ -45,14 +38,7 @@ export function FormField(props: FormFieldProps) {
 
   return (
     <FormFieldContext.Provider value={context}>
-      <div
-        class={cls(
-          "so-form-field",
-          local.error && "so-form-field--error",
-          local.class,
-        )}
-        {...others}
-      >
+      <div class={cls("so-form-field", local.error && "so-form-field--error", local.class)} {...others}>
         <label class="so-form-field__label" for={fieldId}>
           {local.label}
           <Show when={local.required}>

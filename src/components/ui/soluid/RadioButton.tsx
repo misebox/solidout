@@ -12,13 +12,7 @@ export interface RadioButtonProps extends CommonProps {
 }
 
 export function RadioButton(props: RadioButtonProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "value",
-    "label",
-    "disabled",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "value", "label", "disabled", "children"]);
 
   const group = useRadioGroup();
 
@@ -29,13 +23,7 @@ export function RadioButton(props: RadioButtonProps) {
   };
 
   return (
-    <label
-      class={cls(
-        "so-radio-button",
-        local.disabled && "so-radio-button--disabled",
-        local.class,
-      )}
-    >
+    <label class={cls("so-radio-button", local.disabled && "so-radio-button--disabled", local.class)}>
       <input
         type="radio"
         class="so-radio-button__input"
@@ -49,9 +37,7 @@ export function RadioButton(props: RadioButtonProps) {
         <span class="so-radio-button__dot" />
       </span>
       <Show when={local.label || local.children}>
-        <span class="so-radio-button__label">
-          {local.children ?? local.label}
-        </span>
+        <span class="so-radio-button__label">{local.children ?? local.label}</span>
       </Show>
     </label>
   );

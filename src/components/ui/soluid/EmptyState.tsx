@@ -11,21 +11,10 @@ export interface EmptyStateProps extends CommonProps {
 }
 
 export function EmptyState(props: EmptyStateProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "title",
-    "description",
-    "icon",
-    "action",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "title", "description", "icon", "action"]);
 
   return (
-    <div
-      class={cls("so-empty-state", local.class)}
-      data-density={local.density}
-      {...others}
-    >
+    <div class={cls("so-empty-state", local.class)} data-density={local.density} {...others}>
       <Show when={local.icon}>
         <div class="so-empty-state__icon">{local.icon}</div>
       </Show>

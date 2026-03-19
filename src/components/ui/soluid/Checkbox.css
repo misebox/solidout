@@ -37,7 +37,9 @@
   background-color: var(--so-bg);
   color: var(--so-color-primary-fg);
   flex-shrink: 0;
-  transition: background-color 0.15s, border-color 0.15s;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
 }
 
 .so-checkbox__input:checked + .so-checkbox__indicator,

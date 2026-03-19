@@ -105,12 +105,7 @@ export function Popover(props: PopoverProps) {
       </button>
       <Show when={local.open}>
         <Portal>
-          <div
-            ref={setPanelRef}
-            id={panelId}
-            class="so-popover"
-            role="dialog"
-          >
+          <div ref={setPanelRef} id={panelId} class="so-popover" role="dialog">
             {local.content}
           </div>
         </Portal>

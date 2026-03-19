@@ -44,10 +44,16 @@ export function Layout(props: ParentProps) {
   return (
     <div class="site">
       <header class="site-header">
-        <A href="/" class="site-logo">soluid</A>
+        <A href="/" class="site-logo">
+          soluid
+        </A>
         <nav class="site-nav">
-          <A href="/getting-started" class="site-nav-link" activeClass="active">{t(lang(), "nav.gettingStarted")}</A>
-          <A href="/components" class="site-nav-link" activeClass="active">{t(lang(), "nav.components")}</A>
+          <A href="/getting-started" class="site-nav-link" activeClass="active">
+            {t(lang(), "nav.gettingStarted")}
+          </A>
+          <A href="/components" class="site-nav-link" activeClass="active">
+            {t(lang(), "nav.components")}
+          </A>
         </nav>
         <Spacer />
         <div class="site-controls">
@@ -58,11 +64,7 @@ export function Layout(props: ParentProps) {
             size="sm"
             onClick={() => setDensity(density() === "normal" ? "dense" : "normal")}
           />
-          <select
-            class="lang-select"
-            value={lang()}
-            onChange={(e) => setLang(e.currentTarget.value as Lang)}
-          >
+          <select class="lang-select" value={lang()} onChange={(e) => setLang(e.currentTarget.value as Lang)}>
             <option value="en">EN</option>
             <option value="ja">JA</option>
           </select>
@@ -86,9 +88,7 @@ export function Layout(props: ParentProps) {
           </a>
         </div>
       </header>
-      <main class="site-main">
-        {props.children}
-      </main>
+      <main class="site-main">{props.children}</main>
     </div>
   );
 }

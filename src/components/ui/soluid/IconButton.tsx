@@ -8,16 +8,8 @@ export interface IconButtonProps extends VariantProps<ButtonVariant> {
   "aria-label": string;
 }
 
-export function IconButton(
-  props: IconButtonProps & JSX.ButtonHTMLAttributes<HTMLButtonElement>,
-) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "variant",
-    "size",
-    "disabled",
-    "icon",
-  ]);
+export function IconButton(props: IconButtonProps & JSX.ButtonHTMLAttributes<HTMLButtonElement>) {
+  const [local, others] = splitProps(props, ["class", "variant", "size", "disabled", "icon"]);
 
   return (
     <button

@@ -12,33 +12,16 @@ export interface TooltipProps {
 }
 
 export function Tooltip(props: TooltipProps) {
-  const [local, others] = splitProps(props, [
-    "content",
-    "placement",
-    "class",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["content", "placement", "class", "children"]);
 
   tooltipCounter += 1;
   const tooltipId = `so-tooltip-${tooltipCounter}`;
 
   return (
     <Show when={local.content} fallback={<>{local.children}</>}>
-      <span
-        class={cls("so-tooltip-wrapper", local.class)}
-        {...others}
-      >
-        <span aria-describedby={tooltipId}>
-          {local.children}
-        </span>
-        <span
-          id={tooltipId}
-          class={cls(
-            "so-tooltip",
-            `so-tooltip--${local.placement ?? "top"}`,
-          )}
-          role="tooltip"
-        >
+      <span class={cls("so-tooltip-wrapper", local.class)} {...others}>
+        <span aria-describedby={tooltipId}>{local.children}</span>
+        <span id={tooltipId} class={cls("so-tooltip", `so-tooltip--${local.placement ?? "top"}`)} role="tooltip">
           {local.content}
         </span>
       </span>

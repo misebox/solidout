@@ -11,18 +11,15 @@ export function rewriteImports(
   const importRegex =
     /((?:import|export)\s+(?:type\s+)?(?:\{[^}]*\}|[\w*]+(?:\s*,\s*\{[^}]*\})?)\s+from\s+["'])(\.[^"']+)(["'])/g;
 
-  return content.replace(
-    importRegex,
-    (_match, prefix: string, importPath: string, suffix: string) => {
-      const fileDir = path.dirname(filePath);
-      const resolved = path.normalize(path.join(fileDir, importPath));
+  return content.replace(importRegex, (_match, prefix: string, importPath: string, suffix: string) => {
+    const fileDir = path.dirname(filePath);
+    const resolved = path.normalize(path.join(fileDir, importPath));
 
-      let rel = path.relative(fileDir, resolved);
-      if (!rel.startsWith(".")) {
-        rel = "./" + rel;
-      }
+    let rel = path.relative(fileDir, resolved);
+    if (!rel.startsWith(".")) {
+      rel = "./" + rel;
+    }
 
-      return `${prefix}${rel}${suffix}`;
-    },
-  );
+    return `${prefix}${rel}${suffix}`;
+  });
 }

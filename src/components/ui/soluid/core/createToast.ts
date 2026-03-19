@@ -38,12 +38,14 @@ export function createToast(options: ToastOptions = {}): ToastReturn {
   const timers = new Map<string, ReturnType<typeof debounce>>();
 
   function remove(id: string): void {
-    setToasts(produce((list) => {
-      const idx = list.findIndex((t) => t.id === id);
-      if (idx !== -1) {
-        list.splice(idx, 1);
-      }
-    }));
+    setToasts(
+      produce((list) => {
+        const idx = list.findIndex((t) => t.id === id);
+        if (idx !== -1) {
+          list.splice(idx, 1);
+        }
+      }),
+    );
   }
 
   function dismiss(id: string): void {
@@ -54,12 +56,14 @@ export function createToast(options: ToastOptions = {}): ToastReturn {
     }
 
     // Mark as dismissing for exit animation
-    setToasts(produce((list) => {
-      const toast = list.find((t) => t.id === id);
-      if (toast) {
-        toast.dismissing = true;
-      }
-    }));
+    setToasts(
+      produce((list) => {
+        const toast = list.find((t) => t.id === id);
+        if (toast) {
+          toast.dismissing = true;
+        }
+      }),
+    );
 
     // Remove after exit animation
     setTimeout(() => remove(id), EXIT_DURATION);
@@ -77,9 +81,11 @@ export function createToast(options: ToastOptions = {}): ToastReturn {
       duration,
     };
 
-    setToasts(produce((list) => {
-      list.push(toast);
-    }));
+    setToasts(
+      produce((list) => {
+        list.push(toast);
+      }),
+    );
 
     if (duration > 0) {
       const scheduledDismiss = debounce(() => dismiss(id), duration);

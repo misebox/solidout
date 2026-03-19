@@ -32,14 +32,7 @@ export interface DialogFooterProps {
 }
 
 export function Dialog(props: DialogProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "open",
-    "onClose",
-    "size",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "open", "onClose", "size", "children"]);
 
   dialogCounter += 1;
   const titleId = `so-dialog-title-${dialogCounter}`;
@@ -68,9 +61,7 @@ export function Dialog(props: DialogProps) {
     }
   }
 
-  const [containerRef, setContainerRef] = createSignal<HTMLElement | undefined>(
-    undefined,
-  );
+  const [containerRef, setContainerRef] = createSignal<HTMLElement | undefined>(undefined);
 
   createFocusTrap({
     container: containerRef,
@@ -89,10 +80,7 @@ export function Dialog(props: DialogProps) {
       <Portal>
         <DialogContext.Provider value={titleId}>
           <div
-            class={cls(
-              "so-dialog-backdrop",
-              closing() && "so-dialog-backdrop--closing",
-            )}
+            class={cls("so-dialog-backdrop", closing() && "so-dialog-backdrop--closing")}
             onClick={handleBackdropClick}
             onAnimationEnd={handleAnimationEnd}
           >

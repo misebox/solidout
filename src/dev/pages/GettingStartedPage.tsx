@@ -21,8 +21,12 @@ function CodeBlock(props: { children: string }) {
 
   return (
     <div class="code-wrapper">
-      <pre class="gs-code"><code>{props.children}</code></pre>
-      <button class="copy-btn" onClick={copy}>{copied() ? "Copied" : "Copy"}</button>
+      <pre class="gs-code">
+        <code>{props.children}</code>
+      </pre>
+      <button class="copy-btn" onClick={copy}>
+        {copied() ? "Copied" : "Copy"}
+      </button>
     </div>
   );
 }

@@ -31,15 +31,7 @@ function SelectInput<T extends string = string>(props: {
   required?: boolean;
   size?: "sm" | "md" | "lg";
 }) {
-  const [local] = splitProps(props, [
-    "value",
-    "onChange",
-    "options",
-    "placeholder",
-    "disabled",
-    "required",
-    "size",
-  ]);
+  const [local] = splitProps(props, ["value", "onChange", "options", "placeholder", "disabled", "required", "size"]);
 
   const ctx = useFormField();
 
@@ -51,10 +43,7 @@ function SelectInput<T extends string = string>(props: {
     <div class="so-select__wrapper">
       <select
         id={ctx?.id}
-        class={cls(
-          "so-select__input",
-          `so-select__input--${local.size ?? "md"}`,
-        )}
+        class={cls("so-select__input", `so-select__input--${local.size ?? "md"}`)}
         value={local.value ?? ""}
         disabled={local.disabled}
         required={local.required}
@@ -75,12 +64,7 @@ function SelectInput<T extends string = string>(props: {
           )}
         </For>
       </select>
-      <svg
-        class="so-select__arrow"
-        viewBox="0 0 12 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg class="so-select__arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M2.5 4.5L6 8l3.5-3.5"
           stroke="currentColor"
@@ -105,14 +89,7 @@ export function Select<T extends string = string>(props: SelectProps<T>) {
     "density",
   ]);
 
-  const [formProps] = splitProps(props, [
-    "label",
-    "error",
-    "hint",
-    "required",
-    "class",
-    "density",
-  ]);
+  const [formProps] = splitProps(props, ["label", "error", "hint", "required", "class", "density"]);
 
   return (
     <FormField

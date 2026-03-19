@@ -15,46 +15,25 @@ export interface BreadcrumbItemProps {
 }
 
 export function Breadcrumb(props: BreadcrumbProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "density",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "density", "children"]);
 
   return (
-    <nav
-      class={cls("so-breadcrumb", local.class)}
-      aria-label="Breadcrumb"
-      data-density={local.density}
-      {...others}
-    >
+    <nav class={cls("so-breadcrumb", local.class)} aria-label="Breadcrumb" data-density={local.density} {...others}>
       <ol class="so-breadcrumb__list">{local.children}</ol>
     </nav>
   );
 }
 
 export function BreadcrumbItem(props: BreadcrumbItemProps) {
-  const [local, others] = splitProps(props, [
-    "href",
-    "current",
-    "class",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["href", "current", "class", "children"]);
 
   return (
     <li
-      class={cls(
-        "so-breadcrumb__item",
-        local.current && "so-breadcrumb__item--current",
-        local.class,
-      )}
+      class={cls("so-breadcrumb__item", local.current && "so-breadcrumb__item--current", local.class)}
       {...(local.current ? { "aria-current": "page" } : {})}
       {...others}
     >
-      <Show
-        when={local.href && !local.current}
-        fallback={<span>{local.children}</span>}
-      >
+      <Show when={local.href && !local.current} fallback={<span>{local.children}</span>}>
         <a href={local.href}>{local.children}</a>
       </Show>
     </li>

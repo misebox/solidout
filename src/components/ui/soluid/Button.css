@@ -9,7 +9,10 @@
   font-weight: 500;
   line-height: var(--so-line-height);
   cursor: pointer;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
   white-space: nowrap;
   user-select: none;
 }

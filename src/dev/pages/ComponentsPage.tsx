@@ -20,8 +20,12 @@ function CopyableCode(props: { code: string }) {
 
   return (
     <div class="code-wrapper">
-      <pre class="code-block"><code>{props.code}</code></pre>
-      <button class="copy-btn" onClick={copy}>{copied() ? "Copied" : "Copy"}</button>
+      <pre class="code-block">
+        <code>{props.code}</code>
+      </pre>
+      <button class="copy-btn" onClick={copy}>
+        {copied() ? "Copied" : "Copy"}
+      </button>
     </div>
   );
 }
@@ -44,9 +48,7 @@ const data = apiData as ComponentApi[];
 
 const propsFor = (componentName: string): ComponentApi[] => {
   const subs = SUB_COMPONENTS[componentName] ?? [componentName];
-  return subs
-    .map((sub) => data.find((d) => d.name === `${sub}Props`))
-    .filter((d): d is ComponentApi => d != null);
+  return subs.map((sub) => data.find((d) => d.name === `${sub}Props`)).filter((d): d is ComponentApi => d != null);
 };
 
 /* ---------- All component names ---------- */
@@ -62,12 +64,10 @@ export function ComponentsPage() {
   const filtered = createMemo(() => {
     const q = filter().toLowerCase();
     if (!q) return CATEGORIES;
-    return CATEGORIES
-      .map((cat) => ({
-        ...cat,
-        components: cat.components.filter((c) => c.toLowerCase().includes(q)),
-      }))
-      .filter((cat) => cat.components.length > 0);
+    return CATEGORIES.map((cat) => ({
+      ...cat,
+      components: cat.components.filter((c) => c.toLowerCase().includes(q)),
+    })).filter((cat) => cat.components.length > 0);
   });
 
   const filteredNames = createMemo(() => filtered().flatMap((c) => c.components));
@@ -155,7 +155,9 @@ export function ComponentsPage() {
                   scrollTo(name);
                 }}
               >
-                <Badge variant="neutral" size="sm">{name}</Badge>
+                <Badge variant="neutral" size="sm">
+                  {name}
+                </Badge>
               </a>
             )}
           </For>
@@ -166,9 +168,7 @@ export function ComponentsPage() {
           {(cat) => (
             <section class="components-category">
               <h2>{t(lang(), cat.labelKey)}</h2>
-              <For each={cat.components}>
-                {(name) => <ComponentCard name={name} />}
-              </For>
+              <For each={cat.components}>{(name) => <ComponentCard name={name} />}</For>
             </section>
           )}
         </For>
@@ -192,9 +192,7 @@ function ComponentCard(props: { name: string }) {
         <CardHeader>
           <div>
             <span class="component-card-name">{props.name}</span>
-            <Show when={description()}>
-              {(desc) => <p class="component-card-desc">{desc()}</p>}
-            </Show>
+            <Show when={description()}>{(desc) => <p class="component-card-desc">{desc()}</p>}</Show>
           </div>
         </CardHeader>
         <CardBody>

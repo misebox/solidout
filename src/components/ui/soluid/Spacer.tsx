@@ -5,11 +5,5 @@ import { cls } from "./core/utils";
 export function Spacer(props: JSX.HTMLAttributes<HTMLDivElement>) {
   const [local, others] = splitProps(props, ["class"]);
 
-  return (
-    <div
-      class={cls("so-spacer", local.class)}
-      aria-hidden="true"
-      {...others}
-    />
-  );
+  return <div class={cls("so-spacer", local.class)} aria-hidden="true" {...others} />;
 }

@@ -10,9 +10,7 @@ export interface ButtonProps extends VariantProps<ButtonVariant> {
   children: JSX.Element;
 }
 
-export function Button(
-  props: ButtonProps & JSX.ButtonHTMLAttributes<HTMLButtonElement>,
-) {
+export function Button(props: ButtonProps & JSX.ButtonHTMLAttributes<HTMLButtonElement>) {
   const [local, others] = splitProps(props, [
     "class",
     "variant",

@@ -64,11 +64,7 @@ export function Pagination(props: PaginationProps) {
 
   return (
     <nav
-      class={cls(
-        "so-pagination",
-        `so-pagination--${local.size ?? "md"}`,
-        local.class,
-      )}
+      class={cls("so-pagination", `so-pagination--${local.size ?? "md"}`, local.class)}
       aria-label="Pagination"
       data-density={local.density}
       {...others}
@@ -95,14 +91,15 @@ export function Pagination(props: PaginationProps) {
           {(item) => (
             <Show
               when={item !== "ellipsis"}
-              fallback={<span class="so-pagination__ellipsis" aria-hidden="true">…</span>}
+              fallback={
+                <span class="so-pagination__ellipsis" aria-hidden="true">
+                  …
+                </span>
+              }
             >
               <button
                 type="button"
-                class={cls(
-                  "so-pagination__page",
-                  local.page === item && "so-pagination__page--active",
-                )}
+                class={cls("so-pagination__page", local.page === item && "so-pagination__page--active")}
                 aria-label={`Page ${item}`}
                 aria-current={local.page === item ? "page" : undefined}
                 onClick={() => local.onChange(item as number)}

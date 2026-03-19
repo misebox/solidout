@@ -39,10 +39,10 @@ switch (command) {
     break;
   case "list": {
     const filter = args.includes("--installed")
-      ? "installed" as const
+      ? ("installed" as const)
       : args.includes("--not-installed")
-      ? "not-installed" as const
-      : "all" as const;
+        ? ("not-installed" as const)
+        : ("all" as const);
     list(cwd, filter);
     break;
   }

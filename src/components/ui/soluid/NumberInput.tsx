@@ -27,16 +27,7 @@ function NumberInputInner(props: {
   required?: boolean;
   size?: "sm" | "md" | "lg";
 }) {
-  const [local] = splitProps(props, [
-    "value",
-    "onInput",
-    "min",
-    "max",
-    "step",
-    "disabled",
-    "required",
-    "size",
-  ]);
+  const [local] = splitProps(props, ["value", "onInput", "min", "max", "step", "disabled", "required", "size"]);
 
   const ctx = useFormField();
 
@@ -69,12 +60,7 @@ function NumberInputInner(props: {
   };
 
   return (
-    <div
-      class={cls(
-        "so-number-input",
-        `so-number-input--${local.size ?? "md"}`,
-      )}
-    >
+    <div class={cls("so-number-input", `so-number-input--${local.size ?? "md"}`)}>
       <button
         type="button"
         class="so-number-input__button so-number-input__button--decrement"
@@ -114,26 +100,9 @@ function NumberInputInner(props: {
 }
 
 export function NumberInput(props: NumberInputProps) {
-  const [local] = splitProps(props, [
-    "value",
-    "onInput",
-    "min",
-    "max",
-    "step",
-    "disabled",
-    "size",
-    "class",
-    "density",
-  ]);
+  const [local] = splitProps(props, ["value", "onInput", "min", "max", "step", "disabled", "size", "class", "density"]);
 
-  const [formProps] = splitProps(props, [
-    "label",
-    "error",
-    "hint",
-    "required",
-    "class",
-    "density",
-  ]);
+  const [formProps] = splitProps(props, ["label", "error", "hint", "required", "class", "density"]);
 
   return (
     <FormField

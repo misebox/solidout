@@ -11,13 +11,7 @@ export interface StackProps extends CommonProps {
 }
 
 export function Stack(props: StackProps & JSX.HTMLAttributes<HTMLDivElement>) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "gap",
-    "align",
-    "justify",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "gap", "align", "justify", "children"]);
 
   return (
     <div

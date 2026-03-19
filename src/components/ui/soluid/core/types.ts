@@ -5,19 +5,10 @@ import type { JSX } from "solid-js";
 export type Density = "normal" | "dense";
 export type Size = "sm" | "md" | "lg";
 
-export type Variant =
-  | "primary"
-  | "neutral"
-  | "danger"
-  | "success"
-  | "warning"
-  | "info";
+export type Variant = "primary" | "neutral" | "danger" | "success" | "warning" | "info";
 
 export type ButtonVariant = Extract<Variant, "primary" | "neutral" | "danger"> | "ghost";
-export type FeedbackVariant = Extract<
-  Variant,
-  "success" | "danger" | "warning" | "info"
->;
+export type FeedbackVariant = Extract<Variant, "success" | "danger" | "warning" | "info">;
 
 // --- Common Props ---
 

@@ -105,11 +105,7 @@ export const registry: Record<string, RegistryEntry> = {
   FormField: {
     name: "FormField",
     category: "components",
-    files: [
-      "soluid/FormField.tsx",
-      "soluid/FormField.css",
-      "soluid/FormFieldContext.ts",
-    ],
+    files: ["soluid/FormField.tsx", "soluid/FormField.css", "soluid/FormFieldContext.ts"],
     dependencies: ["core"],
     description: "Label + error/hint wrapper for form inputs",
   },
@@ -144,11 +140,7 @@ export const registry: Record<string, RegistryEntry> = {
   Checkbox: {
     name: "Checkbox",
     category: "components",
-    files: [
-      "soluid/Checkbox.tsx",
-      "soluid/Checkbox.css",
-      "soluid/CheckboxGroupContext.ts",
-    ],
+    files: ["soluid/Checkbox.tsx", "soluid/Checkbox.css", "soluid/CheckboxGroupContext.ts"],
     dependencies: ["core"],
     description: "Checkbox with indeterminate support",
   },

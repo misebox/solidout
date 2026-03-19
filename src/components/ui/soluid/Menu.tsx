@@ -25,7 +25,7 @@ export interface MenuSeparatorProps {
   class?: string;
 }
 
-const ITEM_SELECTOR = "[role=\"menuitem\"]:not([aria-disabled=\"true\"])";
+const ITEM_SELECTOR = '[role="menuitem"]:not([aria-disabled="true"])';
 
 export function Menu(props: MenuProps) {
   const [local, others] = splitProps(props, [
@@ -156,12 +156,7 @@ export function Menu(props: MenuProps) {
       </button>
       <Show when={local.open}>
         <Portal>
-          <div
-            ref={setPanelRef}
-            id={menuId}
-            class="so-menu"
-            role="menu"
-          >
+          <div ref={setPanelRef} id={menuId} class="so-menu" role="menu">
             {local.children}
           </div>
         </Portal>
@@ -171,12 +166,7 @@ export function Menu(props: MenuProps) {
 }
 
 export function MenuItem(props: MenuItemProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "disabled",
-    "onSelect",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "disabled", "onSelect", "children"]);
 
   function handleClick() {
     if (!local.disabled) {
@@ -193,11 +183,7 @@ export function MenuItem(props: MenuItemProps) {
 
   return (
     <div
-      class={cls(
-        "so-menu-item",
-        local.disabled && "so-menu-item--disabled",
-        local.class,
-      )}
+      class={cls("so-menu-item", local.disabled && "so-menu-item--disabled", local.class)}
       role="menuitem"
       tabIndex={local.disabled ? -1 : 0}
       aria-disabled={local.disabled || undefined}
@@ -213,11 +199,5 @@ export function MenuItem(props: MenuItemProps) {
 export function MenuSeparator(props: MenuSeparatorProps) {
   const [local, others] = splitProps(props, ["class"]);
 
-  return (
-    <div
-      class={cls("so-menu-separator", local.class)}
-      role="separator"
-      {...others}
-    />
-  );
+  return <div class={cls("so-menu-separator", local.class)} role="separator" {...others} />;
 }

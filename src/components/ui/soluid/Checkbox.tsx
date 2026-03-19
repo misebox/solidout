@@ -90,15 +90,7 @@ export function Checkbox(props: CheckboxProps) {
         <span class="so-checkbox__indicator" aria-hidden="true">
           <Show when={local.indeterminate}>
             <svg viewBox="0 0 12 12" fill="none" class="so-checkbox__icon">
-              <line
-                x1="2"
-                y1="6"
-                x2="10"
-                y2="6"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
+              <line x1="2" y1="6" x2="10" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
           </Show>
           <Show when={!local.indeterminate && isChecked()}>
@@ -115,16 +107,18 @@ export function Checkbox(props: CheckboxProps) {
           </Show>
         </span>
         <Show when={local.label || local.children}>
-          <span class="so-checkbox__label">
-            {local.children ?? local.label}
-          </span>
+          <span class="so-checkbox__label">{local.children ?? local.label}</span>
         </Show>
       </label>
       <Show when={local.error}>
-        <p class="so-checkbox__error" id={errorId} role="alert">{local.error}</p>
+        <p class="so-checkbox__error" id={errorId} role="alert">
+          {local.error}
+        </p>
       </Show>
       <Show when={!local.error && local.hint}>
-        <p class="so-checkbox__hint" id={hintId}>{local.hint}</p>
+        <p class="so-checkbox__hint" id={hintId}>
+          {local.hint}
+        </p>
       </Show>
     </div>
   );

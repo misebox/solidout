@@ -15,15 +15,7 @@ export interface CheckboxGroupProps extends CommonProps {
 }
 
 export function CheckboxGroup(props: CheckboxGroupProps) {
-  const [local, others] = splitProps(props, [
-    "class",
-    "value",
-    "onChange",
-    "label",
-    "error",
-    "hint",
-    "children",
-  ]);
+  const [local, others] = splitProps(props, ["class", "value", "onChange", "label", "error", "hint", "children"]);
 
   const id = createUniqueId();
   const errorId = `so-cbg-error-${id}`;
@@ -39,9 +31,7 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
     value: () => local.value ?? [],
     onChange(itemValue: string, checked: boolean) {
       const current = local.value ?? [];
-      const next = checked
-        ? [...current, itemValue]
-        : current.filter((v) => v !== itemValue);
+      const next = checked ? [...current, itemValue] : current.filter((v) => v !== itemValue);
       local.onChange?.(next);
     },
   };
@@ -60,10 +50,14 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
         </Show>
         <div class="so-checkbox-group__items">{local.children}</div>
         <Show when={local.error}>
-          <p class="so-checkbox-group__error" id={errorId} role="alert">{local.error}</p>
+          <p class="so-checkbox-group__error" id={errorId} role="alert">
+            {local.error}
+          </p>
         </Show>
         <Show when={!local.error && local.hint}>
-          <p class="so-checkbox-group__hint" id={hintId}>{local.hint}</p>
+          <p class="so-checkbox-group__hint" id={hintId}>
+            {local.hint}
+          </p>
         </Show>
       </fieldset>
     </CheckboxGroupContext.Provider>

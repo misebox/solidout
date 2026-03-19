@@ -24,9 +24,7 @@ export interface TableProps<T> extends CommonProps {
   rowKey?: (row: T) => string;
 }
 
-export function Table<T extends Record<string, unknown>>(
-  props: TableProps<T>,
-) {
+export function Table<T extends Record<string, unknown>>(props: TableProps<T>) {
   const [local, others] = splitProps(props, [
     "class",
     "density",
@@ -56,9 +54,7 @@ export function Table<T extends Record<string, unknown>>(
     if (!local.selectable || !local.selectedKeys || local.data.length === 0) {
       return false;
     }
-    return local.data.every(
-      (row, i) => local.selectedKeys?.has(getRowKey(row, i)),
-    );
+    return local.data.every((row, i) => local.selectedKeys?.has(getRowKey(row, i)));
   });
 
   function handleSelectAll(): void {
@@ -83,11 +79,7 @@ export function Table<T extends Record<string, unknown>>(
   }
 
   return (
-    <div
-      class={cls("so-table-wrapper", local.class)}
-      data-density={local.density}
-      {...others}
-    >
+    <div class={cls("so-table-wrapper", local.class)} data-density={local.density} {...others}>
       <table class="so-table" role="table">
         <thead>
           <tr class="so-table__row so-table__row--header">
@@ -104,34 +96,20 @@ export function Table<T extends Record<string, unknown>>(
             <For each={local.columns}>
               {(col) => (
                 <th
-                  class={cls(
-                    "so-table__cell",
-                    "so-table__header",
-                    col.align && `so-table__cell--${col.align}`,
-                  )}
+                  class={cls("so-table__cell", "so-table__header", col.align && `so-table__cell--${col.align}`)}
                   scope="col"
                   style={{ width: col.width }}
-                  aria-sort={local.sortKey === col.key
-                    ? local.sortDirection === "asc"
-                      ? "ascending"
-                      : "descending"
-                    : undefined}
+                  aria-sort={
+                    local.sortKey === col.key ? (local.sortDirection === "asc" ? "ascending" : "descending") : undefined
+                  }
                 >
-                  <Show
-                    when={col.sortable}
-                    fallback={col.header}
-                  >
-                    <button
-                      type="button"
-                      class="so-table__sort-button"
-                      onClick={() => handleSort(col.key)}
-                    >
+                  <Show when={col.sortable} fallback={col.header}>
+                    <button type="button" class="so-table__sort-button" onClick={() => handleSort(col.key)}>
                       {col.header}
                       <span
                         class={cls(
                           "so-table__sort-icon",
-                          local.sortKey === col.key
-                            && `so-table__sort-icon--${local.sortDirection}`,
+                          local.sortKey === col.key && `so-table__sort-icon--${local.sortDirection}`,
                         )}
                         aria-hidden="true"
                       />
@@ -147,13 +125,7 @@ export function Table<T extends Record<string, unknown>>(
             {(row, i) => {
               const key = () => getRowKey(row, i());
               return (
-                <tr
-                  class={cls(
-                    "so-table__row",
-                    local.selectedKeys?.has(key())
-                      && "so-table__row--selected",
-                  )}
-                >
+                <tr class={cls("so-table__row", local.selectedKeys?.has(key()) && "so-table__row--selected")}>
                   <Show when={local.selectable}>
                     <td class="so-table__cell so-table__cell--checkbox">
                       <input
@@ -166,15 +138,8 @@ export function Table<T extends Record<string, unknown>>(
                   </Show>
                   <For each={local.columns}>
                     {(col) => (
-                      <td
-                        class={cls(
-                          "so-table__cell",
-                          col.align && `so-table__cell--${col.align}`,
-                        )}
-                      >
-                        {col.render
-                          ? col.render(row[col.key], row)
-                          : (row[col.key] as JSX.Element)}
+                      <td class={cls("so-table__cell", col.align && `so-table__cell--${col.align}`)}>
+                        {col.render ? col.render(row[col.key], row) : (row[col.key] as JSX.Element)}
                       </td>
                     )}
                   </For>

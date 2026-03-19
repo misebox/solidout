@@ -7,20 +7,14 @@ export interface DividerProps extends CommonProps {
   orientation?: "horizontal" | "vertical";
 }
 
-export function Divider(
-  props: DividerProps & JSX.HTMLAttributes<HTMLHRElement>,
-) {
+export function Divider(props: DividerProps & JSX.HTMLAttributes<HTMLHRElement>) {
   const [local, others] = splitProps(props, ["class", "orientation"]);
 
   const orientation = () => local.orientation ?? "horizontal";
 
   return (
     <hr
-      class={cls(
-        "so-divider",
-        `so-divider--${orientation()}`,
-        local.class,
-      )}
+      class={cls("so-divider", `so-divider--${orientation()}`, local.class)}
       role="separator"
       aria-orientation={orientation()}
       {...others}
