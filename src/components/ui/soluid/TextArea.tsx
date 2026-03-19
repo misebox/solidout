@@ -10,13 +10,13 @@ export interface TextAreaProps extends InteractiveProps {
   onInput?: (value: string) => void;
   placeholder?: string;
   rows?: number;
-  label: string;
+  label?: string;
   error?: string;
   hint?: string;
   required?: boolean;
 }
 
-function TextAreaInput(props: {
+export function TextAreaInput(props: {
   value?: string;
   onInput?: (value: string) => void;
   placeholder?: string;
@@ -63,6 +63,20 @@ export function TextArea(props: TextAreaProps) {
 
   const [formProps] = splitProps(props, ["label", "error", "hint", "required", "class", "density"]);
 
+  const input = (
+    <TextAreaInput
+      value={local.value}
+      onInput={local.onInput}
+      placeholder={local.placeholder}
+      rows={local.rows}
+      disabled={local.disabled}
+      required={props.required}
+      size={local.size}
+    />
+  );
+
+  if (!formProps.label) return input;
+
   return (
     <FormField
       label={formProps.label}
@@ -72,15 +86,7 @@ export function TextArea(props: TextAreaProps) {
       class={formProps.class}
       density={formProps.density}
     >
-      <TextAreaInput
-        value={local.value}
-        onInput={local.onInput}
-        placeholder={local.placeholder}
-        rows={local.rows}
-        disabled={local.disabled}
-        required={props.required}
-        size={local.size}
-      />
+      {input}
     </FormField>
   );
 }

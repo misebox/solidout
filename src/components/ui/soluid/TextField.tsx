@@ -10,13 +10,13 @@ export interface TextFieldProps extends InteractiveProps {
   onInput?: (value: string) => void;
   placeholder?: string;
   type?: "text" | "email" | "password" | "url" | "tel";
-  label: string;
+  label?: string;
   error?: string;
   hint?: string;
   required?: boolean;
 }
 
-function TextFieldInput(props: {
+export function TextFieldInput(props: {
   value?: string;
   onInput?: (value: string) => void;
   placeholder?: string;
@@ -63,6 +63,20 @@ export function TextField(props: TextFieldProps) {
 
   const [formProps] = splitProps(props, ["label", "error", "hint", "required", "class", "density"]);
 
+  const input = (
+    <TextFieldInput
+      value={local.value}
+      onInput={local.onInput}
+      placeholder={local.placeholder}
+      type={local.type}
+      disabled={local.disabled}
+      required={props.required}
+      size={local.size}
+    />
+  );
+
+  if (!formProps.label) return input;
+
   return (
     <FormField
       label={formProps.label}
@@ -72,15 +86,7 @@ export function TextField(props: TextFieldProps) {
       class={formProps.class}
       density={formProps.density}
     >
-      <TextFieldInput
-        value={local.value}
-        onInput={local.onInput}
-        placeholder={local.placeholder}
-        type={local.type}
-        disabled={local.disabled}
-        required={props.required}
-        size={local.size}
-      />
+      {input}
     </FormField>
   );
 }

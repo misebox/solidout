@@ -16,13 +16,13 @@ export interface SelectProps<T extends string = string> extends InteractiveProps
   onChange?: (value: T) => void;
   options: SelectOption<T>[];
   placeholder?: string;
-  label: string;
+  label?: string;
   error?: string;
   hint?: string;
   required?: boolean;
 }
 
-function SelectInput<T extends string = string>(props: {
+export function SelectInput<T extends string = string>(props: {
   value?: T;
   onChange?: (value: T) => void;
   options: SelectOption<T>[];
@@ -91,6 +91,20 @@ export function Select<T extends string = string>(props: SelectProps<T>) {
 
   const [formProps] = splitProps(props, ["label", "error", "hint", "required", "class", "density"]);
 
+  const input = (
+    <SelectInput
+      value={local.value}
+      onChange={local.onChange}
+      options={local.options}
+      placeholder={local.placeholder}
+      disabled={local.disabled}
+      required={props.required}
+      size={local.size}
+    />
+  );
+
+  if (!formProps.label) return input;
+
   return (
     <FormField
       label={formProps.label}
@@ -100,15 +114,7 @@ export function Select<T extends string = string>(props: SelectProps<T>) {
       class={formProps.class}
       density={formProps.density}
     >
-      <SelectInput
-        value={local.value}
-        onChange={local.onChange}
-        options={local.options}
-        placeholder={local.placeholder}
-        disabled={local.disabled}
-        required={props.required}
-        size={local.size}
-      />
+      {input}
     </FormField>
   );
 }
