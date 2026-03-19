@@ -20,7 +20,7 @@
   background-color: var(--so-bg);
   border: 1px solid var(--so-border);
   border-radius: var(--so-radius);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--so-shadow-md);
   padding: var(--so-space-1) 0;
   min-width: 160px;
   animation: so-menu-in 0.15s ease-out;

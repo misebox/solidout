@@ -16,7 +16,7 @@
   bottom: 0;
   background-color: var(--so-bg);
   border: 1px solid var(--so-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--so-shadow-lg);
   display: flex;
   flex-direction: column;
   overflow-y: auto;

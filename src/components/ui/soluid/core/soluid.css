@@ -24,6 +24,10 @@
   --so-line-height: 1.5;
   --so-radius: 6px;
   --so-disabled-opacity: 0.5;
+
+  --so-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --so-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --so-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Density: dense --- */

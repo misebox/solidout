@@ -37,7 +37,7 @@
   padding: var(--so-space-3) var(--so-space-4);
   border-radius: var(--so-radius);
   font-size: var(--so-font-size-md);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--so-shadow-md);
   min-width: 280px;
   max-width: 420px;
   pointer-events: auto;
