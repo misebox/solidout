@@ -4,7 +4,7 @@ import { cls } from "./core/utils";
 
 export interface SpinnerProps extends CommonProps {
   size?: "sm" | "md" | "lg";
-  variant?: "primary" | "neutral";
+  variant?: "primary" | "neutral" | "danger" | "success" | "warning" | "info";
 }
 
 export function Spinner(props: SpinnerProps) {

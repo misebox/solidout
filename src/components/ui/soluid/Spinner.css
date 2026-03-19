@@ -38,6 +38,26 @@
   border-right-color: transparent;
 }
 
+.so-spinner--danger {
+  border-color: var(--so-color-danger-base);
+  border-right-color: transparent;
+}
+
+.so-spinner--success {
+  border-color: var(--so-color-success-base);
+  border-right-color: transparent;
+}
+
+.so-spinner--warning {
+  border-color: var(--so-color-warning-base);
+  border-right-color: transparent;
+}
+
+.so-spinner--info {
+  border-color: var(--so-color-info-base);
+  border-right-color: transparent;
+}
+
 @keyframes so-spinner-spin {
   to {
     transform: rotate(360deg);
