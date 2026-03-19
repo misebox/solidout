@@ -39,10 +39,11 @@
     "prepare": "bun run build:cli",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "fmt": "dprint fmt",
-    "fmt:check": "dprint check",
+    "fmt": "oxfmt src/ cli/ scripts/",
+    "fmt:check": "oxfmt --check src/ cli/ scripts/",
     "lint": "oxlint src/ cli/",
     "lint:fix": "oxlint --fix src/ cli/",
+    "verify": "concurrently -n lint,fmt,test,build \"bun run lint\" \"bun run fmt:check\" \"bun run test\" \"bun run build:cli\"",
     "push:check": "sh bin/check-build-freshness.sh"
   },
   "devDependencies": {
@@ -52,7 +53,8 @@
     "@solid-primitives/scheduled": "^1.5.3",
     "@solidjs/router": "^0.15.4",
     "@types/node": "^20.19.34",
-    "dprint": "^0.52.0",
+    "concurrently": "^9.2.1",
+    "oxfmt": "^0.41.0",
     "oxlint": "^1.50.0",
     "solid-js": "^1.9.0",
     "typescript": "^5.7.0",
