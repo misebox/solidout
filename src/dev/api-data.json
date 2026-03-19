@@ -1212,7 +1212,7 @@
       {
         "name": "label",
         "type": "string",
-        "optional": false
+        "optional": true
       },
       {
         "name": "error",
@@ -1295,7 +1295,7 @@
       },
       {
         "name": "variant",
-        "type": "\"primary\" | \"neutral\"",
+        "type": "\"primary\" | \"neutral\" | \"danger\" | \"success\" | \"warning\" | \"info\"",
         "optional": true
       },
       {
@@ -1634,7 +1634,7 @@
       {
         "name": "label",
         "type": "string",
-        "optional": false
+        "optional": true
       },
       {
         "name": "error",
@@ -1701,7 +1701,7 @@
       {
         "name": "label",
         "type": "string",
-        "optional": false
+        "optional": true
       },
       {
         "name": "error",
