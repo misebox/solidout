@@ -72,7 +72,7 @@ export function Drawer(props: DrawerProps) {
         <DrawerContext.Provider value={titleId}>
           <div
             class={cls("so-drawer-backdrop", closing() && "so-drawer-backdrop--closing")}
-            onClick={handleBackdropClick}
+            on:click={handleBackdropClick}
             onAnimationEnd={handleAnimationEnd}
           >
             <div

@@ -81,7 +81,7 @@ export function Dialog(props: DialogProps) {
         <DialogContext.Provider value={titleId}>
           <div
             class={cls("so-dialog-backdrop", closing() && "so-dialog-backdrop--closing")}
-            onClick={handleBackdropClick}
+            on:click={handleBackdropClick}
             onAnimationEnd={handleAnimationEnd}
           >
             <div
