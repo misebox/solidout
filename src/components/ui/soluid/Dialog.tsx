@@ -39,22 +39,31 @@ export function Dialog(props: DialogProps) {
 
   const [mounted, setMounted] = createSignal(false);
   const [closing, setClosing] = createSignal(false);
+  let closingTimer: ReturnType<typeof setTimeout> | undefined;
 
   createEffect(
     on(
       () => local.open,
       (open) => {
         if (open) {
+          clearTimeout(closingTimer);
           setClosing(false);
           setMounted(true);
         } else if (mounted()) {
           setClosing(true);
+          closingTimer = setTimeout(() => {
+            if (closing()) {
+              setMounted(false);
+              setClosing(false);
+            }
+          }, 200);
         }
       },
     ),
   );
 
   function handleAnimationEnd() {
+    clearTimeout(closingTimer);
     if (closing()) {
       setMounted(false);
       setClosing(false);
