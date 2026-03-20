@@ -503,7 +503,7 @@
   font-size: var(--site-font-size-xs);
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive: tablet ===== */
 @media (max-width: 768px) {
   .components-sidebar {
     display: none;
@@ -539,5 +539,43 @@
   .api-table {
     display: block;
     overflow-x: auto;
+  }
+}
+
+/* ===== Responsive: mobile ===== */
+@media (max-width: 480px) {
+  .site-header {
+    padding: var(--so-space-2) var(--so-space-3);
+    gap: var(--so-space-2);
+  }
+
+  .site-nav {
+    order: 1;
+    width: 100%;
+  }
+
+  .site-controls {
+    gap: var(--so-space-1);
+  }
+
+  .top-hero h1 {
+    font-size: 20px;
+  }
+
+  .top-hero-sub {
+    font-size: var(--so-font-size-sm);
+  }
+
+  .top-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code-block,
+  .gs-code {
+    font-size: 11px;
   }
 }
