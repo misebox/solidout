@@ -13,7 +13,7 @@ export async function update(cwd: string, options: UpdateOptions = {}): Promise<
     return;
   }
 
-  const currentVersion = config.componentsVersion;
+  const currentVersion = config.componentsVersion ?? "(not set)";
   console.log(`Current version: ${currentVersion}`);
   console.log("Checking for updates...");
 

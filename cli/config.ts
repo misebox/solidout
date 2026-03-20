@@ -9,7 +9,7 @@ export const RELEASE_URL = `https://github.com/${GITHUB_REPO}/releases/download`
 
 export interface SoluidConfig {
   /** Components version to install */
-  componentsVersion: string;
+  componentsVersion?: string;
   /** Directory to install components into, relative to project root */
   componentDir: string;
   /** CSS file path relative to project root (e.g. "src/styles/soluid.css") */

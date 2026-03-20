@@ -6,7 +6,14 @@ import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import { createGunzip } from "node:zlib";
 import { Parser, type ReadEntry } from "tar";
-import { CONFIG_FILENAME, loadConfig, PROJECT_NAME, RELEASE_URL } from "../config.js";
+import {
+  CONFIG_FILENAME,
+  fetchLatestComponentsVersion,
+  loadConfig,
+  PROJECT_NAME,
+  RELEASE_URL,
+  saveConfig,
+} from "../config.js";
 import { collectNpmDeps, registry, resolveDependencies } from "../registry.js";
 import { rewriteImports } from "../rewrite-imports.js";
 
@@ -119,7 +126,21 @@ export async function install(cwd: string, options: InstallOptions = {}): Promis
 
   console.log(`Installing ${resolved.length} items (including dependencies):`);
 
-  const version = config.componentsVersion;
+  let version = config.componentsVersion;
+  if (!version) {
+    console.log("No componentsVersion in config, fetching latest...");
+    try {
+      version = await fetchLatestComponentsVersion();
+    } catch (e) {
+      console.error(`Failed to fetch version: ${e instanceof Error ? e.message : e}`);
+      process.exit(1);
+      return;
+    }
+    config.componentsVersion = version;
+    saveConfig(cwd, config);
+    console.log(`Using components v${version}`);
+  }
+
   let archive: Map<string, string>;
   try {
     archive = await fetchAndExtract(version);
