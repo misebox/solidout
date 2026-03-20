@@ -36,4 +36,36 @@ describe("config", () => {
     const loaded = loadConfig(tmpDir);
     expect(loaded).toEqual(config);
   });
+
+  test("loadConfig handles missing componentsVersion", () => {
+    const configPath = path.join(tmpDir, CONFIG_FILENAME);
+    fs.writeFileSync(
+      configPath,
+      JSON.stringify({
+        componentDir: "src/components/ui",
+        cssPath: "src/styles/soluid.css",
+        components: ["Button"],
+      }) + "\n",
+    );
+
+    const loaded = loadConfig(tmpDir);
+    expect(loaded).not.toBeNull();
+    expect(loaded?.componentsVersion).toBeUndefined();
+    expect(loaded?.components).toEqual(["Button"]);
+  });
+
+  test("saveConfig persists updated componentsVersion", () => {
+    const config: SoluidConfig = {
+      componentDir: "src/components/ui",
+      cssPath: "src/styles/soluid.css",
+      components: ["Button"],
+    };
+
+    saveConfig(tmpDir, config);
+    expect(loadConfig(tmpDir)?.componentsVersion).toBeUndefined();
+
+    config.componentsVersion = "0.2.0";
+    saveConfig(tmpDir, config);
+    expect(loadConfig(tmpDir)?.componentsVersion).toBe("0.2.0");
+  });
 });
