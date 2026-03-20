@@ -1,7 +1,11 @@
 import { CONFIG_FILENAME, fetchLatestComponentsVersion, loadConfig, PROJECT_NAME, saveConfig } from "../config.js";
 import { install } from "./install.js";
 
-export async function update(cwd: string): Promise<void> {
+interface UpdateOptions {
+  interactive?: boolean;
+}
+
+export async function update(cwd: string, options: UpdateOptions = {}): Promise<void> {
   const config = loadConfig(cwd);
   if (config === null) {
     console.error(`${CONFIG_FILENAME} not found. Run: npx ${PROJECT_NAME} init`);
@@ -31,5 +35,5 @@ export async function update(cwd: string): Promise<void> {
   config.componentsVersion = latestVersion;
   saveConfig(cwd, config);
 
-  await install(cwd);
+  await install(cwd, { interactive: options.interactive });
 }

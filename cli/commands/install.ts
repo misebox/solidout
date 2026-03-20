@@ -88,7 +88,12 @@ function stripPrefix(archivePath: string): string {
   return archivePath;
 }
 
-export async function install(cwd: string): Promise<void> {
+interface InstallOptions {
+  interactive?: boolean;
+}
+
+export async function install(cwd: string, options: InstallOptions = {}): Promise<void> {
+  const interactive = options.interactive !== false;
   const config = loadConfig(cwd);
   if (config === null) {
     console.error(`${CONFIG_FILENAME} not found. Run: npx ${PROJECT_NAME} init\n`);
@@ -241,11 +246,16 @@ export async function install(cwd: string): Promise<void> {
       }
       const cmd = [...command, ...missingDeps].join(" ");
       console.log(`Required packages: ${missingDeps.join(", ")}`);
-      const ok = await confirm(`Run \`${cmd}\`? [y/N] `);
-      if (ok) {
-        execSync(cmd, { stdio: "inherit", cwd });
+      if (interactive) {
+        const ok = await confirm(`Run \`${cmd}\`? [y/N] `);
+        if (ok) {
+          execSync(cmd, { stdio: "inherit", cwd });
+        } else {
+          console.log(`  ${cmd}`);
+        }
       } else {
-        console.log(`  ${cmd}`);
+        console.log(`Running: ${cmd}`);
+        execSync(cmd, { stdio: "inherit", cwd });
       }
     }
   }

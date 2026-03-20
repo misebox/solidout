@@ -18,7 +18,7 @@ switch (command) {
     await init(cwd, { interactive: !args.includes("--no-interactive") });
     break;
   case "install":
-    await install(cwd);
+    await install(cwd, { interactive: !args.includes("--no-interactive") });
     break;
   case "add":
     if (rest.length === 0) {
@@ -35,7 +35,7 @@ switch (command) {
     remove(cwd, rest);
     break;
   case "update":
-    await update(cwd);
+    await update(cwd, { interactive: !args.includes("--no-interactive") });
     break;
   case "list": {
     const filter = args.includes("--installed")
@@ -51,7 +51,7 @@ switch (command) {
     console.log("");
     console.log("Commands:");
     console.log(`  init [--no-interactive]  Create ${CONFIG_FILENAME}`);
-    console.log("  install                 Install components and CSS");
+    console.log("  install [--no-interactive] Install components and CSS");
     console.log("  update                  Update to latest components version");
     console.log("  add <component...>      Add components to config");
     console.log("  remove <component...>   Remove components from config");
