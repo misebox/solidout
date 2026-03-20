@@ -12,7 +12,7 @@ export interface SoluidConfig {
   componentsVersion?: string;
   /** Directory to install components into, relative to project root */
   componentDir: string;
-  /** CSS file path relative to project root (e.g. "src/styles/soluid.css") */
+  /** CSS file path relative to project root (e.g. "src/soluid.css") */
   cssPath: string;
   /** Components to install */
   components: string[];

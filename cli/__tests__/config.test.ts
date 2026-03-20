@@ -24,7 +24,7 @@ describe("config", () => {
     const config: SoluidConfig = {
       componentsVersion: "0.1.0",
       componentDir: "src/components/ui",
-      cssPath: "src/styles/soluid.css",
+      cssPath: "src/soluid.css",
       components: ["Button", "TextField"],
     };
 
@@ -43,7 +43,7 @@ describe("config", () => {
       configPath,
       JSON.stringify({
         componentDir: "src/components/ui",
-        cssPath: "src/styles/soluid.css",
+        cssPath: "src/soluid.css",
         components: ["Button"],
       }) + "\n",
     );
@@ -57,7 +57,7 @@ describe("config", () => {
   test("saveConfig persists updated componentsVersion", () => {
     const config: SoluidConfig = {
       componentDir: "src/components/ui",
-      cssPath: "src/styles/soluid.css",
+      cssPath: "src/soluid.css",
       components: ["Button"],
     };
 

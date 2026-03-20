@@ -35,7 +35,7 @@ bunx soluid list                # list available components
 ```json
 {
   "componentDir": "src/components/ui",
-  "cssPath": "src/styles/soluid.css",
+  "cssPath": "src/soluid.css",
   "components": ["Button", "TextField", "Dialog"]
 }
 ```
@@ -48,7 +48,7 @@ Import CSS in your app entry point:
 
 ```tsx
 // src/index.tsx
-import "./styles/soluid.css";
+import "./soluid.css";
 ```
 
 Theme and density switching:

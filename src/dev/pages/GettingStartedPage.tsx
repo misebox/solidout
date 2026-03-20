@@ -62,7 +62,7 @@ function TextWithCode(props: { textKey: string; code: string }) {
 
 const CONFIG_EXAMPLE = `{
   "componentDir": "src/components/ui",
-  "cssPath": "src/styles/soluid.css",
+  "cssPath": "src/soluid.css",
   "components": ["Button", "TextField", "Dialog"]
 }`;
 
@@ -121,7 +121,7 @@ ${cmd("remove Switch")}`}
           <p>{t(lang(), "gs.step4.p1")}</p>
           <CodeBlock>
             {`// src/index.tsx
-import "./styles/soluid.css";`}
+import "./soluid.css";`}
           </CodeBlock>
         </Step>
 
